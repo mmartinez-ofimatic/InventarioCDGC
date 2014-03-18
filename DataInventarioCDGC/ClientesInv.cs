@@ -36,6 +36,7 @@ namespace DataInventarioCDGC
             clientes.Telefono = telefono;
             clientes.Celular = celular;
             clientes.Direccion = direccion;
+                //Cambio...
 
             db.Clientes.AddObject(clientes);
             db.SaveChanges();
