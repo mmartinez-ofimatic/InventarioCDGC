@@ -121,7 +121,7 @@ namespace InventarioCDGC
                         dataGridView1.DataSource = clientesclass.BuscarxID();
                         if (dataGridView1.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else if (comboBoxBuscar.Text == "Nombre")
@@ -131,7 +131,7 @@ namespace InventarioCDGC
                         dataGridView1.DataSource = clientesclass.BuscarxNombre(tbuscarpor.Text);
                         if (dataGridView1.RowCount == 0)
                         {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else if (comboBoxBuscar.Text == "Cedula")
@@ -141,17 +141,20 @@ namespace InventarioCDGC
 
                         if (v.ValidateCedula(tbuscarpor.Text) == false)
 
-                            MessageBox.Show("Cedula Invalida. Por favor verifique.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+<<<<<<< HEAD
+                        dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
+                        if (dataGridView1.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+=======
+                            MessageBox.Show("Cedula Invalida. Por favor verifique.");
                         else
                         {
 
                             dataGridView1.AutoGenerateColumns = false;
 
                             dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
-                        if (dataGridView1.RowCount == 0)
-                        {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+>>>>>>> 72bcf7f4d355613f802a9ea90e6ad01e31415871
                         }
                     }
                 }
