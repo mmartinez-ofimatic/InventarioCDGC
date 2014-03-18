@@ -43,6 +43,8 @@ local.properties
 
 # Build results
 
+
+
 [Dd]ebug/
 [Rr]elease/
 x64/
@@ -213,3 +215,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+DataInventarioCDGC/App.Config
+InventarioCDGC/App.Config
