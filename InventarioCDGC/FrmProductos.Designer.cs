@@ -41,9 +41,13 @@
             this.textBoxIDproducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbuscarporid = new System.Windows.Forms.MaskedTextBox();
             this.bbuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+            this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
+            this.tbuscarpor = new System.Windows.Forms.TextBox();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,12 +80,14 @@
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
             this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.modificarToolStripMenuItem1.Text = "Modificar";
+            this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
             // borrarToolStripMenuItem1
             // 
             this.borrarToolStripMenuItem1.Name = "borrarToolStripMenuItem1";
             this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(51, 20);
             this.borrarToolStripMenuItem1.Text = "Borrar";
+            this.borrarToolStripMenuItem1.Click += new System.EventHandler(this.borrarToolStripMenuItem1_Click);
             // 
             // busquedaAvanzadaToolStripMenuItem1
             // 
@@ -157,45 +163,86 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnIDProducto,
+            this.ColumnNombre,
+            this.ColumnPrecio});
             this.dataGridView1.Location = new System.Drawing.Point(0, 285);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(362, 101);
             this.dataGridView1.TabIndex = 25;
-            // 
-            // tbuscarporid
-            // 
-            this.tbuscarporid.Location = new System.Drawing.Point(153, 49);
-            this.tbuscarporid.Mask = "99999";
-            this.tbuscarporid.Name = "tbuscarporid";
-            this.tbuscarporid.Size = new System.Drawing.Size(113, 20);
-            this.tbuscarporid.TabIndex = 30;
-            this.tbuscarporid.ValidatingType = typeof(int);
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // bbuscar
             // 
-            this.bbuscar.Location = new System.Drawing.Point(274, 44);
+            this.bbuscar.Location = new System.Drawing.Point(277, 44);
             this.bbuscar.Name = "bbuscar";
             this.bbuscar.Size = new System.Drawing.Size(75, 28);
             this.bbuscar.TabIndex = 32;
             this.bbuscar.Text = "Buscar";
             this.bbuscar.UseVisualStyleBackColor = true;
+            this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(9, 52);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(138, 13);
+            this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 31;
-            this.label14.Text = "Buscar por ID del Producto:";
+            this.label14.Text = "Buscar por";
+            // 
+            // comboBoxBuscar
+            // 
+            this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBuscar.FormattingEnabled = true;
+            this.comboBoxBuscar.Items.AddRange(new object[] {
+            "ID del producto",
+            "Nombre del producto"});
+            this.comboBoxBuscar.Location = new System.Drawing.Point(73, 48);
+            this.comboBoxBuscar.Name = "comboBoxBuscar";
+            this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxBuscar.TabIndex = 33;
+            // 
+            // tbuscarpor
+            // 
+            this.tbuscarpor.Location = new System.Drawing.Point(191, 49);
+            this.tbuscarpor.Name = "tbuscarpor";
+            this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
+            this.tbuscarpor.TabIndex = 34;
+            // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
+            this.ColumnIDProducto.HeaderText = "ID del Producto";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Producto";
+            this.ColumnNombre.HeaderText = "Nombre del Producto";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 130;
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
+            this.ColumnPrecio.HeaderText = "Precio de Venta";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
+            this.ColumnPrecio.Width = 110;
             // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 386);
-            this.Controls.Add(this.tbuscarporid);
+            this.Controls.Add(this.tbuscarpor);
+            this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.bbuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
@@ -228,8 +275,12 @@
         private System.Windows.Forms.TextBox textBoxIDproducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.MaskedTextBox tbuscarporid;
         private System.Windows.Forms.Button bbuscar;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBoxBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
+        private System.Windows.Forms.TextBox tbuscarpor;
     }
 }

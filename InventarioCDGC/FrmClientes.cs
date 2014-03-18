@@ -119,18 +119,30 @@ namespace InventarioCDGC
                         dataGridView1.AutoGenerateColumns = false;
 
                         dataGridView1.DataSource = clientesclass.BuscarxID();
+                        if (dataGridView1.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else if (comboBoxBuscar.Text == "Nombre")
                     {
                         dataGridView1.AutoGenerateColumns = false;
 
                         dataGridView1.DataSource = clientesclass.BuscarxNombre(tbuscarpor.Text);
+                        if (dataGridView1.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else if (comboBoxBuscar.Text == "Cedula")
                     {
                         dataGridView1.AutoGenerateColumns = false;
 
                         dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
+                        if (dataGridView1.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
@@ -191,18 +203,14 @@ namespace InventarioCDGC
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           int index = e.RowIndex;
+            int index = e.RowIndex;
 
-           DataGridViewRow row = dataGridView1.CurrentRow;
-         //row.DataGridView.cell
-          
+            DataGridViewRow row = dataGridView1.CurrentRow;        
             textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxCedula.Text = row.Cells[2].Value.ToString();
             textBoxTelefono.Text = row.Cells[3].Value.ToString();
             textBoxCelular.Text = row.Cells[4].Value.ToString();
             textBoxDireccion.Text = row.Cells[5].Value.ToString();
-
-
         }
 
 

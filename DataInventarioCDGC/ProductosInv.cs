@@ -12,7 +12,7 @@ namespace DataInventarioCDGC
     InventarioCDGCEntities dbEntities = new InventarioCDGCEntities();
     public int idproducto { get; set; }
     public string producto { get; set; }
-    public double precio { get; set; }
+    public decimal precio { get; set; }
 
     /// <summary>
     /// Guarda un producto.
@@ -27,7 +27,7 @@ namespace DataInventarioCDGC
             Productos product = new Productos();
             product.ID_Producto = idproducto;
             product.Producto = producto;
-            product.Precio_Venta = Convert.ToDecimal(precio);
+            product.Precio_Venta = precio;
 
             dbEntities.AddToProductos(product);
             dbEntities.SaveChanges();
@@ -56,7 +56,7 @@ namespace DataInventarioCDGC
 
             update.ID_Producto = idproducto;
             update.Producto = producto;
-            update.Precio_Venta = Convert.ToDecimal(precio);
+            update.Precio_Venta = precio;
             
             dbEntities.SaveChanges();
 
@@ -107,6 +107,55 @@ namespace DataInventarioCDGC
                      select s).ToList();
 
         return selec;
+    }
+
+    /// <summary>
+    /// Busqueda por ID.
+    /// </summary>
+    /// <returns>List</returns>
+    public List<Productos> BuscarxID()
+    {
+
+        List<Productos> busc = (from b in dbEntities.Productos
+                                  where b.ID_Producto == idproducto
+                                  select b).ToList();
+        if (busc != null)
+        {
+            if (busc.Count != 0)
+            {
+                foreach (var item in busc)
+                {
+                    idproducto = item.ID_Producto;
+                    producto = item.Producto;
+                    precio = Convert.ToDecimal(item.Precio_Venta);                  
+                }
+
+            }
+        }
+
+        return busc;
+    }
+
+    /// <summary>
+    /// Buscar por nombre.
+    /// </summary>
+    /// <param name="nombre">nombre del cliente.</param>
+    /// <returns>List</returns>
+    public List<Productos> BuscarxNombre(string nomproducto)
+    {
+        List<Productos> busc = (from b in dbEntities.Productos
+                                  where b.Producto == nomproducto
+                                  select b).ToList();
+        if (busc != null)
+        {
+            foreach (var item in busc)
+            {
+                idproducto = item.ID_Producto;
+                producto = item.Producto;
+                precio = Convert.ToDecimal (item.Precio_Venta);                
+            }
+        }
+        return busc;
     }
 
     }
