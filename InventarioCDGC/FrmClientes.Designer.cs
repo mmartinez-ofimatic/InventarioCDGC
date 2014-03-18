@@ -63,81 +63,91 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 47);
+            this.label1.Location = new System.Drawing.Point(31, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 87);
+            this.label2.Location = new System.Drawing.Point(31, 107);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cedula:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 124);
+            this.label3.Location = new System.Drawing.Point(31, 153);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Telefono:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 164);
+            this.label4.Location = new System.Drawing.Point(31, 202);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Celular:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 207);
+            this.label5.Location = new System.Drawing.Point(31, 255);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Direccion:";
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(81, 44);
+            this.textBoxNombre.Location = new System.Drawing.Point(108, 54);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(110, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(145, 22);
             this.textBoxNombre.TabIndex = 5;
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(81, 121);
+            this.textBoxTelefono.Location = new System.Drawing.Point(108, 149);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(110, 20);
+            this.textBoxTelefono.Size = new System.Drawing.Size(145, 22);
             this.textBoxTelefono.TabIndex = 6;
             // 
             // textBoxCedula
             // 
-            this.textBoxCedula.Location = new System.Drawing.Point(81, 84);
+            this.textBoxCedula.Location = new System.Drawing.Point(108, 103);
+            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCedula.Name = "textBoxCedula";
-            this.textBoxCedula.Size = new System.Drawing.Size(110, 20);
+            this.textBoxCedula.Size = new System.Drawing.Size(145, 22);
             this.textBoxCedula.TabIndex = 7;
             // 
             // textBoxCelular
             // 
-            this.textBoxCelular.Location = new System.Drawing.Point(81, 161);
+            this.textBoxCelular.Location = new System.Drawing.Point(108, 198);
+            this.textBoxCelular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCelular.Name = "textBoxCelular";
-            this.textBoxCelular.Size = new System.Drawing.Size(110, 20);
+            this.textBoxCelular.Size = new System.Drawing.Size(145, 22);
             this.textBoxCelular.TabIndex = 8;
             // 
             // textBoxDireccion
             // 
-            this.textBoxDireccion.Location = new System.Drawing.Point(81, 204);
+            this.textBoxDireccion.Location = new System.Drawing.Point(108, 251);
+            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(215, 20);
+            this.textBoxDireccion.Size = new System.Drawing.Size(285, 22);
             this.textBoxDireccion.TabIndex = 9;
             // 
             // menuStrip
@@ -150,43 +160,45 @@
             this.busquedaAvanzadaToolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip.Size = new System.Drawing.Size(467, 24);
+            this.menuStrip.Size = new System.Drawing.Size(623, 28);
             this.menuStrip.TabIndex = 21;
             this.menuStrip.Text = "menuStrip";
             // 
             // guardartoolStripMenuItem1
             // 
             this.guardartoolStripMenuItem1.Name = "guardartoolStripMenuItem1";
-            this.guardartoolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
+            this.guardartoolStripMenuItem1.Size = new System.Drawing.Size(74, 24);
             this.guardartoolStripMenuItem1.Text = "Guardar";
             this.guardartoolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(85, 24);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
             // borrarToolStripMenuItem1
             // 
             this.borrarToolStripMenuItem1.Name = "borrarToolStripMenuItem1";
-            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(51, 20);
+            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(62, 24);
             this.borrarToolStripMenuItem1.Text = "Borrar";
             this.borrarToolStripMenuItem1.Click += new System.EventHandler(this.borrarToolStripMenuItem1_Click);
             // 
             // busquedaAvanzadaToolStripMenuItem1
             // 
             this.busquedaAvanzadaToolStripMenuItem1.Name = "busquedaAvanzadaToolStripMenuItem1";
-            this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
+            this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(155, 24);
             this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
             // 
             // bbuscar
             // 
-            this.bbuscar.Location = new System.Drawing.Point(322, 37);
+            this.bbuscar.Location = new System.Drawing.Point(429, 46);
+            this.bbuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bbuscar.Name = "bbuscar";
-            this.bbuscar.Size = new System.Drawing.Size(75, 28);
+            this.bbuscar.Size = new System.Drawing.Size(100, 34);
             this.bbuscar.TabIndex = 29;
             this.bbuscar.Text = "Buscar";
             this.bbuscar.UseVisualStyleBackColor = true;
@@ -195,9 +207,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 45);
+            this.label14.Location = new System.Drawing.Point(16, 55);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(77, 17);
             this.label14.TabIndex = 28;
             this.label14.Text = "Buscar por";
             // 
@@ -213,9 +226,11 @@
             this.groupBox1.Controls.Add(this.textBoxTelefono);
             this.groupBox1.Controls.Add(this.textBoxCelular);
             this.groupBox1.Controls.Add(this.textBoxCedula);
-            this.groupBox1.Location = new System.Drawing.Point(15, 90);
+            this.groupBox1.Location = new System.Drawing.Point(20, 111);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 254);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(433, 313);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -232,10 +247,11 @@
             this.ColumnTelefono,
             this.ColumnCelular,
             this.ColumnDireccion});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 366);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 450);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 93);
+            this.dataGridView1.Size = new System.Drawing.Size(623, 114);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -290,23 +306,26 @@
             "ID del Cliente",
             "Nombre",
             "Cedula"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(76, 42);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(101, 52);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(160, 24);
             this.comboBoxBuscar.TabIndex = 32;
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(203, 42);
+            this.tbuscarpor.Location = new System.Drawing.Point(271, 52);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
+            this.tbuscarpor.Size = new System.Drawing.Size(132, 22);
             this.tbuscarpor.TabIndex = 33;
+           // this.tbuscarpor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbuscarpor_KeyPress);
             // 
             // FrmClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 456);
+            this.ClientSize = new System.Drawing.Size(623, 561);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.dataGridView1);
@@ -314,6 +333,7 @@
             this.Controls.Add(this.bbuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.menuStrip);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);

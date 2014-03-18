@@ -136,12 +136,22 @@ namespace InventarioCDGC
                     }
                     else if (comboBoxBuscar.Text == "Cedula")
                     {
-                        dataGridView1.AutoGenerateColumns = false;
+                        Validaciones v = new Validaciones();
+                       // v.ValidateCedula(tbuscarpor.Text);
 
-                        dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
+                        if (v.ValidateCedula(tbuscarpor.Text) == false)
+
+                            MessageBox.Show("Cedula Invalida. Por favor verifique.");
+                        else
+                        {
+
+                            dataGridView1.AutoGenerateColumns = false;
+
+                            dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
                         if (dataGridView1.RowCount == 0)
                         {
                             MessageBox.Show("Este Cliente no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         }
                     }
                 }
@@ -213,6 +223,7 @@ namespace InventarioCDGC
             textBoxDireccion.Text = row.Cells[5].Value.ToString();
         }
 
+    
 
 
     }
