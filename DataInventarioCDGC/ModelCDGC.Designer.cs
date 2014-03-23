@@ -19,7 +19,7 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Almacen__ID_Prod__182C9B23", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataInventarioCDGC.Productos), "Almacen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Almacen), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Almacen__ID_Prod__182C9B23", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataInventarioCDGC.Productos), "Almacen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.AlmacenInv), true)]
 [assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Clien__117F9D94", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.ClientesInv), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Ventas), true)]
 [assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Produ__1273C1CD", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Productos), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Ventas), true)]
 [assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Usuarios__ID_Rol__0CBAE877", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Roles), "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Usuarios), true)]
@@ -78,18 +78,18 @@ namespace DataInventarioCDGC
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Almacen> Almacen
+        public ObjectSet<AlmacenInv> Almacen
         {
             get
             {
                 if ((_Almacen == null))
                 {
-                    _Almacen = base.CreateObjectSet<Almacen>("Almacen");
+                    _Almacen = base.CreateObjectSet<AlmacenInv>("Almacen");
                 }
                 return _Almacen;
             }
         }
-        private ObjectSet<Almacen> _Almacen;
+        private ObjectSet<AlmacenInv> _Almacen;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -178,7 +178,7 @@ namespace DataInventarioCDGC
         /// <summary>
         /// Deprecated Method for adding a new object to the Almacen EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToAlmacen(Almacen almacen)
+        public void AddToAlmacen(AlmacenInv almacen)
         {
             base.AddObject("Almacen", almacen);
         }
@@ -237,7 +237,7 @@ namespace DataInventarioCDGC
     [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Almacen")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Almacen : EntityObject
+    public partial class AlmacenInv : EntityObject
     {
         #region Factory Method
     
@@ -245,9 +245,9 @@ namespace DataInventarioCDGC
         /// Create a new Almacen object.
         /// </summary>
         /// <param name="iD_Producto">Initial value of the ID_Producto property.</param>
-        public static Almacen CreateAlmacen(global::System.Int32 iD_Producto)
+        public static AlmacenInv CreateAlmacen(global::System.Int32 iD_Producto)
         {
-            Almacen almacen = new Almacen();
+            AlmacenInv almacen = new AlmacenInv();
             almacen.ID_Producto = iD_Producto;
             return almacen;
         }
@@ -669,15 +669,15 @@ namespace DataInventarioCDGC
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Almacen__ID_Prod__182C9B23", "Almacen")]
-        public Almacen Almacen
+        public AlmacenInv Almacen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AlmacenInv>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AlmacenInv>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen").Value = value;
             }
         }
         /// <summary>
@@ -685,17 +685,17 @@ namespace DataInventarioCDGC
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Almacen> AlmacenReference
+        public EntityReference<AlmacenInv> AlmacenReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<AlmacenInv>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<AlmacenInv>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen", value);
                 }
             }
         }

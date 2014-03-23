@@ -134,6 +134,7 @@ namespace InventarioCDGC
                         dataGridView1.AutoGenerateColumns = false;
 
                         dataGridView1.DataSource = product.BuscarxID();
+                        
                         if (dataGridView1.RowCount == 0)
                         {
                             MessageBox.Show("Este Producto no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -170,6 +171,11 @@ namespace InventarioCDGC
             textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxPrecio.Text = row.Cells[2].Value.ToString();
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
 

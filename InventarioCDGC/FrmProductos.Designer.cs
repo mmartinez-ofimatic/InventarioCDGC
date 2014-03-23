@@ -45,9 +45,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
-            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -172,6 +172,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(362, 101);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // bbuscar
@@ -212,13 +213,13 @@
             this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
             this.tbuscarpor.TabIndex = 34;
             // 
-            // ColumnIDProducto
+            // ColumnPrecio
             // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
-            this.ColumnIDProducto.HeaderText = "ID del Producto";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
+            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
+            this.ColumnPrecio.HeaderText = "Precio de Venta";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
+            this.ColumnPrecio.Width = 110;
             // 
             // ColumnNombre
             // 
@@ -228,13 +229,13 @@
             this.ColumnNombre.ReadOnly = true;
             this.ColumnNombre.Width = 130;
             // 
-            // ColumnPrecio
+            // ColumnIDProducto
             // 
-            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
-            this.ColumnPrecio.HeaderText = "Precio de Venta";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            this.ColumnPrecio.ReadOnly = true;
-            this.ColumnPrecio.Width = 110;
+            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
+            this.ColumnIDProducto.HeaderText = "ID del Producto";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
             // 
             // FrmProductos
             // 
@@ -278,9 +279,9 @@
         private System.Windows.Forms.Button bbuscar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
+        private System.Windows.Forms.TextBox tbuscarpor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
-        private System.Windows.Forms.TextBox tbuscarpor;
     }
 }

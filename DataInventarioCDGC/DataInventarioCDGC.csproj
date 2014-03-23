@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlmacenIn.cs" />
     <Compile Include="ClientesInv.cs" />
     <Compile Include="ModelCDGC.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -51,6 +52,8 @@
     </Compile>
     <Compile Include="ProductosInv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolInv.cs" />
+    <Compile Include="UsuarioInv.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\InventarioCDGCEntities.datasource">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

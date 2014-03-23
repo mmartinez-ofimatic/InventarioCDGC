@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DataInventarioCDGC;
-using System.Data;
 using System.Data.Entity;
 
 namespace InventarioCDGC

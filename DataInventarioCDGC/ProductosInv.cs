@@ -139,7 +139,7 @@ namespace DataInventarioCDGC
     /// <summary>
     /// Buscar por nombre.
     /// </summary>
-    /// <param name="nombre">nombre del cliente.</param>
+    /// <param name="nombre">nombre del producto.</param>
     /// <returns>List</returns>
     public List<Productos> BuscarxNombre(string nomproducto)
     {
