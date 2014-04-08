@@ -19,8 +19,8 @@ namespace InventarioCDGC
 
        
         UsuarioInv login = new UsuarioInv();
-        
-        private void BLOGIN_Click(object sender, EventArgs e)
+
+        private void xButton1_Click(object sender, EventArgs e)
         {
             bool validate;
             validate = login.ValidateUsers(tusuario.Text, tpass.Text);
@@ -36,6 +36,14 @@ namespace InventarioCDGC
                 MessageBox.Show("Usuario o Password Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tusuario.Clear();
                 tpass.Clear();
+            }
+        }
+
+        private void tpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                xButton1_Click(sender, e);
             }
         }
     }

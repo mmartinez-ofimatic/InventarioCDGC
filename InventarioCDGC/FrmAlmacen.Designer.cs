@@ -33,9 +33,11 @@
             this.bbuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxExistencia = new System.Windows.Forms.NumericUpDown();
             this.comboBoxID = new System.Windows.Forms.ComboBox();
-            this.textBoxExistencia = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,10 +47,9 @@
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.busquedaAvanzadaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxExistencia)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,14 +102,30 @@
             this.dataGridView1.Location = new System.Drawing.Point(-1, 291);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(276, 101);
+            this.dataGridView1.Size = new System.Drawing.Size(255, 101);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
+            this.ColumnIDProducto.HeaderText = "ID del Producto";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnExistencia
+            // 
+            this.ColumnExistencia.DataPropertyName = "Existencia";
+            this.ColumnExistencia.HeaderText = "Existencia";
+            this.ColumnExistencia.Name = "ColumnExistencia";
+            this.ColumnExistencia.ReadOnly = true;
+            this.ColumnExistencia.Width = 110;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxID);
             this.groupBox1.Controls.Add(this.textBoxExistencia);
+            this.groupBox1.Controls.Add(this.comboBoxID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.label2);
@@ -120,6 +137,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Almacen";
             // 
+            // textBoxExistencia
+            // 
+            this.textBoxExistencia.Location = new System.Drawing.Point(122, 124);
+            this.textBoxExistencia.Maximum = new decimal(new int[] {
+            500000,
+            0,
+            0,
+            0});
+            this.textBoxExistencia.Name = "textBoxExistencia";
+            this.textBoxExistencia.Size = new System.Drawing.Size(120, 20);
+            this.textBoxExistencia.TabIndex = 41;
+            this.textBoxExistencia.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // comboBoxID
             // 
             this.comboBoxID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -129,13 +163,6 @@
             this.comboBoxID.Size = new System.Drawing.Size(121, 21);
             this.comboBoxID.TabIndex = 42;
             this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
-            // 
-            // textBoxExistencia
-            // 
-            this.textBoxExistencia.Location = new System.Drawing.Point(122, 124);
-            this.textBoxExistencia.Name = "textBoxExistencia";
-            this.textBoxExistencia.Size = new System.Drawing.Size(100, 20);
-            this.textBoxExistencia.TabIndex = 1;
             // 
             // label3
             // 
@@ -213,22 +240,7 @@
             this.busquedaAvanzadaToolStripMenuItem1.Name = "busquedaAvanzadaToolStripMenuItem1";
             this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
             this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
-            // 
-            // ColumnIDProducto
-            // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
-            this.ColumnIDProducto.HeaderText = "ID del Producto";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
-            // 
-            // ColumnExistencia
-            // 
-            this.ColumnExistencia.DataPropertyName = "Existencia";
-            this.ColumnExistencia.HeaderText = "Existencia";
-            this.ColumnExistencia.Name = "ColumnExistencia";
-            this.ColumnExistencia.ReadOnly = true;
-            this.ColumnExistencia.Width = 110;
+            this.busquedaAvanzadaToolStripMenuItem1.Click += new System.EventHandler(this.busquedaAvanzadaToolStripMenuItem1_Click);
             // 
             // FrmAlmacen
             // 
@@ -242,12 +254,17 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAlmacen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAlmacen";
             this.Load += new System.EventHandler(this.FrmAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxExistencia)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -263,7 +280,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxExistencia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label2;
@@ -276,5 +292,6 @@
         private System.Windows.Forms.ComboBox comboBoxID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
+        private System.Windows.Forms.NumericUpDown textBoxExistencia;
     }
 }

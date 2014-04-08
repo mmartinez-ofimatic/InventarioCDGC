@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             this.tpass = new System.Windows.Forms.TextBox();
             this.tusuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BLOGIN = new System.Windows.Forms.Button();
+            this.xButton1 = new InventarioCDGC.XButton();
             this.SuspendLayout();
             // 
             // tpass
@@ -43,6 +44,7 @@
             this.tpass.PasswordChar = '*';
             this.tpass.Size = new System.Drawing.Size(121, 20);
             this.tpass.TabIndex = 8;
+            this.tpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tpass_KeyPress);
             // 
             // tusuario
             // 
@@ -76,26 +78,46 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "USUARIO:";
             // 
-            // BLOGIN
+            // xButton1
             // 
-            this.BLOGIN.Location = new System.Drawing.Point(125, 158);
-            this.BLOGIN.Name = "BLOGIN";
-            this.BLOGIN.Size = new System.Drawing.Size(79, 29);
-            this.BLOGIN.TabIndex = 9;
-            this.BLOGIN.Text = "LOGIN";
-            this.BLOGIN.UseVisualStyleBackColor = true;
-            this.BLOGIN.Click += new System.EventHandler(this.BLOGIN_Click);
+            office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.TextColor = System.Drawing.Color.White;
+            this.xButton1.ColorTable = office2010Green1;
+            this.xButton1.Location = new System.Drawing.Point(137, 160);
+            this.xButton1.Name = "xButton1";
+            this.xButton1.Size = new System.Drawing.Size(75, 23);
+            this.xButton1.TabIndex = 10;
+            this.xButton1.Text = "LOGIN";
+            this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButton1.UseVisualStyleBackColor = true;
+            this.xButton1.Click += new System.EventHandler(this.xButton1_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 233);
+            this.Controls.Add(this.xButton1);
             this.Controls.Add(this.tpass);
             this.Controls.Add(this.tusuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BLOGIN);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
@@ -112,6 +134,6 @@
         private System.Windows.Forms.TextBox tusuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BLOGIN;
+        private XButton xButton1;
     }
 }

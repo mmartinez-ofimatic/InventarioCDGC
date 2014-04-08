@@ -220,7 +220,15 @@ namespace InventarioCDGC
             comboBoxID.Text.FirstOrDefault();
             selectModeRow = false;
             textBoxNombre.Clear();
-            textBoxExistencia.Clear();
+            textBoxExistencia.Value = 1;
+        }
+
+    
+
+        private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarAlmacen almacen = new Consultas.BuscarAlmacen();
+            almacen.ShowDialog(this);
         }
 
        

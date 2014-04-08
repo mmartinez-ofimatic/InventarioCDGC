@@ -267,7 +267,7 @@ namespace InventarioCDGC
         private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Consultas.BuscarClienteVentas bclientes = new Consultas.BuscarClienteVentas();
-            bclientes.Show();
+            bclientes.ShowDialog(this);
         }
 
     

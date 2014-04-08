@@ -63,6 +63,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorTable.cs" />
+    <Compile Include="Consultas\BuscarAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarAlmacen.Designer.cs">
+      <DependentUpon>BuscarAlmacen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\BuscarClienteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +81,12 @@
     </Compile>
     <Compile Include="Consultas\BuscarProductosVentas.Designer.cs">
       <DependentUpon>BuscarProductosVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\BuscarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscarVentas.Designer.cs">
+      <DependentUpon>BuscarVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAlmacen.cs">
       <SubType>Form</SubType>
@@ -125,11 +138,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xbutton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Consultas\BuscarAlmacen.resx">
+      <DependentUpon>BuscarAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarClienteVentas.resx">
       <DependentUpon>BuscarClienteVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarProductosVentas.resx">
       <DependentUpon>BuscarProductosVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\BuscarVentas.resx">
+      <DependentUpon>BuscarVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAlmacen.resx">
       <DependentUpon>FrmAlmacen.cs</DependentUpon>

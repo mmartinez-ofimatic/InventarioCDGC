@@ -55,6 +55,9 @@ namespace InventarioCDGC
                     {
                         if (textBoxCantidad.Text != "")
                         {
+                            try
+                            {
+
                                 ventasClass.idcliente = Convert.ToInt32(textBoxCliente.Text);
                                 ventasClass.idproducto = Convert.ToInt32(textBoxProducto.Text);
                                 ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
@@ -69,10 +72,19 @@ namespace InventarioCDGC
                                     MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
                                 }
+
+                                else
+                                {
+                                    MessageBox.Show("Llene el campo Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+
                             }
-                            else
+                            catch (Exception)
                             {
-                                MessageBox.Show("Llene el campo Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                textBoxPrecio.Clear();
+                                MessageBox.Show("El campo precio debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
@@ -89,8 +101,8 @@ namespace InventarioCDGC
                 {
                     MessageBox.Show("Seleccione el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
         }
-
         private void bbuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
@@ -288,9 +300,15 @@ namespace InventarioCDGC
             textBoxCliente.Clear();
             textBoxProducto.Clear();
             textBoxPrecio.Clear();
-            textBoxCantidad.Clear();
-            textBoxDescuento.Clear();
+            textBoxCantidad.Value = 1;
+            textBoxDescuento.Value = 1;
             textBoxObservacion.Clear();
+        }
+
+        private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarVentas ventas = new Consultas.BuscarVentas();
+            ventas.ShowDialog(this);
         }
 
     }

@@ -34,15 +34,12 @@
             this.borrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.busquedaAvanzadaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bbuscarproducto = new System.Windows.Forms.Button();
             this.bbuscarcliente = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxObservacion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxDescuento = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,9 +60,13 @@
             this.ColumnDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
+            this.textBoxDescuento = new System.Windows.Forms.NumericUpDown();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -109,18 +110,18 @@
             this.busquedaAvanzadaToolStripMenuItem1.Name = "busquedaAvanzadaToolStripMenuItem1";
             this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
             this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
+            this.busquedaAvanzadaToolStripMenuItem1.Click += new System.EventHandler(this.busquedaAvanzadaToolStripMenuItem1_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.textBoxDescuento);
             this.groupBox1.Controls.Add(this.bbuscarproducto);
+            this.groupBox1.Controls.Add(this.textBoxCantidad);
             this.groupBox1.Controls.Add(this.bbuscarcliente);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxObservacion);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxDescuento);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxCantidad);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxPrecio);
             this.groupBox1.Controls.Add(this.label2);
@@ -133,46 +134,6 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Venta";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.comboBox1.Location = new System.Drawing.Point(223, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 35;
             // 
             // bbuscarproducto
             // 
@@ -199,7 +160,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 253);
+            this.label7.Location = new System.Drawing.Point(18, 250);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 13;
@@ -207,7 +168,7 @@
             // 
             // textBoxObservacion
             // 
-            this.textBoxObservacion.Location = new System.Drawing.Point(117, 250);
+            this.textBoxObservacion.Location = new System.Drawing.Point(117, 247);
             this.textBoxObservacion.Multiline = true;
             this.textBoxObservacion.Name = "textBoxObservacion";
             this.textBoxObservacion.Size = new System.Drawing.Size(217, 58);
@@ -216,18 +177,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 211);
+            this.label6.Location = new System.Drawing.Point(18, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Descuento";
-            // 
-            // textBoxDescuento
-            // 
-            this.textBoxDescuento.Location = new System.Drawing.Point(117, 208);
-            this.textBoxDescuento.Name = "textBoxDescuento";
-            this.textBoxDescuento.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDescuento.TabIndex = 10;
             // 
             // label4
             // 
@@ -237,13 +191,6 @@
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Cantidad";
-            // 
-            // textBoxCantidad
-            // 
-            this.textBoxCantidad.Location = new System.Drawing.Point(117, 157);
-            this.textBoxCantidad.Name = "textBoxCantidad";
-            this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCantidad.TabIndex = 6;
             // 
             // label3
             // 
@@ -424,6 +371,35 @@
             this.ColumnObservacion.Name = "ColumnObservacion";
             this.ColumnObservacion.ReadOnly = true;
             // 
+            // textBoxCantidad
+            // 
+            this.textBoxCantidad.Location = new System.Drawing.Point(117, 158);
+            this.textBoxCantidad.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCantidad.TabIndex = 40;
+            this.textBoxCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // textBoxDescuento
+            // 
+            this.textBoxDescuento.Location = new System.Drawing.Point(117, 201);
+            this.textBoxDescuento.Name = "textBoxDescuento";
+            this.textBoxDescuento.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDescuento.TabIndex = 41;
+            this.textBoxDescuento.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,7 +412,9 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
@@ -446,6 +424,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,7 +440,6 @@
         private System.Windows.Forms.ToolStripMenuItem busquedaAvanzadaToolStripMenuItem1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.Label label2;
@@ -468,12 +447,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCliente;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxDescuento;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxObservacion;
         private System.Windows.Forms.Button bbuscarproducto;
         private System.Windows.Forms.Button bbuscarcliente;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox tbuscarpor;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Button bbuscar;
@@ -488,5 +465,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnObservacion;
+        private System.Windows.Forms.NumericUpDown textBoxDescuento;
+        private System.Windows.Forms.NumericUpDown textBoxCantidad;
     }
 }
