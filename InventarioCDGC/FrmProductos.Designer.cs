@@ -41,13 +41,13 @@
             this.textBoxIDproducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bbuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
-            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,6 +94,7 @@
             this.busquedaAvanzadaToolStripMenuItem1.Name = "busquedaAvanzadaToolStripMenuItem1";
             this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
             this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
+            this.busquedaAvanzadaToolStripMenuItem1.Click += new System.EventHandler(this.busquedaAvanzadaToolStripMenuItem1_Click);
             // 
             // groupBox1
             // 
@@ -175,6 +176,30 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
+            this.ColumnIDProducto.HeaderText = "ID del Producto";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Producto";
+            this.ColumnNombre.HeaderText = "Nombre del Producto";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 130;
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
+            this.ColumnPrecio.HeaderText = "Precio de Venta";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
+            this.ColumnPrecio.Width = 110;
+            // 
             // bbuscar
             // 
             this.bbuscar.Location = new System.Drawing.Point(277, 44);
@@ -213,30 +238,6 @@
             this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
             this.tbuscarpor.TabIndex = 34;
             // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
-            this.ColumnPrecio.HeaderText = "Precio de Venta";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            this.ColumnPrecio.ReadOnly = true;
-            this.ColumnPrecio.Width = 110;
-            // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.DataPropertyName = "Producto";
-            this.ColumnNombre.HeaderText = "Nombre del Producto";
-            this.ColumnNombre.Name = "ColumnNombre";
-            this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 130;
-            // 
-            // ColumnIDProducto
-            // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
-            this.ColumnIDProducto.HeaderText = "ID del Producto";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
-            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,8 +250,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip);
+            this.MaximizeBox = false;
             this.Name = "FrmProductos";
-            this.Text = "FrmProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Productos";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);

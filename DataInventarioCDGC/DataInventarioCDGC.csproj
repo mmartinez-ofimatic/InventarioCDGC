@@ -55,6 +55,7 @@
     <Compile Include="RolInv.cs" />
     <Compile Include="UsuarioInv.cs" />
     <Compile Include="Validaciones.cs" />
+    <Compile Include="VentasInv.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ModelCDGC.edmx">

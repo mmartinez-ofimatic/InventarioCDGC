@@ -17,6 +17,36 @@ namespace DataInventarioCDGC
 
         InventarioCDGCEntities db = new InventarioCDGCEntities();
 
+
+        public bool ValidateUsers(string nombre, string pass)
+        {
+            bool valido = false;
+
+            Usuarios usuario = db.Usuarios.FirstOrDefault(x => x.Nombre == nombre && x.Contrasena == pass);
+
+            if (usuario != null)
+            {
+                IDrol = Get_Rol(nombre, pass);
+                nomusuario = nombre;
+                valido = true;
+            }
+
+            return valido;
+        }
+
+        public static int Get_Rol(string nom, string pass)
+        {
+         
+            InventarioCDGCEntities db = new InventarioCDGCEntities();
+
+            var selec = (from s in db.Usuarios
+                         where s.Nombre == nom && s.Contrasena == pass
+                         select s.ID_Rol).First();
+
+            return Convert.ToInt32(selec);
+        }
+
+
         /// <summary>
         /// Guarda un usuario en la base de datos.
         /// </summary>

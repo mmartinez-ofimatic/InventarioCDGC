@@ -17,8 +17,9 @@ namespace InventarioCDGC
             InitializeComponent();
         }
 
-        UsuarioInv usuarioClass = new UsuarioInv(); 
-
+        UsuarioInv usuarioClass = new UsuarioInv();
+        int id;
+      
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             RolInv roles = new RolInv();
@@ -29,7 +30,7 @@ namespace InventarioCDGC
 
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+         
             if (textBoxNombre.Text != "")
             {
                 if (textBoxContrasena.Text!="")
@@ -87,74 +88,89 @@ namespace InventarioCDGC
 
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (tbuscarpor.Text != "")
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            if (row != null)
             {
-                if (comboBoxBuscar.Text != "")
+                if (row.Selected == true)
                 {
-                    if (textBoxNombre.Text != "")
+                    if (tbuscarpor.Text != "")
                     {
-                       if (textBoxContrasena.Text!="")
-                       {
-                         if (textBoxRcontrasena.Text!="")
-                          {
-                            if (textBoxContrasena.Text == textBoxRcontrasena.Text)
+                        if (comboBoxBuscar.Text != "")
+                        {
+                            if (textBoxNombre.Text != "")
                             {
-                                if (comboBoxRol.Text!="")
-                                 {
-                                     if (id>0)
-                                     {
-                                 usuarioClass.IDusuario = id;
-                                 usuarioClass.nomusuario = textBoxNombre.Text;
-                                 usuarioClass.contrasena = textBoxContrasena.Text;
-                                 usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
-
-                                if (usuarioClass.Modificar())
+                                if (textBoxContrasena.Text != "")
                                 {
-                                    MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    CleanText();
-                                }
-                                     }
-                                     else
-                                     {
-                                         MessageBox.Show("Debe seleccionar un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                     }
+                                    if (textBoxRcontrasena.Text != "")
+                                    {
+                                        if (textBoxContrasena.Text == textBoxRcontrasena.Text)
+                                        {
+                                            if (comboBoxRol.Text != "")
+                                            {
+                                                if (id > 0)
+                                                {
+                                                    usuarioClass.IDusuario = id;
+                                                    usuarioClass.nomusuario = textBoxNombre.Text;
+                                                    usuarioClass.contrasena = textBoxContrasena.Text;
+                                                    usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
 
-                                     }
+                                                    if (usuarioClass.Modificar())
+                                                    {
+                                                        MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                        CleanText();
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Debe seleccionar un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Elija un rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("La contraseña deben ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Repita la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Llene el campo contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+
+                            }
                             else
                             {
-                                MessageBox.Show("Elija un rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("La contraseña deben ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Debe seleccionar un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Repita la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Primero busque un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Llene el campo contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-               
-            }
-            else
-            {
-                MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe seleccionar para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Primero busque un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe buscar un usuario y despues seleccionarlo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);             
             }
         }
                 
@@ -165,6 +181,8 @@ namespace InventarioCDGC
             textBoxContrasena.Clear();
             textBoxRcontrasena.Clear();
             comboBoxRol.SelectedIndex = 0;
+            tbuscarpor.Clear();
+            dataGridView1.ClearSelection();
             id = 0;
         }
 
@@ -219,12 +237,12 @@ namespace InventarioCDGC
             }
         }
 
-        int id;
+        
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
-
+           
             comboBoxRol.SelectedValue = Convert.ToInt32(row.Cells[1].Value.ToString());
             textBoxNombre.Text = row.Cells[2].Value.ToString();
             textBoxContrasena.Text = row.Cells[3].Value.ToString();
@@ -238,8 +256,9 @@ namespace InventarioCDGC
             {
                 // se valida que el id de la fila seleccionada sea igual que la del textbox
                 DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[0].Value.ToString() == tbuscarpor.Text)
+                if (Convert.ToInt32(row.Cells[0].Value.ToString()) == id)
                 {
+                    usuarioClass.IDusuario = id;
                     if (usuarioClass.Borrar())
                     {
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -249,7 +268,7 @@ namespace InventarioCDGC
 
                 else
                 {
-                    MessageBox.Show("Seleccion un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Seleccione un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

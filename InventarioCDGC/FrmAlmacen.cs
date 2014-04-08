@@ -18,7 +18,7 @@ namespace InventarioCDGC
         }
       
         AlmacenIn almacen = new AlmacenIn();
-
+        bool selectModeRow = false;
         private void FrmAlmacen_Load(object sender, EventArgs e)
         {
             comboBoxID.DataSource = almacen.BuscarIDProducto();         
@@ -131,19 +131,26 @@ namespace InventarioCDGC
         {
             if (tbuscarpor.Text != "")
             {
-                if (comboBoxID.Text != "")
+                if (selectModeRow == true)
                 {
-                    if (textBoxNombre.Text!="")
+                    if (comboBoxID.Text != "")
                     {
-                        if (textBoxExistencia.Text!="")
+                        if (textBoxNombre.Text != "")
                         {
-                            almacen.IDproducto = Convert.ToInt32(comboBoxID.Text);
-                            almacen.existencia = Convert.ToInt32(textBoxExistencia.Text) ;
-                           
-                            if (almacen.Modificar())
+                            if (textBoxExistencia.Text != "")
                             {
-                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                CleanText();
+                                almacen.IDproducto = Convert.ToInt32(comboBoxID.Text);
+                                almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
+
+                                if (almacen.Modificar())
+                                {
+                                    MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CleanText();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
@@ -154,7 +161,7 @@ namespace InventarioCDGC
                     else
                     {
                         MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }                
+                    }
                 }
                 else
                 {
@@ -166,13 +173,16 @@ namespace InventarioCDGC
                 MessageBox.Show("Primero busque un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+      
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
             comboBoxID.Text = row.Cells[0].Value.ToString();
             //textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxExistencia.Text = row.Cells[1].Value.ToString();
+
+           dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+           selectModeRow = dataGridView1.Rows[e.RowIndex].Selected;
         }
 
         private void borrarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -182,7 +192,7 @@ namespace InventarioCDGC
                 // se valida que el id de la fila seleccionada sea igual que la del textbox
                 DataGridViewRow row = dataGridView1.CurrentRow;
                 if (row.Cells[0].Value.ToString() == comboBoxID.Text)
-                {
+                {                 
                     if (almacen.Borrar())
                     {
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -208,7 +218,7 @@ namespace InventarioCDGC
         public void CleanText()
         {
             comboBoxID.Text.FirstOrDefault();
-            
+            selectModeRow = false;
             textBoxNombre.Clear();
             textBoxExistencia.Clear();
         }

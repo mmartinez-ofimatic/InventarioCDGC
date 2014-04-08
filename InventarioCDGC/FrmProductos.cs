@@ -130,6 +130,8 @@ namespace InventarioCDGC
 
                     if (comboBoxBuscar.Text == "ID del producto")
                     {
+                        try
+                        {
                         product.idproducto = Convert.ToInt32(tbuscarpor.Text);
                         dataGridView1.AutoGenerateColumns = false;
 
@@ -138,6 +140,11 @@ namespace InventarioCDGC
                         if (dataGridView1.RowCount == 0)
                         {
                             MessageBox.Show("Este Producto no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("El ID debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else if (comboBoxBuscar.Text == "Nombre del producto")
@@ -176,6 +183,12 @@ namespace InventarioCDGC
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarProductosVentas bProductos = new Consultas.BuscarProductosVentas();
+            bProductos.Show();
         }
 
 

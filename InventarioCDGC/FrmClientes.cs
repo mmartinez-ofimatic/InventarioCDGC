@@ -82,8 +82,19 @@ namespace InventarioCDGC
         {
             if (tbuscarpor.Text != "")
             {
-                if (clientesclass.idcliente == Convert.ToInt32(tbuscarpor.Text))
+            //arreglar esta validacion.. hacerla por el datagriview que compare
+            if (clientesclass.idcliente == Convert.ToInt32(tbuscarpor.Text))
+            {
+            if (textBoxNombre.Text != "")
+            {
+                if (textBoxCedula.Text != "")
                 {
+                   if (textBoxTelefono.Text != "")
+                    {
+                        if (textBoxCelular.Text != "")
+                        {
+                            if (textBoxDireccion.Text != "")
+                            {
                     clientesclass.nombre = textBoxNombre.Text;
                     clientesclass.cedula = textBoxCedula.Text;
                     clientesclass.telefono = textBoxTelefono.Text;
@@ -93,6 +104,32 @@ namespace InventarioCDGC
                     {
                         MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                             }
+                            else
+                            {
+                                MessageBox.Show("Llene el campo Direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Llene el campo Celular", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Llene el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Llene el campo Cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
                 }
                 else
                 {
@@ -111,13 +148,18 @@ namespace InventarioCDGC
             {
                 if (tbuscarpor.Text != "")
                 {
-
                     if (comboBoxBuscar.Text == "ID del Cliente")
-                    {                     
+                    {
+                        try
+                        {
                         clientesclass.idcliente = Convert.ToInt32(tbuscarpor.Text);
                         dataGridView1.AutoGenerateColumns = false;
-
                         dataGridView1.DataSource = clientesclass.BuscarxID();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("El ID del cliente debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                         if (dataGridView1.RowCount == 0)
                         {
                             MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -220,6 +262,12 @@ namespace InventarioCDGC
             textBoxTelefono.Text = row.Cells[3].Value.ToString();
             textBoxCelular.Text = row.Cells[4].Value.ToString();
             textBoxDireccion.Text = row.Cells[5].Value.ToString();
+        }
+
+        private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarClienteVentas bclientes = new Consultas.BuscarClienteVentas();
+            bclientes.Show();
         }
 
     

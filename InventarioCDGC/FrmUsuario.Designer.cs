@@ -33,7 +33,17 @@
             this.bbuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxRcontrasena = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxContrasena = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxRol = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -41,16 +51,6 @@
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.busquedaAvanzadaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxRol = new System.Windows.Forms.ComboBox();
-            this.textBoxContrasena = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxRcontrasena = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnContrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -111,6 +111,38 @@
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Usuario";
+            this.ColumnIDProducto.HeaderText = "ID de usuario";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnExistencia
+            // 
+            this.ColumnExistencia.DataPropertyName = "ID_Rol";
+            this.ColumnExistencia.HeaderText = "ID_Rol";
+            this.ColumnExistencia.Name = "ColumnExistencia";
+            this.ColumnExistencia.ReadOnly = true;
+            this.ColumnExistencia.Width = 110;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Nombre";
+            this.ColumnNombre.HeaderText = "Nombre de usuario";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 155;
+            // 
+            // ColumnContrasena
+            // 
+            this.ColumnContrasena.DataPropertyName = "Contrasena";
+            this.ColumnContrasena.HeaderText = "Contraseña";
+            this.ColumnContrasena.Name = "ColumnContrasena";
+            this.ColumnContrasena.ReadOnly = true;
+            this.ColumnContrasena.Visible = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxRcontrasena);
@@ -127,6 +159,58 @@
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuario";
+            // 
+            // textBoxRcontrasena
+            // 
+            this.textBoxRcontrasena.Location = new System.Drawing.Point(120, 114);
+            this.textBoxRcontrasena.Name = "textBoxRcontrasena";
+            this.textBoxRcontrasena.PasswordChar = '*';
+            this.textBoxRcontrasena.Size = new System.Drawing.Size(121, 20);
+            this.textBoxRcontrasena.TabIndex = 36;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Repetir Contraseña";
+            // 
+            // textBoxContrasena
+            // 
+            this.textBoxContrasena.Location = new System.Drawing.Point(120, 71);
+            this.textBoxContrasena.Name = "textBoxContrasena";
+            this.textBoxContrasena.PasswordChar = '*';
+            this.textBoxContrasena.Size = new System.Drawing.Size(121, 20);
+            this.textBoxContrasena.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Contraseña";
+            // 
+            // comboBoxRol
+            // 
+            this.comboBoxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRol.FormattingEnabled = true;
+            this.comboBoxRol.Location = new System.Drawing.Point(120, 154);
+            this.comboBoxRol.Name = "comboBoxRol";
+            this.comboBoxRol.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRol.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Rol";
             // 
             // textBoxNombre
             // 
@@ -186,90 +270,6 @@
             this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
             this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 157);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Rol";
-            // 
-            // comboBoxRol
-            // 
-            this.comboBoxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxRol.FormattingEnabled = true;
-            this.comboBoxRol.Location = new System.Drawing.Point(120, 154);
-            this.comboBoxRol.Name = "comboBoxRol";
-            this.comboBoxRol.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxRol.TabIndex = 32;
-            // 
-            // textBoxContrasena
-            // 
-            this.textBoxContrasena.Location = new System.Drawing.Point(120, 71);
-            this.textBoxContrasena.Name = "textBoxContrasena";
-            this.textBoxContrasena.PasswordChar = '*';
-            this.textBoxContrasena.Size = new System.Drawing.Size(121, 20);
-            this.textBoxContrasena.TabIndex = 34;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Contraseña";
-            // 
-            // textBoxRcontrasena
-            // 
-            this.textBoxRcontrasena.Location = new System.Drawing.Point(120, 114);
-            this.textBoxRcontrasena.Name = "textBoxRcontrasena";
-            this.textBoxRcontrasena.PasswordChar = '*';
-            this.textBoxRcontrasena.Size = new System.Drawing.Size(121, 20);
-            this.textBoxRcontrasena.TabIndex = 36;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Repetir Contraseña";
-            // 
-            // ColumnIDProducto
-            // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Usuario";
-            this.ColumnIDProducto.HeaderText = "ID de usuario";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
-            // 
-            // ColumnExistencia
-            // 
-            this.ColumnExistencia.DataPropertyName = "ID_Rol";
-            this.ColumnExistencia.HeaderText = "ID_Rol";
-            this.ColumnExistencia.Name = "ColumnExistencia";
-            this.ColumnExistencia.ReadOnly = true;
-            this.ColumnExistencia.Width = 110;
-            // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.DataPropertyName = "Nombre";
-            this.ColumnNombre.HeaderText = "Nombre de usuario";
-            this.ColumnNombre.Name = "ColumnNombre";
-            this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 155;
-            // 
-            // ColumnContrasena
-            // 
-            this.ColumnContrasena.DataPropertyName = "Contrasena";
-            this.ColumnContrasena.HeaderText = "Contraseña";
-            this.ColumnContrasena.Name = "ColumnContrasena";
-            this.ColumnContrasena.ReadOnly = true;
-            this.ColumnContrasena.Visible = false;
-            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,8 +282,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip);
+            this.MaximizeBox = false;
             this.Name = "FrmUsuario";
-            this.Text = "FrmUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Usuario";
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
