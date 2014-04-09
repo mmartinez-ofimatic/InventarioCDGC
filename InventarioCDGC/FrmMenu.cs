@@ -20,8 +20,8 @@ namespace InventarioCDGC
         public static string nameUser { get; set; }
 
         private void FrmMenu_Load(object sender, EventArgs e)
-        {
-            Permisos();         
+        {       
+            Permisos();
         }
 
         public void Permisos()
@@ -132,6 +132,38 @@ namespace InventarioCDGC
             FrmClientes cliente = new FrmClientes();
             //cliente.MdiParent = this;
             cliente.ShowDialog(this);
+        }
+
+        private void buttonProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos productos = new FrmProductos();
+            // productos.MdiParent = this;
+            productos.ShowDialog(this);
+        }
+
+        private void buttonVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas ventas = new FrmVentas();
+            //  ventas.MdiParent = this;
+            ventas.ShowDialog(this);
+        }
+
+        private void buttonAlmacen_Click(object sender, EventArgs e)
+        {
+            FrmAlmacen almacen = new FrmAlmacen();
+            // almacen.MdiParent = this;
+            almacen.ShowDialog(this);
+        }
+
+        private void buttonConsultas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuario usuario = new FrmUsuario();
+            usuario.ShowDialog(this);
         }
 
 

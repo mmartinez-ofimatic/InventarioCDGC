@@ -258,6 +258,7 @@
             this.buttonUsuarios.Text = "Usuarios";
             this.buttonUsuarios.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonUsuarios.UseVisualStyleBackColor = true;
+            this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
             // 
             // buttonConsultas
             // 
@@ -271,6 +272,7 @@
             this.buttonConsultas.Text = "Consultas";
             this.buttonConsultas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonConsultas.UseVisualStyleBackColor = true;
+            this.buttonConsultas.Click += new System.EventHandler(this.buttonConsultas_Click);
             // 
             // buttonReportes
             // 
@@ -297,6 +299,7 @@
             this.buttonAlmacen.Text = "Almacen";
             this.buttonAlmacen.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonAlmacen.UseVisualStyleBackColor = true;
+            this.buttonAlmacen.Click += new System.EventHandler(this.buttonAlmacen_Click);
             // 
             // buttonProductos
             // 
@@ -310,6 +313,7 @@
             this.buttonProductos.Text = "Productos";
             this.buttonProductos.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonProductos.UseVisualStyleBackColor = true;
+            this.buttonProductos.Click += new System.EventHandler(this.buttonProductos_Click);
             // 
             // buttonClientes
             // 
@@ -337,6 +341,7 @@
             this.buttonVentas.Text = "Ventas";
             this.buttonVentas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonVentas.UseVisualStyleBackColor = true;
+            this.buttonVentas.Click += new System.EventHandler(this.buttonVentas_Click);
             // 
             // FrmMenu
             // 
