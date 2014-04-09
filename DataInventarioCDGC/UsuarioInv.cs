@@ -47,6 +47,7 @@ namespace DataInventarioCDGC
         }
 
 
+
         /// <summary>
         /// Guarda un usuario en la base de datos.
         /// </summary>

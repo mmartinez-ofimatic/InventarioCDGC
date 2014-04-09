@@ -16,8 +16,7 @@ namespace InventarioCDGC
         {
             InitializeComponent();
         }
-
-       
+     
         UsuarioInv login = new UsuarioInv();
 
         private void xButton1_Click(object sender, EventArgs e)
@@ -27,6 +26,16 @@ namespace InventarioCDGC
 
             if (validate == true)
             {
+                RolInv roles = new RolInv();
+                FrmMenu.tiporol = roles.GetPermisos(login.IDrol);
+                FrmClientes.tiporol = roles.GetPermisos(login.IDrol);
+                FrmProductos.tiporol = roles.GetPermisos(login.IDrol);
+                FrmVentas.tiporol = roles.GetPermisos(login.IDrol);
+                FrmAlmacen.tiporol = roles.GetPermisos(login.IDrol);
+
+
+                FrmMenu.nameUser = (roles.GetNombreRol(login.IDrol) + ": " + tusuario.Text).ToUpper();
+
                 FrmMenu menu = new FrmMenu();
                 menu.Show();
                 this.Hide();
@@ -45,6 +54,11 @@ namespace InventarioCDGC
             {
                 xButton1_Click(sender, e);
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

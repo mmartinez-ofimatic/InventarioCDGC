@@ -16,9 +16,41 @@ namespace InventarioCDGC
             InitializeComponent();
         }
 
+        public static int tiporol { get; set; }
+        public static string nameUser { get; set; }
+
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            Permisos();         
+        }
 
+        public void Permisos()
+        {   
+            if (tiporol == 1)
+            {
+                toolStripMenuItemUsuario.Visible = true;
+                toolStripStatusNombre.Text = nameUser;
+            }
+            else if (tiporol == 2)
+            {
+                toolStripMenuItemUsuario.Visible = false;
+                toolStripStatusNombre.Text = nameUser;
+            }
+            else if (tiporol == 3)
+            {
+                toolStripMenuItemUsuario.Visible = false;
+                toolStripStatusNombre.Text = nameUser;
+            }
+            else if (tiporol == 4)
+            {
+                toolStripMenuItemUsuario.Visible = false;
+                toolStripStatusNombre.Text = nameUser;
+            }
+            else
+            {
+                toolStripMenuItemUsuario.Visible = false;
+                Application.Exit();
+            }
         }
 
         private void registroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)

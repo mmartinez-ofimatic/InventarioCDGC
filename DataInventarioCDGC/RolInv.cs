@@ -75,7 +75,7 @@ namespace DataInventarioCDGC
     public bool Borrar()
     {
         bool isComplete = false;
-
+       
         try
         {
             Roles borrar = (from bor in db.Roles
@@ -93,6 +93,40 @@ namespace DataInventarioCDGC
         }
 
         return isComplete;
+    }
+
+
+      
+    public int GetPermisos(int ID)
+    {
+        try
+        {
+            int selectquery = Convert.ToInt32((from p in db.Roles
+                                 where p.ID_Rol == ID
+                                 select p.Permisos).First());
+
+            return selectquery;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
+    public string GetNombreRol(int ID)
+    {
+        try
+        {
+            string selectquery = (from p in db.Roles
+                                    where p.ID_Rol == ID
+                                    select p.Rol).First();
+
+            return selectquery;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
 
 

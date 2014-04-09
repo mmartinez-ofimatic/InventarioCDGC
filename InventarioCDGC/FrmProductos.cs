@@ -18,7 +18,7 @@ namespace InventarioCDGC
         }
 
         ProductosInv product = new ProductosInv();
-
+        public static int tiporol { get; set; }
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -189,6 +189,43 @@ namespace InventarioCDGC
         {
             Consultas.BuscarProductosVentas bProductos = new Consultas.BuscarProductosVentas();
             bProductos.ShowDialog(this);
+        }
+
+        private void FrmProductos_Load(object sender, EventArgs e)
+        {
+            Permisos();
+        }
+
+        public void Permisos()
+        {
+            if (tiporol == 1)
+            {
+                borrarToolStripMenuItem1.Enabled = true;
+                modificarToolStripMenuItem1.Enabled = true;
+            }
+            else if (tiporol == 2)
+            {
+                borrarToolStripMenuItem1.Enabled = false;
+                modificarToolStripMenuItem1.Enabled = true;
+            }
+            else if (tiporol == 3)
+            {
+                borrarToolStripMenuItem1.Enabled = false;
+                modificarToolStripMenuItem1.Enabled = false;
+            }
+            else if (tiporol == 4)
+            {
+                borrarToolStripMenuItem1.Enabled = false;
+                modificarToolStripMenuItem1.Enabled = false;
+                guardartoolStripMenuItem1.Enabled = false;
+            }
+            else
+            {
+                borrarToolStripMenuItem1.Enabled = false;
+                modificarToolStripMenuItem1.Enabled = false;
+                guardartoolStripMenuItem1.Enabled = false;
+            }
+
         }
 
 
