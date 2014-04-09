@@ -17,19 +17,48 @@ namespace InventarioCDGC
             InitializeComponent();
         }
 
-        RolInv rolesClass = new RolInv(); 
+        RolInv rolesClass = new RolInv();
 
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-              if (textBoxNombre.Text != "")
+            if (textBoxNombre.Text != "")
+            {
+                if (radioButtonAdmin.Checked != false || radioButtonLSyE.Checked != false || radioButtonLyS.Checked != false || radioButtonLectura.Checked != false)
                 {
-                    rolesClass.rol = textBoxNombre.Text;
-                       
+                    if ((MessageBox.Show("Desea guardar el nuevo registro?", "¿Guardar?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)) == DialogResult.OK)
+                    {
+                        int permisos;
+                        if (radioButtonAdmin.Checked == true)
+                        {
+                            permisos = 1;
+                        }
+                        else if (radioButtonLSyE.Checked == true)
+                        {
+                            permisos = 2;
+                        }
+                        else if (radioButtonLyS.Checked == true)
+                        {
+                            permisos = 3;
+                        }
+                        else if (radioButtonLectura.Checked == true)
+                        {
+                            permisos = 4;
+                        }
+                        else
+                        {
+                            permisos = 0;
+                        }
+
+
+                        rolesClass.rol = textBoxNombre.Text;
+                        rolesClass.permisos = permisos;
                         try
                         {
                             if (rolesClass.Guardar())
                             {
+
+                                dataGridView1.DataSource = rolesClass.BuscarTodos();
                                 MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
                             }
@@ -38,54 +67,103 @@ namespace InventarioCDGC
                         {
                             MessageBox.Show("Error, por favor digite nuevamente el rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             CleanText();
-                        }             
+                        }
+                    }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe especificar por lo menos un permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }            
-        }
+                }
+            }
+        
 
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (tbuscarpor.Text != "")
-            {
-                if (comboBoxBuscar.Text != "")
-                {
+            DataGridViewRow row = dataGridView1.CurrentRow;
+
+            if (row.Selected == true)
+            {  
                     if (textBoxNombre.Text != "")
                     {
-                        rolesClass.rol = textBoxNombre.Text;
-                       
-                            if (rolesClass.Modificar())
+                        if (radioButtonAdmin.Checked != false || radioButtonLSyE.Checked != false || radioButtonLyS.Checked != false || radioButtonLectura.Checked != false)
+                        {
+                            if ((MessageBox.Show("Desea modificar este registro?", "¿Guardar?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)) == DialogResult.OK)
                             {
-                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                CleanText();
-                            }        
+                                int permisos;
+                                if (radioButtonAdmin.Checked == true)
+                                {
+                                    permisos = 1;
+                                }
+                                else if (radioButtonLSyE.Checked == true)
+                                {
+                                    permisos = 2;
+                                }
+                                else if (radioButtonLyS.Checked == true)
+                                {
+                                    permisos = 3;
+                                }
+                                else if (radioButtonLectura.Checked == true)
+                                {
+                                    permisos = 4;
+                                }
+                                else
+                                {
+                                    permisos = 0;
+                                }
+
+                                rolesClass.ID = Convert.ToInt32(row.Cells[0].Value.ToString());
+                                rolesClass.rol = textBoxNombre.Text;
+                                rolesClass.permisos = permisos;
+
+                                try
+                                {
+                                
+                                if (rolesClass.Modificar())
+                                {
+                                    MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CleanText();
+                                }
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Error al modificar, por favor digite nuevamente el rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    CleanText();
+                                }
+                            }
+                        }
+                        else
+                        {
+                           MessageBox.Show("Debe especificar por lo menos un permiso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                  
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Debe seleccionar un rol para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar un rol para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
             else
             {
-                MessageBox.Show("Primero busque un rol para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Primero busque un rol y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void borrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (tbuscarpor.Text != "")
-            {
+            DataGridViewRow row = dataGridView1.CurrentRow;
+
+                if ( row.Selected == true)
+                {          
                 // se valida que el id de la fila seleccionada sea igual que la del textbox
-                DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[0].Value.ToString() == comboBoxBuscar.Text)
+
+                if (row.Cells[0].Value.ToString()!= "")
                 {
+                    rolesClass.ID = Convert.ToInt32(row.Cells[0].Value.ToString());
                     if (rolesClass.Borrar())
                     {
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,12 +173,12 @@ namespace InventarioCDGC
 
                 else
                 {
-                    MessageBox.Show("Seleccion un rol para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Seleccione un rol para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Primero busque un rol para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Primero busque un rol y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -108,8 +186,31 @@ namespace InventarioCDGC
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
             comboBoxBuscar.Text = row.Cells[0].Value.ToString();
-            //textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxNombre.Text = row.Cells[1].Value.ToString();
+            int permisos = Convert.ToInt32(row.Cells[2].Value.ToString()) ;
+            
+            if (permisos == 1 )
+            {
+                radioButtonAdmin.Checked = true;            
+            }
+            else if (permisos == 2)
+            {
+                radioButtonLSyE.Checked = true;
+            }
+            else if (permisos == 3)
+            {
+                radioButtonLyS.Checked = true;
+                
+            }
+            else if (permisos == 4)
+            {
+                radioButtonLectura.Checked = true;
+            }
+            else
+            {
+                permisos = 0;
+            }
+
         }
 
         private void bbuscar_Click(object sender, EventArgs e)
@@ -166,12 +267,20 @@ namespace InventarioCDGC
         public void CleanText()
         {
             textBoxNombre.Clear();
+            radioButtonAdmin.Checked = false;
+            radioButtonLSyE.Checked = false;
+            radioButtonLyS.Checked = false;
+            radioButtonLectura.Checked = false;
+            dataGridView1.DataSource = rolesClass.BuscarTodos();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void FrmRol_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = rolesClass.BuscarTodos();
         }
+
+       
 
     }
 }

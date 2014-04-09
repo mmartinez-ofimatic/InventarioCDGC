@@ -26,6 +26,8 @@ namespace InventarioCDGC
             comboBoxRol.DataSource = roles.BuscarTodos();
             comboBoxRol.DisplayMember = "Rol";
             comboBoxRol.ValueMember = "ID_Rol";
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = usuarioClass.BuscarTodos();
         }
 
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
@@ -89,14 +91,9 @@ namespace InventarioCDGC
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
-            if (row != null)
-            {
+
                 if (row.Selected == true)
                 {
-                    if (tbuscarpor.Text != "")
-                    {
-                        if (comboBoxBuscar.Text != "")
-                        {
                             if (textBoxNombre.Text != "")
                             {
                                 if (textBoxContrasena.Text != "")
@@ -146,27 +143,12 @@ namespace InventarioCDGC
                                     MessageBox.Show("Llene el campo contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
 
-
                             }
                             else
                             {
                                 MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Debe seleccionar un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Primero busque un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                            }                     
+      
             }
             else
             {

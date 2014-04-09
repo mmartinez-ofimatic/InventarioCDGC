@@ -26,10 +26,10 @@ namespace DataInventarioCDGC
             try
             {
                 InventarioCDGCEntities dbEntities2 = new InventarioCDGCEntities();
-                AlmacenInv almacen = new AlmacenInv();
+                Almacen almacen = new Almacen();
                 almacen.ID_Producto = IDproducto;
                 almacen.Existencia = existencia;
-
+              
 
                 dbEntities2.AddToAlmacen(almacen);
                 dbEntities2.SaveChanges();
@@ -54,7 +54,7 @@ namespace DataInventarioCDGC
             bool isComplete = false;
             try
             {
-                AlmacenInv update = (from upd in dbEntities.Almacen
+                Almacen update = (from upd in dbEntities.Almacen
                                     where upd.ID_Producto == IDproducto
                                     select upd).First();
 
@@ -83,7 +83,7 @@ namespace DataInventarioCDGC
 
             try
             {
-                AlmacenInv borrar = (from bor in dbEntities.Almacen
+                Almacen borrar = (from bor in dbEntities.Almacen
                                     where bor.ID_Producto == IDproducto
                                     select bor).FirstOrDefault();
 
@@ -104,7 +104,7 @@ namespace DataInventarioCDGC
         /// Lista de todos los productos en el almacen.
         /// </summary>
         /// <returns>List select</returns>
-        public List<AlmacenInv> BuscarTodos()
+        public List<Almacen> BuscarTodos()
         {
             var selec = (from s in dbEntities.Almacen
                          select s).ToList();
@@ -116,10 +116,10 @@ namespace DataInventarioCDGC
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<AlmacenInv> BuscarxID()
+        public List<Almacen> BuscarxID()
         {
 
-            List<AlmacenInv> busc = (from b in dbEntities.Almacen
+            List<Almacen> busc = (from b in dbEntities.Almacen
                                      join a in dbEntities.Productos
                                      on b.ID_Producto equals a.ID_Producto
                                      where b.ID_Producto == IDproducto
@@ -145,9 +145,9 @@ namespace DataInventarioCDGC
         /// </summary>
         /// <param name="nombre">nombre del producto.</param>
         /// <returns>List</returns>
-        public List<AlmacenInv> BuscarxNombre(string nomproducto)
+        public List<Almacen> BuscarxNombre(string nomproducto)
         {
-            List<AlmacenInv> busc = (from a in dbEntities.Almacen
+            List<Almacen> busc = (from a in dbEntities.Almacen
                                      join p in dbEntities.Productos
                                      on a.ID_Producto equals p.ID_Producto
                                      where p.Producto == nomproducto

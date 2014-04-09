@@ -14,7 +14,7 @@ namespace DataInventarioCDGC
 
         public  int ID { get; set; }
         public  string rol { get; set; }
-
+        public int permisos { get; set;}
 
 
     /// <summary>
@@ -29,6 +29,7 @@ namespace DataInventarioCDGC
         try
         {
             roles.Rol = rol;
+            roles.Permisos = permisos;
             db.AddToRoles(roles);
             db.SaveChanges();
             isComplete = true;
@@ -55,6 +56,7 @@ namespace DataInventarioCDGC
                                   select upd).First();
 
             update.Rol = rol;
+            update.Permisos = permisos;
             db.SaveChanges();
             isComplete = true;
         }
@@ -149,6 +151,7 @@ namespace DataInventarioCDGC
         }
         return busc;
     }
+
 
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="InventarioCDGCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="InventarioCDGCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="InventarioCDGCModelStoreContainer">
           <EntitySet Name="Almacen" EntityType="InventarioCDGCModel.Store.Almacen" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Clientes" EntityType="InventarioCDGCModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
@@ -65,6 +65,7 @@
           </Key>
           <Property Name="ID_Rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Rol" Type="varchar" MaxLength="60" />
+          <Property Name="Permisos" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -149,8 +150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InventarioCDGCModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -219,6 +219,7 @@
           <Property Name="ID_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Rol" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Usuarios" Relationship="InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877" FromRole="Roles" ToRole="Usuarios" />
+          <Property Type="Int32" Name="Permisos" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -346,6 +347,7 @@
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="InventarioCDGCModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Permisos" ColumnName="Permisos" />
                 <ScalarProperty Name="ID_Rol" ColumnName="ID_Rol" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
               </MappingFragment>
