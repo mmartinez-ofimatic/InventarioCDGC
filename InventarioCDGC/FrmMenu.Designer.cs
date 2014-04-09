@@ -51,13 +51,20 @@
             this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusNombre = new System.Windows.Forms.ToolStripStatusLabel();
+            this.buttonUsuarios = new System.Windows.Forms.Button();
+            this.buttonConsultas = new System.Windows.Forms.Button();
+            this.buttonReportes = new System.Windows.Forms.Button();
+            this.buttonAlmacen = new System.Windows.Forms.Button();
+            this.buttonProductos = new System.Windows.Forms.Button();
+            this.buttonClientes = new System.Windows.Forms.Button();
+            this.buttonVentas = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datosInventarioToolStripMenuItem,
             this.consultasDeInventarioToolStripMenuItem,
@@ -68,7 +75,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(668, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(888, 24);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -180,6 +187,7 @@
             // 
             // toolStripMenuItemUsuario
             // 
+            this.toolStripMenuItemUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripMenuItemUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuarioToolStripMenuItem,
             this.rolesToolStripMenuItem});
@@ -226,9 +234,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusNombre});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 372);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 624);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(668, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(888, 22);
             this.statusStrip1.TabIndex = 27;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -238,20 +246,119 @@
             this.toolStripStatusNombre.Size = new System.Drawing.Size(51, 17);
             this.toolStripStatusNombre.Text = "Nombre";
             // 
+            // buttonUsuarios
+            // 
+            this.buttonUsuarios.BackgroundImage = global::InventarioCDGC.Properties.Resources.usuarios2;
+            this.buttonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsuarios.Location = new System.Drawing.Point(82, 425);
+            this.buttonUsuarios.Name = "buttonUsuarios";
+            this.buttonUsuarios.Size = new System.Drawing.Size(156, 114);
+            this.buttonUsuarios.TabIndex = 36;
+            this.buttonUsuarios.Text = "Usuarios";
+            this.buttonUsuarios.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // buttonConsultas
+            // 
+            this.buttonConsultas.BackgroundImage = global::InventarioCDGC.Properties.Resources.Consultas;
+            this.buttonConsultas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConsultas.Location = new System.Drawing.Point(363, 240);
+            this.buttonConsultas.Name = "buttonConsultas";
+            this.buttonConsultas.Size = new System.Drawing.Size(156, 114);
+            this.buttonConsultas.TabIndex = 35;
+            this.buttonConsultas.Text = "Consultas";
+            this.buttonConsultas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonConsultas.UseVisualStyleBackColor = true;
+            // 
+            // buttonReportes
+            // 
+            this.buttonReportes.BackgroundImage = global::InventarioCDGC.Properties.Resources.Reportes;
+            this.buttonReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReportes.Location = new System.Drawing.Point(647, 240);
+            this.buttonReportes.Name = "buttonReportes";
+            this.buttonReportes.Size = new System.Drawing.Size(156, 114);
+            this.buttonReportes.TabIndex = 34;
+            this.buttonReportes.Text = "Reportes";
+            this.buttonReportes.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonReportes.UseVisualStyleBackColor = true;
+            // 
+            // buttonAlmacen
+            // 
+            this.buttonAlmacen.BackgroundImage = global::InventarioCDGC.Properties.Resources.Almacen;
+            this.buttonAlmacen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAlmacen.Location = new System.Drawing.Point(82, 240);
+            this.buttonAlmacen.Name = "buttonAlmacen";
+            this.buttonAlmacen.Size = new System.Drawing.Size(156, 114);
+            this.buttonAlmacen.TabIndex = 33;
+            this.buttonAlmacen.Text = "Almacen";
+            this.buttonAlmacen.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonAlmacen.UseVisualStyleBackColor = true;
+            // 
+            // buttonProductos
+            // 
+            this.buttonProductos.BackgroundImage = global::InventarioCDGC.Properties.Resources.Producto;
+            this.buttonProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProductos.Location = new System.Drawing.Point(363, 68);
+            this.buttonProductos.Name = "buttonProductos";
+            this.buttonProductos.Size = new System.Drawing.Size(156, 114);
+            this.buttonProductos.TabIndex = 32;
+            this.buttonProductos.Text = "Productos";
+            this.buttonProductos.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonProductos.UseVisualStyleBackColor = true;
+            // 
+            // buttonClientes
+            // 
+            this.buttonClientes.BackgroundImage = global::InventarioCDGC.Properties.Resources.Client;
+            this.buttonClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClientes.Location = new System.Drawing.Point(82, 68);
+            this.buttonClientes.Name = "buttonClientes";
+            this.buttonClientes.Size = new System.Drawing.Size(156, 114);
+            this.buttonClientes.TabIndex = 31;
+            this.buttonClientes.Text = "Clientes";
+            this.buttonClientes.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonClientes.UseVisualStyleBackColor = true;
+            this.buttonClientes.Click += new System.EventHandler(this.buttonClientes_Click);
+            // 
+            // buttonVentas
+            // 
+            this.buttonVentas.BackgroundImage = global::InventarioCDGC.Properties.Resources.Ventas;
+            this.buttonVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVentas.Location = new System.Drawing.Point(647, 68);
+            this.buttonVentas.Name = "buttonVentas";
+            this.buttonVentas.Size = new System.Drawing.Size(156, 114);
+            this.buttonVentas.TabIndex = 30;
+            this.buttonVentas.Text = "Ventas";
+            this.buttonVentas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonVentas.UseVisualStyleBackColor = true;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 394);
+            this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(888, 646);
+            this.Controls.Add(this.buttonUsuarios);
+            this.Controls.Add(this.buttonConsultas);
+            this.Controls.Add(this.buttonReportes);
+            this.Controls.Add(this.buttonAlmacen);
+            this.Controls.Add(this.buttonProductos);
+            this.Controls.Add(this.buttonClientes);
+            this.Controls.Add(this.buttonVentas);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -287,6 +394,13 @@
         private System.Windows.Forms.ToolStripMenuItem cerrarSeccionToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusNombre;
+        private System.Windows.Forms.Button buttonVentas;
+        private System.Windows.Forms.Button buttonClientes;
+        private System.Windows.Forms.Button buttonProductos;
+        private System.Windows.Forms.Button buttonAlmacen;
+        private System.Windows.Forms.Button buttonReportes;
+        private System.Windows.Forms.Button buttonConsultas;
+        private System.Windows.Forms.Button buttonUsuarios;
 
     }
 }
