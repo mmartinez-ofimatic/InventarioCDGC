@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.tpass = new System.Windows.Forms.TextBox();
             this.tusuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
             this.pictureBox1.Image = global::InventarioCDGC.Properties.Resources.Login;
             this.pictureBox1.Location = new System.Drawing.Point(12, 27);
             this.pictureBox1.Name = "pictureBox1";
@@ -89,7 +91,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-           // this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // xButton1
             // 
@@ -124,6 +125,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(406, 195);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.xButton1);
@@ -132,6 +136,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";

@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
-            InventarioCDGC.Colortable colortable1 = new InventarioCDGC.Colortable();
-            InventarioCDGC.Colortable colortable2 = new InventarioCDGC.Colortable();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientes));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,11 +40,6 @@
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.textBoxCelular = new System.Windows.Forms.TextBox();
             this.textBoxDireccion = new System.Windows.Forms.TextBox();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.guardartoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.busquedaAvanzadaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -57,10 +51,11 @@
             this.ColumnDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
+            this.xButtonBusquedaAvanzada = new InventarioCDGC.XButton();
+            this.xButtonBorrar = new InventarioCDGC.XButton();
+            this.xButtonModificar = new InventarioCDGC.XButton();
+            this.xButtonGuardar = new InventarioCDGC.XButton();
             this.bbuscar = new InventarioCDGC.XButton();
-            this.xButton1 = new InventarioCDGC.XButton();
-            this.xButton2 = new InventarioCDGC.XButton();
-            this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(23, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
@@ -77,6 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(23, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
@@ -86,6 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(23, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
@@ -95,6 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(23, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
@@ -104,6 +103,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(23, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
@@ -145,53 +145,11 @@
             this.textBoxDireccion.Size = new System.Drawing.Size(215, 20);
             this.textBoxDireccion.TabIndex = 9;
             // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.Highlight;
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardartoolStripMenuItem1,
-            this.modificarToolStripMenuItem1,
-            this.borrarToolStripMenuItem1,
-            this.busquedaAvanzadaToolStripMenuItem1});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip.Size = new System.Drawing.Size(520, 24);
-            this.menuStrip.TabIndex = 21;
-            this.menuStrip.Text = "menuStrip";
-            // 
-            // guardartoolStripMenuItem1
-            // 
-            this.guardartoolStripMenuItem1.Name = "guardartoolStripMenuItem1";
-            this.guardartoolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
-            this.guardartoolStripMenuItem1.Text = "Guardar";
-            this.guardartoolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // modificarToolStripMenuItem1
-            // 
-            this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
-            this.modificarToolStripMenuItem1.Text = "Modificar";
-            this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
-            // 
-            // borrarToolStripMenuItem1
-            // 
-            this.borrarToolStripMenuItem1.Name = "borrarToolStripMenuItem1";
-            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(51, 20);
-            this.borrarToolStripMenuItem1.Text = "Borrar";
-            this.borrarToolStripMenuItem1.Click += new System.EventHandler(this.borrarToolStripMenuItem1_Click);
-            // 
-            // busquedaAvanzadaToolStripMenuItem1
-            // 
-            this.busquedaAvanzadaToolStripMenuItem1.Name = "busquedaAvanzadaToolStripMenuItem1";
-            this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
-            this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
-            this.busquedaAvanzadaToolStripMenuItem1.Click += new System.EventHandler(this.busquedaAvanzadaToolStripMenuItem1_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 45);
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Location = new System.Drawing.Point(10, 344);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 28;
@@ -199,6 +157,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -209,7 +168,7 @@
             this.groupBox1.Controls.Add(this.textBoxTelefono);
             this.groupBox1.Controls.Add(this.textBoxCelular);
             this.groupBox1.Controls.Add(this.textBoxCedula);
-            this.groupBox1.Location = new System.Drawing.Point(15, 90);
+            this.groupBox1.Location = new System.Drawing.Point(13, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(325, 254);
             this.groupBox1.TabIndex = 30;
@@ -228,10 +187,11 @@
             this.ColumnTelefono,
             this.ColumnCelular,
             this.ColumnDireccion});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 366);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 391);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 93);
+            this.dataGridView1.Size = new System.Drawing.Size(520, 132);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -286,19 +246,19 @@
             "ID del Cliente",
             "Nombre",
             "Cedula"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(76, 42);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(74, 341);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBuscar.TabIndex = 32;
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(203, 42);
+            this.tbuscarpor.Location = new System.Drawing.Point(201, 341);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
             this.tbuscarpor.TabIndex = 33;
             // 
-            // bbuscar
+            // xButtonBusquedaAvanzada
             // 
             office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
             office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
@@ -317,92 +277,86 @@
             office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
+            this.xButtonBusquedaAvanzada.ColorTable = office2010Green1;
+            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(362, 230);
+            this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
+            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(129, 23);
+            this.xButtonBusquedaAvanzada.TabIndex = 38;
+            this.xButtonBusquedaAvanzada.Text = "Busqueda avanzada";
+            this.xButtonBusquedaAvanzada.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.xButtonBusquedaAvanzada.Click += new System.EventHandler(this.xButtonBusquedaAvanzada_Click);
+            // 
+            // xButtonBorrar
+            // 
+            this.xButtonBorrar.ColorTable = office2010Green1;
+            this.xButtonBorrar.Location = new System.Drawing.Point(362, 176);
+            this.xButtonBorrar.Name = "xButtonBorrar";
+            this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonBorrar.TabIndex = 37;
+            this.xButtonBorrar.Text = "Borrar";
+            this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonBorrar.UseVisualStyleBackColor = true;
+            this.xButtonBorrar.Click += new System.EventHandler(this.xButtonBorrar_Click);
+            // 
+            // xButtonModificar
+            // 
+            this.xButtonModificar.ColorTable = office2010Green1;
+            this.xButtonModificar.Location = new System.Drawing.Point(362, 122);
+            this.xButtonModificar.Name = "xButtonModificar";
+            this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonModificar.TabIndex = 36;
+            this.xButtonModificar.Text = "Modificar";
+            this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonModificar.UseVisualStyleBackColor = true;
+            this.xButtonModificar.Click += new System.EventHandler(this.xButtonModificar_Click);
+            // 
+            // xButtonGuardar
+            // 
+            this.xButtonGuardar.ColorTable = office2010Green1;
+            this.xButtonGuardar.Location = new System.Drawing.Point(362, 62);
+            this.xButtonGuardar.Name = "xButtonGuardar";
+            this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonGuardar.TabIndex = 35;
+            this.xButtonGuardar.Text = "Guardar";
+            this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonGuardar.UseVisualStyleBackColor = true;
+            this.xButtonGuardar.Click += new System.EventHandler(this.xButtonGuardar_Click);
+            // 
+            // bbuscar
+            // 
             this.bbuscar.ColorTable = office2010Green1;
-            this.bbuscar.Location = new System.Drawing.Point(320, 39);
+            this.bbuscar.Location = new System.Drawing.Point(318, 338);
             this.bbuscar.Name = "bbuscar";
             this.bbuscar.Size = new System.Drawing.Size(75, 23);
             this.bbuscar.TabIndex = 34;
             this.bbuscar.Text = "Buscar";
             this.bbuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.bbuscar.UseVisualStyleBackColor = true;
-            // 
-            // xButton1
-            // 
-            colortable1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            colortable1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            colortable1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            colortable1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            colortable1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            colortable1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            colortable1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            colortable1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            colortable1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
-            colortable1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
-            colortable1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            colortable1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            colortable1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            colortable1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            colortable1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            colortable1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            colortable1.TextColor = System.Drawing.Color.White;
-            this.xButton1.ColorTable = colortable1;
-            this.xButton1.Location = new System.Drawing.Point(362, 115);
-            this.xButton1.Name = "xButton1";
-            this.xButton1.Size = new System.Drawing.Size(75, 23);
-            this.xButton1.TabIndex = 35;
-            this.xButton1.Text = "Guardar";
-            this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_BLUE;
-            this.xButton1.UseVisualStyleBackColor = true;
-            // 
-            // xButton2
-            // 
-            colortable2.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            colortable2.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            colortable2.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            colortable2.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            colortable2.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            colortable2.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            colortable2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            colortable2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            colortable2.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(97)))), ((int)(((byte)(181)))));
-            colortable2.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(125)))), ((int)(((byte)(219)))));
-            colortable2.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            colortable2.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            colortable2.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            colortable2.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            colortable2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            colortable2.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            colortable2.TextColor = System.Drawing.Color.White;
-            this.xButton2.ColorTable = colortable2;
-            this.xButton2.Location = new System.Drawing.Point(362, 156);
-            this.xButton2.Name = "xButton2";
-            this.xButton2.Size = new System.Drawing.Size(75, 23);
-            this.xButton2.TabIndex = 36;
-            this.xButton2.Text = "Modificar";
-            this.xButton2.Theme = InventarioCDGC.Theme.MSOffice2010_BLUE;
-            this.xButton2.UseVisualStyleBackColor = true;
+            this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click_1);
             // 
             // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 456);
-            this.Controls.Add(this.xButton2);
-            this.Controls.Add(this.xButton1);
+            this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
+            this.ClientSize = new System.Drawing.Size(520, 523);
+            this.Controls.Add(this.xButtonBusquedaAvanzada);
+            this.Controls.Add(this.xButtonBorrar);
+            this.Controls.Add(this.xButtonModificar);
+            this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.bbuscar);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -423,11 +377,6 @@
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.TextBox textBoxCelular;
         private System.Windows.Forms.TextBox textBoxDireccion;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem guardartoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem busquedaAvanzadaToolStripMenuItem1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -440,8 +389,10 @@
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.TextBox tbuscarpor;
         private XButton bbuscar;
-        private XButton xButton1;
-        private XButton xButton2;
+        private XButton xButtonGuardar;
+        private XButton xButtonModificar;
+        private XButton xButtonBorrar;
+        private XButton xButtonBusquedaAvanzada;
     }
 }
 

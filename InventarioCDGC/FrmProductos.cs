@@ -228,6 +228,11 @@ namespace InventarioCDGC
 
         }
 
+        private void xButtonGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
