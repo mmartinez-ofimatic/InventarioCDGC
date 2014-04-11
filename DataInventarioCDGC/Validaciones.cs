@@ -131,5 +131,16 @@ namespace DataInventarioCDGC
                 return isCorrect;
         }
 
+        public bool ValidateDecimal(string numericText)
+        {
+            bool isCorrect = false;
+            //^\d*(.\d\d)?$
+            Match numeric = Regex.Match(numericText, @"^\d*(.\d\d)?$");
+
+            if (numeric.Success)
+                return isCorrect = true;
+            else
+                return isCorrect;
+        }
     }
 }

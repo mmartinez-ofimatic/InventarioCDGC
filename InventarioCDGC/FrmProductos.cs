@@ -28,13 +28,20 @@ namespace InventarioCDGC
                 {
                     if (textBoxPrecio.Text != "")
                     {
-
+                        try
+                        {
+                       
                         product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
                         product.producto = textBoxNombre.Text;
                         product.precio = Convert.ToDecimal(textBoxPrecio.Text);
                         if (product.Guardar())
                         {
                             MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -230,7 +237,92 @@ namespace InventarioCDGC
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
+            if (textBoxIDproducto.Text != "")
+            {
+                if (textBoxNombre.Text != "")
+                {
+                    if (textBoxPrecio.Text != "")
+                    {
+                        try
+                        {
+                            product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
+                            product.producto = textBoxNombre.Text;
+                            product.precio = Convert.ToDecimal(textBoxPrecio.Text);
+                            if (product.Guardar())
+                            {
+                                MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Llene el campo nombre del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Llene el campo ID del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
 
+        private void xButtonModificar_Click(object sender, EventArgs e)
+        {
+            if (tbuscarpor.Text != "")
+            {
+                if (textBoxIDproducto.Text != "")
+                {
+                    if (textBoxNombre.Text != "")
+                    {
+                        if (textBoxPrecio.Text != "")
+                        {
+                            //dataGridView1.SelectionMode.GetType();
+                            try
+                            {
+
+                            product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
+                            product.producto = textBoxNombre.Text;
+                            product.precio = Convert.ToDecimal(textBoxPrecio.Text);
+
+                            if (product.Modificar())
+                            {
+                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("Ocurrio un error, modifique nuevamente, recuerde el campo precio debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                  
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero busque un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 

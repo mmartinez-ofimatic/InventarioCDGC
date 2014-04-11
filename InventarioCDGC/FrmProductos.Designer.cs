@@ -104,13 +104,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBoxPrecio);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBoxIDproducto);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 61);
+            this.groupBox1.Location = new System.Drawing.Point(15, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(264, 172);
             this.groupBox1.TabIndex = 24;
@@ -210,6 +211,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Location = new System.Drawing.Point(12, 298);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
@@ -255,7 +257,7 @@
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.bbuscar.ColorTable = office2010Green1;
-            this.bbuscar.Location = new System.Drawing.Point(280, 292);
+            this.bbuscar.Location = new System.Drawing.Point(280, 294);
             this.bbuscar.Name = "bbuscar";
             this.bbuscar.Size = new System.Drawing.Size(75, 23);
             this.bbuscar.TabIndex = 35;
@@ -285,6 +287,7 @@
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonModificar.UseVisualStyleBackColor = true;
+            this.xButtonModificar.Click += new System.EventHandler(this.xButtonModificar_Click);
             // 
             // xButtonBorrar
             // 

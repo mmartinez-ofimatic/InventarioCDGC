@@ -19,6 +19,7 @@ namespace InventarioCDGC
         }
 
         Clientescdgc clientesclass = new Clientescdgc();
+        Validaciones validar = new Validaciones();
 
         public static int tiporol { get; set; }
 
@@ -317,16 +318,22 @@ namespace InventarioCDGC
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
-            Clientescdgc clientes = new Clientescdgc();
+           Clientescdgc clientes = new Clientescdgc();
 
             if (textBoxNombre.Text != "")
             {
                 if (textBoxCedula.Text != "")
                 {
+                    if (validar.ValidateCedula(textBoxCedula.Text))
+                    {
                     if (textBoxTelefono.Text != "")
                     {
+                        if (validar.ValidateNumeric(textBoxTelefono.Text))
+                        {
                         if (textBoxCelular.Text != "")
                         {
+                            if (validar.ValidateNumeric(textBoxCelular.Text))
+                            { 
                             if (textBoxDireccion.Text != "")
                             {
                                 clientes.nombre = textBoxNombre.Text;
@@ -339,22 +346,38 @@ namespace InventarioCDGC
                                 {
                                     actualizarDatagrid();
                                     MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Llene el campo Direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo Dirección", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                            else
+                            {
+                                MessageBox.Show("El campo Celular debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
                             MessageBox.Show("Llene el campo Celular", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("El campo Telefono debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Llene el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -380,12 +403,18 @@ namespace InventarioCDGC
                     if (textBoxNombre.Text != "")
                     {
                         if (textBoxCedula.Text != "")
+                {
+                    if (validar.ValidateCedula(textBoxCedula.Text))
+                    {
+                    if (textBoxTelefono.Text != "")
+                    {
+                        if (validar.ValidateNumeric(textBoxTelefono.Text))
                         {
-                            if (textBoxTelefono.Text != "")
-                            {
-                                if (textBoxCelular.Text != "")
-                                {
-                                    if (textBoxDireccion.Text != "")
+                        if (textBoxCelular.Text != "")
+                        {
+                            if (validar.ValidateNumeric(textBoxCelular.Text))
+                            { 
+                                if (textBoxDireccion.Text != "")
                                     {
                                         clientesclass.nombre = textBoxNombre.Text;
                                         clientesclass.cedula = textBoxCedula.Text;
@@ -403,17 +432,34 @@ namespace InventarioCDGC
                                     {
                                         MessageBox.Show("Llene el campo Direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Llene el campo Celular", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
                             }
                             else
                             {
-                                MessageBox.Show("Llene el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("El campo Celular debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("Llene el campo Celular", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("El campo Telefono debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Llene el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                         else
                         {
                             MessageBox.Show("Llene el campo Cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -423,7 +469,6 @@ namespace InventarioCDGC
                     {
                         MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
                 else
                 {
@@ -515,7 +560,7 @@ namespace InventarioCDGC
 
                         if (v.ValidateCedula(tbuscarpor.Text) == false)
 
-                            MessageBox.Show("Cedula Invalida. Por favor verifique.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         else
                         {
 
@@ -559,7 +604,11 @@ namespace InventarioCDGC
         
         }
 
-    
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridView1_RowHeaderMouseClick(sender, null); 
+        }
+
 
 
     }

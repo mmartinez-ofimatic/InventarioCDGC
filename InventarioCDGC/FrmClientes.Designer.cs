@@ -120,6 +120,7 @@
             // textBoxTelefono
             // 
             this.textBoxTelefono.Location = new System.Drawing.Point(81, 121);
+            this.textBoxTelefono.MaxLength = 12;
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(110, 20);
             this.textBoxTelefono.TabIndex = 6;
@@ -127,6 +128,7 @@
             // textBoxCedula
             // 
             this.textBoxCedula.Location = new System.Drawing.Point(81, 84);
+            this.textBoxCedula.MaxLength = 11;
             this.textBoxCedula.Name = "textBoxCedula";
             this.textBoxCedula.Size = new System.Drawing.Size(110, 20);
             this.textBoxCedula.TabIndex = 7;
@@ -134,6 +136,7 @@
             // textBoxCelular
             // 
             this.textBoxCelular.Location = new System.Drawing.Point(81, 161);
+            this.textBoxCelular.MaxLength = 12;
             this.textBoxCelular.Name = "textBoxCelular";
             this.textBoxCelular.Size = new System.Drawing.Size(110, 20);
             this.textBoxCelular.TabIndex = 8;
@@ -195,6 +198,7 @@
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // ColumnID
             // 
