@@ -131,11 +131,11 @@ namespace DataInventarioCDGC
                 return isCorrect;
         }
 
-        public bool ValidateDecimal(string numericText)
+        public bool ValidateDecimal(string decimalText)
         {
             bool isCorrect = false;
             //^\d*(.\d\d)?$
-            Match numeric = Regex.Match(numericText, @"^\d*(.\d\d)?$");
+            Match numeric = Regex.Match(decimalText, @"^\d*(.\d\d)?$");
 
             if (numeric.Success)
                 return isCorrect = true;

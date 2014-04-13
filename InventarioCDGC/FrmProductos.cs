@@ -207,30 +207,30 @@ namespace InventarioCDGC
         {
             if (tiporol == 1)
             {
-                borrarToolStripMenuItem1.Enabled = true;
-                modificarToolStripMenuItem1.Enabled = true;
+                xButtonBorrar.Enabled = true;
+                xButtonModificar.Enabled = true;
             }
             else if (tiporol == 2)
             {
-                borrarToolStripMenuItem1.Enabled = false;
-                modificarToolStripMenuItem1.Enabled = true;
+                xButtonBorrar.Enabled = false;
+                xButtonModificar.Enabled = true;
             }
             else if (tiporol == 3)
             {
-                borrarToolStripMenuItem1.Enabled = false;
-                modificarToolStripMenuItem1.Enabled = false;
+                xButtonBorrar.Enabled = false;
+                xButtonModificar.Enabled = false;
             }
             else if (tiporol == 4)
             {
-                borrarToolStripMenuItem1.Enabled = false;
-                modificarToolStripMenuItem1.Enabled = false;
-                guardartoolStripMenuItem1.Enabled = false;
+                xButtonBorrar.Enabled = false;
+                xButtonModificar.Enabled = false;
+                xButtonGuardar.Enabled = false;
             }
             else
             {
-                borrarToolStripMenuItem1.Enabled = false;
-                modificarToolStripMenuItem1.Enabled = false;
-                guardartoolStripMenuItem1.Enabled = false;
+                xButtonBorrar.Enabled = false;
+                xButtonModificar.Enabled = false;
+                xButtonGuardar.Enabled = false;
             }
 
         }
@@ -323,6 +323,87 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Primero busque un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void xButtonBorrar_Click(object sender, EventArgs e)
+        {
+            if (tbuscarpor.Text != "")
+            {
+                // se valida que el id de la fila seleccionada sea igual que la del texbox
+                DataGridViewRow row = dataGridView1.CurrentRow;
+                if (row.Cells[0].Value.ToString() == textBoxIDproducto.Text)
+                {
+                    if (product.Borrar())
+                    {
+                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Seleccion un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero busque un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarProductosVentas bProductos = new Consultas.BuscarProductosVentas();
+            bProductos.ShowDialog(this);
+        }
+
+        private void bbuscar_Click_1(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.Text != "")
+            {
+                if (tbuscarpor.Text != "")
+                {
+
+                    if (comboBoxBuscar.Text == "ID del producto")
+                    {
+                        try
+                        {
+                            product.idproducto = Convert.ToInt32(tbuscarpor.Text);
+                            dataGridView1.AutoGenerateColumns = false;
+
+                            dataGridView1.DataSource = product.BuscarxID();
+
+                            if (dataGridView1.RowCount == 0)
+                            {
+                                MessageBox.Show("Este Producto no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("El ID debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else if (comboBoxBuscar.Text == "Nombre del producto")
+                    {
+                        dataGridView1.AutoGenerateColumns = false;
+                        dataGridView1.DataSource = product.BuscarxNombre(tbuscarpor.Text);
+
+                        if (dataGridView1.RowCount == 0)
+                        {
+                            MessageBox.Show("Este Producto no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
         }
 
 
