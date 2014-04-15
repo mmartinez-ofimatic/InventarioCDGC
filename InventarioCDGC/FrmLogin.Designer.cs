@@ -83,7 +83,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::InventarioCDGC.Properties.Resources.Login;
             this.pictureBox1.Location = new System.Drawing.Point(12, 27);
             this.pictureBox1.Name = "pictureBox1";

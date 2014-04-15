@@ -28,19 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            InventarioCDGC.Office2010Green office2010Green5 = new InventarioCDGC.Office2010Green();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
-            this.bbuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPermisos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.guardartoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.busquedaAvanzadaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButtonLSyE = new System.Windows.Forms.RadioButton();
             this.radioButtonLyS = new System.Windows.Forms.RadioButton();
@@ -48,18 +43,21 @@
             this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.xButtonBusquedaAvanzada = new InventarioCDGC.XButton();
+            this.xButtonBorrar = new InventarioCDGC.XButton();
+            this.xButtonModificar = new InventarioCDGC.XButton();
+            this.xButtonGuardar = new InventarioCDGC.XButton();
+            this.xButton1 = new InventarioCDGC.XButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(190, 42);
+            this.tbuscarpor.Location = new System.Drawing.Point(185, 285);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
             this.tbuscarpor.TabIndex = 41;
-           // this.tbuscarpor.TextChanged += new System.EventHandler(this.tbuscarpor_TextChanged);
             // 
             // comboBoxBuscar
             // 
@@ -68,25 +66,16 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del rol",
             "Nombre del rol"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(72, 41);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(67, 284);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
             this.comboBoxBuscar.TabIndex = 47;
             // 
-            // bbuscar
-            // 
-            this.bbuscar.Location = new System.Drawing.Point(276, 37);
-            this.bbuscar.Name = "bbuscar";
-            this.bbuscar.Size = new System.Drawing.Size(75, 28);
-            this.bbuscar.TabIndex = 46;
-            this.bbuscar.Text = "Buscar";
-            this.bbuscar.UseVisualStyleBackColor = true;
-            this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 45);
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Location = new System.Drawing.Point(3, 288);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 45;
@@ -101,12 +90,14 @@
             this.ColumnIDProducto,
             this.ColumnExistencia,
             this.ColumnPermisos});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 290);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 321);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(362, 117);
+            this.dataGridView1.Size = new System.Drawing.Size(362, 101);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // ColumnIDProducto
             // 
@@ -131,60 +122,20 @@
             this.ColumnPermisos.Name = "ColumnPermisos";
             this.ColumnPermisos.ReadOnly = true;
             // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.Highlight;
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.guardartoolStripMenuItem1,
-            this.modificarToolStripMenuItem1,
-            this.borrarToolStripMenuItem1,
-            this.busquedaAvanzadaToolStripMenuItem1});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip.Size = new System.Drawing.Size(362, 24);
-            this.menuStrip.TabIndex = 42;
-            this.menuStrip.Text = "menuStrip";
-            // 
-            // guardartoolStripMenuItem1
-            // 
-            this.guardartoolStripMenuItem1.Name = "guardartoolStripMenuItem1";
-            this.guardartoolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
-            this.guardartoolStripMenuItem1.Text = "Guardar";
-            this.guardartoolStripMenuItem1.Click += new System.EventHandler(this.guardartoolStripMenuItem1_Click);
-            // 
-            // modificarToolStripMenuItem1
-            // 
-            this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
-            this.modificarToolStripMenuItem1.Text = "Modificar";
-            this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
-            // 
-            // borrarToolStripMenuItem1
-            // 
-            this.borrarToolStripMenuItem1.Name = "borrarToolStripMenuItem1";
-            this.borrarToolStripMenuItem1.Size = new System.Drawing.Size(51, 20);
-            this.borrarToolStripMenuItem1.Text = "Borrar";
-            this.borrarToolStripMenuItem1.Click += new System.EventHandler(this.borrarToolStripMenuItem1_Click);
-            // 
-            // busquedaAvanzadaToolStripMenuItem1
-            // 
-            this.busquedaAvanzadaToolStripMenuItem1.Name = "busquedaAvanzadaToolStripMenuItem1";
-            this.busquedaAvanzadaToolStripMenuItem1.Size = new System.Drawing.Size(125, 20);
-            this.busquedaAvanzadaToolStripMenuItem1.Text = "Busqueda Avanzada";
-            // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.radioButtonLSyE);
             this.groupBox2.Controls.Add(this.radioButtonLyS);
             this.groupBox2.Controls.Add(this.radioButtonLectura);
             this.groupBox2.Controls.Add(this.radioButtonAdmin);
-            this.groupBox2.Location = new System.Drawing.Point(12, 132);
+            this.groupBox2.Location = new System.Drawing.Point(6, 96);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(270, 134);
+            this.groupBox2.Size = new System.Drawing.Size(246, 134);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permisos";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // radioButtonLSyE
             // 
@@ -232,44 +183,125 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(123, 94);
+            this.textBoxNombre.Location = new System.Drawing.Point(101, 48);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(121, 20);
             this.textBoxNombre.TabIndex = 50;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 97);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(11, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 49;
             this.label2.Text = "Nombre del Rol";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // xButtonBusquedaAvanzada
+            // 
+            office2010Green5.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green5.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green5.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green5.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green5.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green5.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green5.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green5.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green5.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green5.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green5.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green5.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green5.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green5.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green5.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green5.TextColor = System.Drawing.Color.White;
+            this.xButtonBusquedaAvanzada.ColorTable = office2010Green5;
+            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(276, 198);
+            this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
+            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(75, 41);
+            this.xButtonBusquedaAvanzada.TabIndex = 63;
+            this.xButtonBusquedaAvanzada.Text = "Busqueda Avanzada";
+            this.xButtonBusquedaAvanzada.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonBusquedaAvanzada.UseVisualStyleBackColor = true;
+            // 
+            // xButtonBorrar
+            // 
+            //this.xButtonBorrar.ColorTable = office2010Green1;
+            this.xButtonBorrar.Location = new System.Drawing.Point(276, 147);
+            this.xButtonBorrar.Name = "xButtonBorrar";
+            this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonBorrar.TabIndex = 62;
+            this.xButtonBorrar.Text = "Borrar";
+            this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonBorrar.UseVisualStyleBackColor = true;
+            this.xButtonBorrar.Click += new System.EventHandler(this.xButtonBorrar_Click);
+            // 
+            // xButtonModificar
+            // 
+            //this.xButtonModificar.ColorTable = office2010Green1;
+            this.xButtonModificar.Location = new System.Drawing.Point(276, 94);
+            this.xButtonModificar.Name = "xButtonModificar";
+            this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonModificar.TabIndex = 61;
+            this.xButtonModificar.Text = "Modificar";
+            this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonModificar.UseVisualStyleBackColor = true;
+            this.xButtonModificar.Click += new System.EventHandler(this.xButtonModificar_Click);
+            // 
+            // xButtonGuardar
+            // 
+            //this.xButtonGuardar.ColorTable = office2010Green1;
+            this.xButtonGuardar.Location = new System.Drawing.Point(276, 41);
+            this.xButtonGuardar.Name = "xButtonGuardar";
+            this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonGuardar.TabIndex = 60;
+            this.xButtonGuardar.Text = "Guardar";
+            this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonGuardar.UseVisualStyleBackColor = true;
+            this.xButtonGuardar.Click += new System.EventHandler(this.xButtonGuardar_Click);
+            // 
+            // xButton1
+            // 
+            //this.xButton1.ColorTable = office2010Green3;
+            this.xButton1.Location = new System.Drawing.Point(276, 282);
+            this.xButton1.Name = "xButton1";
+            this.xButton1.Size = new System.Drawing.Size(75, 23);
+            this.xButton1.TabIndex = 64;
+            this.xButton1.Text = " Buscar";
+            this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButton1.UseVisualStyleBackColor = true;
+            this.xButton1.Click += new System.EventHandler(this.xButton1_Click);
             // 
             // FrmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 407);
+            this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
+            this.ClientSize = new System.Drawing.Size(362, 422);
+            this.Controls.Add(this.xButton1);
+            this.Controls.Add(this.xButtonBusquedaAvanzada);
+            this.Controls.Add(this.xButtonBorrar);
+            this.Controls.Add(this.xButtonModificar);
+            this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.bbuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmRol";
+            this.Text = "Roles de Usuarios";
             this.Load += new System.EventHandler(this.FrmRol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -281,14 +313,8 @@
 
         private System.Windows.Forms.TextBox tbuscarpor;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
-        private System.Windows.Forms.Button bbuscar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem guardartoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem busquedaAvanzadaToolStripMenuItem1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButtonLSyE;
         private System.Windows.Forms.RadioButton radioButtonLyS;
@@ -299,5 +325,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPermisos;
+        private XButton xButtonBusquedaAvanzada;
+        private XButton xButtonBorrar;
+        private XButton xButtonModificar;
+        private XButton xButtonGuardar;
+        private XButton xButton1;
     }
 }

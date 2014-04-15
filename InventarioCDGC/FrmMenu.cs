@@ -22,6 +22,8 @@ namespace InventarioCDGC
         private void FrmMenu_Load(object sender, EventArgs e)
         {       
             Permisos();
+            //Consultas.ProductosEnAlmacen pa = new Consultas.ProductosEnAlmacen();
+            //pa.Show();
         }
 
         public void Permisos()

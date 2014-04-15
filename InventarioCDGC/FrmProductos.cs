@@ -19,114 +19,7 @@ namespace InventarioCDGC
 
         ProductosInv product = new ProductosInv();
         public static int tiporol { get; set; }
-        private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-            if (textBoxIDproducto.Text != "")
-            {
-                if (textBoxNombre.Text != "")
-                {
-                    if (textBoxPrecio.Text != "")
-                    {
-                        try
-                        {
-                       
-                        product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
-                        product.producto = textBoxNombre.Text;
-                        product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-                        if (product.Guardar())
-                        {
-                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Llene el campo nombre del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Llene el campo ID del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (tbuscarpor.Text != "")
-            {
-                if (textBoxIDproducto.Text!="")
-                {
-                    if (textBoxNombre.Text!="")
-                    {
-                        if (textBoxPrecio.Text!="")
-                        {
-                            //dataGridView1.SelectionMode.GetType();
-                          
-                            product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
-                            product.producto = textBoxNombre.Text;
-                            product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-
-                            if (product.Modificar())
-                            {
-                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }                
-                }
-                else
-                {
-                    MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void borrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (tbuscarpor.Text != "")
-            {
-                // se valida que el id de la fila seleccionada sea igual que la del texbox
-                DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[0].Value.ToString() == textBoxIDproducto.Text)
-                {
-                    if (product.Borrar())
-                    {
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-
-                else
-                {
-                    MessageBox.Show("Seleccion un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
+        bool selectModeRow = false;
 
         private void bbuscar_Click(object sender, EventArgs e)
         {
@@ -184,7 +77,8 @@ namespace InventarioCDGC
             textBoxIDproducto.Text = row.Cells[0].Value.ToString();
             textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxPrecio.Text = row.Cells[2].Value.ToString();
-            
+
+            selectModeRow = dataGridView1.Rows[e.RowIndex].Selected;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -192,15 +86,10 @@ namespace InventarioCDGC
 
         }
 
-        private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarProductosVentas bProductos = new Consultas.BuscarProductosVentas();
-            bProductos.ShowDialog(this);
-        }
-
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             Permisos();
+            actualizadDatagrid();
         }
 
         public void Permisos()
@@ -235,49 +124,70 @@ namespace InventarioCDGC
 
         }
 
+        public void CleanText()
+        {
+            textBoxIDproducto.Clear();
+            textBoxNombre.Clear();
+            textBoxPrecio.Clear();
+             selectModeRow = false;
+            actualizadDatagrid();
+        }
+
+        public void actualizadDatagrid()
+        {
+            dataGridView1.DataSource = product.BuscarTodos();
+        }
+
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
-            if (textBoxIDproducto.Text != "")
+            if (selectModeRow == false)
             {
-                if (textBoxNombre.Text != "")
+                if (textBoxIDproducto.Text != "")
                 {
-                    if (textBoxPrecio.Text != "")
+                    if (textBoxNombre.Text != "")
                     {
-                        try
+                        if (textBoxPrecio.Text != "")
                         {
-                            product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
-                            product.producto = textBoxNombre.Text;
-                            product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-                            if (product.Guardar())
+                            try
                             {
-                                MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
+                                product.producto = textBoxNombre.Text;
+                                product.precio = Convert.ToDecimal(textBoxPrecio.Text);
+                                if (product.Guardar())
+                                {
+                                    CleanText();
+                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        catch (Exception)
+                        else
                         {
-                            MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Llene el campo nombre del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Llene el campo nombre del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Llene el campo ID del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Llene el campo ID del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hay un producto seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
         }
-
+        
         private void xButtonModificar_Click(object sender, EventArgs e)
         {
-            if (tbuscarpor.Text != "")
+            if (selectModeRow == true)
             {
                 if (textBoxIDproducto.Text != "")
                 {
@@ -295,6 +205,7 @@ namespace InventarioCDGC
 
                             if (product.Modificar())
                             {
+                                CleanText();
                                 MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
 
@@ -321,13 +232,13 @@ namespace InventarioCDGC
             }
             else
             {
-                MessageBox.Show("Primero busque un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Primero busque un producto y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void xButtonBorrar_Click(object sender, EventArgs e)
         {
-            if (tbuscarpor.Text != "")
+            if (selectModeRow == true)
             {
                 // se valida que el id de la fila seleccionada sea igual que la del texbox
                 DataGridViewRow row = dataGridView1.CurrentRow;
@@ -335,18 +246,19 @@ namespace InventarioCDGC
                 {
                     if (product.Borrar())
                     {
+                        CleanText();
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
                 else
                 {
-                    MessageBox.Show("Seleccion un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No es posible borrar este producto el id debe ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Primero busque un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Primero busque un producto y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -404,6 +316,11 @@ namespace InventarioCDGC
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridView1_RowHeaderMouseClick(sender, null);
         }
 
 

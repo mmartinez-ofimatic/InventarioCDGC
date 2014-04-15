@@ -56,6 +56,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox1.Controls.Add(this.textBoxPrecio);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxNombre);
@@ -134,6 +135,7 @@
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // ColumnIDProducto
             // 
@@ -260,7 +262,7 @@
             this.bbuscar.Name = "bbuscar";
             this.bbuscar.Size = new System.Drawing.Size(75, 23);
             this.bbuscar.TabIndex = 35;
-            this.bbuscar.Text = "Buscar";
+            this.bbuscar.Text = " Buscar";
             this.bbuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.bbuscar.UseVisualStyleBackColor = true;
             this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click_1);

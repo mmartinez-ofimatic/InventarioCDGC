@@ -78,9 +78,7 @@ namespace InventarioCDGC
                 else
                 {
                     MessageBox.Show("Llene el campo contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-               
+                }           
             }
             else
             {
@@ -259,5 +257,225 @@ namespace InventarioCDGC
             }
 
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridView1_RowHeaderMouseClick(sender, null);
+        }
+
+        private void xButtonGuardar_Click(object sender, EventArgs e)
+        {
+
+            if (textBoxNombre.Text != "")
+            {
+                if (textBoxContrasena.Text != "")
+                {
+                    if (textBoxRcontrasena.Text != "")
+                    {
+                        if (textBoxContrasena.Text == textBoxRcontrasena.Text)
+                        {
+                            if (comboBoxRol.Text != "")
+                            {
+                                usuarioClass.nomusuario = textBoxNombre.Text;
+                                usuarioClass.contrasena = textBoxContrasena.Text;
+                                usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
+                                try
+                                {
+                                    if (usuarioClass.Guardar())
+                                    {
+                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        CleanText();
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Error, por favor digite nuevamente el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    CleanText();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Elija un rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La contraseña deben ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Repita la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Llene el campo contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void xButtonModificar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.CurrentRow;
+
+            if (row.Selected == true)
+            {
+                if (textBoxNombre.Text != "")
+                {
+                    if (textBoxContrasena.Text != "")
+                    {
+                        if (textBoxRcontrasena.Text != "")
+                        {
+                            if (textBoxContrasena.Text == textBoxRcontrasena.Text)
+                            {
+                                if (comboBoxRol.Text != "")
+                                {
+                                    if (id > 0)
+                                    {
+                                        usuarioClass.IDusuario = id;
+                                        usuarioClass.nomusuario = textBoxNombre.Text;
+                                        usuarioClass.contrasena = textBoxContrasena.Text;
+                                        usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
+
+                                        if (usuarioClass.Modificar())
+                                        {
+                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            CleanText();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Debe seleccionar un usuario para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Elija un rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("La contraseña deben ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Repita la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Llene el campo contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Debe buscar un usuario y despues seleccionarlo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
+
+        private void xButtonBorrar_Click(object sender, EventArgs e)
+        {
+            if (tbuscarpor.Text != "")
+            {
+                // se valida que el id de la fila seleccionada sea igual que la del textbox
+                DataGridViewRow row = dataGridView1.CurrentRow;
+                if (Convert.ToInt32(row.Cells[0].Value.ToString()) == id)
+                {
+                    usuarioClass.IDusuario = id;
+                    if (usuarioClass.Borrar())
+                    {
+                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CleanText();
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Seleccione un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Primero busque un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        
+        }
+
+        private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xButton1_Click(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.Text != "")
+            {
+                if (tbuscarpor.Text != "")
+                {
+                    if (comboBoxBuscar.Text == "ID de usuario")
+                    {
+                        try
+                        {
+                            usuarioClass.IDusuario = Convert.ToInt32(tbuscarpor.Text);
+
+                            dataGridView1.AutoGenerateColumns = false;
+
+                            dataGridView1.DataSource = usuarioClass.BuscarxID();
+
+                            if (dataGridView1.RowCount == 0)
+                            {
+                                MessageBox.Show("Este usuario no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("El ID del rol debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                    else if (comboBoxBuscar.Text == "Nombre de usuario")
+                    {
+                        dataGridView1.AutoGenerateColumns = false;
+                        dataGridView1.DataSource = usuarioClass.BuscarxNombre(tbuscarpor.Text);
+
+                        if (dataGridView1.RowCount == 0)
+                        {
+                            MessageBox.Show("Este rol no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
+
     }
 }

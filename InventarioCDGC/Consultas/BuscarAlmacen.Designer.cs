@@ -44,7 +44,6 @@
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
             this.tbuscarpor.TabIndex = 41;
-           // this.tbuscarpor.TextChanged += new System.EventHandler(this.tbuscarpor_TextChanged);
             // 
             // comboBoxBuscar
             // 
@@ -57,7 +56,6 @@
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
             this.comboBoxBuscar.TabIndex = 45;
-           // this.comboBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscar_SelectedIndexChanged);
             // 
             // bbuscar
             // 
@@ -77,7 +75,6 @@
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 43;
             this.label14.Text = "Buscar por";
-           // this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // dataGridView1
             // 
@@ -93,7 +90,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(360, 101);
             this.dataGridView1.TabIndex = 42;
-           // this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnIDProducto
             // 
@@ -126,6 +122,7 @@
             this.Name = "BuscarAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda Almacen";
+            this.Load += new System.EventHandler(this.BuscarAlmacen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

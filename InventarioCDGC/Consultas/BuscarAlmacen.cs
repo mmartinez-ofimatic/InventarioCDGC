@@ -72,6 +72,12 @@ namespace InventarioCDGC.Consultas
         
         }
 
+        private void BuscarAlmacen_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = almacen.BuscarTodos();
+            //dataGridView1.DataSource = almacen.BuscarTodosConProductos();
+           }
+
        
     }
 }

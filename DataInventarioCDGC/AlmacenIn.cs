@@ -195,5 +195,30 @@ namespace DataInventarioCDGC
             return selec;
         }
 
+
+
+        /// <summary>
+        /// Lista de todos los productos en el almacen.
+        /// </summary>
+        /// <returns>List select</returns>
+        public void BuscarTodosConProductos()
+        {
+           // BindingSource 
+
+            var selec = (from s in dbEntities.Almacen
+                         join p in dbEntities.Productos
+                         on s.ID_Producto equals p.ID_Producto
+                         select new { s.ID_Producto, p.Precio_Venta }).ToList();
+
+           
+           //return selec;
+        }
+
+        /*
+          join p in dbEntities.Productos
+                          where s.ID_Producto == p.ID_Producto
+         *  where s.ID_Producto == p.ID_Producto
+         */
+
     }
 }

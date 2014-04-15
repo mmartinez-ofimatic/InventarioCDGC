@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace InventarioCDGC
 {
@@ -575,4 +576,38 @@ namespace InventarioCDGC
     }
 
     #endregion
+
+    public class CustomGroupBoxProperties
+    {
+       public static void DrawGroupBox(GroupBox box, Graphics g, Color borderColor)
+        {
+            if (box != null)
+            {
+                Brush borderBrush = new SolidBrush(borderColor);
+                Pen borderPen = new Pen(borderBrush);
+                borderPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+                borderPen.Width = 3;
+                SizeF strSize = g.MeasureString(box.Text, box.Font);
+                Rectangle rect = new Rectangle(box.ClientRectangle.X,
+                                               box.ClientRectangle.Y + (int)(strSize.Height / 2),
+                                               box.ClientRectangle.Width - 1,
+                                               box.ClientRectangle.Height - (int)(strSize.Height / 2) - 1);
+
+                box.BackColor = System.Drawing.Color.Transparent;
+                
+                // Drawing Border
+                //Left
+                g.DrawLine(borderPen, rect.Location, new Point(rect.X, rect.Y + rect.Height));
+                //Right
+                g.DrawLine(borderPen, new Point(rect.X + rect.Width, rect.Y), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Bottom
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y + rect.Height), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Top1
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
+                //Top2
+                g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width + 15), rect.Y), new Point(rect.X + rect.Width, rect.Y));
+            }
+        }
+    }
+
 }

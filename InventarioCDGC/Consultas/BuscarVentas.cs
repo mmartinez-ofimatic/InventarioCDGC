@@ -99,5 +99,10 @@ namespace InventarioCDGC.Consultas
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BuscarVentas_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = ventasClass.BuscarTodos();
+        }
     }
 }
