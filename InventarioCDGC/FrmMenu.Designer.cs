@@ -82,9 +82,8 @@
             this.cerrarSeccionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(888, 24);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,34 +95,34 @@
             this.registroDeProductosToolStripMenuItem,
             this.registroDeAlmacenToolStripMenuItem});
             this.datosInventarioToolStripMenuItem.Name = "datosInventarioToolStripMenuItem";
-            this.datosInventarioToolStripMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.datosInventarioToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.datosInventarioToolStripMenuItem.Text = "Datos del Inventario";
             // 
             // registroDeClientesToolStripMenuItem
             // 
             this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
-            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeClientesToolStripMenuItem.Text = "Registro de Clientes";
             this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.registroDeClientesToolStripMenuItem_Click);
             // 
             // registroDeVentasToolStripMenuItem
             // 
             this.registroDeVentasToolStripMenuItem.Name = "registroDeVentasToolStripMenuItem";
-            this.registroDeVentasToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.registroDeVentasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeVentasToolStripMenuItem.Text = "Registro de Ventas";
             this.registroDeVentasToolStripMenuItem.Click += new System.EventHandler(this.registroDeVentasToolStripMenuItem_Click);
             // 
             // registroDeProductosToolStripMenuItem
             // 
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
-            this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de Productos";
             this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
             // registroDeAlmacenToolStripMenuItem
             // 
             this.registroDeAlmacenToolStripMenuItem.Name = "registroDeAlmacenToolStripMenuItem";
-            this.registroDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(224, 24);
+            this.registroDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.registroDeAlmacenToolStripMenuItem.Text = "Registro de Almacen";
             this.registroDeAlmacenToolStripMenuItem.Click += new System.EventHandler(this.registroDeAlmacenToolStripMenuItem_Click);
             // 
@@ -135,34 +134,34 @@
             this.consultaDeProductosToolStripMenuItem,
             this.consultaDeAlmacenToolStripMenuItem});
             this.consultasDeInventarioToolStripMenuItem.Name = "consultasDeInventarioToolStripMenuItem";
-            this.consultasDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(179, 24);
+            this.consultasDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
             this.consultasDeInventarioToolStripMenuItem.Text = "Consultas del Inventario";
             // 
             // consultaClientesToolStripMenuItem
             // 
             this.consultaClientesToolStripMenuItem.Name = "consultaClientesToolStripMenuItem";
-            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.consultaClientesToolStripMenuItem.Text = "Consulta de Clientes";
             this.consultaClientesToolStripMenuItem.Click += new System.EventHandler(this.consultaClientesToolStripMenuItem_Click);
             // 
             // consultaDeVentasToolStripMenuItem
             // 
             this.consultaDeVentasToolStripMenuItem.Name = "consultaDeVentasToolStripMenuItem";
-            this.consultaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.consultaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.consultaDeVentasToolStripMenuItem.Text = "Consulta de Ventas";
             this.consultaDeVentasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeVentasToolStripMenuItem_Click);
             // 
             // consultaDeProductosToolStripMenuItem
             // 
             this.consultaDeProductosToolStripMenuItem.Name = "consultaDeProductosToolStripMenuItem";
-            this.consultaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.consultaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.consultaDeProductosToolStripMenuItem.Text = "Consulta de Productos";
             this.consultaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeProductosToolStripMenuItem_Click);
             // 
             // consultaDeAlmacenToolStripMenuItem
             // 
             this.consultaDeAlmacenToolStripMenuItem.Name = "consultaDeAlmacenToolStripMenuItem";
-            this.consultaDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(226, 24);
+            this.consultaDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.consultaDeAlmacenToolStripMenuItem.Text = "Consulta de Almacen";
             this.consultaDeAlmacenToolStripMenuItem.Click += new System.EventHandler(this.consultaDeAlmacenToolStripMenuItem_Click);
             // 
@@ -173,25 +172,25 @@
             this.reporteDeVentasToolStripMenuItem,
             this.reporteDeProductosToolStripMenuItem});
             this.reportesDeInventarioToolStripMenuItem.Name = "reportesDeInventarioToolStripMenuItem";
-            this.reportesDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.reportesDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesDeInventarioToolStripMenuItem.Text = "Reportes";
             // 
             // reportesDeClientesToolStripMenuItem1
             // 
             this.reportesDeClientesToolStripMenuItem1.Name = "reportesDeClientesToolStripMenuItem1";
-            this.reportesDeClientesToolStripMenuItem1.Size = new System.Drawing.Size(222, 24);
+            this.reportesDeClientesToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.reportesDeClientesToolStripMenuItem1.Text = "Reportes de Clientes";
             // 
             // reporteDeVentasToolStripMenuItem
             // 
             this.reporteDeVentasToolStripMenuItem.Name = "reporteDeVentasToolStripMenuItem";
-            this.reporteDeVentasToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.reporteDeVentasToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.reporteDeVentasToolStripMenuItem.Text = "Reporte de Ventas";
             // 
             // reporteDeProductosToolStripMenuItem
             // 
             this.reporteDeProductosToolStripMenuItem.Name = "reporteDeProductosToolStripMenuItem";
-            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
             // 
             // toolStripMenuItemUsuario
@@ -201,20 +200,20 @@
             this.usuarioToolStripMenuItem,
             this.rolesToolStripMenuItem});
             this.toolStripMenuItemUsuario.Name = "toolStripMenuItemUsuario";
-            this.toolStripMenuItemUsuario.Size = new System.Drawing.Size(158, 24);
+            this.toolStripMenuItemUsuario.Size = new System.Drawing.Size(127, 20);
             this.toolStripMenuItemUsuario.Text = "Usuarios del Sistema";
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // rolesToolStripMenuItem
             // 
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.rolesToolStripMenuItem.Text = "Roles";
             this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
@@ -223,19 +222,19 @@
             this.AyudatoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acercaDeToolStripMenuItem});
             this.AyudatoolStripMenuItem.Name = "AyudatoolStripMenuItem";
-            this.AyudatoolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.AyudatoolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.AyudatoolStripMenuItem.Text = "Ayuda";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // cerrarSeccionToolStripMenuItem
             // 
             this.cerrarSeccionToolStripMenuItem.Name = "cerrarSeccionToolStripMenuItem";
-            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.cerrarSeccionToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.cerrarSeccionToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSeccionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeccionToolStripMenuItem_Click);
             // 
@@ -243,17 +242,16 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusNombre});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 770);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 588);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1184, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(888, 22);
             this.statusStrip1.TabIndex = 27;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusNombre
             // 
             this.toolStripStatusNombre.Name = "toolStripStatusNombre";
-            this.toolStripStatusNombre.Size = new System.Drawing.Size(64, 20);
+            this.toolStripStatusNombre.Size = new System.Drawing.Size(51, 17);
             this.toolStripStatusNombre.Text = "Nombre";
             // 
             // buttonUsuarios
@@ -261,10 +259,9 @@
             this.buttonUsuarios.BackgroundImage = global::InventarioCDGC.Properties.Resources.usuarios2;
             this.buttonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsuarios.Location = new System.Drawing.Point(109, 523);
-            this.buttonUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonUsuarios.Location = new System.Drawing.Point(82, 425);
             this.buttonUsuarios.Name = "buttonUsuarios";
-            this.buttonUsuarios.Size = new System.Drawing.Size(208, 140);
+            this.buttonUsuarios.Size = new System.Drawing.Size(156, 114);
             this.buttonUsuarios.TabIndex = 36;
             this.buttonUsuarios.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonUsuarios.UseVisualStyleBackColor = true;
@@ -275,10 +272,9 @@
             this.buttonConsultas.BackgroundImage = global::InventarioCDGC.Properties.Resources.Consultas;
             this.buttonConsultas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConsultas.Location = new System.Drawing.Point(484, 295);
-            this.buttonConsultas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonConsultas.Location = new System.Drawing.Point(363, 240);
             this.buttonConsultas.Name = "buttonConsultas";
-            this.buttonConsultas.Size = new System.Drawing.Size(208, 140);
+            this.buttonConsultas.Size = new System.Drawing.Size(156, 114);
             this.buttonConsultas.TabIndex = 35;
             this.buttonConsultas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonConsultas.UseVisualStyleBackColor = true;
@@ -289,10 +285,9 @@
             this.buttonReportes.BackgroundImage = global::InventarioCDGC.Properties.Resources.Reportes;
             this.buttonReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReportes.Location = new System.Drawing.Point(863, 295);
-            this.buttonReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReportes.Location = new System.Drawing.Point(647, 240);
             this.buttonReportes.Name = "buttonReportes";
-            this.buttonReportes.Size = new System.Drawing.Size(208, 140);
+            this.buttonReportes.Size = new System.Drawing.Size(156, 114);
             this.buttonReportes.TabIndex = 34;
             this.buttonReportes.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonReportes.UseVisualStyleBackColor = true;
@@ -302,10 +297,9 @@
             this.buttonAlmacen.BackgroundImage = global::InventarioCDGC.Properties.Resources.Almacen;
             this.buttonAlmacen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlmacen.Location = new System.Drawing.Point(109, 295);
-            this.buttonAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlmacen.Location = new System.Drawing.Point(82, 240);
             this.buttonAlmacen.Name = "buttonAlmacen";
-            this.buttonAlmacen.Size = new System.Drawing.Size(208, 140);
+            this.buttonAlmacen.Size = new System.Drawing.Size(156, 114);
             this.buttonAlmacen.TabIndex = 33;
             this.buttonAlmacen.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonAlmacen.UseVisualStyleBackColor = true;
@@ -316,10 +310,9 @@
             this.buttonProductos.BackgroundImage = global::InventarioCDGC.Properties.Resources.Producto;
             this.buttonProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProductos.Location = new System.Drawing.Point(484, 84);
-            this.buttonProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProductos.Location = new System.Drawing.Point(363, 68);
             this.buttonProductos.Name = "buttonProductos";
-            this.buttonProductos.Size = new System.Drawing.Size(208, 140);
+            this.buttonProductos.Size = new System.Drawing.Size(156, 114);
             this.buttonProductos.TabIndex = 32;
             this.buttonProductos.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonProductos.UseVisualStyleBackColor = true;
@@ -330,10 +323,9 @@
             this.buttonClientes.BackgroundImage = global::InventarioCDGC.Properties.Resources.Client;
             this.buttonClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClientes.Location = new System.Drawing.Point(109, 84);
-            this.buttonClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClientes.Location = new System.Drawing.Point(82, 68);
             this.buttonClientes.Name = "buttonClientes";
-            this.buttonClientes.Size = new System.Drawing.Size(208, 140);
+            this.buttonClientes.Size = new System.Drawing.Size(156, 114);
             this.buttonClientes.TabIndex = 31;
             this.buttonClientes.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonClientes.UseVisualStyleBackColor = true;
@@ -344,10 +336,9 @@
             this.buttonVentas.BackgroundImage = global::InventarioCDGC.Properties.Resources.Ventas;
             this.buttonVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVentas.Location = new System.Drawing.Point(863, 84);
-            this.buttonVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonVentas.Location = new System.Drawing.Point(647, 68);
             this.buttonVentas.Name = "buttonVentas";
-            this.buttonVentas.Size = new System.Drawing.Size(208, 140);
+            this.buttonVentas.Size = new System.Drawing.Size(156, 114);
             this.buttonVentas.TabIndex = 30;
             this.buttonVentas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonVentas.UseVisualStyleBackColor = true;
@@ -356,80 +347,100 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, 228);
+            this.label1.Location = new System.Drawing.Point(121, 185);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 29);
+            this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 37;
             this.label1.Text = "Clientes";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(161, 439);
+            this.label3.Location = new System.Drawing.Point(121, 357);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 29);
+            this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 39;
             this.label3.Text = "Almacén";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(527, 439);
+            this.label4.Location = new System.Drawing.Point(395, 357);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 29);
+            this.label4.Size = new System.Drawing.Size(100, 25);
             this.label4.TabIndex = 40;
             this.label4.Text = "Consultas";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(527, 228);
+            this.label5.Location = new System.Drawing.Point(395, 185);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 29);
+            this.label5.Size = new System.Drawing.Size(100, 25);
             this.label5.TabIndex = 41;
             this.label5.Text = "Productos";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(919, 228);
+            this.label6.Location = new System.Drawing.Point(689, 185);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 29);
+            this.label6.Size = new System.Drawing.Size(74, 25);
             this.label6.TabIndex = 42;
             this.label6.Text = "Ventas";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(910, 439);
+            this.label7.Location = new System.Drawing.Point(682, 357);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 29);
+            this.label7.Size = new System.Drawing.Size(90, 25);
             this.label7.TabIndex = 43;
             this.label7.Text = "Reportes";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(153, 667);
+            this.label8.Location = new System.Drawing.Point(115, 542);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 29);
+            this.label8.Size = new System.Drawing.Size(89, 25);
             this.label8.TabIndex = 44;
             this.label8.Text = "Usuarios";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 795);
+            this.ClientSize = new System.Drawing.Size(888, 610);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -448,7 +459,6 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

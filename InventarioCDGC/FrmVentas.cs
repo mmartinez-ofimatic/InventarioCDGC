@@ -274,10 +274,10 @@ namespace InventarioCDGC
                 MessageBox.Show("Debe buscar una venta y luego seleccionarla para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
- 
+        DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.CurrentRow;
+             row = dataGridView1.CurrentRow;
           //textBoxIDVenta.Text = row.Cells[0].Value.ToString();
             textBoxCliente.Text = row.Cells[1].Value.ToString();
             textBoxProducto.Text = row.Cells[2].Value.ToString();
@@ -286,9 +286,9 @@ namespace InventarioCDGC
             textBoxPrecio.Text = row.Cells[4].Value.ToString();
             textBoxCantidad.Text = row.Cells[5].Value.ToString();
             textBoxDescuento.Text = row.Cells[6].Value.ToString();
-            textBoxObservacion.Text = row.Cells[8].Value.ToString();
+            textBoxObservacion1.Text = row.Cells[8].Value.ToString();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
-            selectModeRow = dataGridView1.Rows[e.RowIndex].Selected;
+            selectModeRow = row.Selected;
         }
 
         private void borrarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -367,7 +367,7 @@ namespace InventarioCDGC
                                 ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
                                 ventasClass.cantidad = Convert.ToInt32(textBoxCantidad.Text);
                                 ventasClass.descuento = Convert.ToDecimal(textBoxDescuento.Text);
-                                ventasClass.observacion = textBoxObservacion.Text;
+                                ventasClass.observacion = textBoxObservacion1.Text;
                                 //Falta el id de usuario para saber que usuario hiso la venta
                                 //ventasClass.idusuario = el id del usuario loguiado.
 
@@ -427,7 +427,7 @@ namespace InventarioCDGC
                                 ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
                                 ventasClass.cantidad = Convert.ToInt32(textBoxCantidad.Text);
                                 ventasClass.descuento = Convert.ToDecimal(textBoxDescuento.Text);
-                                ventasClass.observacion = textBoxObservacion.Text;
+                                ventasClass.observacion = textBoxObservacion1.Text;
                                 //Falta el id de usuario para saber que usuario hiso la venta
                                 //ventasClass.idusuario = el id del usuario loguiado.
 
@@ -591,7 +591,15 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            row = dataGridView1.CurrentRow;
+            row.Selected = true;
             dataGridView1_RowHeaderMouseClick(sender, null);
+        }
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
         }
 
     }

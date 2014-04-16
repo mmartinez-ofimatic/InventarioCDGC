@@ -181,10 +181,10 @@ namespace InventarioCDGC
                 MessageBox.Show("Primero busque un rol y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.CurrentRow;
+            row = dataGridView1.CurrentRow;
             comboBoxBuscar.Text = row.Cells[0].Value.ToString();
             textBoxNombre.Text = row.Cells[1].Value.ToString();
             int permisos = Convert.ToInt32(row.Cells[2].Value.ToString()) ;
@@ -282,6 +282,8 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            row = dataGridView1.CurrentRow;
+            row.Selected = true;
             dataGridView1_RowHeaderMouseClick(sender, null);
         }
 
@@ -520,6 +522,12 @@ namespace InventarioCDGC
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox2_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
         }
 
        

@@ -18,6 +18,7 @@ namespace InventarioCDGC
         }
 
         UsuarioInv usuarioClass = new UsuarioInv();
+        bool selectModeRow = false;
         int id;
       
         private void FrmUsuario_Load(object sender, EventArgs e)
@@ -217,17 +218,17 @@ namespace InventarioCDGC
             }
         }
 
-        
+        DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.CurrentRow;
+            row = dataGridView1.CurrentRow;
             id = Convert.ToInt32(row.Cells[0].Value.ToString());
            
             comboBoxRol.SelectedValue = Convert.ToInt32(row.Cells[1].Value.ToString());
             textBoxNombre.Text = row.Cells[2].Value.ToString();
             textBoxContrasena.Text = row.Cells[3].Value.ToString();
             textBoxRcontrasena.Text = row.Cells[3].Value.ToString();
-       
+        
         }
 
         private void borrarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -260,12 +261,15 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            row = dataGridView1.CurrentRow;
+            row.Selected = true;
             dataGridView1_RowHeaderMouseClick(sender, null);
         }
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
-
+            if (selectModeRow == false)
+           {
             if (textBoxNombre.Text != "")
             {
                 if (textBoxContrasena.Text != "")
@@ -318,6 +322,12 @@ namespace InventarioCDGC
             else
             {
                 MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+           }
+            else
+            {
+                MessageBox.Show("Hay un usuario seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -475,6 +485,17 @@ namespace InventarioCDGC
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
+        }
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }

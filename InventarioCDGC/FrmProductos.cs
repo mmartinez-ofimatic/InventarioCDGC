@@ -68,17 +68,16 @@ namespace InventarioCDGC
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int index = e.RowIndex;
+            
 
-            DataGridViewRow row = dataGridView1.CurrentRow;
+            row = dataGridView1.CurrentRow;
             textBoxIDproducto.Text = row.Cells[0].Value.ToString();
             textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxPrecio.Text = row.Cells[2].Value.ToString();
-
-            selectModeRow = dataGridView1.Rows[e.RowIndex].Selected;
+            selectModeRow = row.Selected;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -320,7 +319,15 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            row = dataGridView1.CurrentRow;
+            row.Selected = true;
             dataGridView1_RowHeaderMouseClick(sender, null);
+        }
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
         }
 
 

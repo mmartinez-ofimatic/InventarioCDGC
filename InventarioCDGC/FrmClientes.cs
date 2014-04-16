@@ -165,20 +165,23 @@ namespace InventarioCDGC
         {
            
         }
-
+         DataGridViewRow row; 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int index = e.RowIndex;
 
-            DataGridViewRow row = dataGridView1.CurrentRow;        
+//int index = e.RowIndex;
+
+             row = dataGridView1.CurrentRow;        
             textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxCedula.Text = row.Cells[2].Value.ToString();
             textBoxTelefono.Text = row.Cells[3].Value.ToString();
             textBoxCelular.Text = row.Cells[4].Value.ToString();
             textBoxDireccion.Text = row.Cells[5].Value.ToString();
 
-           clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
-            selectModeRow = dataGridView1.Rows[e.RowIndex].Selected;
+                
+            clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+            selectModeRow = row.Selected;
+
         }
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
@@ -470,6 +473,9 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+           // DataGridViewCellMouseEventArgs a =
+            row = dataGridView1.CurrentRow; 
+            row.Selected = true;
             dataGridView1_RowHeaderMouseClick(sender, null); 
         }
 
@@ -477,6 +483,12 @@ namespace InventarioCDGC
         {
             GroupBox box = sender as GroupBox;
             CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+        //    row = dataGridView1.CurrentRow;
+        //    row.Selected = false;
         }
 
 

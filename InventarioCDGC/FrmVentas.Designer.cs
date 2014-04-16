@@ -29,21 +29,6 @@
         private void InitializeComponent()
         {
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxDescuento = new System.Windows.Forms.NumericUpDown();
-            this.bbuscarproducto = new System.Windows.Forms.Button();
-            this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
-            this.bbuscarcliente = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxObservacion = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPrecio = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxProducto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxCliente = new System.Windows.Forms.TextBox();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -63,175 +48,27 @@
             this.xButtonModificar = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
             this.xButton1 = new InventarioCDGC.XButton();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
+            this.textBoxCliente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxProducto = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxPrecio = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxObservacion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bbuscarcliente = new System.Windows.Forms.Button();
+            this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
+            this.bbuscarproducto = new System.Windows.Forms.Button();
+            this.textBoxDescuento = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxObservacion1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.textBoxDescuento);
-            this.groupBox1.Controls.Add(this.bbuscarproducto);
-            this.groupBox1.Controls.Add(this.textBoxCantidad);
-            this.groupBox1.Controls.Add(this.bbuscarcliente);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxObservacion);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBoxPrecio);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxProducto);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBoxCliente);
-            this.groupBox1.Location = new System.Drawing.Point(17, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 333);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Venta";
-            // 
-            // textBoxDescuento
-            // 
-            this.textBoxDescuento.Location = new System.Drawing.Point(117, 201);
-            this.textBoxDescuento.Name = "textBoxDescuento";
-            this.textBoxDescuento.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDescuento.TabIndex = 41;
-            this.textBoxDescuento.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // bbuscarproducto
-            // 
-            this.bbuscarproducto.BackColor = System.Drawing.Color.Gainsboro;
-            this.bbuscarproducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bbuscarproducto.Location = new System.Drawing.Point(241, 74);
-            this.bbuscarproducto.Name = "bbuscarproducto";
-            this.bbuscarproducto.Size = new System.Drawing.Size(93, 20);
-            this.bbuscarproducto.TabIndex = 34;
-            this.bbuscarproducto.Text = "Buscar producto";
-            this.bbuscarproducto.UseVisualStyleBackColor = false;
-            this.bbuscarproducto.Click += new System.EventHandler(this.bbuscarproducto_Click);
-            // 
-            // textBoxCantidad
-            // 
-            this.textBoxCantidad.Location = new System.Drawing.Point(117, 158);
-            this.textBoxCantidad.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.textBoxCantidad.Name = "textBoxCantidad";
-            this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCantidad.TabIndex = 40;
-            this.textBoxCantidad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // bbuscarcliente
-            // 
-            this.bbuscarcliente.BackColor = System.Drawing.Color.Gainsboro;
-            this.bbuscarcliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bbuscarcliente.Location = new System.Drawing.Point(241, 35);
-            this.bbuscarcliente.Name = "bbuscarcliente";
-            this.bbuscarcliente.Size = new System.Drawing.Size(93, 21);
-            this.bbuscarcliente.TabIndex = 33;
-            this.bbuscarcliente.Text = "Buscar cliente";
-            this.bbuscarcliente.UseVisualStyleBackColor = false;
-            this.bbuscarcliente.Click += new System.EventHandler(this.bbuscarcliente_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 250);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Observación";
-            // 
-            // textBoxObservacion
-            // 
-            this.textBoxObservacion.Location = new System.Drawing.Point(8, -187);
-            this.textBoxObservacion.Multiline = true;
-            this.textBoxObservacion.Name = "textBoxObservacion";
-            this.textBoxObservacion.Size = new System.Drawing.Size(217, 58);
-            this.textBoxObservacion.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Descuento";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Cantidad";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Precio de unidad";
-            // 
-            // textBoxPrecio
-            // 
-            this.textBoxPrecio.Location = new System.Drawing.Point(117, 117);
-            this.textBoxPrecio.Name = "textBoxPrecio";
-            this.textBoxPrecio.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPrecio.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "ID del Producto";
-            // 
-            // textBoxProducto
-            // 
-            this.textBoxProducto.Enabled = false;
-            this.textBoxProducto.Location = new System.Drawing.Point(117, 74);
-            this.textBoxProducto.Name = "textBoxProducto";
-            this.textBoxProducto.ReadOnly = true;
-            this.textBoxProducto.Size = new System.Drawing.Size(100, 20);
-            this.textBoxProducto.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ID del Cliente";
-            // 
-            // textBoxCliente
-            // 
-            this.textBoxCliente.Enabled = false;
-            this.textBoxCliente.Location = new System.Drawing.Point(117, 35);
-            this.textBoxCliente.Name = "textBoxCliente";
-            this.textBoxCliente.ReadOnly = true;
-            this.textBoxCliente.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCliente.TabIndex = 0;
             // 
             // tbuscarpor
             // 
@@ -440,6 +277,180 @@
             this.xButton1.UseVisualStyleBackColor = true;
             this.xButton1.Click += new System.EventHandler(this.xButton1_Click);
             // 
+            // textBoxCliente
+            // 
+            this.textBoxCliente.Enabled = false;
+            this.textBoxCliente.Location = new System.Drawing.Point(109, 35);
+            this.textBoxCliente.Name = "textBoxCliente";
+            this.textBoxCliente.ReadOnly = true;
+            this.textBoxCliente.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCliente.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ID del Cliente";
+            // 
+            // textBoxProducto
+            // 
+            this.textBoxProducto.Enabled = false;
+            this.textBoxProducto.Location = new System.Drawing.Point(109, 74);
+            this.textBoxProducto.Name = "textBoxProducto";
+            this.textBoxProducto.ReadOnly = true;
+            this.textBoxProducto.Size = new System.Drawing.Size(100, 20);
+            this.textBoxProducto.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "ID del Producto";
+            // 
+            // textBoxPrecio
+            // 
+            this.textBoxPrecio.Location = new System.Drawing.Point(109, 117);
+            this.textBoxPrecio.Name = "textBoxPrecio";
+            this.textBoxPrecio.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrecio.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Precio de unidad";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Cantidad";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Descuento";
+            // 
+            // textBoxObservacion
+            // 
+            this.textBoxObservacion.Location = new System.Drawing.Point(8, -187);
+            this.textBoxObservacion.Multiline = true;
+            this.textBoxObservacion.Name = "textBoxObservacion";
+            this.textBoxObservacion.Size = new System.Drawing.Size(217, 58);
+            this.textBoxObservacion.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 250);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Observación";
+            // 
+            // bbuscarcliente
+            // 
+            this.bbuscarcliente.BackColor = System.Drawing.Color.Gainsboro;
+            this.bbuscarcliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bbuscarcliente.Location = new System.Drawing.Point(237, 35);
+            this.bbuscarcliente.Name = "bbuscarcliente";
+            this.bbuscarcliente.Size = new System.Drawing.Size(93, 21);
+            this.bbuscarcliente.TabIndex = 33;
+            this.bbuscarcliente.Text = "Buscar cliente";
+            this.bbuscarcliente.UseVisualStyleBackColor = false;
+            this.bbuscarcliente.Click += new System.EventHandler(this.bbuscarcliente_Click);
+            // 
+            // textBoxCantidad
+            // 
+            this.textBoxCantidad.Location = new System.Drawing.Point(109, 158);
+            this.textBoxCantidad.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCantidad.TabIndex = 40;
+            this.textBoxCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // bbuscarproducto
+            // 
+            this.bbuscarproducto.BackColor = System.Drawing.Color.Gainsboro;
+            this.bbuscarproducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bbuscarproducto.Location = new System.Drawing.Point(237, 74);
+            this.bbuscarproducto.Name = "bbuscarproducto";
+            this.bbuscarproducto.Size = new System.Drawing.Size(93, 20);
+            this.bbuscarproducto.TabIndex = 34;
+            this.bbuscarproducto.Text = "Buscar producto";
+            this.bbuscarproducto.UseVisualStyleBackColor = false;
+            this.bbuscarproducto.Click += new System.EventHandler(this.bbuscarproducto_Click);
+            // 
+            // textBoxDescuento
+            // 
+            this.textBoxDescuento.Location = new System.Drawing.Point(109, 201);
+            this.textBoxDescuento.Name = "textBoxDescuento";
+            this.textBoxDescuento.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDescuento.TabIndex = 41;
+            this.textBoxDescuento.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.textBoxObservacion1);
+            this.groupBox1.Controls.Add(this.textBoxDescuento);
+            this.groupBox1.Controls.Add(this.bbuscarproducto);
+            this.groupBox1.Controls.Add(this.textBoxCantidad);
+            this.groupBox1.Controls.Add(this.bbuscarcliente);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.textBoxObservacion);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBoxPrecio);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxProducto);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxCliente);
+            this.groupBox1.Location = new System.Drawing.Point(17, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(356, 325);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Venta";
+            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // textBoxObservacion1
+            // 
+            this.textBoxObservacion1.Location = new System.Drawing.Point(109, 250);
+            this.textBoxObservacion1.Multiline = true;
+            this.textBoxObservacion1.Name = "textBoxObservacion1";
+            this.textBoxObservacion1.Size = new System.Drawing.Size(217, 56);
+            this.textBoxObservacion1.TabIndex = 42;
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,11 +475,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.FrmVentas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxDescuento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,19 +487,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxPrecio;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxProducto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxCliente;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxObservacion;
-        private System.Windows.Forms.Button bbuscarproducto;
-        private System.Windows.Forms.Button bbuscarcliente;
         private System.Windows.Forms.TextBox tbuscarpor;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label14;
@@ -502,13 +500,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnObservacion;
-        private System.Windows.Forms.NumericUpDown textBoxDescuento;
-        private System.Windows.Forms.NumericUpDown textBoxCantidad;
         private XButton xButtonBusquedaAvanzada;
         private XButton xButtonBorrar;
         private XButton xButtonModificar;
         private XButton xButtonGuardar;
         private XButton xButton1;
         private System.Windows.Forms.Button bbuscar;
+        private System.Windows.Forms.TextBox textBoxCliente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxProducto;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxPrecio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxObservacion;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button bbuscarcliente;
+        private System.Windows.Forms.NumericUpDown textBoxCantidad;
+        private System.Windows.Forms.Button bbuscarproducto;
+        private System.Windows.Forms.NumericUpDown textBoxDescuento;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBoxObservacion1;
     }
 }

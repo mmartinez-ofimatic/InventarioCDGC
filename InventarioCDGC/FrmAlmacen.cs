@@ -123,16 +123,16 @@ namespace InventarioCDGC
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-      
+        DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataGridViewRow row = dataGridView1.CurrentRow;
+            row = dataGridView1.CurrentRow;
             comboBoxID.Text = row.Cells[0].Value.ToString();
             //textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxExistencia.Text = row.Cells[1].Value.ToString();
 
            dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
-           selectModeRow = dataGridView1.Rows[e.RowIndex].Selected;
+           selectModeRow = row.Selected;
         }
 
         public void CleanText()
@@ -329,6 +329,8 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            row = dataGridView1.CurrentRow;
+            row.Selected = true;
             dataGridView1_RowHeaderMouseClick(sender, null);
         }
 

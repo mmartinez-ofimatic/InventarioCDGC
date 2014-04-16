@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            InventarioCDGC.Office2010Green office2010Green5 = new InventarioCDGC.Office2010Green();
+            InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -43,11 +43,11 @@
             this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.xButton1 = new InventarioCDGC.XButton();
             this.xButtonBusquedaAvanzada = new InventarioCDGC.XButton();
             this.xButtonBorrar = new InventarioCDGC.XButton();
             this.xButtonModificar = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
-            this.xButton1 = new InventarioCDGC.XButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -135,6 +135,7 @@
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permisos";
+            this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // radioButtonLSyE
@@ -200,26 +201,38 @@
             this.label2.Text = "Nombre del Rol";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // xButton1
+            // 
+            office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.TextColor = System.Drawing.Color.White;
+            this.xButton1.ColorTable = office2010Green1;
+            this.xButton1.Location = new System.Drawing.Point(276, 282);
+            this.xButton1.Name = "xButton1";
+            this.xButton1.Size = new System.Drawing.Size(75, 23);
+            this.xButton1.TabIndex = 64;
+            this.xButton1.Text = " Buscar";
+            this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButton1.UseVisualStyleBackColor = true;
+            this.xButton1.Click += new System.EventHandler(this.xButton1_Click);
+            // 
             // xButtonBusquedaAvanzada
             // 
-            office2010Green5.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Green5.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Green5.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green5.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green5.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Green5.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Green5.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green5.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green5.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green5.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green5.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green5.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green5.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Green5.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Green5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green5.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green5.TextColor = System.Drawing.Color.White;
-            this.xButtonBusquedaAvanzada.ColorTable = office2010Green5;
+            this.xButtonBusquedaAvanzada.ColorTable = office2010Green1;
             this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(276, 198);
             this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
             this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(75, 41);
@@ -230,7 +243,7 @@
             // 
             // xButtonBorrar
             // 
-            //this.xButtonBorrar.ColorTable = office2010Green1;
+            this.xButtonBorrar.ColorTable = office2010Green1;
             this.xButtonBorrar.Location = new System.Drawing.Point(276, 147);
             this.xButtonBorrar.Name = "xButtonBorrar";
             this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
@@ -242,7 +255,7 @@
             // 
             // xButtonModificar
             // 
-            //this.xButtonModificar.ColorTable = office2010Green1;
+            this.xButtonModificar.ColorTable = office2010Green1;
             this.xButtonModificar.Location = new System.Drawing.Point(276, 94);
             this.xButtonModificar.Name = "xButtonModificar";
             this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
@@ -254,7 +267,7 @@
             // 
             // xButtonGuardar
             // 
-            //this.xButtonGuardar.ColorTable = office2010Green1;
+            this.xButtonGuardar.ColorTable = office2010Green1;
             this.xButtonGuardar.Location = new System.Drawing.Point(276, 41);
             this.xButtonGuardar.Name = "xButtonGuardar";
             this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
@@ -263,18 +276,6 @@
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonGuardar.UseVisualStyleBackColor = true;
             this.xButtonGuardar.Click += new System.EventHandler(this.xButtonGuardar_Click);
-            // 
-            // xButton1
-            // 
-            //this.xButton1.ColorTable = office2010Green3;
-            this.xButton1.Location = new System.Drawing.Point(276, 282);
-            this.xButton1.Name = "xButton1";
-            this.xButton1.Size = new System.Drawing.Size(75, 23);
-            this.xButton1.TabIndex = 64;
-            this.xButton1.Text = " Buscar";
-            this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButton1.UseVisualStyleBackColor = true;
-            this.xButton1.Click += new System.EventHandler(this.xButton1_Click);
             // 
             // FrmRol
             // 

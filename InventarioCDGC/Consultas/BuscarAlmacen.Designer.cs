@@ -70,6 +70,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Location = new System.Drawing.Point(12, 24);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
@@ -111,6 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
             this.ClientSize = new System.Drawing.Size(360, 162);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
