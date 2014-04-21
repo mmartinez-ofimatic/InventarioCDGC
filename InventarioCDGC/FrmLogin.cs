@@ -43,8 +43,11 @@ namespace InventarioCDGC
             else
             {
                 MessageBox.Show("Usuario o Password Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tusuario.Clear();
                 tpass.Clear();
+                tusuario.Clear();
+
+                tusuario.Select();
+               // Cursor.Current = 1;
             }
         }
 
@@ -59,6 +62,14 @@ namespace InventarioCDGC
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tusuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                tpass.Select();
+            }
         }
     }
 }

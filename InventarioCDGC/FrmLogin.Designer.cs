@@ -46,7 +46,7 @@
             this.tpass.Name = "tpass";
             this.tpass.PasswordChar = '*';
             this.tpass.Size = new System.Drawing.Size(121, 20);
-            this.tpass.TabIndex = 8;
+            this.tpass.TabIndex = 2;
             this.tpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tpass_KeyPress);
             // 
             // tusuario
@@ -55,7 +55,8 @@
             this.tusuario.Location = new System.Drawing.Point(237, 44);
             this.tusuario.Name = "tusuario";
             this.tusuario.Size = new System.Drawing.Size(121, 20);
-            this.tusuario.TabIndex = 5;
+            this.tusuario.TabIndex = 1;
+            this.tusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tusuario_KeyPress);
             // 
             // label2
             // 
@@ -115,7 +116,7 @@
             this.xButton1.Location = new System.Drawing.Point(237, 134);
             this.xButton1.Name = "xButton1";
             this.xButton1.Size = new System.Drawing.Size(121, 39);
-            this.xButton1.TabIndex = 10;
+            this.xButton1.TabIndex = 3;
             this.xButton1.Text = "LOGIN";
             this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButton1.UseVisualStyleBackColor = true;

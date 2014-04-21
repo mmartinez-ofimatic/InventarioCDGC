@@ -18,12 +18,20 @@ namespace InventarioCDGC
 
         public static int tiporol { get; set; }
         public static string nameUser { get; set; }
+        Consultas.ProductosEnAlmacen pa = new Consultas.ProductosEnAlmacen();
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {       
             Permisos();
-            //Consultas.ProductosEnAlmacen pa = new Consultas.ProductosEnAlmacen();
-            //pa.Show();
+            
+            pa.Show();
+        }
+
+       
+        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Determine if text has changed in the textbox by comparing to original text. 
+            MessageBox.Show("Prueba");
         }
 
         public void Permisos()
@@ -51,6 +59,7 @@ namespace InventarioCDGC
             else
             {
                 toolStripMenuItemUsuario.Visible = false;
+                MessageBox.Show("Usted no tiene permiso para acceder al sistema!", "Usuario sin permisos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
         }
@@ -123,10 +132,13 @@ namespace InventarioCDGC
 
         private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           // Consultas.ProductosEnAlmacen pa = new Consultas.ProductosEnAlmacen();
 
+            this.Hide();
+            pa.Hide();
             FrmLogin login = new FrmLogin();
             login.Show();
-            this.Close();
+            
         }
 
         private void buttonClientes_Click(object sender, EventArgs e)
@@ -196,6 +208,12 @@ namespace InventarioCDGC
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+            Application.Exit();
         }
 
 

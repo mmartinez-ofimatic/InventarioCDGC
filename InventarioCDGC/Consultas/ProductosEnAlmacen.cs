@@ -21,7 +21,12 @@ namespace InventarioCDGC.Consultas
 
         private void ProductosEnAlmacen_Load(object sender, EventArgs e)
         {
-          //dataGridView1.DataSource = almacen.BuscarTodosConProductos();
+          dataGridView1.DataSource =  almacen.BuscarTodosConProductos();
+        }
+
+        private void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = almacen.BuscarTodosConProductos();
         }
     }
 }

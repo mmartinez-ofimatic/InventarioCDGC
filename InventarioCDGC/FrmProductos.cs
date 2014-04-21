@@ -134,6 +134,7 @@ namespace InventarioCDGC
 
         public void actualizadDatagrid()
         {
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = product.BuscarTodos();
         }
 
@@ -328,6 +329,14 @@ namespace InventarioCDGC
         {
             GroupBox box = sender as GroupBox;
             CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
+        }
+
+        private void FrmProductos_Click(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            CleanText();
         }
 
 

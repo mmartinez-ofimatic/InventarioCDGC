@@ -27,9 +27,14 @@ namespace InventarioCDGC
             comboBoxRol.DataSource = roles.BuscarTodos();
             comboBoxRol.DisplayMember = "Rol";
             comboBoxRol.ValueMember = "ID_Rol";
+            ActualizarGrid();
+        }
+
+        public void ActualizarGrid()
+        {
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = usuarioClass.BuscarTodos();
-        }
+         }
 
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -53,6 +58,7 @@ namespace InventarioCDGC
                                     {
                                         MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         CleanText();
+                                        ActualizarGrid();
                                     }
                                 }
                                 catch (Exception)
@@ -114,6 +120,7 @@ namespace InventarioCDGC
                                                     {
                                                         MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                         CleanText();
+                                                        ActualizarGrid();
                                                     }
                                                 }
                                                 else
@@ -414,6 +421,7 @@ namespace InventarioCDGC
                     {
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CleanText();
+                        ActualizarGrid();
                     }
                 }
 
@@ -496,6 +504,14 @@ namespace InventarioCDGC
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmUsuario_Click(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            CleanText();
         }
 
     }

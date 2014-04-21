@@ -85,14 +85,16 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkSeaGreen;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnIDProducto,
             this.ColumnExistencia});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 367);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 408);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(262, 101);
+            this.dataGridView1.Size = new System.Drawing.Size(450, 101);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -245,7 +247,7 @@
             // xButtonModificar
             // 
             this.xButtonModificar.ColorTable = office2010Green1;
-            this.xButtonModificar.Location = new System.Drawing.Point(303, 115);
+            this.xButtonModificar.Location = new System.Drawing.Point(303, 118);
             this.xButtonModificar.Name = "xButtonModificar";
             this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
             this.xButtonModificar.TabIndex = 47;
@@ -283,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(590, 509);
+            this.ClientSize = new System.Drawing.Size(450, 509);
             this.Controls.Add(this.xButtonBusquedaAvanzada);
             this.Controls.Add(this.xButtonBorrar);
             this.Controls.Add(this.xButtonModificar);
@@ -301,6 +303,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Almacen";
             this.Load += new System.EventHandler(this.FrmAlmacen_Load);
+            this.Click += new System.EventHandler(this.FrmAlmacen_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

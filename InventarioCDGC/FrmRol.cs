@@ -277,6 +277,13 @@ namespace InventarioCDGC
 
         private void FrmRol_Load(object sender, EventArgs e)
         {
+            ActualizarGrid();
+        }
+
+        public void ActualizarGrid()
+        {
+
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = rolesClass.BuscarTodos();
         }
 
@@ -391,6 +398,7 @@ namespace InventarioCDGC
                                 dataGridView1.DataSource = rolesClass.BuscarTodos();
                                 MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
+                                ActualizarGrid();
                             }
                         }
                         catch (Exception)
@@ -457,6 +465,7 @@ namespace InventarioCDGC
                                 {
                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
+                                    ActualizarGrid();
                                 }
                             }
                             catch (Exception)
@@ -499,6 +508,7 @@ namespace InventarioCDGC
                     {
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CleanText();
+                        ActualizarGrid();
                     }
                 }
 
@@ -528,6 +538,19 @@ namespace InventarioCDGC
         {
             GroupBox box = sender as GroupBox;
             CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
+        }
+
+        private void FrmRol_Click(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            //selectModeRow = false;
+            CleanText();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
        

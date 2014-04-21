@@ -64,6 +64,7 @@ namespace InventarioCDGC
 
         public void actualizarDatagrid()
         {
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = clientesclass.BuscarTodos();
         }
 
@@ -353,26 +354,20 @@ namespace InventarioCDGC
         {
             try
             {
-            if (tbuscarpor.Text != "")
+                if (selectModeRow == true)
             {
-                if (clientesclass.idcliente == Convert.ToInt32(tbuscarpor.Text))
-                {
-
+                   // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
                     if (clientesclass.Borrar())
                     {
                         CleanText();
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
-                else
+                
+            }
+              else
                 {
-                    MessageBox.Show("Primero busque por ID para eliminar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero busque un cliente y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque por ID para eliminar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
             }
             catch (Exception)
@@ -489,6 +484,14 @@ namespace InventarioCDGC
         {
         //    row = dataGridView1.CurrentRow;
         //    row.Selected = false;
+        }
+
+        private void FrmClientes_Click(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            CleanText();
         }
 
 

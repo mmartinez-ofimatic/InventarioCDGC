@@ -34,10 +34,14 @@ namespace InventarioCDGC
         private void FrmVentas_Load(object sender, EventArgs e)
         {
             Permisos();
+            ActualizarGrid();
+        }
+
+        public void ActualizarGrid()
+        {
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ventasClass.BuscarTodos();
         }
-
 
         public void Permisos()
         {
@@ -375,6 +379,7 @@ namespace InventarioCDGC
                                 {
                                     MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
+                                    ActualizarGrid();
                                 }
 
                                 else
@@ -435,6 +440,7 @@ namespace InventarioCDGC
                                 {
                                     MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
+                                    ActualizarGrid();
                                 }
                             }
                             else
@@ -481,6 +487,7 @@ namespace InventarioCDGC
                         {
                             MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.CleanText();
+                            ActualizarGrid();
                         }
                     }
 
@@ -600,6 +607,14 @@ namespace InventarioCDGC
         {
             GroupBox box = sender as GroupBox;
             CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
+        }
+
+        private void FrmVentas_Click(object sender, EventArgs e)
+        {
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            CleanText();
         }
 
     }

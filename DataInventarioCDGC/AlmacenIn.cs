@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text; 
 using System.Data.Entity;
 using System.Data.EntityClient;
 
@@ -12,6 +12,8 @@ namespace DataInventarioCDGC
         public int IDproducto { get; set; }
         public int existencia { get; set; }
         public string nombreProducto { get; set; }
+       /* public decimal precio { get; set; }
+        public string producto { get; set; }*/
 
         InventarioCDGCEntities dbEntities = new InventarioCDGCEntities();
 
@@ -201,17 +203,19 @@ namespace DataInventarioCDGC
         /// Lista de todos los productos en el almacen.
         /// </summary>
         /// <returns>List select</returns>
-        public void BuscarTodosConProductos()
+        public List<ProductosEnAlmacen> BuscarTodosConProductos()
         {
-           // BindingSource 
+           // Tipo anonimo 
 
             var selec = (from s in dbEntities.Almacen
                          join p in dbEntities.Productos
                          on s.ID_Producto equals p.ID_Producto
-                         select new { s.ID_Producto, p.Precio_Venta }).ToList();
+                         select new ProductosEnAlmacen () {producto = p.Producto, existencia = s.Existencia.Value,
+                                                            precio = p.Precio_Venta.Value }).ToList();
 
-           
-           //return selec;
+
+           // selec.
+            return selec ;
         }
 
         /*
@@ -221,4 +225,11 @@ namespace DataInventarioCDGC
          */
 
     }
+
+   public class ProductosEnAlmacen 
+   {
+       public string producto { get; set; }
+       public int existencia { get; set; }
+       public decimal precio { get; set; }       
+   }
 }
