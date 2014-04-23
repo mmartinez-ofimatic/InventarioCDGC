@@ -616,6 +616,38 @@ namespace InventarioCDGC
             selectModeRow = false;
             CleanText();
         }
+       
+        List<AgregarVentas> lista = new List<AgregarVentas>();
+        AgregarVentas v = new AgregarVentas();
+
+        private void xButtonAgregar_Click(object sender, EventArgs e)
+        {
+
+            int fproducto = int.Parse(textBoxProducto.Text);
+            decimal fprecio = decimal.Parse(textBoxPrecio.Text);
+            int fcantidad = int.Parse(textBoxCantidad.Value.ToString());
+            double fdescuento = double.Parse(textBoxDescuento.Value.ToString());
+            decimal fprecioBruto = fprecio * fcantidad;
+            double fdescuentoNeto = (double) fprecioBruto * (fdescuento / 100.00);            
+
+            lista.Add(new AgregarVentas
+            {
+                Producto = fproducto,
+                Precio = fprecio,
+                Cantidad = fcantidad,
+                Descuento = fdescuento,
+                PrecioNeto = fprecioBruto - (decimal) fdescuentoNeto
+            });
+
+            dataGridViewVentas.DataSource = null;
+            dataGridViewVentas.DataSource =  lista;                    
+        }
+                
+        private void dataGridViewVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
     }
 }

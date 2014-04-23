@@ -211,7 +211,29 @@ namespace DataInventarioCDGC
             return busc;
         }
 
-   
+        List<AgregarVentas> agregarVentasList = new List<AgregarVentas>();
+        /// <summary>
+        /// Agregar Productos a la venta.
+        /// </summary>
+        /// <returns>List select</returns>
+        public List<AgregarVentas> AgregarProductos(int clientes, int productos, decimal precio, int cantidad, int desc, string obs)
+        {
+            // Tipo anonimo 
+
+            agregarVentasList.Add(new AgregarVentas{ Producto = productos, Precio = precio, Cantidad = cantidad, Descuento = desc });
+
+            // selec.
+            return agregarVentasList;
+        }
 
     }
+
+  public class AgregarVentas
+  {     
+      public int Producto { get; set; }
+      public decimal Precio { get; set; }
+      public int Cantidad { get; set; }
+      public double Descuento { get; set; }
+      public decimal PrecioNeto { get; set; }     
+  }
 }

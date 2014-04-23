@@ -164,7 +164,11 @@ namespace InventarioCDGC
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            xButtonGuardar.Enabled = true;
+            CleanText();
         }
          DataGridViewRow row; 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -179,7 +183,8 @@ namespace InventarioCDGC
             textBoxCelular.Text = row.Cells[4].Value.ToString();
             textBoxDireccion.Text = row.Cells[5].Value.ToString();
 
-                
+            //textBoxNombre.ReadOnly = true;
+            xButtonGuardar.Enabled = false;
             clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
             selectModeRow = row.Selected;
 
@@ -248,7 +253,7 @@ namespace InventarioCDGC
                        }
                        else
                        {
-                           MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           MessageBox.Show("La cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                        }
                    }
                    else
@@ -270,6 +275,9 @@ namespace InventarioCDGC
 
         private void xButtonModificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+            
             if (selectModeRow == true)
             {
                     if (textBoxNombre.Text != "")
@@ -347,7 +355,14 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Primero busque un cliente y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void xButtonBorrar_Click(object sender, EventArgs e)
@@ -468,10 +483,16 @@ namespace InventarioCDGC
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+
+            row = dataGridView1.CurrentRow;
+            row.Selected = false;
+            selectModeRow = false;
+            xButtonGuardar.Enabled = true;
+            CleanText();
            // DataGridViewCellMouseEventArgs a =
-            row = dataGridView1.CurrentRow; 
+           /* row = dataGridView1.CurrentRow; 
             row.Selected = true;
-            dataGridView1_RowHeaderMouseClick(sender, null); 
+            dataGridView1_RowHeaderMouseClick(sender, null); */
         }
 
         private void groupBox1_Paint(object sender, PaintEventArgs e)
@@ -482,17 +503,13 @@ namespace InventarioCDGC
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+    
+
         //    row = dataGridView1.CurrentRow;
         //    row.Selected = false;
         }
 
-        private void FrmClientes_Click(object sender, EventArgs e)
-        {
-            row = dataGridView1.CurrentRow;
-            row.Selected = false;
-            selectModeRow = false;
-            CleanText();
-        }
+        
 
 
 
