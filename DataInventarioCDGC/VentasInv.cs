@@ -234,6 +234,72 @@ namespace DataInventarioCDGC
       public decimal Precio { get; set; }
       public int Cantidad { get; set; }
       public double Descuento { get; set; }
-      public decimal PrecioNeto { get; set; }     
+      public decimal PrecioNeto { get; set; }
+
+      List<AgregarVentas> Lista = new List<AgregarVentas>();
+
+      
+      public List<AgregarVentas> addList(int fproducto, decimal fprecio, int fcantidad, double fdescuento)
+      {
+        
+              decimal fprecioBruto = fprecio * fcantidad;
+              double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);
+
+              Lista.Add(new AgregarVentas
+              {
+                  Producto = fproducto,
+                  Precio = fprecio,
+                  Cantidad = fcantidad,
+                  Descuento = fdescuento,
+                  PrecioNeto = fprecioBruto - (decimal)fdescuentoNeto
+              });
+
+          return Lista;
+
+      }
+
+
+      public List<AgregarVentas> RemoveList(int index)
+      {
+          try
+          {
+              Lista.RemoveAt(index);
+          }
+          catch (Exception)
+          {              
+              throw;
+          }
+
+          return Lista;
+      }
+
+      public List<AgregarVentas> UpdateList(int idproducto, decimal fprecio, int fcantidad, double fdescuento)
+      {
+          var buscar = from b in Lista
+                       where b.Producto == idproducto
+                       select b;
+
+          decimal fprecioBruto = fprecio * fcantidad;
+          double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);
+
+          foreach (var l in buscar)
+          {
+              l.Producto = idproducto;
+              l.Precio = fprecio;
+              l.Cantidad = fcantidad;
+              l.Descuento = fdescuento;
+              l.PrecioNeto = fprecioBruto - (decimal)fdescuentoNeto;
+          }
+
+          return Lista;
+
+      }
+
+      public bool ExistProductList(int idproducto)
+      {
+          return Lista.Exists(x => x.Producto == idproducto);
+      }
+
+  
   }
 }

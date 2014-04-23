@@ -503,9 +503,7 @@ namespace InventarioCDGC
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-    
-
-        //    row = dataGridView1.CurrentRow;
+         //    row = dataGridView1.CurrentRow;
         //    row.Selected = false;
         }
 
