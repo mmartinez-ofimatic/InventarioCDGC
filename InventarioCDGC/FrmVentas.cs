@@ -24,16 +24,22 @@ namespace InventarioCDGC
         bool selectModeRow = false;
         int idusuario;
 
-
+        Consultas.BuscarProductosVentas buscarProducto = new Consultas.BuscarProductosVentas();
         AgregarVentas productVentasList = new AgregarVentas();
         List<AgregarVentas> lista = new List<AgregarVentas>();
         AgregarVentas v = new AgregarVentas();
+        Dictionary<int, string> clienteKeyValue;
+        Dictionary<int, string> productoKeyValue;
 
         private void bbuscarcliente_Click(object sender, EventArgs e)
         {
             Consultas.BuscarClienteVentas buscarCliente = new Consultas.BuscarClienteVentas();
             buscarCliente.ShowDialog(this);
-            textBoxCliente.Text = buscarCliente.Cliente;
+            //textBoxCliente.Text = buscarCliente.idCliente.ToString();
+            clienteKeyValue = new Dictionary<int, string>();
+            clienteKeyValue.Add(buscarCliente.idCliente, buscarCliente.Cliente);
+            textBoxCliente.Text = clienteKeyValue[buscarCliente.idCliente];
+            //textBoxCliente.Text = keyvalue.Keys.ToString();
         }
 
         private void FrmVentas_Load(object sender, EventArgs e)
@@ -80,12 +86,6 @@ namespace InventarioCDGC
 
         }
 
-        private void bbuscarproducto_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarProductosVentas buscarProducto = new Consultas.BuscarProductosVentas();
-            buscarProducto.ShowDialog(this);
-            textBoxProducto.Text = buscarProducto.Producto;
-        }
 
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace InventarioCDGC
                 }
             }
         }
-    
+
         private void bbuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
@@ -200,7 +200,7 @@ namespace InventarioCDGC
                     else if (comboBoxBuscar.Text == "ID del Cliente")
                     {
                         try
-                        {     
+                        {
                             dataGridView1.AutoGenerateColumns = false;
 
                             dataGridView1.DataSource = ventasClass.BuscarxIDCliente(Convert.ToInt32(tbuscarpor.Text));
@@ -241,22 +241,22 @@ namespace InventarioCDGC
                         {
                             if (textBoxCantidad.Text != "")
                             {
-                                    rowCurrent = dataGridView1.CurrentRow;
-                                    ventasClass.idventa = Convert.ToInt32(rowCurrent.Cells[0].Value.ToString());
-                                    ventasClass.idcliente = Convert.ToInt32(textBoxCliente.Text);
-                                    ventasClass.idproducto = Convert.ToInt32(textBoxProducto.Text);
-                                    ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
-                                    ventasClass.cantidad = Convert.ToInt32(textBoxCantidad.Text);
-                                    ventasClass.descuento = Convert.ToDecimal(textBoxDescuento.Text);
-                                    ventasClass.observacion = textBoxObservacion.Text;
-                                    //Falta el id de usuario para saber que usuario hiso la venta
-                                    //ventasClass.idusuario = el id del usuario loguiado.
+                                rowCurrent = dataGridView1.CurrentRow;
+                                ventasClass.idventa = Convert.ToInt32(rowCurrent.Cells[0].Value.ToString());
+                                ventasClass.idcliente = Convert.ToInt32(textBoxCliente.Text);
+                                ventasClass.idproducto = Convert.ToInt32(textBoxProducto.Text);
+                                ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
+                                ventasClass.cantidad = Convert.ToInt32(textBoxCantidad.Text);
+                                ventasClass.descuento = Convert.ToDecimal(textBoxDescuento.Text);
+                                ventasClass.observacion = textBoxObservacion.Text;
+                                //Falta el id de usuario para saber que usuario hiso la venta
+                                //ventasClass.idusuario = el id del usuario loguiado.
 
-                                    if (ventasClass.Modificar())
-                                    {
-                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        CleanText();
-                                    }
+                                if (ventasClass.Modificar())
+                                {
+                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CleanText();
+                                }
                             }
                             else
                             {
@@ -286,8 +286,8 @@ namespace InventarioCDGC
         DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-             row = dataGridView1.CurrentRow;
-          //textBoxIDVenta.Text = row.Cells[0].Value.ToString();
+            row = dataGridView1.CurrentRow;
+            //textBoxIDVenta.Text = row.Cells[0].Value.ToString();
             textBoxCliente.Text = row.Cells[1].Value.ToString();
             textBoxProducto.Text = row.Cells[2].Value.ToString();
             //Pasar el id de usuario
@@ -306,29 +306,29 @@ namespace InventarioCDGC
             {
                 DataGridViewRow row = dataGridView1.CurrentRow;
 
-                if ( row.Selected == true)
-                {          
-               
-                if (row.Cells[0].Value.ToString() != "" )
+                if (row.Selected == true)
                 {
-                    ventasClass.idventa = Convert.ToInt32(row.Cells[0].Value.ToString());
 
-                    if (ventasClass.Borrar())
+                    if (row.Cells[0].Value.ToString() != "")
                     {
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.CleanText();
+                        ventasClass.idventa = Convert.ToInt32(row.Cells[0].Value.ToString());
+
+                        if (ventasClass.Borrar())
+                        {
+                            MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.CleanText();
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Seleccion un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
                 else
                 {
-                    MessageBox.Show("Seleccion un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero busque un producto y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un producto y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
             }
             catch (Exception)
@@ -370,7 +370,7 @@ namespace InventarioCDGC
                             try
                             {
 
-                                ventasClass.idcliente = Convert.ToInt32(textBoxCliente.Text);
+                                ventasClass.idcliente = Convert.ToInt32(clienteKeyValue.Keys.ToString());//textBoxCliente.Text);
                                 ventasClass.idproducto = Convert.ToInt32(textBoxProducto.Text);
                                 ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
                                 ventasClass.cantidad = Convert.ToInt32(textBoxCantidad.Text);
@@ -516,7 +516,7 @@ namespace InventarioCDGC
         private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
         {
             Consultas.BuscarVentas ventas = new Consultas.BuscarVentas();
-            ventas.ShowDialog(this);     
+            ventas.ShowDialog(this);
         }
 
         private void xButton1_Click(object sender, EventArgs e)
@@ -610,7 +610,7 @@ namespace InventarioCDGC
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
-            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
+            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));
         }
 
         private void FrmVentas_Click(object sender, EventArgs e)
@@ -620,64 +620,64 @@ namespace InventarioCDGC
 
         private void xButtonAgregar_Click(object sender, EventArgs e)
         {
-              
+
             if (textBoxProducto.Text != "")
             {
                 if (textBoxPrecio.Text != "")
                 {
                     if (textBoxCantidad.Value.ToString() != "")
                     {
-                        if( textBoxDescuento.Value.ToString()!="")
+                        if (textBoxDescuento.Value.ToString() != "")
                         {
-                                    //int fproducto = int.Parse(textBoxProducto.Text);
-                                    //decimal fprecio = decimal.Parse(textBoxPrecio.Text);
-                                    //int fcantidad = int.Parse(textBoxCantidad.Value.ToString());
-                                    //double fdescuento = double.Parse(textBoxDescuento.Value.ToString());
-                                    //decimal fprecioBruto = fprecio * fcantidad;
-                                    //double fdescuentoNeto = (double) fprecioBruto * (fdescuento / 100.00);            
-
-                                    //lista.Add(new AgregarVentas
-                                    //{
-                                    //    Producto = fproducto,
-                                    //    Precio = fprecio,
-                                    //    Cantidad = fcantidad,
-                                    //    Descuento = fdescuento,
-                                    //    PrecioNeto = fprecioBruto - (decimal) fdescuentoNeto
-                                    //});
-
-                            if (!productVentasList.ExistProductList(int.Parse(textBoxProducto.Text)))
-                            {
+                            
+                            ////if (!productVentasList.ExistProductList(productoKeyValue/*.Select(x=>x.Key).Single()*/))
+                            ////{
                                 dataGridViewVentas.DataSource = null;
-                                dataGridViewVentas.DataSource = productVentasList.addList(int.Parse(textBoxProducto.Text), decimal.Parse(textBoxPrecio.Text),
+
+                                var listaNueva = productVentasList.addList(productoKeyValue, decimal.Parse(textBoxPrecio.Text),
                                                   int.Parse(textBoxCantidad.Value.ToString()), double.Parse(textBoxDescuento.Value.ToString()));
-                                CleanProductos();                              
+
+                                var filtro = (from c in listaNueva
+                                              select new
+                                              {
+                                                  idProducto = c.Producto.Select(x => x.Key).Single(),
+                                                  Producto = c.Producto.Select(x => x.Value).Single(),
+                                                  c.Precio,
+                                                  c.Cantidad,
+                                                  c.Descuento,
+                                                  c.PrecioNeto
+                                              }).ToList();
+
+                                dataGridViewVentas.DataSource = filtro;
+
+                                CleanProductos();
                             }
                             else
                             {
                                 MessageBox.Show("Este producto ya esta agregado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Llene el campo Descuento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            }
+                        }
                         else
                         {
-                            MessageBox.Show("Llene el campo Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo Descuento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Llene el campo Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Elija el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Elija el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
-                
+
         private void dataGridViewVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             rowProducto = dataGridViewVentas.CurrentRow;
@@ -690,13 +690,13 @@ namespace InventarioCDGC
         }
         DataGridViewRow rowProducto;
         int index;
-       // bool SelectModeProduct = false;
+        // bool SelectModeProduct = false;
         private void xButtonBorrarProductos_Click(object sender, EventArgs e)
         {
             if (rowProducto.Selected == true)
             {
-               // lista.RemoveAt(index);
-               
+                // lista.RemoveAt(index);
+
                 dataGridViewVentas.DataSource = null;
                 dataGridViewVentas.DataSource = productVentasList.RemoveList(index);
                 //SelectModeProduct = false;
@@ -708,7 +708,7 @@ namespace InventarioCDGC
                 CleanProductos();
             }
         }
-       
+
         private void dataGridViewVentas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             rowProducto = dataGridViewVentas.CurrentRow;
@@ -717,12 +717,12 @@ namespace InventarioCDGC
             xButtonBorrarProductos.Enabled = true;
             xButtonModificarProductos.Enabled = true;
             //SelectModeProduct = rowProducto.Selected;
-
+            
             textBoxProducto.Text = rowProducto.Cells[0].Value.ToString();
             textBoxPrecio.Text = rowProducto.Cells[1].Value.ToString();
             textBoxCantidad.Text = rowProducto.Cells[2].Value.ToString();
             textBoxDescuento.Text = rowProducto.Cells[3].Value.ToString();
-           
+
         }
 
         public void CleanProductos()
@@ -736,18 +736,35 @@ namespace InventarioCDGC
         }
 
         private void xButtonModificarProductos_Click(object sender, EventArgs e)
-        {         
+        {
             if (textBoxProducto.Text != "")
             {
                 if (textBoxPrecio.Text != "")
                 {
                     if (textBoxCantidad.Value.ToString() != "")
                     {
-                        if( textBoxDescuento.Value.ToString()!="")
+                        if (textBoxDescuento.Value.ToString() != "")
                         {
                             dataGridViewVentas.DataSource = null;
-                            dataGridViewVentas.DataSource = productVentasList.UpdateList(int.Parse(textBoxProducto.Text), decimal.Parse(textBoxPrecio.Text),
-                                                                int.Parse(textBoxCantidad.Value.ToString()), double.Parse(textBoxDescuento.Value.ToString()));
+                            var listaUpdate = productVentasList.UpdateList(/*int.Parse(textBoxProducto.Text)*/productoKeyValue, decimal.Parse(textBoxPrecio.Text),
+                                                              int.Parse(textBoxCantidad.Value.ToString()), double.Parse(textBoxDescuento.Value.ToString()));
+
+                            var filtro = (from c in listaUpdate
+                                          select new
+                                          {
+                                              Producto = c.Producto.Select(x => x.Value).Single(),
+                                              c.Precio,
+                                              c.Cantidad,
+                                              c.Descuento,
+                                              c.PrecioNeto
+                                          }).ToList();
+
+                            dataGridViewVentas.DataSource = filtro;
+
+                            CleanProductos();
+
+
+
                         }
                         else
                         {
@@ -789,16 +806,56 @@ namespace InventarioCDGC
             xButtonAgregar.Enabled = true;
             xButtonGuardar.Enabled = true;
             dataGridViewVentas.DataSource = null;
+            // productoKeyValue.Clear();
+            //productVentasList.EraserList();
+            lista.Clear();
             CleanProductos();
             CleanText();
-            
+
         }
 
         private void bbuscarproducto_Click_1(object sender, EventArgs e)
         {
-            Consultas.BuscarProductosVentas buscarProducto = new Consultas.BuscarProductosVentas();
+
             buscarProducto.ShowDialog(this);
-            textBoxProducto.Text = buscarProducto.Producto;
+            productoKeyValue = new Dictionary<int, string>();
+            productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
+            textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
+            //textBoxProducto.Text = buscarProducto.Producto;
+        }
+
+        private void dataGridViewVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));
+
+        }
+
+        private void dataGridViewVentas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowProducto = dataGridViewVentas.CurrentRow;
+            rowProducto.Selected = false;
+
+            xButtonAgregar.Enabled = true;
+            xButtonBorrar.Enabled = false;
+            xButtonModificar.Enabled = false;
+            CleanProductos();
+        }
+
+        private void dataGridViewVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            rowProducto = dataGridViewVentas.CurrentRow;
+            rowProducto.Selected = false;
+
+            xButtonAgregar.Enabled = true;
+            xButtonBorrar.Enabled = false;
+            xButtonModificar.Enabled = false;
+            CleanProductos();
         }
 
 

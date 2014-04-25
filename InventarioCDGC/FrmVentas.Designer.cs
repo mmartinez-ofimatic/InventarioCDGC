@@ -70,6 +70,8 @@
             this.xButtonModificar = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
             this.xButton1 = new InventarioCDGC.XButton();
+            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVentas)).BeginInit();
@@ -212,6 +214,7 @@
             // textBoxCliente
             // 
             this.textBoxCliente.Enabled = false;
+            this.textBoxCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCliente.Location = new System.Drawing.Point(109, 35);
             this.textBoxCliente.Name = "textBoxCliente";
             this.textBoxCliente.ReadOnly = true;
@@ -221,11 +224,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "ID del Cliente";
+            this.label1.Text = "Cliente";
             // 
             // textBoxObservacion
             // 
@@ -238,6 +242,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(18, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
@@ -249,6 +254,7 @@
             this.bbuscarcliente.BackColor = System.Drawing.Color.Gainsboro;
             this.bbuscarcliente.Enabled = false;
             this.bbuscarcliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bbuscarcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbuscarcliente.Location = new System.Drawing.Point(237, 35);
             this.bbuscarcliente.Name = "bbuscarcliente";
             this.bbuscarcliente.Size = new System.Drawing.Size(93, 21);
@@ -266,6 +272,7 @@
             this.groupBox1.Controls.Add(this.textBoxObservacion);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxCliente);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(356, 152);
@@ -276,6 +283,7 @@
             // 
             // textBoxObservacion1
             // 
+            this.textBoxObservacion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxObservacion1.Location = new System.Drawing.Point(109, 74);
             this.textBoxObservacion1.Multiline = true;
             this.textBoxObservacion1.Name = "textBoxObservacion1";
@@ -285,12 +293,21 @@
             // 
             // dataGridViewVentas
             // 
+            this.dataGridViewVentas.AllowUserToAddRows = false;
+            this.dataGridViewVentas.AllowUserToDeleteRows = false;
             this.dataGridViewVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnID,
+            this.ColumnProduct});
             this.dataGridViewVentas.Location = new System.Drawing.Point(-2, 487);
             this.dataGridViewVentas.Name = "dataGridViewVentas";
+            this.dataGridViewVentas.ReadOnly = true;
             this.dataGridViewVentas.Size = new System.Drawing.Size(487, 117);
             this.dataGridViewVentas.TabIndex = 45;
+            this.dataGridViewVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellClick);
             this.dataGridViewVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellContentClick);
+            this.dataGridViewVentas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellContentDoubleClick);
+            this.dataGridViewVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellDoubleClick);
             this.dataGridViewVentas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewVentas_RowHeaderMouseClick);
             // 
             // groupBox2
@@ -308,15 +325,18 @@
             this.groupBox2.Controls.Add(this.textBoxPrecio);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBoxProducto);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(17, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(468, 275);
+            this.groupBox2.Size = new System.Drawing.Size(457, 275);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Productos a la Venta";
+            this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
             // 
             // textBoxDescuento
             // 
+            this.textBoxDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDescuento.Location = new System.Drawing.Point(116, 165);
             this.textBoxDescuento.Name = "textBoxDescuento";
             this.textBoxDescuento.ReadOnly = true;
@@ -328,6 +348,7 @@
             this.bbuscarproducto.BackColor = System.Drawing.Color.Gainsboro;
             this.bbuscarproducto.Enabled = false;
             this.bbuscarproducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bbuscarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbuscarproducto.Location = new System.Drawing.Point(244, 38);
             this.bbuscarproducto.Name = "bbuscarproducto";
             this.bbuscarproducto.Size = new System.Drawing.Size(93, 20);
@@ -338,6 +359,7 @@
             // 
             // textBoxCantidad
             // 
+            this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCantidad.Location = new System.Drawing.Point(116, 122);
             this.textBoxCantidad.Maximum = new decimal(new int[] {
             200,
@@ -357,6 +379,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(25, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
@@ -366,6 +389,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(25, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
@@ -375,6 +399,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
@@ -383,6 +408,7 @@
             // 
             // textBoxPrecio
             // 
+            this.textBoxPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrecio.Location = new System.Drawing.Point(116, 81);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.ReadOnly = true;
@@ -392,15 +418,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 43;
-            this.label2.Text = "ID del Producto";
+            this.label2.Text = "Producto";
             // 
             // textBoxProducto
             // 
             this.textBoxProducto.Enabled = false;
+            this.textBoxProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProducto.Location = new System.Drawing.Point(116, 38);
             this.textBoxProducto.Name = "textBoxProducto";
             this.textBoxProducto.ReadOnly = true;
@@ -428,6 +456,7 @@
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xButtonModificarProductos.ColorTable = office2010Green1;
             this.xButtonModificarProductos.Enabled = false;
+            this.xButtonModificarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonModificarProductos.Location = new System.Drawing.Point(175, 229);
             this.xButtonModificarProductos.Name = "xButtonModificarProductos";
             this.xButtonModificarProductos.Size = new System.Drawing.Size(107, 23);
@@ -441,6 +470,7 @@
             // 
             this.xButtonBorrarProductos.ColorTable = office2010Green1;
             this.xButtonBorrarProductos.Enabled = false;
+            this.xButtonBorrarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonBorrarProductos.Location = new System.Drawing.Point(339, 229);
             this.xButtonBorrarProductos.Name = "xButtonBorrarProductos";
             this.xButtonBorrarProductos.Size = new System.Drawing.Size(102, 23);
@@ -454,6 +484,7 @@
             // 
             this.xButtonAgregar.ColorTable = office2010Green1;
             this.xButtonAgregar.Enabled = false;
+            this.xButtonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonAgregar.Location = new System.Drawing.Point(6, 229);
             this.xButtonAgregar.Name = "xButtonAgregar";
             this.xButtonAgregar.Size = new System.Drawing.Size(106, 23);
@@ -535,6 +566,20 @@
             this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButton1.UseVisualStyleBackColor = true;
             this.xButton1.Click += new System.EventHandler(this.xButton1_Click);
+            // 
+            // ColumnID
+            // 
+            this.ColumnID.DataPropertyName = "idProducto";
+            this.ColumnID.HeaderText = "ID Producto";
+            this.ColumnID.Name = "ColumnID";
+            this.ColumnID.ReadOnly = true;
+            // 
+            // ColumnProduct
+            // 
+            this.ColumnProduct.DataPropertyName = "Producto";
+            this.ColumnProduct.HeaderText = "Productos";
+            this.ColumnProduct.Name = "ColumnProduct";
+            this.ColumnProduct.ReadOnly = true;
             // 
             // FrmVentas
             // 
@@ -620,5 +665,7 @@
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProduct;
     }
 }

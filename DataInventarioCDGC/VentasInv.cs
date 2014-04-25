@@ -220,7 +220,7 @@ namespace DataInventarioCDGC
         {
             // Tipo anonimo 
 
-            agregarVentasList.Add(new AgregarVentas{ Producto = productos, Precio = precio, Cantidad = cantidad, Descuento = desc });
+           // agregarVentasList.Add(new AgregarVentas{ Producto = productos, Precio = precio, Cantidad = cantidad, Descuento = desc });
 
             // selec.
             return agregarVentasList;
@@ -229,19 +229,18 @@ namespace DataInventarioCDGC
     }
 
   public class AgregarVentas
-  {     
-      public int Producto { get; set; }
+  {
+      public Dictionary<int, string> Producto { get; set; }
       public decimal Precio { get; set; }
       public int Cantidad { get; set; }
       public double Descuento { get; set; }
       public decimal PrecioNeto { get; set; }
 
       List<AgregarVentas> Lista = new List<AgregarVentas>();
-
+      //Dictionary<int, string> Productokey { get; set; }
       
-      public List<AgregarVentas> addList(int fproducto, decimal fprecio, int fcantidad, double fdescuento)
-      {
-        
+      public List<AgregarVentas> addList(Dictionary<int,string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
+      {       
               decimal fprecioBruto = fprecio * fcantidad;
               double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);
 
@@ -255,7 +254,6 @@ namespace DataInventarioCDGC
               });
 
           return Lista;
-
       }
 
 
@@ -273,11 +271,15 @@ namespace DataInventarioCDGC
           return Lista;
       }
 
-      public List<AgregarVentas> UpdateList(int idproducto, decimal fprecio, int fcantidad, double fdescuento)
+      public List<AgregarVentas> UpdateList(Dictionary<int,string> idproducto, decimal fprecio, int fcantidad, double fdescuento)
       {
+
           var buscar = from b in Lista
-                       where b.Producto == idproducto
+                       where b.Producto.Select(x=> x.Value) == idproducto.Select(y => y.Value)
                        select b;
+          //var buscar = from b in Lista
+          //             where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y=> y.Key).Single()
+          //             select b;
 
           decimal fprecioBruto = fprecio * fcantidad;
           double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);
@@ -297,9 +299,19 @@ namespace DataInventarioCDGC
 
       public bool ExistProductList(int idproducto)
       {
-          return Lista.Exists(x => x.Producto == idproducto);
+          //bool exist = false;
+          //foreach (var item in idproducto)
+          //{
+          //   exist = Lista.Exists(x => x.Producto.Where(y => y.Key.Equals(1));
+          //}
+          //return exist;
+          return Lista.Exists(x => x.Producto.Select(y=>y.Key).Single() == idproducto);
       }
 
-  
+      public void EraserList()
+      {
+          Lista.Clear();
+      }
+
   }
 }

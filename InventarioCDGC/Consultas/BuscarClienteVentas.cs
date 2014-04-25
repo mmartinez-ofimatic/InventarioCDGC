@@ -18,6 +18,7 @@ namespace InventarioCDGC.Consultas
         }
 
         Clientescdgc clientesClass = new Clientescdgc();
+        public int idCliente { get; set; }
         public string Cliente { get; set; }
 
         private void BuscarClienteVentas_Load(object sender, EventArgs e)
@@ -30,7 +31,8 @@ namespace InventarioCDGC.Consultas
         private void dataGridView1_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;                
-            this.Cliente = row.Cells[0].Value.ToString();
+            this.idCliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+            Cliente = row.Cells[1].Value.ToString();
             this.Close();  
         }
 

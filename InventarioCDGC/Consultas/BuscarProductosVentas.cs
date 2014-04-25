@@ -18,7 +18,8 @@ namespace InventarioCDGC.Consultas
         }
 
         ProductosInv productosClass = new ProductosInv();
-        public string Producto { get; set; }
+        public int idProducto { get; set; }
+        public string Productoo { get; set; }
 
         private void BuscarProductosVentas_Load(object sender, EventArgs e)
         {
@@ -29,7 +30,8 @@ namespace InventarioCDGC.Consultas
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
-            this.Producto = row.Cells[0].Value.ToString();
+            this.idProducto = Convert.ToInt32(row.Cells[0].Value.ToString());
+            Productoo = row.Cells[1].Value.ToString();
             this.Close(); 
         }
 

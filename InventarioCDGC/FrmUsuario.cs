@@ -28,6 +28,7 @@ namespace InventarioCDGC
             comboBoxRol.DisplayMember = "Rol";
             comboBoxRol.ValueMember = "ID_Rol";
             ActualizarGrid();
+            
         }
 
         public void ActualizarGrid()
