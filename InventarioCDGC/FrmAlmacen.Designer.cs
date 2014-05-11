@@ -54,9 +54,10 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(201, 303);
+            this.tbuscarpor.Location = new System.Drawing.Point(268, 373);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
+            this.tbuscarpor.Size = new System.Drawing.Size(105, 22);
             this.tbuscarpor.TabIndex = 2;
             // 
             // comboBoxBuscar
@@ -66,18 +67,20 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del producto",
             "Nombre del producto"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(83, 302);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(111, 372);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 24);
             this.comboBoxBuscar.TabIndex = 40;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(19, 306);
+            this.label14.Location = new System.Drawing.Point(25, 377);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(77, 17);
             this.label14.TabIndex = 38;
             this.label14.Text = "Buscar por";
             // 
@@ -91,10 +94,11 @@
             this.ColumnIDProducto,
             this.ColumnExistencia});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 408);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 502);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(450, 101);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 124);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -127,9 +131,11 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(13, 72);
+            this.groupBox1.Location = new System.Drawing.Point(17, 89);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 172);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(352, 212);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Almacen";
@@ -138,14 +144,15 @@
             // textBoxExistencia
             // 
             this.textBoxExistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxExistencia.Location = new System.Drawing.Point(122, 124);
+            this.textBoxExistencia.Location = new System.Drawing.Point(163, 153);
+            this.textBoxExistencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxExistencia.Maximum = new decimal(new int[] {
             500000,
             0,
             0,
             0});
             this.textBoxExistencia.Name = "textBoxExistencia";
-            this.textBoxExistencia.Size = new System.Drawing.Size(120, 20);
+            this.textBoxExistencia.Size = new System.Drawing.Size(160, 23);
             this.textBoxExistencia.TabIndex = 41;
             this.textBoxExistencia.Value = new decimal(new int[] {
             1,
@@ -158,9 +165,10 @@
             this.comboBoxID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxID.FormattingEnabled = true;
-            this.comboBoxID.Location = new System.Drawing.Point(122, 32);
+            this.comboBoxID.Location = new System.Drawing.Point(163, 39);
+            this.comboBoxID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxID.Name = "comboBoxID";
-            this.comboBoxID.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxID.Size = new System.Drawing.Size(160, 25);
             this.comboBoxID.TabIndex = 42;
             this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
@@ -168,28 +176,31 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 131);
+            this.label3.Location = new System.Drawing.Point(11, 161);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Existencia:";
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(122, 78);
+            this.textBoxNombre.Location = new System.Drawing.Point(163, 96);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.ReadOnly = true;
-            this.textBoxNombre.Size = new System.Drawing.Size(121, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(160, 23);
             this.textBoxNombre.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 81);
+            this.label2.Location = new System.Drawing.Point(11, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 13);
+            this.label2.Size = new System.Drawing.Size(146, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre del Producto:";
             // 
@@ -197,9 +208,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 35);
+            this.label1.Location = new System.Drawing.Point(11, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID del Producto:";
             // 
@@ -223,9 +235,10 @@
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xButtonBusquedaAvanzada.ColorTable = office2010Green1;
-            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(303, 227);
+            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(404, 279);
+            this.xButtonBusquedaAvanzada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
-            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(75, 41);
+            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(100, 50);
             this.xButtonBusquedaAvanzada.TabIndex = 49;
             this.xButtonBusquedaAvanzada.Text = "Busqueda Avanzada";
             this.xButtonBusquedaAvanzada.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -235,9 +248,10 @@
             // xButtonBorrar
             // 
             this.xButtonBorrar.ColorTable = office2010Green1;
-            this.xButtonBorrar.Location = new System.Drawing.Point(303, 173);
+            this.xButtonBorrar.Location = new System.Drawing.Point(404, 213);
+            this.xButtonBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonBorrar.Name = "xButtonBorrar";
-            this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonBorrar.Size = new System.Drawing.Size(100, 28);
             this.xButtonBorrar.TabIndex = 48;
             this.xButtonBorrar.Text = "Borrar";
             this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -247,9 +261,10 @@
             // xButtonModificar
             // 
             this.xButtonModificar.ColorTable = office2010Green1;
-            this.xButtonModificar.Location = new System.Drawing.Point(303, 118);
+            this.xButtonModificar.Location = new System.Drawing.Point(404, 145);
+            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonModificar.Name = "xButtonModificar";
-            this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
             this.xButtonModificar.TabIndex = 47;
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -259,9 +274,10 @@
             // xButtonGuardar
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
-            this.xButtonGuardar.Location = new System.Drawing.Point(303, 57);
+            this.xButtonGuardar.Location = new System.Drawing.Point(404, 70);
+            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonGuardar.Name = "xButtonGuardar";
-            this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
             this.xButtonGuardar.TabIndex = 46;
             this.xButtonGuardar.Text = "Guardar";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -271,9 +287,10 @@
             // xButtonBuscar
             // 
             this.xButtonBuscar.ColorTable = office2010Green1;
-            this.xButtonBuscar.Location = new System.Drawing.Point(303, 300);
+            this.xButtonBuscar.Location = new System.Drawing.Point(404, 369);
+            this.xButtonBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonBuscar.Name = "xButtonBuscar";
-            this.xButtonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonBuscar.Size = new System.Drawing.Size(100, 28);
             this.xButtonBuscar.TabIndex = 45;
             this.xButtonBuscar.Text = " Buscar";
             this.xButtonBuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -282,10 +299,10 @@
             // 
             // FrmAlmacen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(450, 509);
+            this.ClientSize = new System.Drawing.Size(600, 626);
             this.Controls.Add(this.xButtonBusquedaAvanzada);
             this.Controls.Add(this.xButtonBorrar);
             this.Controls.Add(this.xButtonModificar);
@@ -297,11 +314,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Almacen";
+            this.Text = "Almacén";
             this.Load += new System.EventHandler(this.FrmAlmacen_Load);
             this.Click += new System.EventHandler(this.FrmAlmacen_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -35,7 +35,8 @@ namespace InventarioCDGC.Consultas
             this.Close(); 
         }
 
-        private void bbuscar_Click(object sender, EventArgs e)
+
+        private void xBuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
             {

@@ -25,6 +25,7 @@ namespace InventarioCDGC
             Permisos();
             
             pa.Show();
+            
         }
 
        
@@ -33,6 +34,8 @@ namespace InventarioCDGC
             // Determine if text has changed in the textbox by comparing to original text. 
             MessageBox.Show("Prueba");
         }
+
+
 
         public void Permisos()
         {   
@@ -134,10 +137,15 @@ namespace InventarioCDGC
         {
            // Consultas.ProductosEnAlmacen pa = new Consultas.ProductosEnAlmacen();
 
-            this.Hide();
-            pa.Hide();
-            FrmLogin login = new FrmLogin();
-            login.Show();
+            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                pa.Hide();
+                FrmLogin login = new FrmLogin();
+                login.Show();
+            }
+            
             
         }
 

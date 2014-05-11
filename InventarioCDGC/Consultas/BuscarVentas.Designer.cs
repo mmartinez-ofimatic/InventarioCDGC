@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnIDVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +41,8 @@
             this.ColumnObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
-            this.bbuscar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+            this.xBuscar = new InventarioCDGC.XButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,10 +62,11 @@
             this.ColumnDescuento,
             this.ColumnFecha,
             this.ColumnObservacion});
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 87);
+            this.dataGridView1.Location = new System.Drawing.Point(-5, 107);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(670, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(893, 239);
             this.dataGridView1.TabIndex = 40;
             // 
             // ColumnIDVenta
@@ -135,9 +137,10 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(209, 26);
+            this.tbuscarpor.Location = new System.Drawing.Point(279, 32);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
+            this.tbuscarpor.Size = new System.Drawing.Size(105, 22);
             this.tbuscarpor.TabIndex = 44;
             // 
             // comboBoxBuscar
@@ -147,43 +150,65 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID de Venta",
             "ID del Cliente"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(91, 25);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(121, 31);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 24);
             this.comboBoxBuscar.TabIndex = 43;
-            // 
-            // bbuscar
-            // 
-            this.bbuscar.Location = new System.Drawing.Point(295, 21);
-            this.bbuscar.Name = "bbuscar";
-            this.bbuscar.Size = new System.Drawing.Size(75, 28);
-            this.bbuscar.TabIndex = 42;
-            this.bbuscar.Text = "Buscar";
-            this.bbuscar.UseVisualStyleBackColor = true;
-            this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(27, 29);
+            this.label14.Location = new System.Drawing.Point(36, 36);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(77, 17);
             this.label14.TabIndex = 41;
             this.label14.Text = "Buscar por";
             // 
+            // xBuscar
+            // 
+            office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.TextColor = System.Drawing.Color.White;
+            this.xBuscar.ColorTable = office2010Green1;
+            this.xBuscar.Location = new System.Drawing.Point(420, 30);
+            this.xBuscar.Name = "xBuscar";
+            this.xBuscar.Size = new System.Drawing.Size(75, 25);
+            this.xBuscar.TabIndex = 45;
+            this.xBuscar.Text = "Buscar";
+            this.xBuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xBuscar.UseVisualStyleBackColor = true;
+            this.xBuscar.Click += new System.EventHandler(this.xBuscar_Click);
+            // 
             // BuscarVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(667, 281);
+            this.ClientSize = new System.Drawing.Size(889, 346);
+            this.Controls.Add(this.xBuscar);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
-            this.Controls.Add(this.bbuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BuscarVentas";
@@ -210,7 +235,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnObservacion;
         private System.Windows.Forms.TextBox tbuscarpor;
         private System.Windows.Forms.ComboBox comboBoxBuscar;
-        private System.Windows.Forms.Button bbuscar;
         private System.Windows.Forms.Label label14;
+        private XButton xBuscar;
     }
 }

@@ -19,7 +19,17 @@ namespace InventarioCDGC.Consultas
 
         AlmacenIn almacen = new AlmacenIn();
 
-        private void bbuscar_Click(object sender, EventArgs e)
+        
+
+        private void BuscarAlmacen_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = almacen.BuscarTodos();
+            //dataGridView1.DataSource = almacen.BuscarTodosConProductos();
+           }
+
+ 
+
+        private void xBuscar_Click_1(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
             {
@@ -69,14 +79,7 @@ namespace InventarioCDGC.Consultas
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
         }
-
-        private void BuscarAlmacen_Load(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = almacen.BuscarTodos();
-            //dataGridView1.DataSource = almacen.BuscarTodosConProductos();
-           }
 
        
     }

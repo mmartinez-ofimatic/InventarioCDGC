@@ -41,7 +41,9 @@ namespace InventarioCDGC.Consultas
             dataGridView1_RowHeaderMouseClick_1(sender, null); 
         }
 
-        private void bbuscar_Click(object sender, EventArgs e)
+        
+
+        private void xBuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
             {
@@ -52,10 +54,10 @@ namespace InventarioCDGC.Consultas
                     {
                         try
                         {
-                        clientesClass.idcliente = Convert.ToInt32(tbuscarpor.Text);
-                        dataGridView1.AutoGenerateColumns = false;
+                            clientesClass.idcliente = Convert.ToInt32(tbuscarpor.Text);
+                            dataGridView1.AutoGenerateColumns = false;
 
-                        dataGridView1.DataSource = clientesClass.BuscarxID();
+                            dataGridView1.DataSource = clientesClass.BuscarxID();
                         }
                         catch (Exception)
                         {
@@ -106,7 +108,6 @@ namespace InventarioCDGC.Consultas
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

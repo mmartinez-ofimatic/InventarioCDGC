@@ -19,7 +19,14 @@ namespace InventarioCDGC.Consultas
 
         VentasInv ventasClass = new VentasInv();
 
-        private void bbuscar_Click(object sender, EventArgs e)
+        
+
+        private void BuscarVentas_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = ventasClass.BuscarTodos();
+        }
+
+        private void xBuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
             {
@@ -98,11 +105,6 @@ namespace InventarioCDGC.Consultas
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void BuscarVentas_Load(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = ventasClass.BuscarTodos();
         }
     }
 }
