@@ -293,11 +293,16 @@ namespace InventarioCDGC
                                 usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
                                 try
                                 {
-                                    if (usuarioClass.Guardar())
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
                                     {
-                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        CleanText();
+                                        if (usuarioClass.Guardar())
+                                        {
+                                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            CleanText();
+                                        }
                                     }
+                                    
                                 }
                                 catch (Exception)
                                 {
@@ -363,11 +368,16 @@ namespace InventarioCDGC
                                         usuarioClass.contrasena = textBoxContrasena.Text;
                                         usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
 
-                                        if (usuarioClass.Modificar())
+                                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este usuario?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                        if (dialogResult == DialogResult.Yes)
                                         {
-                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                            CleanText();
+                                            if (usuarioClass.Modificar())
+                                            {
+                                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                CleanText();
+                                            }
                                         }
+                                        
                                     }
                                     else
                                     {
@@ -409,40 +419,40 @@ namespace InventarioCDGC
         
         }
 
-        private void xButtonBorrar_Click(object sender, EventArgs e)
-        {
-            if (tbuscarpor.Text != "")
-            {
-                // se valida que el id de la fila seleccionada sea igual que la del textbox
-                DataGridViewRow row = dataGridView1.CurrentRow;
-                if (Convert.ToInt32(row.Cells[0].Value.ToString()) == id)
-                {
-                    usuarioClass.IDusuario = id;
-                    if (usuarioClass.Borrar())
-                    {
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CleanText();
-                        ActualizarGrid();
-                    }
-                }
+        //private void xButtonBorrar_Click(object sender, EventArgs e)
+        //{
+        //    if (tbuscarpor.Text != "")
+        //    {
+        //        // se valida que el id de la fila seleccionada sea igual que la del textbox
+        //        DataGridViewRow row = dataGridView1.CurrentRow;
+        //        if (Convert.ToInt32(row.Cells[0].Value.ToString()) == id)
+        //        {
+        //            usuarioClass.IDusuario = id;
+        //            if (usuarioClass.Borrar())
+        //            {
+        //                MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                CleanText();
+        //                ActualizarGrid();
+        //            }
+        //        }
 
-                else
-                {
-                    MessageBox.Show("Seleccione un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        //        else
+        //        {
+        //            MessageBox.Show("Seleccione un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Primero busque un usuario para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
 
         
-        }
+        //}
 
-        private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
-        {
+        //private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void xButton1_Click(object sender, EventArgs e)
         {

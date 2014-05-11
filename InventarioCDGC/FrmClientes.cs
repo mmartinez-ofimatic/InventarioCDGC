@@ -34,28 +34,28 @@ namespace InventarioCDGC
         {
             if (tiporol == 1)
             {
-                xButtonBorrar.Enabled = true;
+               // xButtonBorrar.Enabled = true;
                 xButtonModificar.Enabled = true;
             }
             else if (tiporol == 2)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = true;
             }
             else if (tiporol == 3)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
             }
             else if (tiporol == 4)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
                 xButtonGuardar.Enabled = false;
             }
             else
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
                 xButtonGuardar.Enabled = false;
             }
@@ -218,11 +218,16 @@ namespace InventarioCDGC
                                                clientes.telefono = textBoxTelefono.Text;
                                                clientes.celular = textBoxCelular.Text;
                                                clientes.direccion = textBoxDireccion.Text;
-                                               if (clientes.Guardar())
+                                               DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                               if (dialogResult == DialogResult.Yes)
                                                {
-                                                   CleanText();
-                                                   MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                   if (clientes.Guardar())
+                                                   {
+                                                       CleanText();
+                                                       MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                   }
                                                }
+                                              
                                            }
                                            else
                                            {
@@ -301,12 +306,18 @@ namespace InventarioCDGC
                                         clientesclass.telefono = textBoxTelefono.Text;
                                         clientesclass.celular = textBoxCelular.Text;
                                         clientesclass.direccion = textBoxDireccion.Text;
-                                        if (clientesclass.Modificar())
+                                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                        if (dialogResult == DialogResult.Yes)
                                         {
-                                            CleanText(); 
-                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            if (clientesclass.Modificar())
+                                            {
+                                                CleanText();
+                                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                        }
+                                            }
+                                        }    
+                                    
+                                    
                                     }
                                     else
                                     {
@@ -365,101 +376,101 @@ namespace InventarioCDGC
             }
         }
 
-        private void xButtonBorrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (selectModeRow == true)
-            {
-                   // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
-                    if (clientesclass.Borrar())
-                    {
-                        CleanText();
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+        //private void xButtonBorrar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (selectModeRow == true)
+        //    {
+        //           // clientesclass.idcliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+        //            if (clientesclass.Borrar())
+        //            {
+        //                CleanText();
+        //                MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            }
                 
-            }
-              else
-                {
-                    MessageBox.Show("Primero busque un cliente y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        //    }
+        //      else
+        //        {
+        //            MessageBox.Show("Primero busque un cliente y luego seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error, trate de eliminar nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error, trate de eliminar nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
-        private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarClienteVentas bclientes = new Consultas.BuscarClienteVentas();
-            bclientes.ShowDialog(this);
-        }
+        //private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
+        //{
+        //    Consultas.BuscarClienteVentas bclientes = new Consultas.BuscarClienteVentas();
+        //    bclientes.ShowDialog(this);
+        //}
 
-        private void bbuscar_Click_1(object sender, EventArgs e)
-        {
-            if (comboBoxBuscar.Text != "")
-            {
-                if (tbuscarpor.Text != "")
-                {
-                    if (comboBoxBuscar.Text == "ID del Cliente")
-                    {
-                        try
-                        {
-                            clientesclass.idcliente = Convert.ToInt32(tbuscarpor.Text);
-                            dataGridView1.AutoGenerateColumns = false;
-                            dataGridView1.DataSource = clientesclass.BuscarxID();
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("El ID del cliente debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        if (dataGridView1.RowCount == 0)
-                        {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else if (comboBoxBuscar.Text == "Nombre")
-                    {
-                        dataGridView1.AutoGenerateColumns = false;
+        //private void bbuscar_Click_1(object sender, EventArgs e)
+        //{
+        //    if (comboBoxBuscar.Text != "")
+        //    {
+        //        if (tbuscarpor.Text != "")
+        //        {
+        //            if (comboBoxBuscar.Text == "ID del Cliente")
+        //            {
+        //                try
+        //                {
+        //                    clientesclass.idcliente = Convert.ToInt32(tbuscarpor.Text);
+        //                    dataGridView1.AutoGenerateColumns = false;
+        //                    dataGridView1.DataSource = clientesclass.BuscarxID();
+        //                }
+        //                catch (Exception)
+        //                {
+        //                    MessageBox.Show("El ID del cliente debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                }
+        //                if (dataGridView1.RowCount == 0)
+        //                {
+        //                    MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                }
+        //            }
+        //            else if (comboBoxBuscar.Text == "Nombre")
+        //            {
+        //                dataGridView1.AutoGenerateColumns = false;
 
-                        dataGridView1.DataSource = clientesclass.BuscarxNombre(tbuscarpor.Text);
-                        if (dataGridView1.RowCount == 0)
-                        {
-                            MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else if (comboBoxBuscar.Text == "Cedula")
-                    {
-                        Validaciones v = new Validaciones();
-                        // v.ValidateCedula(tbuscarpor.Text);
+        //                dataGridView1.DataSource = clientesclass.BuscarxNombre(tbuscarpor.Text);
+        //                if (dataGridView1.RowCount == 0)
+        //                {
+        //                    MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                }
+        //            }
+        //            else if (comboBoxBuscar.Text == "Cedula")
+        //            {
+        //                Validaciones v = new Validaciones();
+        //                // v.ValidateCedula(tbuscarpor.Text);
 
-                        if (v.ValidateCedula(tbuscarpor.Text) == false)
+        //                if (v.ValidateCedula(tbuscarpor.Text) == false)
 
-                            MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
-                        {
+        //                    MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                else
+        //                {
 
-                            dataGridView1.AutoGenerateColumns = false;
+        //                    dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
-                            if (dataGridView1.RowCount == 0)
-                            {
-                                MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        //                    dataGridView1.DataSource = clientesclass.BuscarxCedula(tbuscarpor.Text);
+        //                    if (dataGridView1.RowCount == 0)
+        //                    {
+        //                        MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
 
             //if (tbuscarpor.Text != "")
             //{
@@ -479,7 +490,7 @@ namespace InventarioCDGC
             //    MessageBox.Show("LLene el campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
         
-        }
+        //}
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {

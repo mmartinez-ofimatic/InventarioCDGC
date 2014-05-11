@@ -51,8 +51,6 @@
             this.ColumnDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
-            this.xButtonBusquedaAvanzada = new InventarioCDGC.XButton();
-            this.xButtonBorrar = new InventarioCDGC.XButton();
             this.xButtonModificar = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
             this.bbuscar = new InventarioCDGC.XButton();
@@ -65,9 +63,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 47);
+            this.label1.Location = new System.Drawing.Point(31, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
@@ -76,9 +75,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 87);
+            this.label2.Location = new System.Drawing.Point(31, 107);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cedula:";
             // 
@@ -87,9 +87,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 124);
+            this.label3.Location = new System.Drawing.Point(31, 153);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Telefono:";
             // 
@@ -98,9 +99,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 164);
+            this.label4.Location = new System.Drawing.Point(31, 202);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Celular:";
             // 
@@ -109,62 +111,69 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 207);
+            this.label5.Location = new System.Drawing.Point(31, 255);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Direccion:";
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(81, 44);
+            this.textBoxNombre.Location = new System.Drawing.Point(108, 54);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(110, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(145, 23);
             this.textBoxNombre.TabIndex = 5;
             // 
             // textBoxTelefono
             // 
             this.textBoxTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTelefono.Location = new System.Drawing.Point(81, 121);
+            this.textBoxTelefono.Location = new System.Drawing.Point(108, 149);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTelefono.MaxLength = 12;
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(110, 20);
+            this.textBoxTelefono.Size = new System.Drawing.Size(145, 23);
             this.textBoxTelefono.TabIndex = 6;
             // 
             // textBoxCedula
             // 
             this.textBoxCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCedula.Location = new System.Drawing.Point(81, 84);
+            this.textBoxCedula.Location = new System.Drawing.Point(108, 103);
+            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCedula.MaxLength = 11;
             this.textBoxCedula.Name = "textBoxCedula";
-            this.textBoxCedula.Size = new System.Drawing.Size(110, 20);
+            this.textBoxCedula.Size = new System.Drawing.Size(145, 23);
             this.textBoxCedula.TabIndex = 7;
             // 
             // textBoxCelular
             // 
             this.textBoxCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCelular.Location = new System.Drawing.Point(81, 161);
+            this.textBoxCelular.Location = new System.Drawing.Point(108, 198);
+            this.textBoxCelular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCelular.MaxLength = 12;
             this.textBoxCelular.Name = "textBoxCelular";
-            this.textBoxCelular.Size = new System.Drawing.Size(110, 20);
+            this.textBoxCelular.Size = new System.Drawing.Size(145, 23);
             this.textBoxCelular.TabIndex = 8;
             // 
             // textBoxDireccion
             // 
             this.textBoxDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDireccion.Location = new System.Drawing.Point(81, 204);
+            this.textBoxDireccion.Location = new System.Drawing.Point(108, 251);
+            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(215, 20);
+            this.textBoxDireccion.Size = new System.Drawing.Size(285, 23);
             this.textBoxDireccion.TabIndex = 9;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(10, 344);
+            this.label14.Location = new System.Drawing.Point(13, 423);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(77, 17);
             this.label14.TabIndex = 28;
             this.label14.Text = "Buscar por";
             // 
@@ -182,9 +191,11 @@
             this.groupBox1.Controls.Add(this.textBoxCelular);
             this.groupBox1.Controls.Add(this.textBoxCedula);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 45);
+            this.groupBox1.Location = new System.Drawing.Point(17, 55);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 254);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(433, 313);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -204,10 +215,11 @@
             this.ColumnCelular,
             this.ColumnDireccion});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 391);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 482);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 132);
+            this.dataGridView1.Size = new System.Drawing.Size(693, 162);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -264,19 +276,21 @@
             "ID del Cliente",
             "Nombre",
             "Cedula"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(74, 341);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(99, 420);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(160, 24);
             this.comboBoxBuscar.TabIndex = 32;
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(201, 341);
+            this.tbuscarpor.Location = new System.Drawing.Point(268, 420);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
+            this.tbuscarpor.Size = new System.Drawing.Size(132, 22);
             this.tbuscarpor.TabIndex = 33;
             // 
-            // xButtonBusquedaAvanzada
+            // xButtonModificar
             // 
             office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
             office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
@@ -295,34 +309,11 @@
             office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
-            this.xButtonBusquedaAvanzada.ColorTable = office2010Green1;
-            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(362, 230);
-            this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
-            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(129, 23);
-            this.xButtonBusquedaAvanzada.TabIndex = 38;
-            this.xButtonBusquedaAvanzada.Text = "Busqueda avanzada";
-            this.xButtonBusquedaAvanzada.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBusquedaAvanzada.UseVisualStyleBackColor = true;
-            this.xButtonBusquedaAvanzada.Click += new System.EventHandler(this.xButtonBusquedaAvanzada_Click);
-            // 
-            // xButtonBorrar
-            // 
-            this.xButtonBorrar.ColorTable = office2010Green1;
-            this.xButtonBorrar.Location = new System.Drawing.Point(362, 176);
-            this.xButtonBorrar.Name = "xButtonBorrar";
-            this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
-            this.xButtonBorrar.TabIndex = 37;
-            this.xButtonBorrar.Text = "Borrar";
-            this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBorrar.UseVisualStyleBackColor = true;
-            this.xButtonBorrar.Click += new System.EventHandler(this.xButtonBorrar_Click);
-            // 
-            // xButtonModificar
-            // 
             this.xButtonModificar.ColorTable = office2010Green1;
-            this.xButtonModificar.Location = new System.Drawing.Point(362, 122);
+            this.xButtonModificar.Location = new System.Drawing.Point(483, 246);
+            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonModificar.Name = "xButtonModificar";
-            this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
             this.xButtonModificar.TabIndex = 36;
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -332,9 +323,10 @@
             // xButtonGuardar
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
-            this.xButtonGuardar.Location = new System.Drawing.Point(362, 62);
+            this.xButtonGuardar.Location = new System.Drawing.Point(483, 153);
+            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonGuardar.Name = "xButtonGuardar";
-            this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
             this.xButtonGuardar.TabIndex = 35;
             this.xButtonGuardar.Text = "Guardar";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -344,23 +336,22 @@
             // bbuscar
             // 
             this.bbuscar.ColorTable = office2010Green1;
-            this.bbuscar.Location = new System.Drawing.Point(318, 338);
+            this.bbuscar.Location = new System.Drawing.Point(424, 416);
+            this.bbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.bbuscar.Name = "bbuscar";
-            this.bbuscar.Size = new System.Drawing.Size(75, 23);
+            this.bbuscar.Size = new System.Drawing.Size(100, 28);
             this.bbuscar.TabIndex = 34;
             this.bbuscar.Text = "Buscar";
             this.bbuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.bbuscar.UseVisualStyleBackColor = true;
-            this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click_1);
+          //  this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click_1);
             // 
             // FrmClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(520, 523);
-            this.Controls.Add(this.xButtonBusquedaAvanzada);
-            this.Controls.Add(this.xButtonBorrar);
+            this.ClientSize = new System.Drawing.Size(693, 644);
             this.Controls.Add(this.xButtonModificar);
             this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.bbuscar);
@@ -370,6 +361,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label14);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -409,8 +401,6 @@
         private XButton bbuscar;
         private XButton xButtonGuardar;
         private XButton xButtonModificar;
-        private XButton xButtonBorrar;
-        private XButton xButtonBusquedaAvanzada;
     }
 }
 

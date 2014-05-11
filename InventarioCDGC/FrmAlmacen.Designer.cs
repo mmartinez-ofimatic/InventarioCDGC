@@ -42,8 +42,6 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.xButtonBusquedaAvanzada = new InventarioCDGC.XButton();
-            this.xButtonBorrar = new InventarioCDGC.XButton();
             this.xButtonModificar = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
             this.xButtonBuscar = new InventarioCDGC.XButton();
@@ -215,7 +213,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID del Producto:";
             // 
-            // xButtonBusquedaAvanzada
+            // xButtonModificar
             // 
             office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
             office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
@@ -234,35 +232,9 @@
             office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
-            this.xButtonBusquedaAvanzada.ColorTable = office2010Green1;
-            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(404, 279);
-            this.xButtonBusquedaAvanzada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
-            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(100, 50);
-            this.xButtonBusquedaAvanzada.TabIndex = 49;
-            this.xButtonBusquedaAvanzada.Text = "Busqueda Avanzada";
-            this.xButtonBusquedaAvanzada.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBusquedaAvanzada.UseVisualStyleBackColor = true;
-            this.xButtonBusquedaAvanzada.Click += new System.EventHandler(this.xButtonBusquedaAvanzada_Click);
-            // 
-            // xButtonBorrar
-            // 
-            this.xButtonBorrar.ColorTable = office2010Green1;
-            this.xButtonBorrar.Location = new System.Drawing.Point(404, 213);
-            this.xButtonBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.xButtonBorrar.Name = "xButtonBorrar";
-            this.xButtonBorrar.Size = new System.Drawing.Size(100, 28);
-            this.xButtonBorrar.TabIndex = 48;
-            this.xButtonBorrar.Text = "Borrar";
-            this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBorrar.UseVisualStyleBackColor = true;
-            this.xButtonBorrar.Click += new System.EventHandler(this.xButtonBorrar_Click);
-            // 
-            // xButtonModificar
-            // 
             this.xButtonModificar.ColorTable = office2010Green1;
-            this.xButtonModificar.Location = new System.Drawing.Point(404, 145);
-            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonModificar.Location = new System.Drawing.Point(404, 210);
+            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonModificar.Name = "xButtonModificar";
             this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
             this.xButtonModificar.TabIndex = 47;
@@ -274,8 +246,8 @@
             // xButtonGuardar
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
-            this.xButtonGuardar.Location = new System.Drawing.Point(404, 70);
-            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonGuardar.Location = new System.Drawing.Point(404, 152);
+            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonGuardar.Name = "xButtonGuardar";
             this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
             this.xButtonGuardar.TabIndex = 46;
@@ -288,7 +260,7 @@
             // 
             this.xButtonBuscar.ColorTable = office2010Green1;
             this.xButtonBuscar.Location = new System.Drawing.Point(404, 369);
-            this.xButtonBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonBuscar.Name = "xButtonBuscar";
             this.xButtonBuscar.Size = new System.Drawing.Size(100, 28);
             this.xButtonBuscar.TabIndex = 45;
@@ -303,8 +275,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
             this.ClientSize = new System.Drawing.Size(600, 626);
-            this.Controls.Add(this.xButtonBusquedaAvanzada);
-            this.Controls.Add(this.xButtonBorrar);
             this.Controls.Add(this.xButtonModificar);
             this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.xButtonBuscar);
@@ -346,8 +316,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private System.Windows.Forms.NumericUpDown textBoxExistencia;
-        private XButton xButtonBusquedaAvanzada;
-        private XButton xButtonBorrar;
         private XButton xButtonModificar;
         private XButton xButtonGuardar;
         private XButton xButtonBuscar;

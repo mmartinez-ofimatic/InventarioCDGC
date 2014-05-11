@@ -95,28 +95,28 @@ namespace InventarioCDGC
         {
             if (tiporol == 1)
             {
-                xButtonBorrar.Enabled = true;
+                //xButtonBorrar.Enabled = true;
                 xButtonModificar.Enabled = true;
             }
             else if (tiporol == 2)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = true;
             }
             else if (tiporol == 3)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
             }
             else if (tiporol == 4)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
                 xButtonGuardar.Enabled = false;
             }
             else
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
                 xButtonGuardar.Enabled = false;
             }
@@ -153,11 +153,17 @@ namespace InventarioCDGC
                                 product.idproducto = textBoxIDproducto.Text;
                                 product.producto = textBoxNombre.Text;
                                 product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-                                if (product.Guardar())
+
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogResult == DialogResult.Yes)
                                 {
-                                    CleanText();
-                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    if (product.Guardar())
+                                    {
+                                        CleanText();
+                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
                                 }
+                                
                             }
                             catch (Exception)
                             {
@@ -202,12 +208,16 @@ namespace InventarioCDGC
                             product.idproducto = textBoxIDproducto.Text;
                             product.producto = textBoxNombre.Text;
                             product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-
-                            if (product.Modificar())
+                            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
                             {
-                                CleanText();
-                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (product.Modificar())
+                                {
+                                    CleanText();
+                                    MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
+                            
 
                             }
                             catch (Exception)
@@ -236,38 +246,38 @@ namespace InventarioCDGC
             }
         }
 
-        private void xButtonBorrar_Click(object sender, EventArgs e)
-        {
-            if (selectModeRow == true)
-            {
-                // se valida que el id de la fila seleccionada sea igual que la del texbox
-                DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[0].Value.ToString() == textBoxIDproducto.Text)
-                {
-                    if (product.Borrar())
-                    {
-                        CleanText();
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
+        //private void xButtonBorrar_Click(object sender, EventArgs e)
+        //{
+        //    if (selectModeRow == true)
+        //    {
+        //        // se valida que el id de la fila seleccionada sea igual que la del texbox
+        //        DataGridViewRow row = dataGridView1.CurrentRow;
+        //        if (row.Cells[0].Value.ToString() == textBoxIDproducto.Text)
+        //        {
+        //            if (product.Borrar())
+        //            {
+        //                CleanText();
+        //                MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            }
+        //        }
 
-                else
-                {
-                    MessageBox.Show("No es posible borrar este producto el id debe ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un producto y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        //        else
+        //        {
+        //            MessageBox.Show("No es posible borrar este producto el id debe ser igual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Primero busque un producto y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
 
-        }
+        //}
 
-        private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarProductosVentas bProductos = new Consultas.BuscarProductosVentas();
-            bProductos.ShowDialog(this);
-        }
+        //private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
+        //{
+        //    Consultas.BuscarProductosVentas bProductos = new Consultas.BuscarProductosVentas();
+        //    bProductos.ShowDialog(this);
+        //}
 
         private void bbuscar_Click_1(object sender, EventArgs e)
         {

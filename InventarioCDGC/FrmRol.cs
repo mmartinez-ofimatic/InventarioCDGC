@@ -392,14 +392,17 @@ namespace InventarioCDGC
                         rolesClass.permisos = permisos;
                         try
                         {
-                            if (rolesClass.Guardar())
-                            {
+                            
+                                if (rolesClass.Guardar())
+                                {
 
-                                dataGridView1.DataSource = rolesClass.BuscarTodos();
-                                MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                CleanText();
-                                ActualizarGrid();
-                            }
+                                    dataGridView1.DataSource = rolesClass.BuscarTodos();
+                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CleanText();
+                                    ActualizarGrid();
+                                }
+                            
+                            
                         }
                         catch (Exception)
                         {
@@ -504,12 +507,17 @@ namespace InventarioCDGC
                 if (row.Cells[0].Value.ToString() != "")
                 {
                     rolesClass.ID = Convert.ToInt32(row.Cells[0].Value.ToString());
-                    if (rolesClass.Borrar())
+                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea eliminar este Rol?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CleanText();
-                        ActualizarGrid();
+                        if (rolesClass.Borrar())
+                        {
+                            MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CleanText();
+                            ActualizarGrid();
+                        }
                     }
+                    
                 }
 
                 else

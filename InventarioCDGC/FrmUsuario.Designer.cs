@@ -46,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.xButtonBusquedaAvanzada = new InventarioCDGC.XButton();
-            this.xButtonBorrar = new InventarioCDGC.XButton();
             this.xButtonModificar = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
             this.xButton1 = new InventarioCDGC.XButton();
@@ -57,9 +55,10 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(198, 279);
+            this.tbuscarpor.Location = new System.Drawing.Point(264, 343);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(80, 20);
+            this.tbuscarpor.Size = new System.Drawing.Size(105, 22);
             this.tbuscarpor.TabIndex = 48;
             // 
             // comboBoxBuscar
@@ -69,18 +68,20 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID de usuario",
             "Nombre de usuario"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(80, 278);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(107, 342);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 24);
             this.comboBoxBuscar.TabIndex = 54;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(16, 282);
+            this.label14.Location = new System.Drawing.Point(21, 347);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(77, 17);
             this.label14.TabIndex = 52;
             this.label14.Text = "Buscar por";
             // 
@@ -96,10 +97,11 @@
             this.ColumnNombre,
             this.ColumnContrasena});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 327);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 402);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(417, 108);
+            this.dataGridView1.Size = new System.Drawing.Size(556, 133);
             this.dataGridView1.TabIndex = 51;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -148,9 +150,11 @@
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 40);
+            this.groupBox1.Location = new System.Drawing.Point(23, 49);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(283, 193);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(377, 238);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuario";
@@ -160,38 +164,42 @@
             // textBoxRcontrasena
             // 
             this.textBoxRcontrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRcontrasena.Location = new System.Drawing.Point(120, 114);
+            this.textBoxRcontrasena.Location = new System.Drawing.Point(160, 140);
+            this.textBoxRcontrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRcontrasena.Name = "textBoxRcontrasena";
             this.textBoxRcontrasena.PasswordChar = '*';
-            this.textBoxRcontrasena.Size = new System.Drawing.Size(121, 20);
+            this.textBoxRcontrasena.Size = new System.Drawing.Size(160, 23);
             this.textBoxRcontrasena.TabIndex = 36;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 117);
+            this.label4.Location = new System.Drawing.Point(8, 144);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.Size = new System.Drawing.Size(131, 17);
             this.label4.TabIndex = 35;
             this.label4.Text = "Repetir Contraseña";
             // 
             // textBoxContrasena
             // 
             this.textBoxContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContrasena.Location = new System.Drawing.Point(120, 71);
+            this.textBoxContrasena.Location = new System.Drawing.Point(160, 87);
+            this.textBoxContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxContrasena.Name = "textBoxContrasena";
             this.textBoxContrasena.PasswordChar = '*';
-            this.textBoxContrasena.Size = new System.Drawing.Size(121, 20);
+            this.textBoxContrasena.Size = new System.Drawing.Size(160, 23);
             this.textBoxContrasena.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 74);
+            this.label3.Location = new System.Drawing.Point(8, 91);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 33;
             this.label3.Text = "Contraseña";
             // 
@@ -200,40 +208,44 @@
             this.comboBoxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRol.FormattingEnabled = true;
-            this.comboBoxRol.Location = new System.Drawing.Point(120, 154);
+            this.comboBoxRol.Location = new System.Drawing.Point(160, 190);
+            this.comboBoxRol.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxRol.Name = "comboBoxRol";
-            this.comboBoxRol.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRol.Size = new System.Drawing.Size(160, 25);
             this.comboBoxRol.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 157);
+            this.label1.Location = new System.Drawing.Point(8, 193);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.Size = new System.Drawing.Size(29, 17);
             this.label1.TabIndex = 31;
             this.label1.Text = "Rol";
             // 
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(120, 30);
+            this.textBoxNombre.Location = new System.Drawing.Point(160, 37);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(121, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(160, 23);
             this.textBoxNombre.TabIndex = 30;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 33);
+            this.label2.Location = new System.Drawing.Point(8, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(129, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre de usuario";
             // 
-            // xButtonBusquedaAvanzada
+            // xButtonModificar
             // 
             office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
             office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
@@ -252,34 +264,11 @@
             office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
-            this.xButtonBusquedaAvanzada.ColorTable = office2010Green1;
-            this.xButtonBusquedaAvanzada.Location = new System.Drawing.Point(318, 197);
-            this.xButtonBusquedaAvanzada.Name = "xButtonBusquedaAvanzada";
-            this.xButtonBusquedaAvanzada.Size = new System.Drawing.Size(75, 41);
-            this.xButtonBusquedaAvanzada.TabIndex = 59;
-            this.xButtonBusquedaAvanzada.Text = "Busqueda Avanzada";
-            this.xButtonBusquedaAvanzada.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBusquedaAvanzada.UseVisualStyleBackColor = true;
-            this.xButtonBusquedaAvanzada.Click += new System.EventHandler(this.xButtonBusquedaAvanzada_Click);
-            // 
-            // xButtonBorrar
-            // 
-            this.xButtonBorrar.ColorTable = office2010Green1;
-            this.xButtonBorrar.Location = new System.Drawing.Point(318, 146);
-            this.xButtonBorrar.Name = "xButtonBorrar";
-            this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
-            this.xButtonBorrar.TabIndex = 58;
-            this.xButtonBorrar.Text = "Borrar";
-            this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBorrar.UseVisualStyleBackColor = true;
-            this.xButtonBorrar.Click += new System.EventHandler(this.xButtonBorrar_Click);
-            // 
-            // xButtonModificar
-            // 
             this.xButtonModificar.ColorTable = office2010Green1;
-            this.xButtonModificar.Location = new System.Drawing.Point(318, 93);
+            this.xButtonModificar.Location = new System.Drawing.Point(424, 206);
+            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonModificar.Name = "xButtonModificar";
-            this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
             this.xButtonModificar.TabIndex = 57;
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -289,9 +278,10 @@
             // xButtonGuardar
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
-            this.xButtonGuardar.Location = new System.Drawing.Point(318, 40);
+            this.xButtonGuardar.Location = new System.Drawing.Point(424, 113);
+            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButtonGuardar.Name = "xButtonGuardar";
-            this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
+            this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
             this.xButtonGuardar.TabIndex = 56;
             this.xButtonGuardar.Text = "Guardar";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -301,9 +291,10 @@
             // xButton1
             // 
             this.xButton1.ColorTable = office2010Green1;
-            this.xButton1.Location = new System.Drawing.Point(295, 276);
+            this.xButton1.Location = new System.Drawing.Point(393, 340);
+            this.xButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xButton1.Name = "xButton1";
-            this.xButton1.Size = new System.Drawing.Size(75, 23);
+            this.xButton1.Size = new System.Drawing.Size(100, 28);
             this.xButton1.TabIndex = 55;
             this.xButton1.Text = " Buscar";
             this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -312,12 +303,10 @@
             // 
             // FrmUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(417, 435);
-            this.Controls.Add(this.xButtonBusquedaAvanzada);
-            this.Controls.Add(this.xButtonBorrar);
+            this.ClientSize = new System.Drawing.Size(556, 535);
             this.Controls.Add(this.xButtonModificar);
             this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.xButton1);
@@ -327,6 +316,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmUsuario";
@@ -361,8 +351,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContrasena;
-        private XButton xButtonBusquedaAvanzada;
-        private XButton xButtonBorrar;
         private XButton xButtonModificar;
         private XButton xButtonGuardar;
         private XButton xButton1;

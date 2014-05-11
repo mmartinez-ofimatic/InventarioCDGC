@@ -32,28 +32,28 @@ namespace InventarioCDGC
         {
             if (tiporol == 1)
             {
-                xButtonBorrar.Enabled = true;
+               // xButtonBorrar.Enabled = true;
                 xButtonModificar.Enabled = true;
             }
             else if (tiporol == 2)
             {
-                xButtonBorrar.Enabled = false;
+              //  xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = true;
             }
             else if (tiporol == 3)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
             }
             else if (tiporol == 4)
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
                 xButtonGuardar.Enabled = false;
             }
             else
             {
-                xButtonBorrar.Enabled = false;
+                //xButtonBorrar.Enabled = false;
                 xButtonModificar.Enabled = false;
                 xButtonGuardar.Enabled = false;
             }
@@ -213,12 +213,17 @@ namespace InventarioCDGC
 
                             try
                             {
-                                if (almacen.Guardar())
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogResult == DialogResult.Yes)
                                 {
-                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    CleanText();
-                                    comboBoxID.SelectedIndex = 0;
+                                    if (almacen.Guardar())
+                                    {
+                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        CleanText();
+                                        comboBoxID.SelectedIndex = 0;
+                                    }
                                 }
+                                
                             }
                             catch (Exception)
                             {
@@ -263,12 +268,16 @@ namespace InventarioCDGC
                             {
                                 almacen.IDproducto = comboBoxID.Text;
                                 almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
-
-                                if (almacen.Modificar())
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogResult == DialogResult.Yes)
                                 {
-                                    MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    CleanText();
+                                    if (almacen.Modificar())
+                                    {
+                                        MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        CleanText();
+                                    }
                                 }
+                                
                             }
                             else
                             {
@@ -293,39 +302,39 @@ namespace InventarioCDGC
         
         }
 
-        private void xButtonBorrar_Click(object sender, EventArgs e)
-        {
-            if (selectModeRow == true)
-            {
-                // se valida que el id de la fila seleccionada sea igual que la del textbox
-                DataGridViewRow row = dataGridView1.CurrentRow;
-                if (row.Cells[0].Value.ToString() == comboBoxID.Text)
-                {
-                    if (almacen.Borrar())
-                    {
-                        MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CleanText();
-                    }
-                }
+        //private void xButtonBorrar_Click(object sender, EventArgs e)
+        //{
+        //    if (selectModeRow == true)
+        //    {
+        //        // se valida que el id de la fila seleccionada sea igual que la del textbox
+        //        DataGridViewRow row = dataGridView1.CurrentRow;
+        //        if (row.Cells[0].Value.ToString() == comboBoxID.Text)
+        //        {
+        //            if (almacen.Borrar())
+        //            {
+        //                MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                CleanText();
+        //            }
+        //        }
 
-                else
-                {
-                    MessageBox.Show("Busque un producto y luego seleccionelo para eliminar del almacen", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        //        else
+        //        {
+        //            MessageBox.Show("Busque un producto y luego seleccionelo para eliminar del almacen", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Primero busque un producto para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
 
-        }
+        //}
 
-        private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarAlmacen almacen = new Consultas.BuscarAlmacen();
-            almacen.ShowDialog(this);
+        //private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
+        //{
+        //    Consultas.BuscarAlmacen almacen = new Consultas.BuscarAlmacen();
+        //    almacen.ShowDialog(this);
         
-        }
+        //}
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
