@@ -17,7 +17,7 @@ namespace DataInventarioCDGC
         public string observacion { get; set; }
         public DateTime fecha { get; set; }
 
-        InventarioCDGCEntities dbEntities = new InventarioCDGCEntities();
+        InventarioCDGCEntities1 dbEntities = new InventarioCDGCEntities1();
 
         /// <summary>
         /// Guarda una venta.
@@ -28,15 +28,11 @@ namespace DataInventarioCDGC
             bool isComplete = false;
             try
             {
-                InventarioCDGCEntities db = new InventarioCDGCEntities();
-                Ventas ventas = new Ventas();
+                InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
+                Venta ventas = new Venta();
                 ventas.ID_Cliente = idcliente;
-                ventas.ID_Producto = idproducto;
                 //falata el id de usuario
                 ventas.ID_Usuario = null;
-                ventas.Precio_Unidad = precio;
-                ventas.Cantidad = cantidad;
-                ventas.Descuento = descuento;
                 ventas.Observacion = observacion;
                 ventas.Fecha = DateTime.Now;
 
@@ -61,17 +57,13 @@ namespace DataInventarioCDGC
             bool isComplete = false;
             try
             {
-                Ventas update = (from upd in dbEntities.Ventas
+                Venta update = (from upd in dbEntities.Ventas
                                       where upd.ID_Venta == idventa
                                       select upd).First();
 
                 update.ID_Cliente = idcliente;
-                update.ID_Producto = idproducto;
                 //Poner el di de usuario loguiado.
                 update.ID_Usuario = null;
-                update.Precio_Unidad = precio;
-                update.Cantidad = cantidad;
-                update.Descuento = descuento;
                 update.Fecha = DateTime.Now;
                 update.Observacion = observacion;
                 dbEntities.SaveChanges();
@@ -96,7 +88,7 @@ namespace DataInventarioCDGC
 
             try
             {
-                Ventas borrar = (from bor in dbEntities.Ventas
+                Venta borrar = (from bor in dbEntities.Ventas
                                       where bor.ID_Venta == idventa
                                       select bor).FirstOrDefault();
 
@@ -117,7 +109,7 @@ namespace DataInventarioCDGC
         /// Lista de todas las ventas.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Ventas> BuscarTodos()
+        public List<Venta> BuscarTodos()
         {
             var selec = (from s in dbEntities.Ventas
                          select s).ToList();
@@ -128,10 +120,10 @@ namespace DataInventarioCDGC
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<Ventas> BuscarxID()
+        public List<Venta> BuscarxID()
         {
 
-            List<Ventas> busc = (from b in dbEntities.Ventas
+            List<Venta> busc = (from b in dbEntities.Ventas
                                       where b.ID_Venta == idventa
                                       select b).ToList();
             if (busc != null)
@@ -142,11 +134,7 @@ namespace DataInventarioCDGC
                     {
                         idcliente = Convert.ToInt32(item.ID_Cliente);
 
-                        idproducto = Convert.ToInt32(item.ID_Producto);
                         idusuario = Convert.ToInt32(item.ID_Usuario);
-                        precio = Convert.ToDecimal(item.Precio_Unidad);
-                        cantidad = Convert.ToInt32(item.Cantidad);
-                        descuento = Convert.ToDecimal(item.Descuento);
                         fecha = Convert.ToDateTime(item.Fecha);
                         observacion = item.Observacion;
                     }
@@ -161,10 +149,10 @@ namespace DataInventarioCDGC
         /// </summary>
         /// <param name="nombre">ID del producto.</param>
         /// <returns>List</returns>
-        public List<Ventas> BuscarxIDProducto(int id)
+       /* public List<Venta> BuscarxIDProducto(int id)
         {
 
-            List<Ventas> busc = (from b in dbEntities.Ventas
+            List<Venta> busc = (from b in dbEntities.Ventas
                                       where b.ID_Producto == id
                                       select b).ToList();
             if (busc != null)
@@ -182,16 +170,16 @@ namespace DataInventarioCDGC
                 }
             }
             return busc;
-        }
+        }*/
 
         /// <summary>
         /// Buscar por ID del Cliente.
         /// </summary>
         /// <param name="nombre">ID del cliente.</param>
         /// <returns>List</returns>
-        public List<Ventas> BuscarxIDCliente(int id)
+        public List<Venta> BuscarxIDCliente(int id)
         {
-            List<Ventas> busc = (from b in dbEntities.Ventas
+            List<Venta> busc = (from b in dbEntities.Ventas
                                       where b.ID_Cliente == id
                                       select b).ToList();
             if (busc != null)
@@ -199,11 +187,7 @@ namespace DataInventarioCDGC
                 foreach (var item in busc)
                 {
                     idcliente = Convert.ToInt32(item.ID_Cliente);
-                    idproducto = Convert.ToInt32(item.ID_Producto);
                     idusuario = Convert.ToInt32(item.ID_Usuario);
-                    precio = Convert.ToDecimal(item.Precio_Unidad);
-                    cantidad = Convert.ToInt32(item.Cantidad);
-                    descuento = Convert.ToDecimal(item.Descuento);
                     fecha = Convert.ToDateTime(item.Fecha);
                     observacion = item.Observacion;
                 }

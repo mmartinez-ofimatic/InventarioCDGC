@@ -30,7 +30,7 @@ namespace InventarioCDGC.Consultas
                     {
                         try
                         {
-                            almacen.IDproducto = Convert.ToInt32(tbuscarpor.Text);
+                            almacen.IDproducto = tbuscarpor.Text;
 
                             dataGridView1.AutoGenerateColumns = false;
 

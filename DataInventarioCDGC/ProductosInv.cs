@@ -9,8 +9,8 @@ namespace DataInventarioCDGC
    public class ProductosInv
     {
 
-    InventarioCDGCEntities dbEntities = new InventarioCDGCEntities();
-    public int idproducto { get; set; }
+    InventarioCDGCEntities1 dbEntities = new InventarioCDGCEntities1();
+    public string idproducto { get; set; }
     public string producto { get; set; }
     public decimal precio { get; set; }
 
@@ -24,9 +24,9 @@ namespace DataInventarioCDGC
 
         try
         {
-            Productos product = new Productos();
+            Producto product = new Producto();
             product.ID_Producto = idproducto;
-            product.Producto = producto;
+            product.Producto1 = producto;
             product.Precio_Venta = precio;
 
             dbEntities.AddToProductos(product);
@@ -50,12 +50,12 @@ namespace DataInventarioCDGC
         bool isComplete = false;
         try
         {
-            Productos update = (from upd in dbEntities.Productos
+            Producto update = (from upd in dbEntities.Productos
                                   where upd.ID_Producto == idproducto
                                   select upd).First();
 
             update.ID_Producto = idproducto;
-            update.Producto = producto;
+            update.Producto1 = producto;
             update.Precio_Venta = precio;
             
             dbEntities.SaveChanges();
@@ -80,7 +80,7 @@ namespace DataInventarioCDGC
 
         try
         {
-            Productos borrar = (from bor in dbEntities.Productos
+            Producto borrar = (from bor in dbEntities.Productos
                                   where bor.ID_Producto == idproducto
                                   select bor).FirstOrDefault();
 
@@ -101,7 +101,7 @@ namespace DataInventarioCDGC
     /// Lista de todos los productos.
     /// </summary>
     /// <returns>List select</returns>
-    public List<Productos> BuscarTodos()
+    public List<Producto> BuscarTodos()
     {
         var selec = (from s in dbEntities.Productos
                      select s).ToList();
@@ -113,10 +113,10 @@ namespace DataInventarioCDGC
     /// Busqueda por ID.
     /// </summary>
     /// <returns>List</returns>
-    public List<Productos> BuscarxID()
+    public List<Producto> BuscarxID()
     {
 
-        List<Productos> busc = (from b in dbEntities.Productos
+        List<Producto> busc = (from b in dbEntities.Productos
                                   where b.ID_Producto == idproducto
                                   select b).ToList();
         if (busc != null)
@@ -126,7 +126,7 @@ namespace DataInventarioCDGC
                 foreach (var item in busc)
                 {
                     idproducto = item.ID_Producto;
-                    producto = item.Producto;
+                    producto = item.Producto1;
                     precio = Convert.ToDecimal(item.Precio_Venta);                  
                 }
 
@@ -141,17 +141,17 @@ namespace DataInventarioCDGC
     /// </summary>
     /// <param name="nombre">nombre del producto.</param>
     /// <returns>List</returns>
-    public List<Productos> BuscarxNombre(string nomproducto)
+    public List<Producto> BuscarxNombre(string nomproducto)
     {
-        List<Productos> busc = (from b in dbEntities.Productos
-                                  where b.Producto == nomproducto
+        List<Producto> busc = (from b in dbEntities.Productos
+                                  where b.Producto1 == nomproducto
                                   select b).ToList();
         if (busc != null)
         {
             foreach (var item in busc)
             {
                 idproducto = item.ID_Producto;
-                producto = item.Producto;
+                producto = item.Producto1;
                 precio = Convert.ToDecimal (item.Precio_Venta);                
             }
         }

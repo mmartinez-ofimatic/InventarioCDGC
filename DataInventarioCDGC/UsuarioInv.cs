@@ -15,14 +15,14 @@ namespace DataInventarioCDGC
         public string contrasena { get; set; }
 
 
-        InventarioCDGCEntities db = new InventarioCDGCEntities();
+        InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
 
 
         public bool ValidateUsers(string nombre, string pass)
         {
             bool valido = false;
 
-            Usuarios usuario = db.Usuarios.FirstOrDefault(x => x.Nombre == nombre && x.Contrasena == pass);
+            Usuario usuario = db.Usuarios.FirstOrDefault(x => x.Nombre == nombre && x.Contrasena == pass);
 
             if (usuario != null)
             {
@@ -37,7 +37,7 @@ namespace DataInventarioCDGC
         public static int Get_Rol(string nom, string pass)
         {
          
-            InventarioCDGCEntities db = new InventarioCDGCEntities();
+            InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
 
             var selec = (from s in db.Usuarios
                          where s.Nombre == nom && s.Contrasena == pass
@@ -55,7 +55,7 @@ namespace DataInventarioCDGC
         {
             bool isComplete = false;
 
-            Usuarios usuario = new Usuarios();
+            Usuario usuario = new Usuario();
 
             try
             {
@@ -83,7 +83,7 @@ namespace DataInventarioCDGC
 
             try
             {
-                Usuarios update = (from upd in db.Usuarios
+                Usuario update = (from upd in db.Usuarios
                                 where upd.ID_Usuario == IDusuario
                                 select upd).First();
 
@@ -111,7 +111,7 @@ namespace DataInventarioCDGC
 
             try
             {
-                Usuarios borrar = (from bor in db.Usuarios
+                Usuario borrar = (from bor in db.Usuarios
                                 where bor.ID_Usuario == IDusuario
                                 select bor).FirstOrDefault();
 
@@ -133,7 +133,7 @@ namespace DataInventarioCDGC
         /// Lista de todos los usuarios.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Usuarios> BuscarTodos()
+        public List<Usuario> BuscarTodos()
         {
             var selec = (from s in db.Usuarios
                          select s).ToList();
@@ -144,9 +144,9 @@ namespace DataInventarioCDGC
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<Usuarios> BuscarxID()
+        public List<Usuario> BuscarxID()
         {
-            List<Usuarios> busc = (from b in db.Usuarios
+            List<Usuario> busc = (from b in db.Usuarios
                                 where b.ID_Usuario == IDusuario
                                 select b).ToList();
             if (busc != null)
@@ -171,10 +171,10 @@ namespace DataInventarioCDGC
         /// </summary>
         /// <param name="nombre">nombre del cliente.</param>
         /// <returns>List</returns>
-        public List<Usuarios> BuscarxNombre(string nombre)
+        public List<Usuario> BuscarxNombre(string nombre)
         {
 
-            List<Usuarios> busc = (from b in db.Usuarios
+            List<Usuario> busc = (from b in db.Usuarios
                                 where b.Nombre == nombre
                                 select b).ToList();
             if (busc != null)

@@ -10,7 +10,7 @@ namespace DataInventarioCDGC
   public class RolInv
     {
 
-        InventarioCDGCEntities db = new InventarioCDGCEntities();
+        InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
 
         public  int ID { get; set; }
         public  string rol { get; set; }
@@ -24,7 +24,7 @@ namespace DataInventarioCDGC
     {
         bool isComplete = false;
 
-        Roles roles = new Roles();
+        Role roles = new Role();
 
         try
         {
@@ -51,7 +51,7 @@ namespace DataInventarioCDGC
 
         try
         {
-            Roles update = (from upd in db.Roles
+            Role update = (from upd in db.Roles
                                   where upd.ID_Rol == ID
                                   select upd).First();
 
@@ -78,7 +78,7 @@ namespace DataInventarioCDGC
        
         try
         {
-            Roles borrar = (from bor in db.Roles
+            Role borrar = (from bor in db.Roles
                                   where bor.ID_Rol == ID
                                   select bor).FirstOrDefault();
 
@@ -134,7 +134,7 @@ namespace DataInventarioCDGC
     /// Lista de todos los roles.
     /// </summary>
     /// <returns>List select</returns>
-    public List<Roles> BuscarTodos()
+    public List<Role> BuscarTodos()
     {
         var selec = (from s in db.Roles
                      select s).ToList();
@@ -145,9 +145,9 @@ namespace DataInventarioCDGC
     /// Busqueda por ID.
     /// </summary>
     /// <returns>List</returns>
-    public List<Roles> BuscarxID()
+    public List<Role> BuscarxID()
     {
-        List<Roles> busc = (from b in db.Roles
+        List<Role> busc = (from b in db.Roles
                                   where b.ID_Rol == ID
                                   select b).ToList();
         if (busc != null)
@@ -170,10 +170,10 @@ namespace DataInventarioCDGC
     /// </summary>
     /// <param name="nombre">nombre del cliente.</param>
     /// <returns>List</returns>
-    public List<Roles> BuscarxNombre(string nombre)
+    public List<Role> BuscarxNombre(string nombre)
     {
 
-        List<Roles> busc = (from b in db.Roles
+        List<Role> busc = (from b in db.Roles
                                   where b.Rol == nombre
                                   select b).ToList();
         if (busc != null)

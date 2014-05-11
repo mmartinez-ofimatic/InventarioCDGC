@@ -162,7 +162,7 @@ namespace InventarioCDGC
 
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = ventasClass.BuscarxIDProducto(Convert.ToInt32(tbuscarpor.Text));
+                            //dataGridView1.DataSource = ventasClass.BuscarxIDProducto(Convert.ToInt32(tbuscarpor.Text));
 
                             if (dataGridView1.RowCount == 0)
                             {
@@ -533,7 +533,7 @@ namespace InventarioCDGC
 
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = ventasClass.BuscarxIDProducto(Convert.ToInt32(tbuscarpor.Text));
+                          //  dataGridView1.DataSource = ventasClass.BuscarxIDProducto(Convert.ToInt32(tbuscarpor.Text));
 
                             if (dataGridView1.RowCount == 0)
                             {

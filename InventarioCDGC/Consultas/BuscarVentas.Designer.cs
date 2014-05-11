@@ -146,8 +146,7 @@
             this.comboBoxBuscar.FormattingEnabled = true;
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID de Venta",
-            "ID del Cliente",
-            "ID del Producto"});
+            "ID del Cliente"});
             this.comboBoxBuscar.Location = new System.Drawing.Point(91, 25);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);

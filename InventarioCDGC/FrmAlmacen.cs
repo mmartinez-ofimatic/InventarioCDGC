@@ -64,7 +64,7 @@ namespace InventarioCDGC
         {
             try
             {
-                textBoxNombre.Text = almacen.BuscarxIDNombreCbx(Convert.ToInt32(comboBoxID.Text));
+                textBoxNombre.Text = almacen.BuscarxIDNombreCbx(comboBoxID.Text);
             }
             catch (Exception)
             {
@@ -83,7 +83,7 @@ namespace InventarioCDGC
                     {
                         try
                         {                
-                        almacen.IDproducto = Convert.ToInt32(tbuscarpor.Text);
+                        almacen.IDproducto =tbuscarpor.Text;
                        
                         dataGridView1.AutoGenerateColumns = false;
 
@@ -156,7 +156,7 @@ namespace InventarioCDGC
                     {
                         try
                         {
-                            almacen.IDproducto = Convert.ToInt32(tbuscarpor.Text);
+                            almacen.IDproducto = tbuscarpor.Text;
 
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -208,7 +208,7 @@ namespace InventarioCDGC
                         if (textBoxExistencia.Text != "")
                         {
 
-                            almacen.IDproducto = Convert.ToInt32(comboBoxID.Text);
+                            almacen.IDproducto = comboBoxID.Text;
                             almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
 
                             try
@@ -261,7 +261,7 @@ namespace InventarioCDGC
                         {
                             if (textBoxExistencia.Text != "")
                             {
-                                almacen.IDproducto = Convert.ToInt32(comboBoxID.Text);
+                                almacen.IDproducto = comboBoxID.Text;
                                 almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
 
                                 if (almacen.Modificar())

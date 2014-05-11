@@ -19,11 +19,12 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Almacen__ID_Prod__182C9B23", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataInventarioCDGC.Productos), "Almacen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Almacen), true)]
-[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Clien__117F9D94", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Clientes), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Ventas), true)]
-[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Produ__1273C1CD", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Productos), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Ventas), true)]
-[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Usuarios__ID_Rol__0CBAE877", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Roles), "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Usuarios), true)]
-[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Usuar__1367E606", "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Usuarios), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Ventas), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK_Almacen_Productos", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DataInventarioCDGC.Producto), "Almacen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Almacen), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Clien__117F9D94", "Clientes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Cliente), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Venta), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK_VentaDetalle_Productos", "Productos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Producto), "VentaDetalle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.VentaDetalle), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Usuarios__ID_Rol__0CBAE877", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Role), "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Usuario), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK__Ventas__ID_Usuar__1367E606", "Usuarios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Usuario), "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.Venta), true)]
+[assembly: EdmRelationshipAttribute("InventarioCDGCModel", "FK_VentaDetalle_Ventas", "Ventas", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DataInventarioCDGC.Venta), "VentaDetalle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DataInventarioCDGC.VentaDetalle), true)]
 
 #endregion
 
@@ -34,32 +35,32 @@ namespace DataInventarioCDGC
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class InventarioCDGCEntities : ObjectContext
+    public partial class InventarioCDGCEntities1 : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new InventarioCDGCEntities object using the connection string found in the 'InventarioCDGCEntities' section of the application configuration file.
+        /// Initializes a new InventarioCDGCEntities1 object using the connection string found in the 'InventarioCDGCEntities1' section of the application configuration file.
         /// </summary>
-        public InventarioCDGCEntities() : base("name=InventarioCDGCEntities", "InventarioCDGCEntities")
+        public InventarioCDGCEntities1() : base("name=InventarioCDGCEntities1", "InventarioCDGCEntities1")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new InventarioCDGCEntities object.
+        /// Initialize a new InventarioCDGCEntities1 object.
         /// </summary>
-        public InventarioCDGCEntities(string connectionString) : base(connectionString, "InventarioCDGCEntities")
+        public InventarioCDGCEntities1(string connectionString) : base(connectionString, "InventarioCDGCEntities1")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new InventarioCDGCEntities object.
+        /// Initialize a new InventarioCDGCEntities1 object.
         /// </summary>
-        public InventarioCDGCEntities(EntityConnection connection) : base(connection, "InventarioCDGCEntities")
+        public InventarioCDGCEntities1(EntityConnection connection) : base(connection, "InventarioCDGCEntities1")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -78,149 +79,173 @@ namespace DataInventarioCDGC
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Almacen> Almacen
+        public ObjectSet<Almacen> Almacens
         {
             get
             {
-                if ((_Almacen == null))
+                if ((_Almacens == null))
                 {
-                    _Almacen = base.CreateObjectSet<Almacen>("Almacen");
+                    _Almacens = base.CreateObjectSet<Almacen>("Almacens");
                 }
-                return _Almacen;
+                return _Almacens;
             }
         }
-        private ObjectSet<Almacen> _Almacen;
+        private ObjectSet<Almacen> _Almacens;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Clientes> Clientes
+        public ObjectSet<Cliente> Clientes
         {
             get
             {
                 if ((_Clientes == null))
                 {
-                    _Clientes = base.CreateObjectSet<Clientes>("Clientes");
+                    _Clientes = base.CreateObjectSet<Cliente>("Clientes");
                 }
                 return _Clientes;
             }
         }
-        private ObjectSet<Clientes> _Clientes;
+        private ObjectSet<Cliente> _Clientes;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Productos> Productos
+        public ObjectSet<Producto> Productos
         {
             get
             {
                 if ((_Productos == null))
                 {
-                    _Productos = base.CreateObjectSet<Productos>("Productos");
+                    _Productos = base.CreateObjectSet<Producto>("Productos");
                 }
                 return _Productos;
             }
         }
-        private ObjectSet<Productos> _Productos;
+        private ObjectSet<Producto> _Productos;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Roles> Roles
+        public ObjectSet<Role> Roles
         {
             get
             {
                 if ((_Roles == null))
                 {
-                    _Roles = base.CreateObjectSet<Roles>("Roles");
+                    _Roles = base.CreateObjectSet<Role>("Roles");
                 }
                 return _Roles;
             }
         }
-        private ObjectSet<Roles> _Roles;
+        private ObjectSet<Role> _Roles;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Usuarios> Usuarios
+        public ObjectSet<Usuario> Usuarios
         {
             get
             {
                 if ((_Usuarios == null))
                 {
-                    _Usuarios = base.CreateObjectSet<Usuarios>("Usuarios");
+                    _Usuarios = base.CreateObjectSet<Usuario>("Usuarios");
                 }
                 return _Usuarios;
             }
         }
-        private ObjectSet<Usuarios> _Usuarios;
+        private ObjectSet<Usuario> _Usuarios;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Ventas> Ventas
+        public ObjectSet<VentaDetalle> VentaDetalles
+        {
+            get
+            {
+                if ((_VentaDetalles == null))
+                {
+                    _VentaDetalles = base.CreateObjectSet<VentaDetalle>("VentaDetalles");
+                }
+                return _VentaDetalles;
+            }
+        }
+        private ObjectSet<VentaDetalle> _VentaDetalles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Venta> Ventas
         {
             get
             {
                 if ((_Ventas == null))
                 {
-                    _Ventas = base.CreateObjectSet<Ventas>("Ventas");
+                    _Ventas = base.CreateObjectSet<Venta>("Ventas");
                 }
                 return _Ventas;
             }
         }
-        private ObjectSet<Ventas> _Ventas;
+        private ObjectSet<Venta> _Ventas;
 
         #endregion
 
         #region AddTo Methods
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the Almacen EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Almacens EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToAlmacen(Almacen almacen)
+        public void AddToAlmacens(Almacen almacen)
         {
-            base.AddObject("Almacen", almacen);
+            base.AddObject("Almacens", almacen);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Clientes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToClientes(Clientes clientes)
+        public void AddToClientes(Cliente cliente)
         {
-            base.AddObject("Clientes", clientes);
+            base.AddObject("Clientes", cliente);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Productos EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToProductos(Productos productos)
+        public void AddToProductos(Producto producto)
         {
-            base.AddObject("Productos", productos);
+            base.AddObject("Productos", producto);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Roles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToRoles(Roles roles)
+        public void AddToRoles(Role role)
         {
-            base.AddObject("Roles", roles);
+            base.AddObject("Roles", role);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Usuarios EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToUsuarios(Usuarios usuarios)
+        public void AddToUsuarios(Usuario usuario)
         {
-            base.AddObject("Usuarios", usuarios);
+            base.AddObject("Usuarios", usuario);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the VentaDetalles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToVentaDetalles(VentaDetalle ventaDetalle)
+        {
+            base.AddObject("VentaDetalles", ventaDetalle);
         }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Ventas EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToVentas(Ventas ventas)
+        public void AddToVentas(Venta venta)
         {
-            base.AddObject("Ventas", ventas);
+            base.AddObject("Ventas", venta);
         }
 
         #endregion
@@ -245,7 +270,7 @@ namespace DataInventarioCDGC
         /// Create a new Almacen object.
         /// </summary>
         /// <param name="iD_Producto">Initial value of the ID_Producto property.</param>
-        public static Almacen CreateAlmacen(global::System.Int32 iD_Producto)
+        public static Almacen CreateAlmacen(global::System.String iD_Producto)
         {
             Almacen almacen = new Almacen();
             almacen.ID_Producto = iD_Producto;
@@ -261,7 +286,7 @@ namespace DataInventarioCDGC
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID_Producto
+        public global::System.String ID_Producto
         {
             get
             {
@@ -273,14 +298,14 @@ namespace DataInventarioCDGC
                 {
                     OnID_ProductoChanging(value);
                     ReportPropertyChanging("ID_Producto");
-                    _ID_Producto = StructuralObject.SetValidValue(value);
+                    _ID_Producto = StructuralObject.SetValidValue(value, false);
                     ReportPropertyChanged("ID_Producto");
                     OnID_ProductoChanged();
                 }
             }
         }
-        private global::System.Int32 _ID_Producto;
-        partial void OnID_ProductoChanging(global::System.Int32 value);
+        private global::System.String _ID_Producto;
+        partial void OnID_ProductoChanging(global::System.String value);
         partial void OnID_ProductoChanged();
     
         /// <summary>
@@ -318,16 +343,16 @@ namespace DataInventarioCDGC
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Almacen__ID_Prod__182C9B23", "Productos")]
-        public Productos Productos
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK_Almacen_Productos", "Productos")]
+        public Producto Producto
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Productos").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Producto>("InventarioCDGCModel.FK_Almacen_Productos", "Productos").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Productos").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Producto>("InventarioCDGCModel.FK_Almacen_Productos", "Productos").Value = value;
             }
         }
         /// <summary>
@@ -335,17 +360,17 @@ namespace DataInventarioCDGC
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Productos> ProductosReference
+        public EntityReference<Producto> ProductoReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Productos");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Producto>("InventarioCDGCModel.FK_Almacen_Productos", "Productos");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Productos>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Productos", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Producto>("InventarioCDGCModel.FK_Almacen_Productos", "Productos", value);
                 }
             }
         }
@@ -357,22 +382,22 @@ namespace DataInventarioCDGC
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Clientes")]
+    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Cliente")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Clientes : EntityObject
+    public partial class Cliente : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Clientes object.
+        /// Create a new Cliente object.
         /// </summary>
         /// <param name="iD_Cliente">Initial value of the ID_Cliente property.</param>
-        public static Clientes CreateClientes(global::System.Int32 iD_Cliente)
+        public static Cliente CreateCliente(global::System.Int32 iD_Cliente)
         {
-            Clientes clientes = new Clientes();
-            clientes.ID_Cliente = iD_Cliente;
-            return clientes;
+            Cliente cliente = new Cliente();
+            cliente.ID_Cliente = iD_Cliente;
+            return cliente;
         }
 
         #endregion
@@ -538,17 +563,17 @@ namespace DataInventarioCDGC
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Clien__117F9D94", "Ventas")]
-        public EntityCollection<Ventas> Ventas
+        public EntityCollection<Venta> Ventas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ventas>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Ventas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Venta>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Ventas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ventas>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Ventas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Venta>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Ventas", value);
                 }
             }
         }
@@ -560,22 +585,22 @@ namespace DataInventarioCDGC
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Productos")]
+    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Producto")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Productos : EntityObject
+    public partial class Producto : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Productos object.
+        /// Create a new Producto object.
         /// </summary>
         /// <param name="iD_Producto">Initial value of the ID_Producto property.</param>
-        public static Productos CreateProductos(global::System.Int32 iD_Producto)
+        public static Producto CreateProducto(global::System.String iD_Producto)
         {
-            Productos productos = new Productos();
-            productos.ID_Producto = iD_Producto;
-            return productos;
+            Producto producto = new Producto();
+            producto.ID_Producto = iD_Producto;
+            return producto;
         }
 
         #endregion
@@ -587,7 +612,7 @@ namespace DataInventarioCDGC
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 ID_Producto
+        public global::System.String ID_Producto
         {
             get
             {
@@ -599,14 +624,14 @@ namespace DataInventarioCDGC
                 {
                     OnID_ProductoChanging(value);
                     ReportPropertyChanging("ID_Producto");
-                    _ID_Producto = StructuralObject.SetValidValue(value);
+                    _ID_Producto = StructuralObject.SetValidValue(value, false);
                     ReportPropertyChanged("ID_Producto");
                     OnID_ProductoChanged();
                 }
             }
         }
-        private global::System.Int32 _ID_Producto;
-        partial void OnID_ProductoChanging(global::System.Int32 value);
+        private global::System.String _ID_Producto;
+        partial void OnID_ProductoChanging(global::System.String value);
         partial void OnID_ProductoChanged();
     
         /// <summary>
@@ -614,24 +639,24 @@ namespace DataInventarioCDGC
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String Producto
+        public global::System.String Producto1
         {
             get
             {
-                return _Producto;
+                return _Producto1;
             }
             set
             {
-                OnProductoChanging(value);
-                ReportPropertyChanging("Producto");
-                _Producto = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Producto");
-                OnProductoChanged();
+                OnProducto1Changing(value);
+                ReportPropertyChanging("Producto1");
+                _Producto1 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Producto1");
+                OnProducto1Changed();
             }
         }
-        private global::System.String _Producto;
-        partial void OnProductoChanging(global::System.String value);
-        partial void OnProductoChanged();
+        private global::System.String _Producto1;
+        partial void OnProducto1Changing(global::System.String value);
+        partial void OnProducto1Changed();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -668,16 +693,16 @@ namespace DataInventarioCDGC
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Almacen__ID_Prod__182C9B23", "Almacen")]
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK_Almacen_Productos", "Almacen")]
         public Almacen Almacen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK_Almacen_Productos", "Almacen").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK_Almacen_Productos", "Almacen").Value = value;
             }
         }
         /// <summary>
@@ -689,13 +714,13 @@ namespace DataInventarioCDGC
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Almacen>("InventarioCDGCModel.FK_Almacen_Productos", "Almacen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Almacen>("InventarioCDGCModel.FK__Almacen__ID_Prod__182C9B23", "Almacen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Almacen>("InventarioCDGCModel.FK_Almacen_Productos", "Almacen", value);
                 }
             }
         }
@@ -706,18 +731,18 @@ namespace DataInventarioCDGC
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Produ__1273C1CD", "Ventas")]
-        public EntityCollection<Ventas> Ventas
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK_VentaDetalle_Productos", "VentaDetalle")]
+        public EntityCollection<VentaDetalle> VentaDetalles
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ventas>("InventarioCDGCModel.FK__Ventas__ID_Produ__1273C1CD", "Ventas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VentaDetalle>("InventarioCDGCModel.FK_VentaDetalle_Productos", "VentaDetalle");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ventas>("InventarioCDGCModel.FK__Ventas__ID_Produ__1273C1CD", "Ventas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VentaDetalle>("InventarioCDGCModel.FK_VentaDetalle_Productos", "VentaDetalle", value);
                 }
             }
         }
@@ -729,22 +754,22 @@ namespace DataInventarioCDGC
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Roles")]
+    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Role")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Roles : EntityObject
+    public partial class Role : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Roles object.
+        /// Create a new Role object.
         /// </summary>
         /// <param name="iD_Rol">Initial value of the ID_Rol property.</param>
-        public static Roles CreateRoles(global::System.Int32 iD_Rol)
+        public static Role CreateRole(global::System.Int32 iD_Rol)
         {
-            Roles roles = new Roles();
-            roles.ID_Rol = iD_Rol;
-            return roles;
+            Role role = new Role();
+            role.ID_Rol = iD_Rol;
+            return role;
         }
 
         #endregion
@@ -838,17 +863,17 @@ namespace DataInventarioCDGC
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Usuarios__ID_Rol__0CBAE877", "Usuarios")]
-        public EntityCollection<Usuarios> Usuarios
+        public EntityCollection<Usuario> Usuarios
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Usuarios>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Usuarios");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Usuario>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Usuarios");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuarios>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Usuarios", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Usuario>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Usuarios", value);
                 }
             }
         }
@@ -860,22 +885,22 @@ namespace DataInventarioCDGC
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Usuarios")]
+    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Usuario")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Usuarios : EntityObject
+    public partial class Usuario : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Usuarios object.
+        /// Create a new Usuario object.
         /// </summary>
         /// <param name="iD_Usuario">Initial value of the ID_Usuario property.</param>
-        public static Usuarios CreateUsuarios(global::System.Int32 iD_Usuario)
+        public static Usuario CreateUsuario(global::System.Int32 iD_Usuario)
         {
-            Usuarios usuarios = new Usuarios();
-            usuarios.ID_Usuario = iD_Usuario;
-            return usuarios;
+            Usuario usuario = new Usuario();
+            usuario.ID_Usuario = iD_Usuario;
+            return usuario;
         }
 
         #endregion
@@ -993,15 +1018,15 @@ namespace DataInventarioCDGC
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Usuarios__ID_Rol__0CBAE877", "Roles")]
-        public Roles Roles
+        public Role Role
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Roles>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Roles>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles").Value = value;
             }
         }
         /// <summary>
@@ -1009,17 +1034,17 @@ namespace DataInventarioCDGC
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Roles> RolesReference
+        public EntityReference<Role> RoleReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Roles>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Roles>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Role>("InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877", "Roles", value);
                 }
             }
         }
@@ -1031,17 +1056,17 @@ namespace DataInventarioCDGC
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Usuar__1367E606", "Ventas")]
-        public EntityCollection<Ventas> Ventas
+        public EntityCollection<Venta> Ventas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ventas>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Ventas");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Venta>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Ventas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ventas>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Ventas", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Venta>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Ventas", value);
                 }
             }
         }
@@ -1053,22 +1078,22 @@ namespace DataInventarioCDGC
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Ventas")]
+    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="Venta")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Ventas : EntityObject
+    public partial class Venta : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Ventas object.
+        /// Create a new Venta object.
         /// </summary>
         /// <param name="iD_Venta">Initial value of the ID_Venta property.</param>
-        public static Ventas CreateVentas(global::System.Int32 iD_Venta)
+        public static Venta CreateVenta(global::System.Int32 iD_Venta)
         {
-            Ventas ventas = new Ventas();
-            ventas.ID_Venta = iD_Venta;
-            return ventas;
+            Venta venta = new Venta();
+            venta.ID_Venta = iD_Venta;
+            return venta;
         }
 
         #endregion
@@ -1131,30 +1156,6 @@ namespace DataInventarioCDGC
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> ID_Producto
-        {
-            get
-            {
-                return _ID_Producto;
-            }
-            set
-            {
-                OnID_ProductoChanging(value);
-                ReportPropertyChanging("ID_Producto");
-                _ID_Producto = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("ID_Producto");
-                OnID_ProductoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _ID_Producto;
-        partial void OnID_ProductoChanging(Nullable<global::System.Int32> value);
-        partial void OnID_ProductoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Int32> ID_Usuario
         {
             get
@@ -1173,6 +1174,261 @@ namespace DataInventarioCDGC
         private Nullable<global::System.Int32> _ID_Usuario;
         partial void OnID_UsuarioChanging(Nullable<global::System.Int32> value);
         partial void OnID_UsuarioChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Observacion
+        {
+            get
+            {
+                return _Observacion;
+            }
+            set
+            {
+                OnObservacionChanging(value);
+                ReportPropertyChanging("Observacion");
+                _Observacion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Observacion");
+                OnObservacionChanged();
+            }
+        }
+        private global::System.String _Observacion;
+        partial void OnObservacionChanging(global::System.String value);
+        partial void OnObservacionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Fecha
+        {
+            get
+            {
+                return _Fecha;
+            }
+            set
+            {
+                OnFechaChanging(value);
+                ReportPropertyChanging("Fecha");
+                _Fecha = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Fecha");
+                OnFechaChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Fecha;
+        partial void OnFechaChanging(Nullable<global::System.DateTime> value);
+        partial void OnFechaChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Clien__117F9D94", "Clientes")]
+        public Cliente Cliente
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cliente>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cliente>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Cliente> ClienteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cliente>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cliente>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Usuar__1367E606", "Usuarios")]
+        public Usuario Usuario
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Usuario> UsuarioReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuario>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuario>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK_VentaDetalle_Ventas", "VentaDetalle")]
+        public EntityCollection<VentaDetalle> VentaDetalles
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<VentaDetalle>("InventarioCDGCModel.FK_VentaDetalle_Ventas", "VentaDetalle");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<VentaDetalle>("InventarioCDGCModel.FK_VentaDetalle_Ventas", "VentaDetalle", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="InventarioCDGCModel", Name="VentaDetalle")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class VentaDetalle : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new VentaDetalle object.
+        /// </summary>
+        /// <param name="iD_Detalle">Initial value of the ID_Detalle property.</param>
+        public static VentaDetalle CreateVentaDetalle(global::System.Int32 iD_Detalle)
+        {
+            VentaDetalle ventaDetalle = new VentaDetalle();
+            ventaDetalle.ID_Detalle = iD_Detalle;
+            return ventaDetalle;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID_Detalle
+        {
+            get
+            {
+                return _ID_Detalle;
+            }
+            set
+            {
+                if (_ID_Detalle != value)
+                {
+                    OnID_DetalleChanging(value);
+                    ReportPropertyChanging("ID_Detalle");
+                    _ID_Detalle = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID_Detalle");
+                    OnID_DetalleChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID_Detalle;
+        partial void OnID_DetalleChanging(global::System.Int32 value);
+        partial void OnID_DetalleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ID_Venta
+        {
+            get
+            {
+                return _ID_Venta;
+            }
+            set
+            {
+                OnID_VentaChanging(value);
+                ReportPropertyChanging("ID_Venta");
+                _ID_Venta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ID_Venta");
+                OnID_VentaChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ID_Venta;
+        partial void OnID_VentaChanging(Nullable<global::System.Int32> value);
+        partial void OnID_VentaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ID_Producto
+        {
+            get
+            {
+                return _ID_Producto;
+            }
+            set
+            {
+                OnID_ProductoChanging(value);
+                ReportPropertyChanging("ID_Producto");
+                _ID_Producto = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ID_Producto");
+                OnID_ProductoChanged();
+            }
+        }
+        private global::System.String _ID_Producto;
+        partial void OnID_ProductoChanging(global::System.String value);
+        partial void OnID_ProductoChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1245,54 +1501,6 @@ namespace DataInventarioCDGC
         private Nullable<global::System.Decimal> _Descuento;
         partial void OnDescuentoChanging(Nullable<global::System.Decimal> value);
         partial void OnDescuentoChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Observacion
-        {
-            get
-            {
-                return _Observacion;
-            }
-            set
-            {
-                OnObservacionChanging(value);
-                ReportPropertyChanging("Observacion");
-                _Observacion = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Observacion");
-                OnObservacionChanged();
-            }
-        }
-        private global::System.String _Observacion;
-        partial void OnObservacionChanging(global::System.String value);
-        partial void OnObservacionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> Fecha
-        {
-            get
-            {
-                return _Fecha;
-            }
-            set
-            {
-                OnFechaChanging(value);
-                ReportPropertyChanging("Fecha");
-                _Fecha = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Fecha");
-                OnFechaChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _Fecha;
-        partial void OnFechaChanging(Nullable<global::System.DateTime> value);
-        partial void OnFechaChanged();
 
         #endregion
 
@@ -1305,16 +1513,16 @@ namespace DataInventarioCDGC
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Clien__117F9D94", "Clientes")]
-        public Clientes Clientes
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK_VentaDetalle_Productos", "Productos")]
+        public Producto Producto
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Clientes>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Producto>("InventarioCDGCModel.FK_VentaDetalle_Productos", "Productos").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Clientes>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Producto>("InventarioCDGCModel.FK_VentaDetalle_Productos", "Productos").Value = value;
             }
         }
         /// <summary>
@@ -1322,17 +1530,17 @@ namespace DataInventarioCDGC
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Clientes> ClientesReference
+        public EntityReference<Producto> ProductoReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Clientes>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Producto>("InventarioCDGCModel.FK_VentaDetalle_Productos", "Productos");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Clientes>("InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94", "Clientes", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Producto>("InventarioCDGCModel.FK_VentaDetalle_Productos", "Productos", value);
                 }
             }
         }
@@ -1343,16 +1551,16 @@ namespace DataInventarioCDGC
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Produ__1273C1CD", "Productos")]
-        public Productos Productos
+        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK_VentaDetalle_Ventas", "Ventas")]
+        public Venta Venta
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("InventarioCDGCModel.FK__Ventas__ID_Produ__1273C1CD", "Productos").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Venta>("InventarioCDGCModel.FK_VentaDetalle_Ventas", "Ventas").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("InventarioCDGCModel.FK__Ventas__ID_Produ__1273C1CD", "Productos").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Venta>("InventarioCDGCModel.FK_VentaDetalle_Ventas", "Ventas").Value = value;
             }
         }
         /// <summary>
@@ -1360,55 +1568,17 @@ namespace DataInventarioCDGC
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Productos> ProductosReference
+        public EntityReference<Venta> VentaReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Productos>("InventarioCDGCModel.FK__Ventas__ID_Produ__1273C1CD", "Productos");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Venta>("InventarioCDGCModel.FK_VentaDetalle_Ventas", "Ventas");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Productos>("InventarioCDGCModel.FK__Ventas__ID_Produ__1273C1CD", "Productos", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("InventarioCDGCModel", "FK__Ventas__ID_Usuar__1367E606", "Usuarios")]
-        public Usuarios Usuarios
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuarios>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuarios>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Usuarios> UsuariosReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Usuarios>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Usuarios>("InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606", "Usuarios", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Venta>("InventarioCDGCModel.FK_VentaDetalle_Ventas", "Ventas", value);
                 }
             }
         }

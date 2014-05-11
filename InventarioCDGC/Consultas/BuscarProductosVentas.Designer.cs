@@ -106,7 +106,7 @@
             // 
             // ColumnNombre
             // 
-            this.ColumnNombre.DataPropertyName = "Producto";
+            this.ColumnNombre.DataPropertyName = "Producto1";
             this.ColumnNombre.HeaderText = "Nombre del Producto";
             this.ColumnNombre.Name = "ColumnNombre";
             this.ColumnNombre.ReadOnly = true;

@@ -19,7 +19,7 @@ namespace DataInventarioCDGC
         public string celular { get; set; }
         public string direccion { get; set; }
 
-        InventarioCDGCEntities dbEntities = new InventarioCDGCEntities();
+        InventarioCDGCEntities1 dbEntities = new InventarioCDGCEntities1();
         
         /// <summary>
         /// Guarda un cliente en la base de datos.
@@ -30,8 +30,8 @@ namespace DataInventarioCDGC
             try
             {
                 
-            InventarioCDGCEntities db = new InventarioCDGCEntities();
-            Clientes clientes = new Clientes();   
+            InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
+            Cliente clientes = new Cliente();   
             clientes.Nombre = nombre;
             clientes.Cedula = cedula;
             clientes.Telefono = telefono;
@@ -61,7 +61,7 @@ namespace DataInventarioCDGC
            bool isComplete = false;
             try
             {
-                Clientes update = (from upd in dbEntities.Clientes
+                Cliente update = (from upd in dbEntities.Clientes
                                       where upd.ID_Cliente == idcliente
                                       select upd).First();
 
@@ -93,7 +93,7 @@ namespace DataInventarioCDGC
             
             try
             {
-                Clientes borrar = (from bor in dbEntities.Clientes
+                Cliente borrar = (from bor in dbEntities.Clientes
                                       where bor.ID_Cliente == idcliente
                                       select bor).FirstOrDefault();
 
@@ -114,7 +114,7 @@ namespace DataInventarioCDGC
         /// Lista de todos los clientes.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Clientes> BuscarTodos()
+        public List<Cliente> BuscarTodos()
         {
            var selec = (from s in dbEntities.Clientes
                          select s).ToList();
@@ -125,10 +125,10 @@ namespace DataInventarioCDGC
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<Clientes> BuscarxID()
+        public List<Cliente> BuscarxID()
         {
 
-            List<Clientes> busc = (from b in dbEntities.Clientes
+            List<Cliente> busc = (from b in dbEntities.Clientes
                                            where b.ID_Cliente == idcliente
                                            select b).ToList();
             if (busc != null)
@@ -156,10 +156,10 @@ namespace DataInventarioCDGC
         /// </summary>
         /// <param name="nombre">nombre del cliente.</param>
         /// <returns>List</returns>
-        public List<Clientes> BuscarxNombre(string nombre)
+        public List<Cliente> BuscarxNombre(string nombre)
         {
 
-            List<Clientes> busc = (from b in dbEntities.Clientes
+            List<Cliente> busc = (from b in dbEntities.Clientes
                                            where b.Nombre == nombre
                                            select b).ToList();
             if (busc != null)
@@ -181,9 +181,9 @@ namespace DataInventarioCDGC
         /// </summary>
         /// <param name="nombre">cedula del cliente.</param>
         /// <returns>List</returns>
-        public List<Clientes> BuscarxCedula(string cedula)
+        public List<Cliente> BuscarxCedula(string cedula)
         {
-            List<Clientes> busc = (from b in dbEntities.Clientes
+            List<Cliente> busc = (from b in dbEntities.Clientes
                                       where b.Cedula == cedula
                                       select b).ToList();
             if (busc != null)

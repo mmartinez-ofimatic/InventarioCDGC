@@ -32,7 +32,7 @@ namespace InventarioCDGC
                     {
                         try
                         {
-                        product.idproducto = Convert.ToInt32(tbuscarpor.Text);
+                        product.idproducto = tbuscarpor.Text;
                         dataGridView1.AutoGenerateColumns = false;
 
                         dataGridView1.DataSource = product.BuscarxID();
@@ -150,7 +150,7 @@ namespace InventarioCDGC
                         {
                             try
                             {
-                                product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
+                                product.idproducto = textBoxIDproducto.Text;
                                 product.producto = textBoxNombre.Text;
                                 product.precio = Convert.ToDecimal(textBoxPrecio.Text);
                                 if (product.Guardar())
@@ -199,7 +199,7 @@ namespace InventarioCDGC
                             try
                             {
 
-                            product.idproducto = Convert.ToInt32(textBoxIDproducto.Text);
+                            product.idproducto = textBoxIDproducto.Text;
                             product.producto = textBoxNombre.Text;
                             product.precio = Convert.ToDecimal(textBoxPrecio.Text);
 
@@ -280,7 +280,7 @@ namespace InventarioCDGC
                     {
                         try
                         {
-                            product.idproducto = Convert.ToInt32(tbuscarpor.Text);
+                            product.idproducto = tbuscarpor.Text;
                             dataGridView1.AutoGenerateColumns = false;
 
                             dataGridView1.DataSource = product.BuscarxID();

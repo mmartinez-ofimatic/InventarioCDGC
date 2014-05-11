@@ -58,15 +58,13 @@
     <Compile Include="VentasInv.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="ModelCDGC.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelCDGC.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\DataSources\InventarioCDGCEntities.datasource">
       <SubType>Designer</SubType>
     </None>

@@ -46,7 +46,7 @@ namespace InventarioCDGC.Consultas
                     {
                         try
                         {
-                            productosClass.idproducto = Convert.ToInt32(tbuscarpor.Text);
+                            productosClass.idproducto = tbuscarpor.Text;
                             dataGridView1.AutoGenerateColumns = false;
 
                             dataGridView1.DataSource = productosClass.BuscarxID();

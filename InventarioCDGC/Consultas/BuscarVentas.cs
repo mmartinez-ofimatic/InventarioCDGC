@@ -33,7 +33,7 @@ namespace InventarioCDGC.Consultas
 
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = ventasClass.BuscarxIDProducto(Convert.ToInt32(tbuscarpor.Text));
+                            //dataGridView1.DataSource = ventasClass.BuscarxIDProducto(tbuscarpor.Text);
 
                             if (dataGridView1.RowCount == 0)
                             {
