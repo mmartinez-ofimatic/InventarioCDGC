@@ -27,14 +27,8 @@ namespace InventarioCDGC
             pa.Show();
             pa.SetDesktopLocation(this.Location.X + this.Size.Width, this.Location.Y);
             
+            
         }
-
-       
-        //private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        //{
-        //    // Determine if text has changed in the textbox by comparing to original text. 
-        //    MessageBox.Show("Prueba");
-        //}
 
 
 
@@ -192,7 +186,7 @@ namespace InventarioCDGC
 
         private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro de que desea cerrar la aplicación", "Cerrar aplicación", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("¿Esta seguro de que desea cerrar la aplicación", "Cerrar aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 e.Cancel = true;
             
         }
@@ -200,7 +194,14 @@ namespace InventarioCDGC
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }     
+        }
+
+        private void FrmMenu_Move(object sender, EventArgs e)
+        {
+
+            //pa.BringToFront();
+            pa.SetDesktopLocation(this.Location.X + this.Size.Width, this.Location.Y);
+        }
 
 
     }

@@ -282,7 +282,6 @@
             this.buttonConsultas.TabIndex = 35;
             this.buttonConsultas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonConsultas.UseVisualStyleBackColor = true;
-            this.buttonConsultas.Click += new System.EventHandler(this.buttonConsultas_Click);
             // 
             // buttonReportes
             // 
@@ -374,7 +373,6 @@
             this.label3.Size = new System.Drawing.Size(113, 29);
             this.label3.TabIndex = 39;
             this.label3.Text = "Almacén";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -386,7 +384,6 @@
             this.label4.Size = new System.Drawing.Size(126, 29);
             this.label4.TabIndex = 40;
             this.label4.Text = "Consultas";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -398,7 +395,6 @@
             this.label5.Size = new System.Drawing.Size(127, 29);
             this.label5.TabIndex = 41;
             this.label5.Text = "Productos";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -410,7 +406,6 @@
             this.label6.Size = new System.Drawing.Size(92, 29);
             this.label6.TabIndex = 42;
             this.label6.Text = "Ventas";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -422,7 +417,6 @@
             this.label7.Size = new System.Drawing.Size(115, 29);
             this.label7.TabIndex = 43;
             this.label7.Text = "Reportes";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -434,7 +428,6 @@
             this.label8.Size = new System.Drawing.Size(113, 29);
             this.label8.TabIndex = 44;
             this.label8.Text = "Usuarios";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // FrmMenu
             // 
@@ -466,14 +459,15 @@
             this.Name = "FrmMenu";
             this.Text = "Menú Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenu_FormClosed);
             this.Load += new System.EventHandler(this.FrmMenu_Load);
+            this.LocationChanged += new System.EventHandler(this.FrmMenu_Move);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenu_FormClosed);
 
         }
 
