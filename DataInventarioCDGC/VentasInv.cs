@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
+using System.Data.Objects;
 
 namespace DataInventarioCDGC
 {
@@ -37,7 +39,7 @@ namespace DataInventarioCDGC
                 ventas.Fecha = DateTime.Now;
 
                 db.AddToVentas(ventas);
-                db.SaveChanges();
+                db.SaveChanges(SaveOptions.DetectChangesBeforeSave);
                 isComplete = true;
             }
             catch (Exception)
@@ -209,7 +211,6 @@ namespace DataInventarioCDGC
             // selec.
             return agregarVentasList;
         }
-
     }
 
   public class AgregarVentas
