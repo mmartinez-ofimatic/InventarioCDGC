@@ -262,7 +262,7 @@
             this.buttonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUsuarios.Location = new System.Drawing.Point(109, 523);
-            this.buttonUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUsuarios.Name = "buttonUsuarios";
             this.buttonUsuarios.Size = new System.Drawing.Size(208, 140);
             this.buttonUsuarios.TabIndex = 36;
@@ -276,7 +276,7 @@
             this.buttonConsultas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConsultas.Location = new System.Drawing.Point(484, 295);
-            this.buttonConsultas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonConsultas.Margin = new System.Windows.Forms.Padding(4);
             this.buttonConsultas.Name = "buttonConsultas";
             this.buttonConsultas.Size = new System.Drawing.Size(208, 140);
             this.buttonConsultas.TabIndex = 35;
@@ -290,7 +290,7 @@
             this.buttonReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReportes.Location = new System.Drawing.Point(863, 295);
-            this.buttonReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReportes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReportes.Name = "buttonReportes";
             this.buttonReportes.Size = new System.Drawing.Size(208, 140);
             this.buttonReportes.TabIndex = 34;
@@ -303,7 +303,7 @@
             this.buttonAlmacen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlmacen.Location = new System.Drawing.Point(109, 295);
-            this.buttonAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlmacen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAlmacen.Name = "buttonAlmacen";
             this.buttonAlmacen.Size = new System.Drawing.Size(208, 140);
             this.buttonAlmacen.TabIndex = 33;
@@ -317,7 +317,7 @@
             this.buttonProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonProductos.Location = new System.Drawing.Point(484, 84);
-            this.buttonProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonProductos.Margin = new System.Windows.Forms.Padding(4);
             this.buttonProductos.Name = "buttonProductos";
             this.buttonProductos.Size = new System.Drawing.Size(208, 140);
             this.buttonProductos.TabIndex = 32;
@@ -331,7 +331,7 @@
             this.buttonClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClientes.Location = new System.Drawing.Point(109, 84);
-            this.buttonClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClientes.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClientes.Name = "buttonClientes";
             this.buttonClientes.Size = new System.Drawing.Size(208, 140);
             this.buttonClientes.TabIndex = 31;
@@ -345,7 +345,7 @@
             this.buttonVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVentas.Location = new System.Drawing.Point(863, 84);
-            this.buttonVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonVentas.Margin = new System.Windows.Forms.Padding(4);
             this.buttonVentas.Name = "buttonVentas";
             this.buttonVentas.Size = new System.Drawing.Size(208, 140);
             this.buttonVentas.TabIndex = 30;
@@ -461,10 +461,9 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenu_Load);
@@ -474,6 +473,7 @@
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenu_FormClosed);
 
         }
 

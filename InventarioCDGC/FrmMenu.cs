@@ -25,15 +25,16 @@ namespace InventarioCDGC
             Permisos();
             
             pa.Show();
+            pa.SetDesktopLocation(this.Location.X + this.Size.Width, this.Location.Y);
             
         }
 
        
-        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // Determine if text has changed in the textbox by comparing to original text. 
-            MessageBox.Show("Prueba");
-        }
+        //private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        //{
+        //    // Determine if text has changed in the textbox by comparing to original text. 
+        //    MessageBox.Show("Prueba");
+        //}
 
 
 
@@ -177,10 +178,7 @@ namespace InventarioCDGC
             almacen.ShowDialog(this);
         }
 
-        private void buttonConsultas_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void buttonUsuarios_Click(object sender, EventArgs e)
         {
@@ -188,41 +186,21 @@ namespace InventarioCDGC
             usuario.ShowDialog(this);
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
-            Application.Exit();
+            if (MessageBox.Show("¿Esta seguro de que desea cerrar la aplicación", "Cerrar aplicación", MessageBoxButtons.YesNo) == DialogResult.No)
+                e.Cancel = true;
+            
         }
+
+        private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }     
 
 
     }
