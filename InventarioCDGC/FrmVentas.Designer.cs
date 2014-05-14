@@ -325,12 +325,13 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 45;
-            this.label3.Text = "Precio de unidad";
+            this.label3.Text = "Precio RD$:";
             // 
             // textBoxPrecio
             // 
+            this.textBoxPrecio.Enabled = false;
             this.textBoxPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrecio.Location = new System.Drawing.Point(116, 81);
             this.textBoxPrecio.Name = "textBoxPrecio";

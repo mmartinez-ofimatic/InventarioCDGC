@@ -112,7 +112,7 @@ namespace InventarioCDGC
                                             {
                                                 if (id > 0)
                                                 {
-                                                    usuarioClass.IDusuario = id;
+                                                    UsuarioInv.IDusuario = id;
                                                     usuarioClass.nomusuario = textBoxNombre.Text;
                                                     usuarioClass.contrasena = textBoxContrasena.Text;
                                                     usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
@@ -185,7 +185,7 @@ namespace InventarioCDGC
                     {
                         try
                         {
-                            usuarioClass.IDusuario = Convert.ToInt32(tbuscarpor.Text);
+                            UsuarioInv.IDusuario = Convert.ToInt32(tbuscarpor.Text);
 
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -247,7 +247,7 @@ namespace InventarioCDGC
                 DataGridViewRow row = dataGridView1.CurrentRow;
                 if (Convert.ToInt32(row.Cells[0].Value.ToString()) == id)
                 {
-                    usuarioClass.IDusuario = id;
+                    UsuarioInv.IDusuario = id;
                     if (usuarioClass.Borrar())
                     {
                         MessageBox.Show("Eliminado!", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -363,7 +363,7 @@ namespace InventarioCDGC
                                 {
                                     if (id > 0)
                                     {
-                                        usuarioClass.IDusuario = id;
+                                        UsuarioInv.IDusuario = id;
                                         usuarioClass.nomusuario = textBoxNombre.Text;
                                         usuarioClass.contrasena = textBoxContrasena.Text;
                                         usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
@@ -464,7 +464,7 @@ namespace InventarioCDGC
                     {
                         try
                         {
-                            usuarioClass.IDusuario = Convert.ToInt32(tbuscarpor.Text);
+                            UsuarioInv.IDusuario = Convert.ToInt32(tbuscarpor.Text);
 
                             dataGridView1.AutoGenerateColumns = false;
 

@@ -13,8 +13,7 @@ namespace DataInventarioCDGC
         InventarioCDGCEntities1 dbEntities = new InventarioCDGCEntities1();
         VentasInv venta = new VentasInv();
         ventaDetalles ventaDetalle = new ventaDetalles();
-
-
+       
         public int idventa { get; set; }
         public int idcliente { get; set; }
         public string idproducto { get; set; }
@@ -25,52 +24,60 @@ namespace DataInventarioCDGC
         public string observacion { get; set; }
         public DateTime fecha { get; set; }
 
-        public bool estadoGuardado = false;
-        public bool savecommit = false;
-
        public InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
        public InventarioCDGCEntities1 db1 = new InventarioCDGCEntities1();
-       public TransactionScope transScope;
+       public TransactionScope transScope ;
 
-        public bool transationsVentas()
+        public bool transationsVentas(List<AgregarVentas> listaVenta)
         {
-            //bool savecommit = false;
+            bool savecommit = false;
 
             using (transScope = new TransactionScope())
             {
+
                 try
                 {
-                    if (!estadoGuardado)
-                    {
+
                         Venta ventas = new Venta();
                         ventas.ID_Cliente = idcliente;
-                        //falata el id de usuario
-                        ventas.ID_Usuario = null;
+
+                        ventas.ID_Usuario = UsuarioInv.IDusuario;
                         ventas.Observacion = observacion;
                         ventas.Fecha = DateTime.Now;
-
+                           
                         db.AddToVentas(ventas);
                         db.SaveChanges(SaveOptions.DetectChangesBeforeSave);
-                        estadoGuardado = true;
-                    }
-                
+
+                    var filtro = (from c in listaVenta
+                                  select new
+                                  {
+                                      idProducto = c.Producto.Select(x => x.Key).Single(),
+                                      Producto = c.Producto.Select(x => x.Value).Single(),
+                                      c.Precio,
+                                      c.Cantidad,
+                                      c.Descuento,
+                                      c.PrecioNeto
+                                  }).ToList();
+
+
                     VentaDetalle ventasDetalle = new VentaDetalle();
-                    ventasDetalle.ID_Venta = 5;
-                    ventasDetalle.ID_Producto = idproducto;
-                    ventasDetalle.Precio_Unidad = precio;
-                    ventasDetalle.Cantidad = cantidad;
-                    ventasDetalle.Descuento = descuento;
 
-                    db1.AddToVentaDetalles(ventasDetalle);
-                    db1.SaveChanges(SaveOptions.DetectChangesBeforeSave);
+                    foreach (var item in filtro)
+                    {
+                        ventasDetalle.ID_Venta =  ventas.ID_Venta;
+                        ventasDetalle.ID_Producto = item.idProducto.ToString();
+                        ventasDetalle.Precio_Unidad = item.Precio;
+                        ventasDetalle.Cantidad = item.Cantidad;
+                        ventasDetalle.Descuento = Convert.ToDecimal(item.Descuento);
 
+                        db1.AddToVentaDetalles(ventasDetalle);
+                        db1.SaveChanges(SaveOptions.DetectChangesBeforeSave);
+                    }
+              
+                    transScope.Complete();
+                    db.AcceptAllChanges();
+                    db1.AcceptAllChanges();
 
-                    //venta.Guardar();
-                    //ventaDetalle.Guardar();
-
-                    //transScope.Complete();
-                    //db.AcceptAllChanges();
-                    //db1.AcceptAllChanges();
                     savecommit = true;
                   
                 }
@@ -85,35 +92,6 @@ namespace DataInventarioCDGC
             return savecommit;
         }
 
-
-        /// <summary>
-        /// Guarda una venta.
-        /// </summary>
-        /// <returns>bool isComplete</returns>
-        public bool Guardar()
-        {
-            bool isComplete = false;
-            try
-            {
-                InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
-                Venta ventas = new Venta();
-                ventas.ID_Cliente = idcliente;
-                //falata el id de usuario
-                ventas.ID_Usuario = null;
-                ventas.Observacion = observacion;
-                ventas.Fecha = DateTime.Now;
-
-                db.AddToVentas(ventas);
-                db.SaveChanges(SaveOptions.DetectChangesBeforeSave);
-                isComplete = true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return isComplete;
-        }
 
     }
 }

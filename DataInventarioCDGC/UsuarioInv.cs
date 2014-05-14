@@ -9,7 +9,7 @@ namespace DataInventarioCDGC
 {
   public class UsuarioInv
     {
-        public int IDusuario { get; set; }
+        public static int IDusuario { get; set; }
         public int IDrol { get; set; }
         public string nomusuario { get; set; }
         public string contrasena { get; set; }
@@ -29,6 +29,10 @@ namespace DataInventarioCDGC
                 IDrol = Get_Rol(nombre, pass);
                 nomusuario = nombre;
                 valido = true;
+
+                IDusuario = usuario.ID_Usuario;
+                //var selectidusuario = from selec in db.Usuarios
+                //                      where selec.Nombre == nombre
             }
 
             return valido;

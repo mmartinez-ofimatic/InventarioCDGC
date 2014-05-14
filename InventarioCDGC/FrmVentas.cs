@@ -243,78 +243,47 @@ namespace InventarioCDGC
             ventas.ShowDialog(this);
         }
 
-        TransationsVentas transVenta = new TransationsVentas();
+       TransationsVentas transationsVentas = new TransationsVentas();
 
+        
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
-            //Clientescdgc clientes = new Clientescdgc();
-
             if (textBoxCliente.Text != "")
             {
                 if (dataGridViewVentas.RowCount != 0)
-                {
-                   
-                            try
+                {                  
+                          try
                             {
-                                transVenta.idcliente = Convert.ToInt32(clienteKeyValue.Keys.First());//textBoxCliente.Text);
-                                transVenta.observacion = textBoxObservacion1.Text;
-
-                                row = dataGridViewVentas.CurrentRow;
-                               // dataGridView1.RowCount;
-                                
-                                for (int i = 0; i < dataGridViewVentas.RowCount; i++)
+                                transationsVentas.idcliente = Convert.ToInt32(clienteKeyValue.Keys.First());
+                                transationsVentas.observacion = textBoxObservacion1.Text;
+        
+                                if (transationsVentas.transationsVentas(listaNueva))
                                 {
-                                    transVenta.idproducto = row.Cells[0].Value.ToString();
-                                    transVenta.precio = Convert.ToDecimal(row.Cells[2].Value.ToString());
-                                    transVenta.cantidad = Convert.ToInt32(row.Cells[3].Value.ToString());
-                                    transVenta.descuento = Convert.ToDecimal(row.Cells[4].Value.ToString());
-                                    transVenta.transationsVentas();
-                                }
-
-                                transVenta.transScope.Complete();
-                                transVenta.db.AcceptAllChanges();
-                                transVenta.db1.AcceptAllChanges();
-                              
-                                //transVenta.idproducto = textBoxProducto.Text;
-                                //transVenta.precio = Convert.ToDecimal(textBoxPrecio.Text);
-                                //transVenta.cantidad = Convert.ToInt32(textBoxCantidad.Text);
-                                //transVenta.descuento = Convert.ToDecimal(textBoxDescuento.Text);
-                                
-                                //Falta el id de usuario para saber que usuario hiso la venta
-                                //ventasClass.idusuario = el id del usuario loguiado.
-
-                                if (transVenta.savecommit)
-                                {
-                                    transVenta.estadoGuardado = false;
-                                    transVenta.savecommit = false;
                                     MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
-                                    //ActualizarGrid();
+                                    dataGridViewVentas.DataSource = null;
+                                    
                                 }
 
                                 else
                                 {
-                                    MessageBox.Show("Llene el campo Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Realize la venta nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
-
 
                             }
                             catch (Exception)
                             {
-
-                                textBoxPrecio.Clear();
-                                MessageBox.Show("El campo precio debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Realize la venta nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
-                     
+                        }                    
                     else
                     {
-                        MessageBox.Show("Seleccione el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Agregue un producto a la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Seleccione un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         
@@ -335,6 +304,7 @@ namespace InventarioCDGC
         {
         }
 
+        List<AgregarVentas> listaNueva;
 
         private void xButtonAgregar_Click(object sender, EventArgs e)
         {
@@ -347,12 +317,13 @@ namespace InventarioCDGC
                     {
                         if (textBoxDescuento.Value.ToString() != "")
                         {
-                            
-                            ////if (!productVentasList.ExistProductList(productoKeyValue/*.Select(x=>x.Key).Single()*/))
-                            ////{
+                            /*.Select(x=>x.Key).Single()*/
+                            if (!productVentasList.ExistProductList(productoKeyValue.Select(x=>x.Key).Single()))
+                            {
+                                xButtonGuardar.Enabled = true;
                                 dataGridViewVentas.DataSource = null;
 
-                                var listaNueva = productVentasList.addList(productoKeyValue, decimal.Parse(textBoxPrecio.Text),
+                                 listaNueva = productVentasList.addList(productoKeyValue, decimal.Parse(textBoxPrecio.Text),
                                                   int.Parse(textBoxCantidad.Value.ToString()), double.Parse(textBoxDescuento.Value.ToString()));
 
                                 var filtro = (from c in listaNueva
@@ -365,7 +336,7 @@ namespace InventarioCDGC
                                                   c.Descuento,
                                                   c.PrecioNeto
                                               }).ToList();
-
+    
                                 dataGridViewVentas.DataSource = filtro;
 
                                 CleanProductos();
@@ -389,11 +360,11 @@ namespace InventarioCDGC
                 {
                     MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Elija el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            else
+            {
+                MessageBox.Show("Elija un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridViewVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -402,8 +373,8 @@ namespace InventarioCDGC
             rowProducto.Selected = false;
 
             xButtonAgregar.Enabled = true;
-           // xButtonBorrar.Enabled = false;
-           // xButtonModificar.Enabled = false;
+            xButtonBorrarProductos.Enabled = false;
+            xButtonModificarProductos.Enabled = false;
             CleanProductos();
         }
         DataGridViewRow rowProducto;
@@ -436,10 +407,11 @@ namespace InventarioCDGC
             xButtonModificarProductos.Enabled = true;
             //SelectModeProduct = rowProducto.Selected;
             
-            textBoxProducto.Text = rowProducto.Cells[0].Value.ToString();
-            textBoxPrecio.Text = rowProducto.Cells[1].Value.ToString();
-            textBoxCantidad.Text = rowProducto.Cells[2].Value.ToString();
-            textBoxDescuento.Text = rowProducto.Cells[3].Value.ToString();
+            //textBoxProducto.Text = rowProducto.Cells[0].Value.ToString();
+            textBoxProducto.Text = rowProducto.Cells[1].Value.ToString();
+            textBoxPrecio.Text = rowProducto.Cells[2].Value.ToString();
+            textBoxCantidad.Text = rowProducto.Cells[3].Value.ToString();
+            textBoxDescuento.Text = rowProducto.Cells[4].Value.ToString();
 
         }
 
@@ -507,14 +479,14 @@ namespace InventarioCDGC
 
         private void xButtonNuevaVenta_Click(object sender, EventArgs e)
         {
-            textBoxPrecio.ReadOnly = false;
+            //textBoxPrecio.ReadOnly = false;
             textBoxCantidad.ReadOnly = false;
             textBoxDescuento.ReadOnly = false;
             textBoxObservacion1.ReadOnly = false;
             bbuscarcliente.Enabled = true;
             bbuscarproducto.Enabled = true;
             xButtonAgregar.Enabled = true;
-            xButtonGuardar.Enabled = true;
+            xButtonGuardar.Enabled = false;
             dataGridViewVentas.DataSource = null;
             // productoKeyValue.Clear();
             //productVentasList.EraserList();
@@ -531,6 +503,7 @@ namespace InventarioCDGC
             productoKeyValue = new Dictionary<int, string>();
             productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
             textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
+            textBoxPrecio.Text = buscarProducto.precio.ToString();
             //textBoxProducto.Text = buscarProducto.Producto;
         }
 

@@ -241,6 +241,33 @@ namespace DataInventarioCDGC
           return Lista;
       }
 
+      public TransationsVentas transVenta = new TransationsVentas();
+
+      public void listaGuardar(List<AgregarVentas> lista)
+      {
+
+          var filtro = (from c in lista
+                        select new
+                        {
+                            idProducto = c.Producto.Select(x => x.Key).Single(),
+                            Producto = c.Producto.Select(x => x.Value).Single(),
+                            c.Precio,
+                            c.Cantidad,
+                            c.Descuento,
+                            c.PrecioNeto
+                        }).ToList();
+
+          foreach (var item in filtro)
+          {
+              transVenta.idproducto = item.idProducto.ToString();
+              transVenta.precio = item.Precio;
+              transVenta.cantidad = item.Cantidad;
+              transVenta.descuento = Convert.ToDecimal(item.Descuento);
+
+              //transVenta.transationsVentas();
+          }
+      }
+
 
       public List<AgregarVentas> RemoveList(int index)
       {

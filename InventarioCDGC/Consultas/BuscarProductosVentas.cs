@@ -20,6 +20,7 @@ namespace InventarioCDGC.Consultas
         ProductosInv productosClass = new ProductosInv();
         public int idProducto { get; set; }
         public string Productoo { get; set; }
+        public decimal precio { get; set; }
 
         private void BuscarProductosVentas_Load(object sender, EventArgs e)
         {
@@ -32,6 +33,7 @@ namespace InventarioCDGC.Consultas
             DataGridViewRow row = dataGridView1.CurrentRow;
             this.idProducto = Convert.ToInt32(row.Cells[0].Value.ToString());
             Productoo = row.Cells[1].Value.ToString();
+            precio = Convert.ToDecimal(row.Cells[2].Value.ToString());
             this.Close(); 
         }
 
