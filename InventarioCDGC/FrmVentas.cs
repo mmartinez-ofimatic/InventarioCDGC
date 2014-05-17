@@ -29,7 +29,7 @@ namespace InventarioCDGC
         List<AgregarVentas> lista = new List<AgregarVentas>();
         AgregarVentas v = new AgregarVentas();
         Dictionary<int, string> clienteKeyValue;
-        Dictionary<int, string> productoKeyValue;
+        Dictionary<string, string> productoKeyValue;
 
         private void bbuscarcliente_Click(object sender, EventArgs e)
         {
@@ -500,7 +500,7 @@ namespace InventarioCDGC
         {
 
             buscarProducto.ShowDialog(this);
-            productoKeyValue = new Dictionary<int, string>();
+            productoKeyValue = new Dictionary<string, string>();
             productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
             textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
             textBoxPrecio.Text = buscarProducto.precio.ToString();
