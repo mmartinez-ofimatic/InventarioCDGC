@@ -60,7 +60,7 @@
             this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
             this.tbuscarpor.Name = "tbuscarpor";
             this.tbuscarpor.Size = new System.Drawing.Size(105, 24);
-            this.tbuscarpor.TabIndex = 41;
+            this.tbuscarpor.TabIndex = 10;
             // 
             // comboBoxBuscar
             // 
@@ -74,7 +74,7 @@
             this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
             this.comboBoxBuscar.Size = new System.Drawing.Size(148, 26);
-            this.comboBoxBuscar.TabIndex = 47;
+            this.comboBoxBuscar.TabIndex = 9;
             // 
             // label14
             // 
@@ -170,7 +170,7 @@
             this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(160, 24);
-            this.textBoxNombre.TabIndex = 52;
+            this.textBoxNombre.TabIndex = 1;
             // 
             // label2
             // 
@@ -205,7 +205,7 @@
             this.radioButtonLyS.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonLyS.Name = "radioButtonLyS";
             this.radioButtonLyS.Size = new System.Drawing.Size(232, 22);
-            this.radioButtonLyS.TabIndex = 2;
+            this.radioButtonLyS.TabIndex = 3;
             this.radioButtonLyS.TabStop = true;
             this.radioButtonLyS.Text = "Permiso de Lectura y Escritura";
             this.radioButtonLyS.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.radioButtonLectura.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonLectura.Name = "radioButtonLectura";
             this.radioButtonLectura.Size = new System.Drawing.Size(158, 22);
-            this.radioButtonLectura.TabIndex = 1;
+            this.radioButtonLectura.TabIndex = 4;
             this.radioButtonLectura.TabStop = true;
             this.radioButtonLectura.Text = "Permiso de Lectura";
             this.radioButtonLectura.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@
             this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonAdmin.Name = "radioButtonAdmin";
             this.radioButtonAdmin.Size = new System.Drawing.Size(200, 22);
-            this.radioButtonAdmin.TabIndex = 0;
+            this.radioButtonAdmin.TabIndex = 2;
             this.radioButtonAdmin.TabStop = true;
             this.radioButtonAdmin.Text = "Permiso de Administrador";
             this.radioButtonAdmin.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@
             this.xButton1.Margin = new System.Windows.Forms.Padding(4);
             this.xButton1.Name = "xButton1";
             this.xButton1.Size = new System.Drawing.Size(100, 28);
-            this.xButton1.TabIndex = 64;
+            this.xButton1.TabIndex = 11;
             this.xButton1.Text = " Buscar";
             this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButton1.UseVisualStyleBackColor = true;
@@ -275,7 +275,7 @@
             this.xButtonBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonBorrar.Name = "xButtonBorrar";
             this.xButtonBorrar.Size = new System.Drawing.Size(100, 28);
-            this.xButtonBorrar.TabIndex = 62;
+            this.xButtonBorrar.TabIndex = 8;
             this.xButtonBorrar.Text = "Borrar";
             this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonBorrar.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonModificar.Name = "xButtonModificar";
             this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
-            this.xButtonModificar.TabIndex = 61;
+            this.xButtonModificar.TabIndex = 7;
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonModificar.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonGuardar.Name = "xButtonGuardar";
             this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
-            this.xButtonGuardar.TabIndex = 60;
+            this.xButtonGuardar.TabIndex = 6;
             this.xButtonGuardar.Text = "Guardar";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonGuardar.UseVisualStyleBackColor = true;

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -61,11 +63,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBoxIDproducto);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(20, 47);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(352, 212);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -74,55 +76,61 @@
             // 
             // textBoxPrecio
             // 
+            this.textBoxPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPrecio.Location = new System.Drawing.Point(156, 158);
-            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrecio.Name = "textBoxPrecio";
-            this.textBoxPrecio.Size = new System.Drawing.Size(132, 22);
-            this.textBoxPrecio.TabIndex = 5;
+            this.textBoxPrecio.Size = new System.Drawing.Size(132, 24);
+            this.textBoxPrecio.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 161);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.Size = new System.Drawing.Size(116, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Precio de Venta:";
             // 
             // textBoxNombre
             // 
+            this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.Location = new System.Drawing.Point(156, 96);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(132, 22);
-            this.textBoxNombre.TabIndex = 3;
+            this.textBoxNombre.Size = new System.Drawing.Size(132, 24);
+            this.textBoxNombre.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 100);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 17);
+            this.label2.Size = new System.Drawing.Size(73, 18);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre del Producto:";
+            this.label2.Text = "Producto:";
             // 
             // textBoxIDproducto
             // 
+            this.textBoxIDproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIDproducto.Location = new System.Drawing.Point(156, 39);
-            this.textBoxIDproducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxIDproducto.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIDproducto.Name = "textBoxIDproducto";
-            this.textBoxIDproducto.Size = new System.Drawing.Size(132, 22);
+            this.textBoxIDproducto.Size = new System.Drawing.Size(132, 24);
             this.textBoxIDproducto.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 43);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 17);
+            this.label1.Size = new System.Drawing.Size(114, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID del Producto:";
             // 
@@ -138,9 +146,19 @@
             this.ColumnPrecio});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 367);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(521, 124);
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -175,33 +193,36 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(16, 318);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 17);
+            this.label14.Size = new System.Drawing.Size(81, 18);
             this.label14.TabIndex = 31;
             this.label14.Text = "Buscar por";
             // 
             // comboBoxBuscar
             // 
             this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBuscar.FormattingEnabled = true;
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del producto",
             "Nombre del producto"});
             this.comboBoxBuscar.Location = new System.Drawing.Point(101, 313);
-            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 24);
-            this.comboBoxBuscar.TabIndex = 33;
+            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 26);
+            this.comboBoxBuscar.TabIndex = 6;
             // 
             // tbuscarpor
             // 
+            this.tbuscarpor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbuscarpor.Location = new System.Drawing.Point(259, 314);
-            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(105, 22);
-            this.tbuscarpor.TabIndex = 34;
+            this.tbuscarpor.Size = new System.Drawing.Size(105, 24);
+            this.tbuscarpor.TabIndex = 7;
             // 
             // xButtonModificar
             // 
@@ -223,11 +244,12 @@
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xButtonModificar.ColorTable = office2010Green1;
+            this.xButtonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonModificar.Location = new System.Drawing.Point(393, 169);
-            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonModificar.Name = "xButtonModificar";
             this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
-            this.xButtonModificar.TabIndex = 37;
+            this.xButtonModificar.TabIndex = 5;
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonModificar.UseVisualStyleBackColor = true;
@@ -236,11 +258,12 @@
             // xButtonGuardar
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
+            this.xButtonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonGuardar.Location = new System.Drawing.Point(393, 110);
-            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonGuardar.Name = "xButtonGuardar";
             this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
-            this.xButtonGuardar.TabIndex = 36;
+            this.xButtonGuardar.TabIndex = 4;
             this.xButtonGuardar.Text = "Guardar";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xButtonGuardar.UseVisualStyleBackColor = true;
@@ -249,11 +272,12 @@
             // bbuscar
             // 
             this.bbuscar.ColorTable = office2010Green1;
+            this.bbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bbuscar.Location = new System.Drawing.Point(393, 305);
-            this.bbuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.bbuscar.Name = "bbuscar";
             this.bbuscar.Size = new System.Drawing.Size(100, 28);
-            this.bbuscar.TabIndex = 35;
+            this.bbuscar.TabIndex = 8;
             this.bbuscar.Text = " Buscar";
             this.bbuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.bbuscar.UseVisualStyleBackColor = true;
@@ -275,7 +299,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmProductos";
