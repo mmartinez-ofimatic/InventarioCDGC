@@ -510,7 +510,6 @@ namespace InventarioCDGC
                 CleanProductos();
                 CleanText();
             }
-            productoKeyValue = new Dictionary<string, string>();
         }
 
         private void dataGridViewVentas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -550,7 +549,7 @@ namespace InventarioCDGC
         private void xbuscarproducto_Click(object sender, EventArgs e)
         {
             buscarProducto.ShowDialog(this);
-            productoKeyValue = new Dictionary<string, string>();
+            productoKeyValue = new Dictionary<int, string>();
             productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
             textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
             textBoxPrecio.Text = buscarProducto.precio.ToString();

@@ -19,12 +19,16 @@ namespace InventarioCDGC
 
         public static int tiporol { get; set; }
         AlmacenIn almacen = new AlmacenIn();
+       // Dictionary<int, string> productoKeyValue;
+
+        Consultas.BuscarProductosVentas buscarProducto = new Consultas.BuscarProductosVentas();
+   
         bool selectModeRow = false;
         private void FrmAlmacen_Load(object sender, EventArgs e)
         {
             Permisos();
-            comboBoxID.DataSource = almacen.BuscarIDProducto();
-            dataGridView1.DataSource = almacen.BuscarTodos();
+            //comboBoxID.DataSource = almacen.BuscarIDProducto();
+           // dataGridView1.DataSource = almacen.BuscarTodos();
         }
 
 
@@ -33,46 +37,35 @@ namespace InventarioCDGC
             if (tiporol == 1)
             {
                // xButtonBorrar.Enabled = true;
-                xButtonModificar.Enabled = true;
+                xButtonAgregarExitAlmacen.Enabled = true;
             }
             else if (tiporol == 2)
             {
               //  xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = true;
+                xButtonAgregarExitAlmacen.Enabled = true;
             }
             else if (tiporol == 3)
             {
                 //xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = false;
+                xButtonAgregarExitAlmacen.Enabled = true;
             }
             else if (tiporol == 4)
             {
                 //xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = false;
-                xButtonGuardar.Enabled = false;
+                xButtonAgregarExitAlmacen.Enabled = false;
+                xButtonAgregarExitAlmacen.Enabled = false;
             }
             else
             {
                 //xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = false;
-                xButtonGuardar.Enabled = false;
+                xButtonAgregarExitAlmacen.Enabled = false;
+                xButtonAgregarExitAlmacen.Enabled = false;
             }
 
         }
 
-        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                textBoxNombre.Text = almacen.BuscarxIDNombreCbx(comboBoxID.Text);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error de conexion por favor verificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
-        private void bbuscar_Click(object sender, EventArgs e)
+        /*private void bbuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
             {
@@ -122,30 +115,33 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        DataGridViewRow row;
+        }*/
+        /*DataGridViewRow row;
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             row = dataGridView1.CurrentRow;
-            comboBoxID.Text = row.Cells[0].Value.ToString();
+            textBoxIDProducto.Text = row.Cells[0].Value.ToString();
             //textBoxNombre.Text = row.Cells[1].Value.ToString();
             textBoxExistencia.Text = row.Cells[1].Value.ToString();
+            textBoxNombre.Text = row.Cells[2].Value.ToString();
 
            dataGridView1.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
            selectModeRow = row.Selected;
+           xButtonAgregarExitAlmacen.Enabled = false;
         }
-
+        */
         public void CleanText()
         {
            // comboBoxID.SelectedIndex = 0;
             selectModeRow = false;
-           // textBoxNombre.Clear();
+            textBoxNombre.Clear();
+            textBoxIDProducto.Clear();
             textBoxExistencia.Value = 1;
-            comboBoxID.DataSource = almacen.BuscarIDProducto();
-            dataGridView1.DataSource = almacen.BuscarTodos();
+           // comboBoxID.DataSource = almacen.BuscarIDProducto();
+          //  dataGridView1.DataSource = almacen.BuscarTodos();
         }
 
-        private void xButtonBuscar_Click(object sender, EventArgs e)
+      /*  private void xButtonBuscar_Click(object sender, EventArgs e)
         {
             if (comboBoxBuscar.Text != "")
             {
@@ -195,20 +191,20 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }*/
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
             if (selectModeRow == false)
             {
-                if (comboBoxID.Text != "")
+                if (textBoxIDProducto.Text != "")
                 {
                     if (textBoxNombre.Text != "")
                     {
                         if (textBoxExistencia.Text != "")
                         {
 
-                            almacen.IDproducto = comboBoxID.Text;
+                            almacen.IDproducto = textBoxIDProducto.Text;
                             almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
 
                             try
@@ -218,9 +214,9 @@ namespace InventarioCDGC
                                 {
                                     if (almacen.Guardar())
                                     {
-                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Se agrego "+ textBoxExistencia.Text + " productos con exito en su existencia!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         CleanText();
-                                        comboBoxID.SelectedIndex = 0;
+                                        //textBoxIDProducto.SelectedIndex = 0;
                                     }
                                 }
                                 
@@ -229,7 +225,7 @@ namespace InventarioCDGC
                             {
                                 MessageBox.Show("Este producto existe, solo modifique su existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 CleanText();
-                                comboBoxID.SelectedIndex = 0;
+                                //comboBoxID.SelectedIndex = 0;
 
                             }
                         }
@@ -257,23 +253,22 @@ namespace InventarioCDGC
 
         private void xButtonModificar_Click(object sender, EventArgs e)
         {
-          
-                if (selectModeRow == true)
-                {
-                    if (comboBoxID.Text != "")
+            //if (selectModeRow == true)
+            //{
+                    if (textBoxIDProducto.Text != "")
                     {
                         if (textBoxNombre.Text != "")
                         {
                             if (textBoxExistencia.Text != "")
                             {
-                                almacen.IDproducto = comboBoxID.Text;
+                                almacen.IDproducto = textBoxIDProducto.Text;
                                 almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
-                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea sacar: " + textBoxExistencia.Text + " productos de la existencia?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (dialogResult == DialogResult.Yes)
                                 {
-                                    if (almacen.Modificar())
+                                    if (almacen.SacarExistenciadeProducto(textBoxIDProducto.Text))
                                     {
-                                        MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        MessageBox.Show("Existencia eliminada!", "Existencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         CleanText();
                                     }
                                 }
@@ -281,23 +276,23 @@ namespace InventarioCDGC
                             }
                             else
                             {
-                                MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Debe llenar el campo existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Debe seleccionar un producto para modificar su existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Debe seleccionar un producto para modificar su existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Primero busque un producto y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Primero busque un producto y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
            
         
         }
@@ -336,12 +331,17 @@ namespace InventarioCDGC
         
         //}
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+       /* private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             row = dataGridView1.CurrentRow;
-            row.Selected = true;
-            dataGridView1_RowHeaderMouseClick(sender, null);
-        }
+            row.Selected = false;
+            selectModeRow = false;
+            xButtonAgregarExitAlmacen.Enabled = true;
+            CleanText();
+            //row = dataGridView1.CurrentRow;
+            //row.Selected = true;
+            //dataGridView1_RowHeaderMouseClick(sender, null);
+        }*/
 
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -351,10 +351,82 @@ namespace InventarioCDGC
 
         private void FrmAlmacen_Click(object sender, EventArgs e)
         {
+            //row = dataGridView1.CurrentRow;
+           // row.Selected = false;
+           // selectModeRow = false;
+            CleanText();
+        }
+
+        private void bbuscarproducto_Click(object sender, EventArgs e)
+        {
+            buscarProducto.idProducto = null;
+            buscarProducto.Productoo = null;
+            buscarProducto.ShowDialog(this);
+           // productoKeyValue = new Dictionary<string, string>();
+           // productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
+            textBoxIDProducto.Text = buscarProducto.idProducto;
+            textBoxNombre.Text = buscarProducto.Productoo;
+        }
+
+        private void xButtonAgregarExitAlmacen_Click(object sender, EventArgs e)
+        {
+            if (textBoxNombre.Text != "")
+            {
+                if (textBoxExistencia.Text != "")
+                {
+                    //almacen.IDproducto = comboBoxID.Text;
+                    //almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
+
+                    almacen.IDproducto = textBoxIDProducto.Text;
+                    almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
+
+      
+                    try
+                    {
+                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea agregar "+textBoxExistencia.Text+" existencia mas a este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            if (almacen.AgregarExistenciadeProducto(textBoxIDProducto.Text))
+                            {
+                                MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CleanText();
+                                //comboBoxID.SelectedIndex = 0;
+                            }
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ocurrio un error, Intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        CleanText();
+                       // comboBoxID.SelectedIndex = 0;
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Llene el campo Existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Elija un ID de producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBoxIDProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+      /*  private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             row = dataGridView1.CurrentRow;
             row.Selected = false;
             selectModeRow = false;
+            xButtonAgregarExitAlmacen.Enabled = true;
             CleanText();
         }
+   */ 
     }
 }

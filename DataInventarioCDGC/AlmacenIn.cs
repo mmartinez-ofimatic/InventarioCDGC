@@ -12,6 +12,7 @@ namespace DataInventarioCDGC
         public string IDproducto { get; set; }
         public int existencia { get; set; }
         public string nombreProducto { get; set; }
+        public decimal precio_venta { get; set; }
        /* public decimal precio { get; set; }
         public string producto { get; set; }*/
 
@@ -30,7 +31,9 @@ namespace DataInventarioCDGC
                 InventarioCDGCEntities1 dbEntities2 = new InventarioCDGCEntities1();
                 Almacen almacen = new Almacen();
                 almacen.ID_Producto = IDproducto;
-                almacen.Existencia = existencia;
+                almacen.Existencia = 0;
+                almacen.Producto_1 = nombreProducto;
+                almacen.Precio_Venta = precio_venta;
               
 
                 dbEntities2.AddToAlmacens(almacen);
@@ -61,7 +64,9 @@ namespace DataInventarioCDGC
                                     select upd).First();
 
                 update.ID_Producto = IDproducto;
-                update.Existencia = existencia;
+                //update.Existencia = existencia;
+                update.Precio_Venta = precio_venta;
+                update.Producto_1 = nombreProducto;
                 
                 dbEntities.SaveChanges();
 
@@ -74,6 +79,60 @@ namespace DataInventarioCDGC
 
             return isComplete;
         }
+
+
+        /// <summary>
+        /// Modifica un producto en el almacen.
+        /// </summary>
+        public bool AgregarExistenciadeProducto(string idproducto)
+        {
+            bool isComplete = false;
+            try
+            {
+                Almacen update = (from upd in dbEntities.Almacens
+                                  where upd.ID_Producto == idproducto
+                                  select upd).First();
+         
+                update.Existencia = update.Existencia + existencia;
+               
+                dbEntities.SaveChanges();
+
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
+        /// <summary>
+        /// Modifica un producto en el almacen.
+        /// </summary>
+        public bool SacarExistenciadeProducto(string idproducto)
+        {
+            bool isComplete = false;
+            try
+            {
+                Almacen update = (from upd in dbEntities.Almacens
+                                  where upd.ID_Producto == idproducto
+                                  select upd).First();
+
+                update.Existencia = update.Existencia - existencia;
+
+                dbEntities.SaveChanges();
+
+                isComplete = true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return isComplete;
+        }
+
 
         /// <summary>
         /// Borra un producto del almacen.
@@ -115,10 +174,10 @@ namespace DataInventarioCDGC
         }
 
         /// <summary>
-        /// Busqueda por ID.
+        /// Busqueda por ID con producto.
         /// </summary>
         /// <returns>List</returns>
-        public List<Almacen> BuscarxID()
+        public List<Almacen> BuscarxIDconProducto()
         {
 
             List<Almacen> busc = (from b in dbEntities.Almacens
@@ -143,11 +202,39 @@ namespace DataInventarioCDGC
         }
 
         /// <summary>
+        /// Busqueda por ID.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<Almacen> BuscarxID()
+        {
+
+            List<Almacen> busc = (from b in dbEntities.Almacens
+                                   where b.ID_Producto == IDproducto
+                                   select b).ToList();
+            if (busc != null)
+            {
+                if (busc.Count != 0)
+                {
+                    foreach (var item in busc)
+                    {
+                        IDproducto = item.ID_Producto;
+                        nombreProducto = item.Producto_1;
+                        precio_venta = Convert.ToDecimal(item.Precio_Venta);
+                    }
+
+                }
+            }
+
+            return busc;
+        }
+
+
+        /// <summary>
         /// Buscar por nombre.
         /// </summary>
         /// <param name="nombre">nombre del producto.</param>
         /// <returns>List</returns>
-        public List<Almacen> BuscarxNombre(string nomproducto)
+        public List<Almacen> BuscarxNombreconProducto(string nomproducto)
         {
             List<Almacen> busc = (from a in dbEntities.Almacens
                                      join p in dbEntities.Productos
@@ -184,6 +271,30 @@ namespace DataInventarioCDGC
         }
 
 
+
+        /// <summary>
+        /// Buscar por nombre.
+        /// </summary>
+        /// <param name="nombre">nombre del producto.</param>
+        /// <returns>List</returns>
+        public List<Almacen> BuscarxNombre(string nomproducto)
+        {
+            List<Almacen> busc = (from b in dbEntities.Almacens
+                                   where b.Producto_1 == nomproducto
+                                   select b).ToList();
+            if (busc != null)
+            {
+                foreach (var item in busc)
+                {
+                    IDproducto = item.ID_Producto;
+                    nombreProducto = item.Producto_1;
+                    precio_venta = Convert.ToDecimal(item.Precio_Venta);
+                }
+            }
+            return busc;
+        }
+
+
         /// <summary>
         /// Lista de todos los productos en el almacen.
         /// </summary>
@@ -208,21 +319,25 @@ namespace DataInventarioCDGC
            // Tipo anonimo 
 
             var selec = (from s in dbEntities.Almacens
-                         join p in dbEntities.Productos
-                         on s.ID_Producto equals p.ID_Producto
-                         select new ProductosEnAlmacen () {producto = p.Producto1, existencia = s.Existencia.Value,
-                                                            precio = p.Precio_Venta.Value }).ToList();
+                         select new ProductosEnAlmacen () {producto = s.Producto_1, existencia = s.Existencia.Value,
+                                                            precio = s.Precio_Venta.Value}).ToList();
 
 
            // selec.
             return selec ;
         }
 
-        /*
-          join p in dbEntities.Productos
-                          where s.ID_Producto == p.ID_Producto
-         *  where s.ID_Producto == p.ID_Producto
-         */
+        //var selec = (from s in dbEntities.Almacens
+        //             join p in dbEntities.Productos
+        //             on s.ID_Producto equals p.ID_Producto
+        //             select new ProductosEnAlmacen()
+        //             {
+        //                 producto = p.Producto1,
+        //                 existencia = s.Existencia.Value,
+        //                 precio = p.Precio_Venta.Value
+        //             }).ToList();
+
+
 
     }
 

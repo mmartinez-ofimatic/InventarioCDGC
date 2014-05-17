@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="InventarioCDGCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="InventarioCDGCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="InventarioCDGCModelStoreContainer">
           <EntitySet Name="Almacen" EntityType="InventarioCDGCModel.Store.Almacen" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Clientes" EntityType="InventarioCDGCModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
@@ -25,12 +25,8 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Ventas" EntitySet="Ventas" />
           </AssociationSet>
-          <AssociationSet Name="FK_Almacen_Productos" Association="InventarioCDGCModel.Store.FK_Almacen_Productos">
-            <End Role="Productos" EntitySet="Productos" />
+          <AssociationSet Name="FK_VentaDetalle_Almacen" Association="InventarioCDGCModel.Store.FK_VentaDetalle_Almacen">
             <End Role="Almacen" EntitySet="Almacen" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VentaDetalle_Productos" Association="InventarioCDGCModel.Store.FK_VentaDetalle_Productos">
-            <End Role="Productos" EntitySet="Productos" />
             <End Role="VentaDetalle" EntitySet="VentaDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_VentaDetalle_Ventas" Association="InventarioCDGCModel.Store.FK_VentaDetalle_Ventas">
@@ -44,6 +40,8 @@
           </Key>
           <Property Name="ID_Producto" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Existencia" Type="int" />
+          <Property Name="Producto" Type="varchar" MaxLength="100" />
+          <Property Name="Precio_Venta" Type="decimal" Scale="2" />
         </EntityType>
         <EntityType Name="Clientes">
           <Key>
@@ -62,7 +60,7 @@
           </Key>
           <Property Name="ID_Producto" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Producto" Type="varchar" MaxLength="60" />
-          <Property Name="Precio_Venta" Type="money" />
+          <Property Name="Precio_Venta" Type="decimal" Scale="2" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -88,9 +86,9 @@
           <Property Name="ID_Detalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ID_Venta" Type="int" />
           <Property Name="ID_Producto" Type="varchar" MaxLength="50" />
-          <Property Name="Precio_Unidad" Type="money" />
+          <Property Name="Precio_Unidad" Type="decimal" Scale="2" />
           <Property Name="Cantidad" Type="int" />
-          <Property Name="Descuento" Type="money" />
+          <Property Name="Descuento" Type="decimal" Scale="2" />
         </EntityType>
         <EntityType Name="Ventas">
           <Key>
@@ -138,23 +136,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Almacen_Productos">
-          <End Role="Productos" Type="InventarioCDGCModel.Store.Productos" Multiplicity="1" />
+        <Association Name="FK_VentaDetalle_Almacen">
           <End Role="Almacen" Type="InventarioCDGCModel.Store.Almacen" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="ID_Producto" />
-            </Principal>
-            <Dependent Role="Almacen">
-              <PropertyRef Name="ID_Producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VentaDetalle_Productos">
-          <End Role="Productos" Type="InventarioCDGCModel.Store.Productos" Multiplicity="0..1" />
           <End Role="VentaDetalle" Type="InventarioCDGCModel.Store.VentaDetalle" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Productos">
+            <Principal Role="Almacen">
               <PropertyRef Name="ID_Producto" />
             </Principal>
             <Dependent Role="VentaDetalle">
@@ -174,8 +160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InventarioCDGCModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -187,17 +172,9 @@
           <EntitySet Name="Usuarios" EntityType="InventarioCDGCModel.Usuario" />
           <EntitySet Name="VentaDetalles" EntityType="InventarioCDGCModel.VentaDetalle" />
           <EntitySet Name="Ventas" EntityType="InventarioCDGCModel.Venta" />
-          <AssociationSet Name="FK_Almacen_Productos" Association="InventarioCDGCModel.FK_Almacen_Productos">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="Almacen" EntitySet="Almacens" />
-          </AssociationSet>
           <AssociationSet Name="FK__Ventas__ID_Clien__117F9D94" Association="InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Ventas" EntitySet="Ventas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VentaDetalle_Productos" Association="InventarioCDGCModel.FK_VentaDetalle_Productos">
-            <End Role="Productos" EntitySet="Productos" />
-            <End Role="VentaDetalle" EntitySet="VentaDetalles" />
           </AssociationSet>
           <AssociationSet Name="FK__Usuarios__ID_Rol__0CBAE877" Association="InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877">
             <End Role="Roles" EntitySet="Roles" />
@@ -211,6 +188,10 @@
             <End Role="Ventas" EntitySet="Ventas" />
             <End Role="VentaDetalle" EntitySet="VentaDetalles" />
           </AssociationSet>
+          <AssociationSet Name="FK_VentaDetalle_Almacen" Association="InventarioCDGCModel.FK_VentaDetalle_Almacen">
+            <End Role="Almacen" EntitySet="Almacens" />
+            <End Role="VentaDetalle" EntitySet="VentaDetalles" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Almacen">
           <Key>
@@ -218,7 +199,9 @@
           </Key>
           <Property Name="ID_Producto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Existencia" Type="Int32" />
-          <NavigationProperty Name="Producto" Relationship="InventarioCDGCModel.FK_Almacen_Productos" FromRole="Almacen" ToRole="Productos" />
+          <Property Type="String" Name="Producto_1" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Precio_Venta" Precision="19" Scale="2" />
+          <NavigationProperty Name="VentaDetalles" Relationship="InventarioCDGCModel.FK_VentaDetalle_Almacen" FromRole="Almacen" ToRole="VentaDetalle" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -238,9 +221,7 @@
           </Key>
           <Property Name="ID_Producto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Producto1" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
-          <Property Name="Precio_Venta" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Almacen" Relationship="InventarioCDGCModel.FK_Almacen_Productos" FromRole="Productos" ToRole="Almacen" />
-          <NavigationProperty Name="VentaDetalles" Relationship="InventarioCDGCModel.FK_VentaDetalle_Productos" FromRole="Productos" ToRole="VentaDetalle" />
+          <Property Name="Precio_Venta" Type="Decimal" Precision="19" Scale="2" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -269,11 +250,11 @@
           <Property Name="ID_Detalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_Venta" Type="Int32" />
           <Property Name="ID_Producto" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Precio_Unidad" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Precio_Unidad" Type="Decimal" Precision="19" Scale="2" />
           <Property Name="Cantidad" Type="Int32" />
-          <Property Name="Descuento" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Producto" Relationship="InventarioCDGCModel.FK_VentaDetalle_Productos" FromRole="VentaDetalle" ToRole="Productos" />
+          <Property Name="Descuento" Type="Decimal" Precision="19" Scale="2" />
           <NavigationProperty Name="Venta" Relationship="InventarioCDGCModel.FK_VentaDetalle_Ventas" FromRole="VentaDetalle" ToRole="Ventas" />
+          <NavigationProperty Name="Almacen" Relationship="InventarioCDGCModel.FK_VentaDetalle_Almacen" FromRole="VentaDetalle" ToRole="Almacen" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -288,18 +269,6 @@
           <NavigationProperty Name="Usuario" Relationship="InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606" FromRole="Ventas" ToRole="Usuarios" />
           <NavigationProperty Name="VentaDetalles" Relationship="InventarioCDGCModel.FK_VentaDetalle_Ventas" FromRole="Ventas" ToRole="VentaDetalle" />
         </EntityType>
-        <Association Name="FK_Almacen_Productos">
-          <End Role="Productos" Type="InventarioCDGCModel.Producto" Multiplicity="1" />
-          <End Role="Almacen" Type="InventarioCDGCModel.Almacen" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="ID_Producto" />
-            </Principal>
-            <Dependent Role="Almacen">
-              <PropertyRef Name="ID_Producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Ventas__ID_Clien__117F9D94">
           <End Role="Clientes" Type="InventarioCDGCModel.Cliente" Multiplicity="0..1" />
           <End Role="Ventas" Type="InventarioCDGCModel.Venta" Multiplicity="*" />
@@ -309,18 +278,6 @@
             </Principal>
             <Dependent Role="Ventas">
               <PropertyRef Name="ID_Cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VentaDetalle_Productos">
-          <End Role="Productos" Type="InventarioCDGCModel.Producto" Multiplicity="0..1" />
-          <End Role="VentaDetalle" Type="InventarioCDGCModel.VentaDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Productos">
-              <PropertyRef Name="ID_Producto" />
-            </Principal>
-            <Dependent Role="VentaDetalle">
-              <PropertyRef Name="ID_Producto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -360,6 +317,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VentaDetalle_Almacen">
+          <End Type="InventarioCDGCModel.Almacen" Role="Almacen" Multiplicity="0..1" />
+          <End Type="InventarioCDGCModel.VentaDetalle" Role="VentaDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Almacen">
+              <PropertyRef Name="ID_Producto" />
+            </Principal>
+            <Dependent Role="VentaDetalle">
+              <PropertyRef Name="ID_Producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -369,6 +338,8 @@
           <EntitySetMapping Name="Almacens">
             <EntityTypeMapping TypeName="InventarioCDGCModel.Almacen">
               <MappingFragment StoreEntitySet="Almacen">
+                <ScalarProperty Name="Precio_Venta" ColumnName="Precio_Venta" />
+                <ScalarProperty Name="Producto_1" ColumnName="Producto" />
                 <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
                 <ScalarProperty Name="Existencia" ColumnName="Existencia" />
               </MappingFragment>
@@ -465,21 +436,11 @@
         <EntityTypeShape EntityType="InventarioCDGCModel.Usuario" Width="1.5" PointX="3" PointY="1.125" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="InventarioCDGCModel.VentaDetalle" Width="1.5" PointX="7.5" PointY="1" Height="2.5571907552083326" IsExpanded="true" />
         <EntityTypeShape EntityType="InventarioCDGCModel.Venta" Width="1.5" PointX="5.25" PointY="1" Height="2.5571907552083317" IsExpanded="true" />
-        <AssociationConnector Association="InventarioCDGCModel.FK_Almacen_Productos" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="6.172841796875" />
-          <ConnectorPoint PointX="7.5" PointY="6.172841796875" />
-        </AssociationConnector>
         <AssociationConnector Association="InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="5" />
           <ConnectorPoint PointX="4.875" PointY="4.625" />
           <ConnectorPoint PointX="4.875" PointY="2.2785953776041659" />
           <ConnectorPoint PointX="5.25" PointY="2.2785953776041659" />
-        </AssociationConnector>
-        <AssociationConnector Association="InventarioCDGCModel.FK_VentaDetalle_Productos" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="5.25" />
-          <ConnectorPoint PointX="7.125" PointY="4.875" />
-          <ConnectorPoint PointX="7.125" PointY="2.2785953776041659" />
-          <ConnectorPoint PointX="7.5" PointY="2.2785953776041659" />
         </AssociationConnector>
         <AssociationConnector Association="InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.2689925130208328" />
@@ -490,8 +451,12 @@
           <ConnectorPoint PointX="5.25" PointY="1.6392976888020829" />
         </AssociationConnector>
         <AssociationConnector Association="InventarioCDGCModel.FK_VentaDetalle_Ventas" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="1.5767976888020829" />
-          <ConnectorPoint PointX="7.5" PointY="1.5767976888020829" />
+          <ConnectorPoint PointX="6.75" PointY="2.2785953776041659" />
+          <ConnectorPoint PointX="7.5" PointY="2.2785953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="InventarioCDGCModel.FK_VentaDetalle_Almacen" >
+          <ConnectorPoint PointX="8.25" PointY="5.375" />
+          <ConnectorPoint PointX="8.25" PointY="3.5571907552083331" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

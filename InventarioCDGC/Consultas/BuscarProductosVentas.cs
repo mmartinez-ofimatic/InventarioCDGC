@@ -17,21 +17,23 @@ namespace InventarioCDGC.Consultas
             InitializeComponent();
         }
 
-        ProductosInv productosClass = new ProductosInv();
-        public int idProducto { get; set; }
+       // ProductosInv productosClass = new ProductosInv();
+        AlmacenIn almacenClass = new AlmacenIn();
+        public string idProducto { get; set; }
         public string Productoo { get; set; }
         public decimal precio { get; set; }
 
         private void BuscarProductosVentas_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
-           dataGridView1.DataSource = productosClass.BuscarTodos();
+            dataGridView1.DataSource = almacenClass.BuscarTodos();
+           //dataGridView1.DataSource = productosClass.BuscarTodos();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
-            this.idProducto = Convert.ToInt32(row.Cells[0].Value.ToString());
+            this.idProducto = row.Cells[0].Value.ToString();
             Productoo = row.Cells[1].Value.ToString();
             precio = Convert.ToDecimal(row.Cells[2].Value.ToString());
             this.Close(); 
@@ -49,10 +51,10 @@ namespace InventarioCDGC.Consultas
                     {
                         try
                         {
-                            productosClass.idproducto = tbuscarpor.Text;
+                            almacenClass.IDproducto = tbuscarpor.Text;
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = productosClass.BuscarxID();
+                            dataGridView1.DataSource = almacenClass.BuscarxID();
 
                             if (dataGridView1.RowCount == 0)
                             {
@@ -67,7 +69,7 @@ namespace InventarioCDGC.Consultas
                     else if (comboBoxBuscar.Text == "Nombre del producto")
                     {
                         dataGridView1.AutoGenerateColumns = false;
-                        dataGridView1.DataSource = productosClass.BuscarxNombre(tbuscarpor.Text);
+                        dataGridView1.DataSource = almacenClass.BuscarxNombre(tbuscarpor.Text);
 
                         if (dataGridView1.RowCount == 0)
                         {

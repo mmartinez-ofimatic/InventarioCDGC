@@ -215,7 +215,7 @@ namespace DataInventarioCDGC
 
   public class AgregarVentas
   {
-      public Dictionary<int, string> Producto { get; set; }
+      public Dictionary<string, string> Producto { get; set; }
       public decimal Precio { get; set; }
       public int Cantidad { get; set; }
       public double Descuento { get; set; }
@@ -224,7 +224,7 @@ namespace DataInventarioCDGC
       List<AgregarVentas> Lista = new List<AgregarVentas>();
       //Dictionary<int, string> Productokey { get; set; }
       
-      public List<AgregarVentas> addList(Dictionary<int,string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
+      public List<AgregarVentas> addList(Dictionary<string,string> fproducto, decimal fprecio, int fcantidad, double fdescuento)
       {       
               decimal fprecioBruto = fprecio * fcantidad;
               double fdescuentoNeto = (double)fprecioBruto * (fdescuento / 100.00);
@@ -283,7 +283,7 @@ namespace DataInventarioCDGC
           return Lista;
       }
 
-      public List<AgregarVentas> UpdateList(Dictionary<int,string> idproducto, decimal fprecio, int fcantidad, double fdescuento)
+      public List<AgregarVentas> UpdateList(Dictionary<string,string> idproducto, decimal fprecio, int fcantidad, double fdescuento)
       {
 
           var buscar = from b in Lista
@@ -309,7 +309,7 @@ namespace DataInventarioCDGC
 
       }
 
-      public bool ExistProductList(int idproducto)
+      public bool ExistProductList(string idproducto)
       {
           //bool exist = false;
           //foreach (var item in idproducto)

@@ -203,6 +203,12 @@ namespace InventarioCDGC
             pa.SetDesktopLocation(this.Location.X + this.Size.Width, this.Location.Y);
         }
 
+        private void buttonReportes_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteVentas1 reporteventas = new Reportes.ReporteVentas1();
+            reporteventas.Show();
+        }
+
 
     }
 }

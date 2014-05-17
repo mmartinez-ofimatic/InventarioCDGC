@@ -18,6 +18,7 @@ namespace InventarioCDGC
         }
 
         ProductosInv product = new ProductosInv();
+        AlmacenIn almacen = new AlmacenIn();
         public static int tiporol { get; set; }
         bool selectModeRow = false;
 
@@ -135,7 +136,7 @@ namespace InventarioCDGC
         public void actualizadDatagrid()
         {
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = product.BuscarTodos();
+            dataGridView1.DataSource = almacen.BuscarTodos();
         }
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
@@ -150,14 +151,17 @@ namespace InventarioCDGC
                         {
                             try
                             {
-                                product.idproducto = textBoxIDproducto.Text;
-                                product.producto = textBoxNombre.Text;
-                                product.precio = Convert.ToDecimal(textBoxPrecio.Text);
+                                almacen.IDproducto = textBoxIDproducto.Text;
+                                almacen.nombreProducto = textBoxNombre.Text;
+                                almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
+                                //product.idproducto = 
+                               // product.producto = textBoxNombre.Text;
+                                //product.precio = Convert.ToDecimal(textBoxPrecio.Text);
 
                                 DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (dialogResult == DialogResult.Yes)
                                 {
-                                    if (product.Guardar())
+                                    if (almacen.Guardar())
                                     {
                                         CleanText();
                                         MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -205,13 +209,14 @@ namespace InventarioCDGC
                             try
                             {
 
-                            product.idproducto = textBoxIDproducto.Text;
-                            product.producto = textBoxNombre.Text;
-                            product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-                            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                almacen.IDproducto = textBoxIDproducto.Text;
+                                almacen.nombreProducto = textBoxNombre.Text;
+                                almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
+                           
+                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.Yes)
                             {
-                                if (product.Modificar())
+                                if (almacen.Modificar())
                                 {
                                     CleanText();
                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -290,10 +295,10 @@ namespace InventarioCDGC
                     {
                         try
                         {
-                            product.idproducto = tbuscarpor.Text;
+                            almacen.IDproducto = tbuscarpor.Text;
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = product.BuscarxID();
+                            dataGridView1.DataSource = almacen.BuscarxID();
 
                             if (dataGridView1.RowCount == 0)
                             {
@@ -302,13 +307,13 @@ namespace InventarioCDGC
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("El ID debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error, por favor verifique la informacion y intente otra vez", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else if (comboBoxBuscar.Text == "Nombre del producto")
                     {
                         dataGridView1.AutoGenerateColumns = false;
-                        dataGridView1.DataSource = product.BuscarxNombre(tbuscarpor.Text);
+                        dataGridView1.DataSource = almacen.BuscarxNombre(tbuscarpor.Text);
 
                         if (dataGridView1.RowCount == 0)
                         {
@@ -343,10 +348,10 @@ namespace InventarioCDGC
 
         private void FrmProductos_Click(object sender, EventArgs e)
         {
-            row = dataGridView1.CurrentRow;
-            row.Selected = false;
-            selectModeRow = false;
-            CleanText();
+            //row = dataGridView1.CurrentRow;
+            //row.Selected = false;
+            //selectModeRow = false;
+            //CleanText();
         }
 
 
