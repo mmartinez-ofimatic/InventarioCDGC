@@ -31,16 +31,7 @@ namespace InventarioCDGC
         Dictionary<int, string> clienteKeyValue;
         Dictionary<int, string> productoKeyValue;
 
-        private void bbuscarcliente_Click(object sender, EventArgs e)
-        {
-            Consultas.BuscarClienteVentas buscarCliente = new Consultas.BuscarClienteVentas();
-            buscarCliente.ShowDialog(this);
-            //textBoxCliente.Text = buscarCliente.idCliente.ToString();
-            clienteKeyValue = new Dictionary<int, string>();
-            clienteKeyValue.Add(buscarCliente.idCliente, buscarCliente.Cliente);
-            textBoxCliente.Text = clienteKeyValue[buscarCliente.idCliente];
-            //textBoxCliente.Text = keyvalue.Keys.ToString();
-        }
+ 
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
@@ -251,35 +242,39 @@ namespace InventarioCDGC
             if (textBoxCliente.Text != "")
             {
                 if (dataGridViewVentas.RowCount != 0)
-                {                  
-                          try
-                            {
-                                transationsVentas.idcliente = Convert.ToInt32(clienteKeyValue.Keys.First());
-                                transationsVentas.observacion = textBoxObservacion1.Text;
-        
-                                if (transationsVentas.transationsVentas(listaNueva))
-                                {
-                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    CleanText();
-                                    dataGridViewVentas.DataSource = null;
-                                    
-                                }
+                {
+                    DialogResult dialogResult = MessageBox.Show("¿Desea relizar esta venta?", "Realizar venta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            transationsVentas.idcliente = Convert.ToInt32(clienteKeyValue.Keys.First());
+                            transationsVentas.observacion = textBoxObservacion1.Text;
 
-                                else
-                                {
-                                    MessageBox.Show("Realize la venta nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                            if (transationsVentas.transationsVentas(listaNueva))
+                            {
+                                MessageBox.Show("Venta realizada!", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CleanText();
+                                dataGridViewVentas.DataSource = null;
 
                             }
-                            catch (Exception)
+
+                            else
                             {
                                 MessageBox.Show("Realize la venta nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }                    
-                    else
-                    {
-                        MessageBox.Show("Agregue un producto a la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Realize la venta nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Agregue un producto a la venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 }
                 else
                 {
@@ -371,7 +366,6 @@ namespace InventarioCDGC
         {
             rowProducto = dataGridViewVentas.CurrentRow;
             rowProducto.Selected = false;
-
             xButtonAgregar.Enabled = true;
             xButtonBorrarProductos.Enabled = false;
             xButtonModificarProductos.Enabled = false;
@@ -479,32 +473,43 @@ namespace InventarioCDGC
 
         private void xButtonNuevaVenta_Click(object sender, EventArgs e)
         {
-            //textBoxPrecio.ReadOnly = false;
-            textBoxCantidad.ReadOnly = false;
-            textBoxDescuento.ReadOnly = false;
-            textBoxObservacion1.ReadOnly = false;
-            bbuscarcliente.Enabled = true;
-            bbuscarproducto.Enabled = true;
-            xButtonAgregar.Enabled = true;
-            xButtonGuardar.Enabled = false;
-            dataGridViewVentas.DataSource = null;
-            // productoKeyValue.Clear();
-            //productVentasList.EraserList();
-            lista.Clear();
-            CleanProductos();
-            CleanText();
-
-        }
-
-        private void bbuscarproducto_Click_1(object sender, EventArgs e)
-        {
-
-            buscarProducto.ShowDialog(this);
-            productoKeyValue = new Dictionary<int, string>();
-            productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
-            textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
-            textBoxPrecio.Text = buscarProducto.precio.ToString();
-            //textBoxProducto.Text = buscarProducto.Producto;
+            if (dataGridViewVentas.RowCount != 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("La venta en proceso se va a borrar ¿Esta seguro?", "Nueva venta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //textBoxPrecio.ReadOnly = false;
+                    textBoxCantidad.ReadOnly = false;
+                    textBoxDescuento.ReadOnly = false;
+                    textBoxObservacion1.ReadOnly = false;
+                    xbuscarcliente.Enabled = true;
+                    xbuscarproducto.Enabled = true;
+                    xButtonAgregar.Enabled = true;
+                    xButtonGuardar.Enabled = false;
+                    dataGridViewVentas.DataSource = null;
+                    // productoKeyValue.Clear();
+                    //productVentasList.EraserList();
+                    lista.Clear();
+                    CleanProductos();
+                    CleanText();
+                }
+            }
+            else {
+                //textBoxPrecio.ReadOnly = false;
+                textBoxCantidad.ReadOnly = false;
+                textBoxDescuento.ReadOnly = false;
+                textBoxObservacion1.ReadOnly = false;
+                xbuscarcliente.Enabled = true;
+                xbuscarproducto.Enabled = true;
+                xButtonAgregar.Enabled = true;
+                xButtonGuardar.Enabled = false;
+                dataGridViewVentas.DataSource = null;
+                // productoKeyValue.Clear();
+                //productVentasList.EraserList();
+                lista.Clear();
+                CleanProductos();
+                CleanText();
+            }
         }
 
         private void dataGridViewVentas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -539,6 +544,27 @@ namespace InventarioCDGC
            // xButtonBorrar.Enabled = false;
           //  xButtonModificar.Enabled = false;
             CleanProductos();
+        }
+
+        private void xbuscarproducto_Click(object sender, EventArgs e)
+        {
+            buscarProducto.ShowDialog(this);
+            productoKeyValue = new Dictionary<int, string>();
+            productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
+            textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
+            textBoxPrecio.Text = buscarProducto.precio.ToString();
+            //textBoxProducto.Text = buscarProducto.Producto;
+        }
+
+        private void xbuscarcliente_Click(object sender, EventArgs e)
+        {
+            Consultas.BuscarClienteVentas buscarCliente = new Consultas.BuscarClienteVentas();
+            buscarCliente.ShowDialog(this);
+            //textBoxCliente.Text = buscarCliente.idCliente.ToString();
+            clienteKeyValue = new Dictionary<int, string>();
+            clienteKeyValue.Add(buscarCliente.idCliente, buscarCliente.Cliente);
+            textBoxCliente.Text = clienteKeyValue[buscarCliente.idCliente];
+            //textBoxCliente.Text = keyvalue.Keys.ToString();
         }
 
 

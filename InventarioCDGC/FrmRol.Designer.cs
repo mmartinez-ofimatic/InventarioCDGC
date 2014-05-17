@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
@@ -53,33 +55,36 @@
             // 
             // tbuscarpor
             // 
+            this.tbuscarpor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbuscarpor.Location = new System.Drawing.Point(247, 351);
-            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(105, 22);
+            this.tbuscarpor.Size = new System.Drawing.Size(105, 24);
             this.tbuscarpor.TabIndex = 41;
             // 
             // comboBoxBuscar
             // 
             this.comboBoxBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBuscar.FormattingEnabled = true;
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del rol",
             "Nombre del rol"});
             this.comboBoxBuscar.Location = new System.Drawing.Point(89, 350);
-            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 24);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 26);
             this.comboBoxBuscar.TabIndex = 47;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(4, 354);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 17);
+            this.label14.Size = new System.Drawing.Size(81, 18);
             this.label14.TabIndex = 45;
             this.label14.Text = "Buscar por";
             // 
@@ -94,10 +99,20 @@
             this.ColumnExistencia,
             this.ColumnPermisos});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 395);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 423);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(483, 124);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -136,11 +151,11 @@
             this.groupBox2.Controls.Add(this.radioButtonLyS);
             this.groupBox2.Controls.Add(this.radioButtonLectura);
             this.groupBox2.Controls.Add(this.radioButtonAdmin);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 68);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(345, 215);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
@@ -150,33 +165,33 @@
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNombre.Location = new System.Drawing.Point(144, 47);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(160, 23);
+            this.textBoxNombre.Size = new System.Drawing.Size(160, 24);
             this.textBoxNombre.TabIndex = 52;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.Size = new System.Drawing.Size(112, 18);
             this.label2.TabIndex = 51;
             this.label2.Text = "Nombre del Rol";
             // 
             // radioButtonLSyE
             // 
             this.radioButtonLSyE.AutoSize = true;
-            this.radioButtonLSyE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonLSyE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonLSyE.Location = new System.Drawing.Point(29, 124);
-            this.radioButtonLSyE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonLSyE.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonLSyE.Name = "radioButtonLSyE";
-            this.radioButtonLSyE.Size = new System.Drawing.Size(281, 21);
+            this.radioButtonLSyE.Size = new System.Drawing.Size(293, 22);
             this.radioButtonLSyE.TabIndex = 3;
             this.radioButtonLSyE.TabStop = true;
             this.radioButtonLSyE.Text = "Permiso de Lectura, Escritura y Eliminar";
@@ -185,11 +200,11 @@
             // radioButtonLyS
             // 
             this.radioButtonLyS.AutoSize = true;
-            this.radioButtonLyS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonLyS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonLyS.Location = new System.Drawing.Point(29, 155);
-            this.radioButtonLyS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonLyS.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonLyS.Name = "radioButtonLyS";
-            this.radioButtonLyS.Size = new System.Drawing.Size(223, 21);
+            this.radioButtonLyS.Size = new System.Drawing.Size(232, 22);
             this.radioButtonLyS.TabIndex = 2;
             this.radioButtonLyS.TabStop = true;
             this.radioButtonLyS.Text = "Permiso de Lectura y Escritura";
@@ -198,11 +213,11 @@
             // radioButtonLectura
             // 
             this.radioButtonLectura.AutoSize = true;
-            this.radioButtonLectura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonLectura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonLectura.Location = new System.Drawing.Point(29, 183);
-            this.radioButtonLectura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonLectura.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonLectura.Name = "radioButtonLectura";
-            this.radioButtonLectura.Size = new System.Drawing.Size(152, 21);
+            this.radioButtonLectura.Size = new System.Drawing.Size(158, 22);
             this.radioButtonLectura.TabIndex = 1;
             this.radioButtonLectura.TabStop = true;
             this.radioButtonLectura.Text = "Permiso de Lectura";
@@ -211,11 +226,11 @@
             // radioButtonAdmin
             // 
             this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonAdmin.Location = new System.Drawing.Point(29, 96);
-            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(191, 21);
+            this.radioButtonAdmin.Size = new System.Drawing.Size(200, 22);
             this.radioButtonAdmin.TabIndex = 0;
             this.radioButtonAdmin.TabStop = true;
             this.radioButtonAdmin.Text = "Permiso de Administrador";
@@ -241,8 +256,9 @@
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xButton1.ColorTable = office2010Green1;
+            this.xButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButton1.Location = new System.Drawing.Point(368, 347);
-            this.xButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButton1.Margin = new System.Windows.Forms.Padding(4);
             this.xButton1.Name = "xButton1";
             this.xButton1.Size = new System.Drawing.Size(100, 28);
             this.xButton1.TabIndex = 64;
@@ -254,8 +270,9 @@
             // xButtonBorrar
             // 
             this.xButtonBorrar.ColorTable = office2010Green1;
+            this.xButtonBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonBorrar.Location = new System.Drawing.Point(370, 244);
-            this.xButtonBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonBorrar.Name = "xButtonBorrar";
             this.xButtonBorrar.Size = new System.Drawing.Size(100, 28);
             this.xButtonBorrar.TabIndex = 62;
@@ -267,8 +284,9 @@
             // xButtonModificar
             // 
             this.xButtonModificar.ColorTable = office2010Green1;
+            this.xButtonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonModificar.Location = new System.Drawing.Point(370, 192);
-            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonModificar.Name = "xButtonModificar";
             this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
             this.xButtonModificar.TabIndex = 61;
@@ -280,8 +298,9 @@
             // xButtonGuardar
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
+            this.xButtonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xButtonGuardar.Location = new System.Drawing.Point(370, 137);
-            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.xButtonGuardar.Name = "xButtonGuardar";
             this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
             this.xButtonGuardar.TabIndex = 60;
@@ -295,7 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(483, 519);
+            this.ClientSize = new System.Drawing.Size(483, 547);
             this.Controls.Add(this.xButton1);
             this.Controls.Add(this.xButtonBorrar);
             this.Controls.Add(this.xButtonModificar);
@@ -306,7 +325,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmRol";
