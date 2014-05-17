@@ -551,10 +551,14 @@ namespace InventarioCDGC
         {
             buscarProducto.ShowDialog(this);
             productoKeyValue = new Dictionary<string, string>();
-            productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
-            textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
-            textBoxPrecio.Text = buscarProducto.precio.ToString();
-            //textBoxProducto.Text = buscarProducto.Producto;
+            if (buscarProducto.idProducto!=null)
+            {
+                productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
+                textBoxProducto.Text = productoKeyValue[buscarProducto.idProducto];
+                textBoxPrecio.Text = buscarProducto.precio.ToString();
+                //textBoxProducto.Text = buscarProducto.Producto;
+            }
+            
         }
 
         private void xbuscarcliente_Click(object sender, EventArgs e)
