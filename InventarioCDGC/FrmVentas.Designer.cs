@@ -56,6 +56,7 @@
             this.xButtonNuevaVenta = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
             this.xbuscarcliente = new InventarioCDGC.XButton();
+            this.xButtonReporte = new InventarioCDGC.XButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVentas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,41 +68,37 @@
             // 
             this.textBoxCliente.Enabled = false;
             this.textBoxCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCliente.Location = new System.Drawing.Point(145, 43);
-            this.textBoxCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCliente.Location = new System.Drawing.Point(109, 35);
             this.textBoxCliente.Name = "textBoxCliente";
             this.textBoxCliente.ReadOnly = true;
-            this.textBoxCliente.Size = new System.Drawing.Size(132, 24);
+            this.textBoxCliente.Size = new System.Drawing.Size(100, 21);
             this.textBoxCliente.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(18, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 18);
+            this.label1.Size = new System.Drawing.Size(45, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cliente";
             // 
             // textBoxObservacion
             // 
-            this.textBoxObservacion.Location = new System.Drawing.Point(11, -230);
-            this.textBoxObservacion.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxObservacion.Location = new System.Drawing.Point(8, -187);
             this.textBoxObservacion.Multiline = true;
             this.textBoxObservacion.Name = "textBoxObservacion";
-            this.textBoxObservacion.Size = new System.Drawing.Size(288, 70);
+            this.textBoxObservacion.Size = new System.Drawing.Size(217, 58);
             this.textBoxObservacion.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 91);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(18, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 18);
+            this.label7.Size = new System.Drawing.Size(75, 15);
             this.label7.TabIndex = 13;
             this.label7.Text = "Observación";
             // 
@@ -115,11 +112,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxCliente);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(23, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(17, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(475, 187);
+            this.groupBox1.Size = new System.Drawing.Size(356, 152);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Venta";
@@ -128,12 +123,11 @@
             // textBoxObservacion1
             // 
             this.textBoxObservacion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxObservacion1.Location = new System.Drawing.Point(145, 91);
-            this.textBoxObservacion1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxObservacion1.Location = new System.Drawing.Point(109, 74);
             this.textBoxObservacion1.Multiline = true;
             this.textBoxObservacion1.Name = "textBoxObservacion1";
             this.textBoxObservacion1.ReadOnly = true;
-            this.textBoxObservacion1.Size = new System.Drawing.Size(288, 68);
+            this.textBoxObservacion1.Size = new System.Drawing.Size(217, 56);
             this.textBoxObservacion1.TabIndex = 2;
             // 
             // dataGridViewVentas
@@ -144,8 +138,7 @@
             this.dataGridViewVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnProduct});
-            this.dataGridViewVentas.Location = new System.Drawing.Point(-3, 599);
-            this.dataGridViewVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewVentas.Location = new System.Drawing.Point(-2, 487);
             this.dataGridViewVentas.Name = "dataGridViewVentas";
             this.dataGridViewVentas.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -158,7 +151,7 @@
             this.dataGridViewVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewVentas.Size = new System.Drawing.Size(649, 144);
+            this.dataGridViewVentas.Size = new System.Drawing.Size(487, 117);
             this.dataGridViewVentas.TabIndex = 45;
             this.dataGridViewVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellClick);
             this.dataGridViewVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellContentClick);
@@ -183,6 +176,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.xButtonReporte);
             this.groupBox2.Controls.Add(this.xbuscarproducto);
             this.groupBox2.Controls.Add(this.textBoxDescuento);
             this.groupBox2.Controls.Add(this.xButtonModificarProductos);
@@ -196,11 +190,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBoxProducto);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(23, 241);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(17, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(609, 338);
+            this.groupBox2.Size = new System.Drawing.Size(457, 275);
             this.groupBox2.TabIndex = 50;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Productos a la Venta";
@@ -209,18 +201,16 @@
             // textBoxDescuento
             // 
             this.textBoxDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescuento.Location = new System.Drawing.Point(155, 203);
-            this.textBoxDescuento.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDescuento.Location = new System.Drawing.Point(116, 165);
             this.textBoxDescuento.Name = "textBoxDescuento";
             this.textBoxDescuento.ReadOnly = true;
-            this.textBoxDescuento.Size = new System.Drawing.Size(133, 24);
+            this.textBoxDescuento.Size = new System.Drawing.Size(100, 21);
             this.textBoxDescuento.TabIndex = 6;
             // 
             // textBoxCantidad
             // 
             this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCantidad.Location = new System.Drawing.Point(155, 150);
-            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCantidad.Location = new System.Drawing.Point(116, 122);
             this.textBoxCantidad.Maximum = new decimal(new int[] {
             200,
             0,
@@ -228,7 +218,7 @@
             0});
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.ReadOnly = true;
-            this.textBoxCantidad.Size = new System.Drawing.Size(133, 24);
+            this.textBoxCantidad.Size = new System.Drawing.Size(100, 21);
             this.textBoxCantidad.TabIndex = 5;
             this.textBoxCantidad.Value = new decimal(new int[] {
             1,
@@ -240,10 +230,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 206);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(25, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 18);
+            this.label6.Size = new System.Drawing.Size(66, 15);
             this.label6.TabIndex = 47;
             this.label6.Text = "Descuento";
             // 
@@ -251,10 +240,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 153);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(25, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 18);
+            this.label4.Size = new System.Drawing.Size(56, 15);
             this.label4.TabIndex = 46;
             this.label4.Text = "Cantidad";
             // 
@@ -262,10 +250,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 103);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(25, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 18);
+            this.label3.Size = new System.Drawing.Size(73, 15);
             this.label3.TabIndex = 45;
             this.label3.Text = "Precio RD$:";
             // 
@@ -273,21 +260,19 @@
             // 
             this.textBoxPrecio.Enabled = false;
             this.textBoxPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrecio.Location = new System.Drawing.Point(155, 100);
-            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrecio.Location = new System.Drawing.Point(116, 81);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.ReadOnly = true;
-            this.textBoxPrecio.Size = new System.Drawing.Size(132, 24);
+            this.textBoxPrecio.Size = new System.Drawing.Size(100, 21);
             this.textBoxPrecio.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(25, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 18);
+            this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 43;
             this.label2.Text = "Producto";
             // 
@@ -295,11 +280,10 @@
             // 
             this.textBoxProducto.Enabled = false;
             this.textBoxProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxProducto.Location = new System.Drawing.Point(155, 47);
-            this.textBoxProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxProducto.Location = new System.Drawing.Point(116, 38);
             this.textBoxProducto.Name = "textBoxProducto";
             this.textBoxProducto.ReadOnly = true;
-            this.textBoxProducto.Size = new System.Drawing.Size(132, 24);
+            this.textBoxProducto.Size = new System.Drawing.Size(100, 21);
             this.textBoxProducto.TabIndex = 3;
             // 
             // xbuscarproducto
@@ -307,9 +291,10 @@
             this.xbuscarproducto.ColorTable = office2010Green1;
             this.xbuscarproducto.Enabled = false;
             this.xbuscarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xbuscarproducto.Location = new System.Drawing.Point(311, 45);
+            this.xbuscarproducto.Location = new System.Drawing.Point(233, 37);
+            this.xbuscarproducto.Margin = new System.Windows.Forms.Padding(2);
             this.xbuscarproducto.Name = "xbuscarproducto";
-            this.xbuscarproducto.Size = new System.Drawing.Size(100, 23);
+            this.xbuscarproducto.Size = new System.Drawing.Size(75, 19);
             this.xbuscarproducto.TabIndex = 3;
             this.xbuscarproducto.Text = "Buscar";
             this.xbuscarproducto.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -321,10 +306,9 @@
             this.xButtonModificarProductos.ColorTable = office2010Green1;
             this.xButtonModificarProductos.Enabled = false;
             this.xButtonModificarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonModificarProductos.Location = new System.Drawing.Point(233, 282);
-            this.xButtonModificarProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonModificarProductos.Location = new System.Drawing.Point(175, 229);
             this.xButtonModificarProductos.Name = "xButtonModificarProductos";
-            this.xButtonModificarProductos.Size = new System.Drawing.Size(143, 48);
+            this.xButtonModificarProductos.Size = new System.Drawing.Size(118, 39);
             this.xButtonModificarProductos.TabIndex = 48;
             this.xButtonModificarProductos.Text = "Modificar Producto";
             this.xButtonModificarProductos.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -336,10 +320,9 @@
             this.xButtonBorrarProductos.ColorTable = office2010Green1;
             this.xButtonBorrarProductos.Enabled = false;
             this.xButtonBorrarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonBorrarProductos.Location = new System.Drawing.Point(452, 282);
-            this.xButtonBorrarProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonBorrarProductos.Location = new System.Drawing.Point(339, 229);
             this.xButtonBorrarProductos.Name = "xButtonBorrarProductos";
-            this.xButtonBorrarProductos.Size = new System.Drawing.Size(136, 48);
+            this.xButtonBorrarProductos.Size = new System.Drawing.Size(112, 39);
             this.xButtonBorrarProductos.TabIndex = 47;
             this.xButtonBorrarProductos.Text = "Borrar Producto -";
             this.xButtonBorrarProductos.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -351,10 +334,9 @@
             this.xButtonAgregar.ColorTable = office2010Green1;
             this.xButtonAgregar.Enabled = false;
             this.xButtonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonAgregar.Location = new System.Drawing.Point(8, 282);
-            this.xButtonAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonAgregar.Location = new System.Drawing.Point(6, 229);
             this.xButtonAgregar.Name = "xButtonAgregar";
-            this.xButtonAgregar.Size = new System.Drawing.Size(141, 48);
+            this.xButtonAgregar.Size = new System.Drawing.Size(117, 39);
             this.xButtonAgregar.TabIndex = 7;
             this.xButtonAgregar.Text = "Agregar Producto +";
             this.xButtonAgregar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -365,10 +347,9 @@
             // 
             this.xButtonNuevaVenta.ColorTable = office2010Green1;
             this.xButtonNuevaVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonNuevaVenta.Location = new System.Drawing.Point(519, 51);
-            this.xButtonNuevaVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonNuevaVenta.Location = new System.Drawing.Point(389, 41);
             this.xButtonNuevaVenta.Name = "xButtonNuevaVenta";
-            this.xButtonNuevaVenta.Size = new System.Drawing.Size(116, 46);
+            this.xButtonNuevaVenta.Size = new System.Drawing.Size(87, 37);
             this.xButtonNuevaVenta.TabIndex = 49;
             this.xButtonNuevaVenta.Text = "Nueva Venta";
             this.xButtonNuevaVenta.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -380,10 +361,9 @@
             this.xButtonGuardar.ColorTable = office2010Green1;
             this.xButtonGuardar.Enabled = false;
             this.xButtonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonGuardar.Location = new System.Drawing.Point(519, 149);
-            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonGuardar.Location = new System.Drawing.Point(389, 121);
             this.xButtonGuardar.Name = "xButtonGuardar";
-            this.xButtonGuardar.Size = new System.Drawing.Size(116, 44);
+            this.xButtonGuardar.Size = new System.Drawing.Size(87, 36);
             this.xButtonGuardar.TabIndex = 41;
             this.xButtonGuardar.Text = "Realizar Venta";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -412,28 +392,42 @@
             this.xbuscarcliente.ColorTable = office2010Green1;
             this.xbuscarcliente.Enabled = false;
             this.xbuscarcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xbuscarcliente.Location = new System.Drawing.Point(311, 42);
+            this.xbuscarcliente.Location = new System.Drawing.Point(233, 34);
+            this.xbuscarcliente.Margin = new System.Windows.Forms.Padding(2);
             this.xbuscarcliente.Name = "xbuscarcliente";
-            this.xbuscarcliente.Size = new System.Drawing.Size(122, 23);
+            this.xbuscarcliente.Size = new System.Drawing.Size(92, 19);
             this.xbuscarcliente.TabIndex = 1;
             this.xbuscarcliente.Text = "Buscar Cliente";
             this.xbuscarcliente.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.xbuscarcliente.UseVisualStyleBackColor = true;
             this.xbuscarcliente.Click += new System.EventHandler(this.xbuscarcliente_Click);
             // 
+            // xButtonReporte
+            // 
+            this.xButtonReporte.ColorTable = office2010Green1;
+            this.xButtonReporte.Enabled = false;
+            this.xButtonReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xButtonReporte.Location = new System.Drawing.Point(339, 20);
+            this.xButtonReporte.Name = "xButtonReporte";
+            this.xButtonReporte.Size = new System.Drawing.Size(87, 36);
+            this.xButtonReporte.TabIndex = 51;
+            this.xButtonReporte.Text = "Reporte";
+            this.xButtonReporte.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonReporte.UseVisualStyleBackColor = true;
+            this.xButtonReporte.Click += new System.EventHandler(this.xButtonReporte_Click);
+            // 
             // FrmVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(648, 746);
+            this.ClientSize = new System.Drawing.Size(486, 604);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.xButtonNuevaVenta);
             this.Controls.Add(this.dataGridViewVentas);
             this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmVentas";
@@ -479,5 +473,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProduct;
         private XButton xbuscarproducto;
         private XButton xbuscarcliente;
+        private XButton xButtonReporte;
     }
 }

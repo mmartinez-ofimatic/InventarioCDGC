@@ -59,7 +59,7 @@ namespace DataInventarioCDGC
                                       c.PrecioNeto
                                   }).ToList();
 
-
+                    
                     VentaDetalle ventasDetalle = new VentaDetalle();
 
                     foreach (var item in filtro)
@@ -73,7 +73,8 @@ namespace DataInventarioCDGC
                         db1.AddToVentaDetalles(ventasDetalle);
                         db1.SaveChanges(SaveOptions.DetectChangesBeforeSave);
                     }
-              
+
+                    this.idventa = ventas.ID_Venta;
                     transScope.Complete();
                     db.AcceptAllChanges();
                     db1.AcceptAllChanges();

@@ -56,10 +56,9 @@
             // tbuscarpor
             // 
             this.tbuscarpor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbuscarpor.Location = new System.Drawing.Point(247, 351);
-            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
+            this.tbuscarpor.Location = new System.Drawing.Point(185, 285);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(105, 24);
+            this.tbuscarpor.Size = new System.Drawing.Size(80, 21);
             this.tbuscarpor.TabIndex = 10;
             // 
             // comboBoxBuscar
@@ -70,10 +69,9 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del rol",
             "Nombre del rol"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(89, 350);
-            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(67, 284);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 26);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(112, 23);
             this.comboBoxBuscar.TabIndex = 9;
             // 
             // label14
@@ -81,10 +79,9 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(4, 354);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(3, 288);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 18);
+            this.label14.Size = new System.Drawing.Size(66, 15);
             this.label14.TabIndex = 45;
             this.label14.Text = "Buscar por";
             // 
@@ -99,8 +96,7 @@
             this.ColumnExistencia,
             this.ColumnPermisos});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 423);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 343);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -113,7 +109,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(483, 124);
+            this.dataGridView1.Size = new System.Drawing.Size(362, 101);
             this.dataGridView1.TabIndex = 44;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
@@ -152,11 +148,9 @@
             this.groupBox2.Controls.Add(this.radioButtonLectura);
             this.groupBox2.Controls.Add(this.radioButtonAdmin);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 68);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(6, 55);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(345, 215);
+            this.groupBox2.Size = new System.Drawing.Size(259, 175);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Permisos";
@@ -166,10 +160,9 @@
             // textBoxNombre
             // 
             this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.Location = new System.Drawing.Point(144, 47);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNombre.Location = new System.Drawing.Point(116, 38);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(160, 24);
+            this.textBoxNombre.Size = new System.Drawing.Size(121, 21);
             this.textBoxNombre.TabIndex = 1;
             // 
             // label2
@@ -177,10 +170,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(18, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 18);
+            this.label2.Size = new System.Drawing.Size(94, 15);
             this.label2.TabIndex = 51;
             this.label2.Text = "Nombre del Rol";
             // 
@@ -188,10 +180,9 @@
             // 
             this.radioButtonLSyE.AutoSize = true;
             this.radioButtonLSyE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonLSyE.Location = new System.Drawing.Point(29, 124);
-            this.radioButtonLSyE.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonLSyE.Location = new System.Drawing.Point(22, 101);
             this.radioButtonLSyE.Name = "radioButtonLSyE";
-            this.radioButtonLSyE.Size = new System.Drawing.Size(293, 22);
+            this.radioButtonLSyE.Size = new System.Drawing.Size(243, 19);
             this.radioButtonLSyE.TabIndex = 3;
             this.radioButtonLSyE.TabStop = true;
             this.radioButtonLSyE.Text = "Permiso de Lectura, Escritura y Eliminar";
@@ -201,10 +192,9 @@
             // 
             this.radioButtonLyS.AutoSize = true;
             this.radioButtonLyS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonLyS.Location = new System.Drawing.Point(29, 155);
-            this.radioButtonLyS.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonLyS.Location = new System.Drawing.Point(22, 126);
             this.radioButtonLyS.Name = "radioButtonLyS";
-            this.radioButtonLyS.Size = new System.Drawing.Size(232, 22);
+            this.radioButtonLyS.Size = new System.Drawing.Size(191, 19);
             this.radioButtonLyS.TabIndex = 3;
             this.radioButtonLyS.TabStop = true;
             this.radioButtonLyS.Text = "Permiso de Lectura y Escritura";
@@ -214,10 +204,9 @@
             // 
             this.radioButtonLectura.AutoSize = true;
             this.radioButtonLectura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonLectura.Location = new System.Drawing.Point(29, 183);
-            this.radioButtonLectura.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonLectura.Location = new System.Drawing.Point(22, 149);
             this.radioButtonLectura.Name = "radioButtonLectura";
-            this.radioButtonLectura.Size = new System.Drawing.Size(158, 22);
+            this.radioButtonLectura.Size = new System.Drawing.Size(132, 19);
             this.radioButtonLectura.TabIndex = 4;
             this.radioButtonLectura.TabStop = true;
             this.radioButtonLectura.Text = "Permiso de Lectura";
@@ -227,10 +216,9 @@
             // 
             this.radioButtonAdmin.AutoSize = true;
             this.radioButtonAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonAdmin.Location = new System.Drawing.Point(29, 96);
-            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.radioButtonAdmin.Location = new System.Drawing.Point(22, 78);
             this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(200, 22);
+            this.radioButtonAdmin.Size = new System.Drawing.Size(167, 19);
             this.radioButtonAdmin.TabIndex = 2;
             this.radioButtonAdmin.TabStop = true;
             this.radioButtonAdmin.Text = "Permiso de Administrador";
@@ -257,10 +245,9 @@
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xButton1.ColorTable = office2010Green1;
             this.xButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButton1.Location = new System.Drawing.Point(368, 347);
-            this.xButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.xButton1.Location = new System.Drawing.Point(276, 282);
             this.xButton1.Name = "xButton1";
-            this.xButton1.Size = new System.Drawing.Size(100, 28);
+            this.xButton1.Size = new System.Drawing.Size(75, 23);
             this.xButton1.TabIndex = 11;
             this.xButton1.Text = " Buscar";
             this.xButton1.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -271,10 +258,9 @@
             // 
             this.xButtonBorrar.ColorTable = office2010Green1;
             this.xButtonBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonBorrar.Location = new System.Drawing.Point(370, 244);
-            this.xButtonBorrar.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonBorrar.Location = new System.Drawing.Point(278, 198);
             this.xButtonBorrar.Name = "xButtonBorrar";
-            this.xButtonBorrar.Size = new System.Drawing.Size(100, 28);
+            this.xButtonBorrar.Size = new System.Drawing.Size(75, 23);
             this.xButtonBorrar.TabIndex = 8;
             this.xButtonBorrar.Text = "Borrar";
             this.xButtonBorrar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -285,10 +271,9 @@
             // 
             this.xButtonModificar.ColorTable = office2010Green1;
             this.xButtonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonModificar.Location = new System.Drawing.Point(370, 192);
-            this.xButtonModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonModificar.Location = new System.Drawing.Point(278, 156);
             this.xButtonModificar.Name = "xButtonModificar";
-            this.xButtonModificar.Size = new System.Drawing.Size(100, 28);
+            this.xButtonModificar.Size = new System.Drawing.Size(75, 23);
             this.xButtonModificar.TabIndex = 7;
             this.xButtonModificar.Text = "Modificar";
             this.xButtonModificar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -299,10 +284,9 @@
             // 
             this.xButtonGuardar.ColorTable = office2010Green1;
             this.xButtonGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonGuardar.Location = new System.Drawing.Point(370, 137);
-            this.xButtonGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.xButtonGuardar.Location = new System.Drawing.Point(278, 111);
             this.xButtonGuardar.Name = "xButtonGuardar";
-            this.xButtonGuardar.Size = new System.Drawing.Size(100, 28);
+            this.xButtonGuardar.Size = new System.Drawing.Size(75, 23);
             this.xButtonGuardar.TabIndex = 6;
             this.xButtonGuardar.Text = "Guardar";
             this.xButtonGuardar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -311,10 +295,10 @@
             // 
             // FrmRol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(483, 547);
+            this.ClientSize = new System.Drawing.Size(362, 444);
             this.Controls.Add(this.xButton1);
             this.Controls.Add(this.xButtonBorrar);
             this.Controls.Add(this.xButtonModificar);
@@ -325,7 +309,6 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmRol";
