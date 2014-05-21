@@ -255,39 +255,45 @@ namespace InventarioCDGC
         {
             //if (selectModeRow == true)
             //{
-                    if (textBoxIDProducto.Text != "")
+            try
+            {
+                if (textBoxIDProducto.Text != "")
+                {
+                    if (textBoxNombre.Text != "")
                     {
-                        if (textBoxNombre.Text != "")
+                        if (textBoxExistencia.Text != "")
                         {
-                            if (textBoxExistencia.Text != "")
+                            almacen.IDproducto = textBoxIDProducto.Text;
+                            almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
+                            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea sacar: " + textBoxExistencia.Text + " productos de la existencia?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
                             {
-                                almacen.IDproducto = textBoxIDProducto.Text;
-                                almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
-                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea sacar: " + textBoxExistencia.Text + " productos de la existencia?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                if (dialogResult == DialogResult.Yes)
+                                if (almacen.SacarExistenciadeProducto(textBoxIDProducto.Text))
                                 {
-                                    if (almacen.SacarExistenciadeProducto(textBoxIDProducto.Text))
-                                    {
-                                        MessageBox.Show("Existencia eliminada!", "Existencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        CleanText();
-                                    }
+                                    MessageBox.Show("Existencia eliminada!", "Existencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CleanText();
                                 }
-                                
                             }
-                            else
-                            {
-                                MessageBox.Show("Debe llenar el campo existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+
                         }
                         else
                         {
-                            MessageBox.Show("Debe seleccionar un producto para modificar su existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Debe llenar el campo existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
                         MessageBox.Show("Debe seleccionar un producto para modificar su existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un producto para modificar su existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception) {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
                 //}
                 //else
                 //{
@@ -370,47 +376,54 @@ namespace InventarioCDGC
 
         private void xButtonAgregarExitAlmacen_Click(object sender, EventArgs e)
         {
-            if (textBoxNombre.Text != "")
+            try
             {
-                if (textBoxExistencia.Text != "")
+
+                if (textBoxNombre.Text != "")
                 {
-                    //almacen.IDproducto = comboBoxID.Text;
-                    //almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
-
-                    almacen.IDproducto = textBoxIDProducto.Text;
-                    almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
-
-      
-                    try
+                    if (textBoxExistencia.Text != "")
                     {
-                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea agregar "+textBoxExistencia.Text+" existencia mas a este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (dialogResult == DialogResult.Yes)
+                        //almacen.IDproducto = comboBoxID.Text;
+                        //almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
+
+                        almacen.IDproducto = textBoxIDProducto.Text;
+                        almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
+
+
+                        try
                         {
-                            if (almacen.AgregarExistenciadeProducto(textBoxIDProducto.Text))
+                            DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea agregar " + textBoxExistencia.Text + " existencia mas a este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.Yes)
                             {
-                                MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                CleanText();
-                                //comboBoxID.SelectedIndex = 0;
+                                if (almacen.AgregarExistenciadeProducto(textBoxIDProducto.Text))
+                                {
+                                    MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CleanText();
+                                    //comboBoxID.SelectedIndex = 0;
+                                }
                             }
+
                         }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Ocurrio un error, Intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            CleanText();
+                            // comboBoxID.SelectedIndex = 0;
 
+                        }
                     }
-                    catch (Exception)
+                    else
                     {
-                        MessageBox.Show("Ocurrio un error, Intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        CleanText();
-                       // comboBoxID.SelectedIndex = 0;
-
+                        MessageBox.Show("Llene el campo Existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Llene el campo Existencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Elija un ID de producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Elija un ID de producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception) {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

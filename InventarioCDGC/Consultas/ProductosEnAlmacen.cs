@@ -26,7 +26,13 @@ namespace InventarioCDGC.Consultas
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = almacen.BuscarTodosConProductos();
+            try
+            {
+                dataGridView1.DataSource = almacen.BuscarTodosConProductos();
+            }
+            catch (Exception) {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

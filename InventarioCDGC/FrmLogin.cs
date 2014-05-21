@@ -22,32 +22,40 @@ namespace InventarioCDGC
         private void xButton1_Click(object sender, EventArgs e)
         {
             bool validate;
-            validate = login.ValidateUsers(tusuario.Text, tpass.Text);
 
-            if (validate == true)
+            try
             {
-                RolInv roles = new RolInv();
-                FrmMenu.tiporol = roles.GetPermisos(login.IDrol);
-                FrmClientes.tiporol = roles.GetPermisos(login.IDrol);
-                FrmProductos.tiporol = roles.GetPermisos(login.IDrol);
-                FrmVentas.tiporol = roles.GetPermisos(login.IDrol);
-                FrmAlmacen.tiporol = roles.GetPermisos(login.IDrol);
+                validate = login.ValidateUsers(tusuario.Text, tpass.Text);
+
+                if (validate == true)
+                {
+                    RolInv roles = new RolInv();
+                    FrmMenu.tiporol = roles.GetPermisos(login.IDrol);
+                    FrmClientes.tiporol = roles.GetPermisos(login.IDrol);
+                    FrmProductos.tiporol = roles.GetPermisos(login.IDrol);
+                    FrmVentas.tiporol = roles.GetPermisos(login.IDrol);
+                    FrmAlmacen.tiporol = roles.GetPermisos(login.IDrol);
 
 
-                FrmMenu.nameUser = (roles.GetNombreRol(login.IDrol) + ": " + tusuario.Text).ToUpper();
+                    FrmMenu.nameUser = (roles.GetNombreRol(login.IDrol) + ": " + tusuario.Text).ToUpper();
 
-                FrmMenu menu = new FrmMenu();
-                menu.Show();
-                this.Hide();
+                    FrmMenu menu = new FrmMenu();
+                    menu.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o Password Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tpass.Clear();
+                    tusuario.Clear();
+
+                    tusuario.Select();
+                    // Cursor.Current = 1;
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Usuario o Password Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tpass.Clear();
-                tusuario.Clear();
-
-                tusuario.Select();
-               // Cursor.Current = 1;
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -59,9 +67,9 @@ namespace InventarioCDGC
             }
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void tusuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -71,5 +79,7 @@ namespace InventarioCDGC
                 tpass.Select();
             }
         }
+
+
     }
 }

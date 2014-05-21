@@ -306,6 +306,8 @@ namespace InventarioCDGC
 
         private void xButton1_Click(object sender, EventArgs e)
         {
+            try{
+
             if (comboBoxBuscar.Text != "")
             {
                 if (tbuscarpor.Text != "")
@@ -353,12 +355,16 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
-
+            try{
             if (textBoxNombre.Text != "")
             {
                 if (radioButtonAdmin.Checked != false || radioButtonLSyE.Checked != false || radioButtonLyS.Checked != false || radioButtonLectura.Checked != false)
@@ -420,12 +426,19 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Llene el campo nombre del rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
            
         }
 
         private void xButtonModificar_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
+
+            try{
 
             if (row.Selected == true)
             {
@@ -493,12 +506,19 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Primero busque un rol y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         
         }
 
         private void xButtonBorrar_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
+
+            try{
 
             if (row.Selected == true)
             {
@@ -528,6 +548,11 @@ namespace InventarioCDGC
             else
             {
                 MessageBox.Show("Primero busque un rol y seleccionelo para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         
         }

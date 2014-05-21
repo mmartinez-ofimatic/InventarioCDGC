@@ -355,6 +355,7 @@
             this.bbuscar.Text = "Buscar";
             this.bbuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
             this.bbuscar.UseVisualStyleBackColor = true;
+        //    this.bbuscar.Click += new System.EventHandler(this.bbuscar_Click_1);
             // 
             // FrmClientes
             // 

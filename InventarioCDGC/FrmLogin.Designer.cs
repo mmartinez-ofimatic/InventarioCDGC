@@ -44,7 +44,7 @@
             this.tpass.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpass.Location = new System.Drawing.Point(316, 107);
-            this.tpass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpass.Margin = new System.Windows.Forms.Padding(4);
             this.tpass.Name = "tpass";
             this.tpass.PasswordChar = '*';
             this.tpass.Size = new System.Drawing.Size(160, 24);
@@ -56,7 +56,7 @@
             this.tusuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tusuario.Location = new System.Drawing.Point(316, 54);
-            this.tusuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tusuario.Margin = new System.Windows.Forms.Padding(4);
             this.tusuario.Name = "tusuario";
             this.tusuario.Size = new System.Drawing.Size(160, 24);
             this.tusuario.TabIndex = 1;
@@ -93,7 +93,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::InventarioCDGC.Properties.Resources.Login;
             this.pictureBox1.Location = new System.Drawing.Point(16, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(168, 135);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -147,13 +147,13 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLogin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

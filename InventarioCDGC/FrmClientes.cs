@@ -194,86 +194,75 @@ namespace InventarioCDGC
         {
            Clientescdgc clientes = new Clientescdgc();
 
-           if (selectModeRow == false)
+           try
            {
-               if (textBoxNombre.Text != "")
-               {
-                   if (textBoxCedula.Text != "")
-                   {
-                       if (validar.ValidateCedula(textBoxCedula.Text))
-                       {
-                           if (textBoxTelefono.Text != "")
-                           {
-                               if (validar.ValidateNumeric(textBoxTelefono.Text))
-                               {
-                                   if (textBoxCelular.Text != "")
-                                   {
-                                       if (validar.ValidateNumeric(textBoxCelular.Text))
-                                       {
-                                           if (textBoxDireccion.Text != "")
-                                           {
-                                               clientes.nombre = textBoxNombre.Text;
 
-                                               clientes.cedula = textBoxCedula.Text;
-                                               clientes.telefono = textBoxTelefono.Text;
-                                               clientes.celular = textBoxCelular.Text;
-                                               clientes.direccion = textBoxDireccion.Text;
-                                               DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                               if (dialogResult == DialogResult.Yes)
-                                               {
-                                                   if (clientes.Guardar())
-                                                   {
-                                                       CleanText();
-                                                       MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                   }
-                                               }
-                                              
-                                           }
-                                           else
-                                           {
-                                               MessageBox.Show("Llene el campo Dirección", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                           }
-                                       }
-                                       else
-                                       {
-                                           MessageBox.Show("El campo Celular debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                       }
-                                   }
-                                   else
+               if (selectModeRow == false)
+               {
+                   if (textBoxNombre.Text != "")
+                   {
+                       if (validar.ValidateCedula(textBoxCedula.Text) || textBoxCedula.Text == "")
+                       {
+                           if (validar.ValidateNumeric(textBoxTelefono.Text) || textBoxTelefono.Text == "")
+                           {
+                               if (validar.ValidateNumeric(textBoxCelular.Text) || textBoxCelular.Text == "")
+                               {
+                                   clientes.nombre = textBoxNombre.Text;
+
+                                   clientes.cedula = textBoxCedula.Text;
+                                   clientes.telefono = textBoxTelefono.Text;
+                                   clientes.celular = textBoxCelular.Text;
+                                   clientes.direccion = textBoxDireccion.Text;
+                                   DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                   if (dialogResult == DialogResult.Yes)
                                    {
-                                       MessageBox.Show("Llene el campo Celular", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                       if (clientes.Guardar())
+                                       {
+                                           CleanText();
+                                           MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                       }
                                    }
 
                                }
+
+
                                else
                                {
-                                   MessageBox.Show("El campo Telefono debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                   MessageBox.Show("El campo Celular debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                }
                            }
+
+
+
                            else
                            {
-                               MessageBox.Show("Llene el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                               MessageBox.Show("El campo Telefono debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                            }
-
                        }
+
+
+
                        else
                        {
                            MessageBox.Show("La cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                        }
                    }
+
+
                    else
                    {
-                       MessageBox.Show("Llene el campo Cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                       MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    }
                }
                else
                {
-                   MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                }
            }
-           else
+           catch (Exception)
            {
-               MessageBox.Show("Hay un cliente seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
            }
             
         }
@@ -282,97 +271,73 @@ namespace InventarioCDGC
         {
             try
             {
-            
-            if (selectModeRow == true)
-            {
+
+                if (selectModeRow == true)
+                {
                     if (textBoxNombre.Text != "")
                     {
-                   if (textBoxCedula.Text != "")
-                     {
-                    if (validar.ValidateCedula(textBoxCedula.Text))
-                    {
-                    if (textBoxTelefono.Text != "")
-                    {
-                        if (validar.ValidateNumeric(textBoxTelefono.Text))
-                        {
-                        if (textBoxCelular.Text != "")
-                        {
-                            if (validar.ValidateNumeric(textBoxCelular.Text))
-                            { 
-                                if (textBoxDireccion.Text != "")
-                                    {
-                                        clientesclass.nombre = textBoxNombre.Text;
-                                        clientesclass.cedula = textBoxCedula.Text;
-                                        clientesclass.telefono = textBoxTelefono.Text;
-                                        clientesclass.celular = textBoxCelular.Text;
-                                        clientesclass.direccion = textBoxDireccion.Text;
-                                        DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                        if (dialogResult == DialogResult.Yes)
-                                        {
-                                            if (clientesclass.Modificar())
-                                            {
-                                                CleanText();
-                                                MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                            }
-                                        }    
-                                    
-                                    
-                                    }
-                                    else
+                        if (validar.ValidateCedula(textBoxCedula.Text) || textBoxCedula.Text == "")
+                        {
+
+                            if (validar.ValidateNumeric(textBoxTelefono.Text) || textBoxTelefono.Text == "")
+                            {
+
+                                if (validar.ValidateNumeric(textBoxCelular.Text) || textBoxCelular.Text == "")
+                                {
+
+                                    clientesclass.nombre = textBoxNombre.Text;
+                                    clientesclass.cedula = textBoxCedula.Text;
+                                    clientesclass.telefono = textBoxTelefono.Text;
+                                    clientesclass.celular = textBoxCelular.Text;
+                                    clientesclass.direccion = textBoxDireccion.Text;
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este cliente?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
                                     {
-                                        MessageBox.Show("Llene el campo Direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        if (clientesclass.Modificar())
+                                        {
+                                            CleanText();
+                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                        }
                                     }
+
+
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El campo Celular debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+
                             }
                             else
                             {
-                                MessageBox.Show("El campo Celular debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("El campo Telefono debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Llene el campo Celular", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+
 
                         }
                         else
                         {
-                            MessageBox.Show("El campo Telefono debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+
+
                     else
                     {
-                        MessageBox.Show("Llene el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Primero busque un cliente y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("La Cedula debe ser numerica y debe tener 11 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+
                 }
-                        else
-                        {
-                            MessageBox.Show("Llene el campo Cedula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Llene el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                
-            }
-            else
-            {
-                MessageBox.Show("Primero busque un cliente y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
             }
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -517,10 +482,6 @@ namespace InventarioCDGC
          //    row = dataGridView1.CurrentRow;
         //    row.Selected = false;
         }
-
-        
-
-
 
     }
 }

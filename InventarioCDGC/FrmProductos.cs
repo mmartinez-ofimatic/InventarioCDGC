@@ -141,93 +141,106 @@ namespace InventarioCDGC
 
         private void xButtonGuardar_Click(object sender, EventArgs e)
         {
-            if (selectModeRow == false)
+            try
             {
-                if (textBoxIDproducto.Text != "")
+                if (selectModeRow == false)
                 {
-                    if (textBoxNombre.Text != "")
+                    if (textBoxIDproducto.Text != "")
                     {
-                        if (textBoxPrecio.Text != "")
+                        if (textBoxNombre.Text != "")
                         {
-                            try
+                            if (textBoxPrecio.Text != "")
                             {
-                                almacen.IDproducto = textBoxIDproducto.Text;
-                                almacen.nombreProducto = textBoxNombre.Text;
-                                almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
-                                //product.idproducto = 
-                               // product.producto = textBoxNombre.Text;
-                                //product.precio = Convert.ToDecimal(textBoxPrecio.Text);
-
-                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                if (dialogResult == DialogResult.Yes)
+                                try
                                 {
-                                    if (almacen.Guardar())
+                                    almacen.IDproducto = textBoxIDproducto.Text;
+                                    almacen.nombreProducto = textBoxNombre.Text;
+                                    almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
+                                    //product.idproducto = 
+                                    // product.producto = textBoxNombre.Text;
+                                    //product.precio = Convert.ToDecimal(textBoxPrecio.Text);
+
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
                                     {
-                                        CleanText();
-                                        MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        if (almacen.Guardar())
+                                        {
+                                            CleanText();
+                                            MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
                                     }
+
                                 }
-                                
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
-                            catch (Exception)
+                            else
                             {
-                                MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Llene el campo precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Llene el campo nombre del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Llene el campo nombre del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Llene el campo ID del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Llene el campo ID del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hay un producto seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Hay un producto seleccionado, Deseleccionelo para guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception) {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
         private void xButtonModificar_Click(object sender, EventArgs e)
         {
-            if (selectModeRow == true)
+            try
             {
-                if (textBoxIDproducto.Text != "")
+                if (selectModeRow == true)
                 {
-                    if (textBoxNombre.Text != "")
+                    if (textBoxIDproducto.Text != "")
                     {
-                        if (textBoxPrecio.Text != "")
+                        if (textBoxNombre.Text != "")
                         {
-                            //dataGridView1.SelectionMode.GetType();
-                            try
+                            if (textBoxPrecio.Text != "")
                             {
-
-                                almacen.IDproducto = textBoxIDproducto.Text;
-                                almacen.nombreProducto = textBoxNombre.Text;
-                                almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
-                           
-                                DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                if (almacen.Modificar())
+                                //dataGridView1.SelectionMode.GetType();
+                                try
                                 {
-                                    CleanText();
-                                    MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    almacen.IDproducto = textBoxIDproducto.Text;
+                                    almacen.nombreProducto = textBoxNombre.Text;
+                                    almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
+
+                                    DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea modificar este producto?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogResult == DialogResult.Yes)
+                                    {
+                                        if (almacen.Modificar())
+                                        {
+                                            CleanText();
+                                            MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        }
+                                    }
+
+
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Ocurrio un error, modifique nuevamente, recuerde el campo precio debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
-                            
-
-                            }
-                            catch (Exception)
+                            else
                             {
-                                MessageBox.Show("Ocurrio un error, modifique nuevamente, recuerde el campo precio debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                  
+                                MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
@@ -242,12 +255,11 @@ namespace InventarioCDGC
                 }
                 else
                 {
-                    MessageBox.Show("Debe seleccionar un producto para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Primero busque un producto y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Primero busque un producto y seleccionelo para modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch (Exception) {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -286,6 +298,7 @@ namespace InventarioCDGC
 
         private void bbuscar_Click_1(object sender, EventArgs e)
         {
+            try{
             if (comboBoxBuscar.Text != "")
             {
                 if (tbuscarpor.Text != "")
@@ -330,7 +343,11 @@ namespace InventarioCDGC
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

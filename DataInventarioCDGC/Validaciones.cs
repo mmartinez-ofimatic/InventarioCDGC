@@ -123,7 +123,7 @@ namespace DataInventarioCDGC
         {
             bool isCorrect = false;
 
-            Match numeric = Regex.Match(numericText, @"^[0-9]*$");
+            Match numeric = Regex.Match(numericText, @"^[0-9]+$");
             
             if (numeric.Success)
                 return isCorrect = true;
@@ -135,7 +135,7 @@ namespace DataInventarioCDGC
         {
             bool isCorrect = false;
             //^\d*(.\d\d)?$
-            Match numeric = Regex.Match(decimalText, @"^\d*(.\d\d)?$");
+            Match numeric = Regex.Match(decimalText, @"^\d+(.\d\d)?$");
 
             if (numeric.Success)
                 return isCorrect = true;

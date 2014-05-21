@@ -42,6 +42,7 @@ namespace InventarioCDGC.Consultas
 
         private void xBuscar_Click(object sender, EventArgs e)
         {
+            try{
             if (comboBoxBuscar.Text != "")
             {
                 if (tbuscarpor.Text != "")
@@ -86,6 +87,13 @@ namespace InventarioCDGC.Consultas
             {
                 MessageBox.Show("Elija la opcion de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+             
     }
+     
 }
