@@ -1,6 +1,6 @@
 ﻿namespace InventarioCDGC.Reportes
 {
-    partial class ReporteVentasD
+    partial class ReporteVentasDetalle
     {
         /// <summary>
         /// Required designer variable.
@@ -41,19 +41,19 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrystalReportFactura1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(746, 387);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(735, 413);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // ReporteVentasD
+            // ReporteVentasDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 387);
+            this.ClientSize = new System.Drawing.Size(735, 413);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "ReporteVentasD";
-            this.Text = "ReporteVentasD";
-            this.Load += new System.EventHandler(this.ReporteVentasD_Load);
+            this.Name = "ReporteVentasDetalle";
+            this.Text = "ReporteVentasDetalle";
+            this.Load += new System.EventHandler(this.ReporteVentasDetalle_Load);
             this.ResumeLayout(false);
 
         }

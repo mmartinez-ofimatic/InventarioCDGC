@@ -160,11 +160,11 @@
       <DependentUpon>CrystalReportFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteVentasD.cs">
+    <Compile Include="Reportes\ReporteVentasDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\ReporteVentasD.Designer.cs">
-      <DependentUpon>ReporteVentasD.cs</DependentUpon>
+    <Compile Include="Reportes\ReporteVentasDetalle.Designer.cs">
+      <DependentUpon>ReporteVentasDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Xbutton.cs">
       <SubType>Component</SubType>
@@ -222,8 +222,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportFactura.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteVentasD.resx">
-      <DependentUpon>ReporteVentasD.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ReporteVentasDetalle.resx">
+      <DependentUpon>ReporteVentasDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>

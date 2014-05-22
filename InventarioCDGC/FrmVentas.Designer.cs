@@ -42,7 +42,6 @@
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.xButtonReporte = new InventarioCDGC.XButton();
             this.xbuscarproducto = new InventarioCDGC.XButton();
             this.textBoxDescuento = new System.Windows.Forms.NumericUpDown();
             this.xButtonModificarProductos = new InventarioCDGC.XButton();
@@ -208,7 +207,6 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.xButtonReporte);
             this.groupBox2.Controls.Add(this.xbuscarproducto);
             this.groupBox2.Controls.Add(this.textBoxDescuento);
             this.groupBox2.Controls.Add(this.xButtonModificarProductos);
@@ -229,19 +227,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar Productos a la Venta";
             this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
-            // 
-            // xButtonReporte
-            // 
-            this.xButtonReporte.ColorTable = office2010Green1;
-            this.xButtonReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonReporte.Location = new System.Drawing.Point(339, 20);
-            this.xButtonReporte.Name = "xButtonReporte";
-            this.xButtonReporte.Size = new System.Drawing.Size(87, 36);
-            this.xButtonReporte.TabIndex = 51;
-            this.xButtonReporte.Text = "Reporte";
-            this.xButtonReporte.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonReporte.UseVisualStyleBackColor = true;
-            this.xButtonReporte.Click += new System.EventHandler(this.xButtonReporte_Click);
             // 
             // xbuscarproducto
             // 
@@ -472,6 +457,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProduct;
         private XButton xbuscarproducto;
         private XButton xbuscarcliente;
-        private XButton xButtonReporte;
     }
 }

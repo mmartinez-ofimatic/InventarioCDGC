@@ -91,7 +91,7 @@ namespace InventarioCDGC
                             {
 
                                 ventasClass.idcliente = Convert.ToInt32(textBoxCliente.Text);
-                                ventasClass.idproducto = Convert.ToInt32(textBoxProducto.Text);
+                               // ventasClass.idproducto = Convert.ToInt32(textBoxProducto.Text);
                                 ventasClass.precio = Convert.ToDecimal(textBoxPrecio.Text);
                                 ventasClass.cantidad = Convert.ToInt32(textBoxCantidad.Text);
                                 ventasClass.descuento = Convert.ToDecimal(textBoxDescuento.Text);
@@ -258,6 +258,9 @@ namespace InventarioCDGC
                                 MessageBox.Show("Venta realizada!", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
                                 dataGridViewVentas.DataSource = null;
+
+                                InventarioCDGC.Reportes.ReporteVentasDetalle reporte = new Reportes.ReporteVentasDetalle();
+                                reporte.Show();
 
                             }
 
@@ -576,7 +579,7 @@ namespace InventarioCDGC
 
         private void xButtonReporte_Click(object sender, EventArgs e)
         {
-            InventarioCDGC.Reportes.ReporteVentasD reporte = new Reportes.ReporteVentasD();
+            InventarioCDGC.Reportes.ReporteVentasDetalle reporte = new Reportes.ReporteVentasDetalle();
             reporte.Show();
         }
 

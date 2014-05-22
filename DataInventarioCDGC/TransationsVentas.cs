@@ -14,7 +14,7 @@ namespace DataInventarioCDGC
         VentasInv venta = new VentasInv();
         ventaDetalles ventaDetalle = new ventaDetalles();
        
-        public int idventa { get; set; }
+        public static int idventa { get; set; }
         public int idcliente { get; set; }
         public string idproducto { get; set; }
         public int idusuario { get; set; }
@@ -24,9 +24,12 @@ namespace DataInventarioCDGC
         public string observacion { get; set; }
         public DateTime fecha { get; set; }
 
-       public InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
-       public InventarioCDGCEntities1 db1 = new InventarioCDGCEntities1();
+       InventarioCDGCEntities1 db = new InventarioCDGCEntities1();
+       InventarioCDGCEntities1 db1 = new InventarioCDGCEntities1();
+       AlmacenIn almacen = new AlmacenIn();
+
        public TransactionScope transScope ;
+
 
         public bool transationsVentas(List<AgregarVentas> listaVenta)
         {
@@ -37,7 +40,7 @@ namespace DataInventarioCDGC
 
                 try
                 {
-
+                    //Guardar Venta
                         Venta ventas = new Venta();
                         ventas.ID_Cliente = idcliente;
 
@@ -59,26 +62,42 @@ namespace DataInventarioCDGC
                                       c.PrecioNeto
                                   }).ToList();
 
-                    
+                    //Guardar Venta detalle
                     VentaDetalle ventasDetalle = new VentaDetalle();
-
+                    
                     foreach (var item in filtro)
                     {
                         ventasDetalle.ID_Venta =  ventas.ID_Venta;
-                        ventasDetalle.ID_Producto = item.idProducto.ToString();
+                        ventasDetalle.ID_Producto = item.idProducto;
                         ventasDetalle.Precio_Unidad = item.Precio;
                         ventasDetalle.Cantidad = item.Cantidad;
                         ventasDetalle.Descuento = Convert.ToDecimal(item.Descuento);
+                        ventasDetalle.Total = item.PrecioNeto;
+
+                        //Sacar productos del almacen
+                        Almacen update = (from upd in dbEntities.Almacens
+                                          where upd.ID_Producto == item.idProducto
+                                          select upd).First();
+
+                        update.Existencia = update.Existencia - item.Cantidad;
+
+
 
                         db1.AddToVentaDetalles(ventasDetalle);
                         db1.SaveChanges(SaveOptions.DetectChangesBeforeSave);
+                        dbEntities.SaveChanges();
                     }
 
-                    this.idventa = ventas.ID_Venta;
+
+                   
+                    dbEntities.SaveChanges();
+
+                    idventa = ventas.ID_Venta;
+                    
                     transScope.Complete();
                     db.AcceptAllChanges();
                     db1.AcceptAllChanges();
-
+                    dbEntities.AcceptAllChanges();
                     savecommit = true;
                   
                 }

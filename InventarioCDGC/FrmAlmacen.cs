@@ -268,7 +268,7 @@ namespace InventarioCDGC
                             DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea sacar: " + textBoxExistencia.Text + " productos de la existencia?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.Yes)
                             {
-                                if (almacen.SacarExistenciadeProducto(textBoxIDProducto.Text))
+                                if (almacen.SacarExistenciadeProducto(textBoxIDProducto.Text, Convert.ToInt32(textBoxExistencia.Text) ))
                                 {
                                     MessageBox.Show("Existencia eliminada!", "Existencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();

@@ -11,7 +11,7 @@ namespace DataInventarioCDGC
     {
         public int idventa { get; set; }
         public int idcliente { get; set; }
-        public int idproducto { get; set; }
+        public int iDproducto { get; set; }
         public int idusuario { get; set; }
         public decimal precio { get; set; }
         public int cantidad { get; set; }
@@ -219,6 +219,7 @@ namespace DataInventarioCDGC
       public decimal Precio { get; set; }
       public int Cantidad { get; set; }
       public double Descuento { get; set; }
+      //public double DescuentoNeto { get; set; }
       public decimal PrecioNeto { get; set; }
 
       List<AgregarVentas> Lista = new List<AgregarVentas>();
@@ -249,7 +250,7 @@ namespace DataInventarioCDGC
           var filtro = (from c in lista
                         select new
                         {
-                            idProducto = c.Producto.Select(x => x.Key).Single(),
+                            IDProducto = c.Producto.Select(x => x.Key).Single(),
                             Producto = c.Producto.Select(x => x.Value).Single(),
                             c.Precio,
                             c.Cantidad,
@@ -259,7 +260,7 @@ namespace DataInventarioCDGC
 
           foreach (var item in filtro)
           {
-              transVenta.idproducto = item.idProducto.ToString();
+              transVenta.idproducto = item.IDProducto.ToString();
               transVenta.precio = item.Precio;
               transVenta.cantidad = item.Cantidad;
               transVenta.descuento = Convert.ToDecimal(item.Descuento);
@@ -287,7 +288,7 @@ namespace DataInventarioCDGC
       {
 
           var buscar = from b in Lista
-                       where b.Producto.Select(x=> x.Value) == idproducto.Select(y => y.Value)
+                       where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y => y.Key).Single()
                        select b;
           //var buscar = from b in Lista
           //             where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y=> y.Key).Single()

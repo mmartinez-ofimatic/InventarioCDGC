@@ -110,7 +110,7 @@ namespace DataInventarioCDGC
         /// <summary>
         /// Modifica un producto en el almacen.
         /// </summary>
-        public bool SacarExistenciadeProducto(string idproducto)
+        public bool SacarExistenciadeProducto(string idproducto, int existenc)
         {
             bool isComplete = false;
             try
@@ -119,7 +119,7 @@ namespace DataInventarioCDGC
                                   where upd.ID_Producto == idproducto
                                   select upd).First();
 
-                update.Existencia = update.Existencia - existencia;
+                update.Existencia = update.Existencia - existenc;
 
                 dbEntities.SaveChanges();
 
