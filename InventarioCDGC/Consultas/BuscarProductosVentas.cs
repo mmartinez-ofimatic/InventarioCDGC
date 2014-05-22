@@ -50,8 +50,7 @@ namespace InventarioCDGC.Consultas
 
                     if (comboBoxBuscar.Text == "ID del producto")
                     {
-                        try
-                        {
+                       
                             almacenClass.IDproducto = tbuscarpor.Text;
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -61,11 +60,7 @@ namespace InventarioCDGC.Consultas
                             {
                                 MessageBox.Show("Este Producto no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("El ID debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        
                     }
                     else if (comboBoxBuscar.Text == "Nombre del producto")
                     {

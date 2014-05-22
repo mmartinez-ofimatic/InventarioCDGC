@@ -365,13 +365,20 @@ namespace InventarioCDGC
 
         private void bbuscarproducto_Click(object sender, EventArgs e)
         {
-            buscarProducto.idProducto = null;
-            buscarProducto.Productoo = null;
-            buscarProducto.ShowDialog(this);
-           // productoKeyValue = new Dictionary<string, string>();
-           // productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
-            textBoxIDProducto.Text = buscarProducto.idProducto;
-            textBoxNombre.Text = buscarProducto.Productoo;
+            try
+            {
+                buscarProducto.idProducto = null;
+                buscarProducto.Productoo = null;
+                buscarProducto.ShowDialog(this);
+                // productoKeyValue = new Dictionary<string, string>();
+                // productoKeyValue.Add(buscarProducto.idProducto, buscarProducto.Productoo);
+                textBoxIDProducto.Text = buscarProducto.idProducto;
+                textBoxNombre.Text = buscarProducto.Productoo;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void xButtonAgregarExitAlmacen_Click(object sender, EventArgs e)
@@ -390,8 +397,7 @@ namespace InventarioCDGC
                         almacen.existencia = Convert.ToInt32(textBoxExistencia.Text);
 
 
-                        try
-                        {
+                        
                             DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea agregar " + textBoxExistencia.Text + " existencia mas a este producto?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.Yes)
                             {
@@ -403,14 +409,7 @@ namespace InventarioCDGC
                                 }
                             }
 
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Ocurrio un error, Intentelo nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            CleanText();
-                            // comboBoxID.SelectedIndex = 0;
-
-                        }
+                       
                     }
                     else
                     {
@@ -424,6 +423,7 @@ namespace InventarioCDGC
             }
             catch (Exception) {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CleanText();
             }
         }
 

@@ -151,8 +151,7 @@ namespace InventarioCDGC
                         {
                             if (textBoxPrecio.Text != "")
                             {
-                                try
-                                {
+                                
                                     almacen.IDproducto = textBoxIDproducto.Text;
                                     almacen.nombreProducto = textBoxNombre.Text;
                                     almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
@@ -169,12 +168,6 @@ namespace InventarioCDGC
                                             MessageBox.Show("Guardado!", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
-
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Ocurrio un error, recuerde el id del producto debe ser numerico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
                             }
                             else
                             {
@@ -214,9 +207,7 @@ namespace InventarioCDGC
                             if (textBoxPrecio.Text != "")
                             {
                                 //dataGridView1.SelectionMode.GetType();
-                                try
-                                {
-
+                               
                                     almacen.IDproducto = textBoxIDproducto.Text;
                                     almacen.nombreProducto = textBoxNombre.Text;
                                     almacen.precio_venta = Convert.ToDecimal(textBoxPrecio.Text);
@@ -230,13 +221,7 @@ namespace InventarioCDGC
                                             MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                     }
-
-
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Ocurrio un error, modifique nuevamente, recuerde el campo precio debe ser numerico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
+                               
                             }
                             else
                             {
@@ -306,8 +291,7 @@ namespace InventarioCDGC
 
                     if (comboBoxBuscar.Text == "ID del producto")
                     {
-                        try
-                        {
+                       
                             almacen.IDproducto = tbuscarpor.Text;
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -317,11 +301,6 @@ namespace InventarioCDGC
                             {
                                 MessageBox.Show("Este Producto no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Error, por favor verifique la informacion y intente otra vez", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
                     }
                     else if (comboBoxBuscar.Text == "Nombre del producto")
                     {

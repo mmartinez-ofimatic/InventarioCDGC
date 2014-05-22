@@ -314,8 +314,7 @@ namespace InventarioCDGC
                 {
                     if (comboBoxBuscar.Text == "ID del rol")
                     {
-                        try
-                        {
+                        
                             rolesClass.ID = Convert.ToInt32(tbuscarpor.Text);
 
                             dataGridView1.AutoGenerateColumns = false;
@@ -327,12 +326,6 @@ namespace InventarioCDGC
                                 MessageBox.Show("Este rol no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("El ID del rol debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
                     }
                     else if (comboBoxBuscar.Text == "Nombre del rol")
                     {
@@ -396,9 +389,7 @@ namespace InventarioCDGC
 
                         rolesClass.rol = textBoxNombre.Text;
                         rolesClass.permisos = permisos;
-                        try
-                        {
-                            
+                       
                                 if (rolesClass.Guardar())
                                 {
 
@@ -407,14 +398,7 @@ namespace InventarioCDGC
                                     CleanText();
                                     ActualizarGrid();
                                 }
-                            
-                            
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("Error, por favor digite nuevamente el rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            CleanText();
-                        }
+                        
                     }
                 }
                 else
@@ -430,6 +414,7 @@ namespace InventarioCDGC
             catch (Exception)
             {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CleanText();
             }
            
         }
@@ -474,21 +459,13 @@ namespace InventarioCDGC
                             rolesClass.rol = textBoxNombre.Text;
                             rolesClass.permisos = permisos;
 
-                            try
-                            {
-
+                          
                                 if (rolesClass.Modificar())
                                 {
                                     MessageBox.Show("Modificado!", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     CleanText();
                                     ActualizarGrid();
                                 }
-                            }
-                            catch (Exception)
-                            {
-                                MessageBox.Show("Error al modificar, por favor digite nuevamente el rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                CleanText();
-                            }
                         }
                     }
                     else
@@ -510,6 +487,7 @@ namespace InventarioCDGC
             catch (Exception)
             {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CleanText();
             }
         
         }

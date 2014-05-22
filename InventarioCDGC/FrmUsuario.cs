@@ -292,8 +292,7 @@ namespace InventarioCDGC
                                 usuarioClass.nomusuario = textBoxNombre.Text;
                                 usuarioClass.contrasena = textBoxContrasena.Text;
                                 usuarioClass.IDrol = Convert.ToInt32(comboBoxRol.SelectedValue);
-                                try
-                                {
+                              
                                     DialogResult dialogResult = MessageBox.Show("¿Estas seguro que desea guardar?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                     if (dialogResult == DialogResult.Yes)
                                     {
@@ -304,12 +303,6 @@ namespace InventarioCDGC
                                         }
                                     }
                                     
-                                }
-                                catch (Exception)
-                                {
-                                    MessageBox.Show("Error, por favor digite nuevamente el usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    CleanText();
-                                }
                             }
                             else
                             {
@@ -347,6 +340,7 @@ namespace InventarioCDGC
             catch (Exception)
             {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CleanText();
             }
         }
 
@@ -475,8 +469,7 @@ namespace InventarioCDGC
                 {
                     if (comboBoxBuscar.Text == "ID de usuario")
                     {
-                        try
-                        {
+                       
                             UsuarioInv.IDusuario = Convert.ToInt32(tbuscarpor.Text);
 
                             dataGridView1.AutoGenerateColumns = false;
@@ -488,12 +481,6 @@ namespace InventarioCDGC
                                 MessageBox.Show("Este usuario no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("El ID del rol debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
                     }
                     else if (comboBoxBuscar.Text == "Nombre de usuario")
                     {
@@ -529,10 +516,6 @@ namespace InventarioCDGC
             CustomGroupBoxProperties.DrawGroupBox(box, e.Graphics, System.Drawing.ColorTranslator.FromHtml("#25BB04"));  
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmUsuario_Click(object sender, EventArgs e)
         {

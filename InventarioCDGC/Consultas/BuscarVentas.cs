@@ -35,8 +35,7 @@ namespace InventarioCDGC.Consultas
                 {
                     if (comboBoxBuscar.Text == "ID del producto")
                     {
-                        try
-                        {
+                        
                             //ventasClass.idproducto = Convert.ToInt32(tbuscarpor.Text);
 
                             dataGridView1.AutoGenerateColumns = false;
@@ -48,12 +47,6 @@ namespace InventarioCDGC.Consultas
                                 MessageBox.Show("Este Producto no tiene venta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("El ID del producto debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
                     }
                     else if (comboBoxBuscar.Text == "ID de Venta")
                     {
