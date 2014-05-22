@@ -576,55 +576,8 @@ namespace InventarioCDGC
 
         private void xButtonReporte_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                string server, database, user, password;
-                ReporteLogOn(out server, out database, out user, out password);
-                TableLogOnInfo infor = new TableLogOnInfo();
-                if (user != "")
-                {
-                    infor.ConnectionInfo.UserID = user;
-                    infor.ConnectionInfo.Password = password;
-                }
-                else
-                { infor.ConnectionInfo.IntegratedSecurity = true; }
-                infor.ConnectionInfo.DatabaseName = database;
-                infor.ConnectionInfo.ServerName = server;
-                ParameterFields myParams = new ParameterFields();
-                ParameterDiscreteValue myDiscreteValue = new ParameterDiscreteValue();
-
-
-                ParameterField PGrupo = new ParameterField();
-                PGrupo.ParameterFieldName = "@IDVenta";
-                myDiscreteValue = new ParameterDiscreteValue();
-                myDiscreteValue.Value = 5; //transationsVentas.idventa;"
-                PGrupo.CurrentValues.Add(myDiscreteValue);
-                myParams.Add(PGrupo);
-
-                //InventarioCDGC.Reportes.CrystalReportVentas21.Database.Tables["VProducto"].ApplyLogOnInfo(infor);
-                //ReporteProducto1.Refresh();
-
-                //InventarioCDGC.Reportes..LogOnInfo.Add(infor);
-                //InventarioCDGC.Reportes..ParameterFieldInfo.Clear();
-
-                //InventarioCDGC.Reportes.vwVentas.ParameterFieldInfo.Add(PGrupo);
-                //InventarioCDGC.Reportes.vwVentas.RefreshReport();
-
-            }
-            catch (Exception exc)
-            {
-                //ErrorHandler.Show(exc);
-            }
-
-        }
-        public void ReporteLogOn(out string server, out string database, out string user, out string password)
-        {
-            string[] valor = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString.Split(';');
-            server = (valor[0].Split('=').GetValue(1).ToString()).Trim();
-            database = (valor[1].Split('=').GetValue(1).ToString()).Trim();
-            user = (valor[2].Split('=').GetValue(1).ToString()).Trim();
-            password = (valor[3].Split('=').GetValue(1).ToString()).Trim();
+            InventarioCDGC.Reportes.ReporteVentasD reporte = new Reportes.ReporteVentasD();
+            reporte.Show();
         }
 
 
