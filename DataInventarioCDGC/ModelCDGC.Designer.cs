@@ -581,6 +581,30 @@ namespace DataInventarioCDGC
         private global::System.String _Direccion;
         partial void OnDireccionChanging(global::System.String value);
         partial void OnDireccionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String RNC
+        {
+            get
+            {
+                return _RNC;
+            }
+            set
+            {
+                OnRNCChanging(value);
+                ReportPropertyChanging("RNC");
+                _RNC = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("RNC");
+                OnRNCChanged();
+            }
+        }
+        private global::System.String _RNC;
+        partial void OnRNCChanging(global::System.String value);
+        partial void OnRNCChanged();
 
         #endregion
 
@@ -1468,6 +1492,30 @@ namespace DataInventarioCDGC
         private Nullable<global::System.Decimal> _Descuento;
         partial void OnDescuentoChanging(Nullable<global::System.Decimal> value);
         partial void OnDescuentoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> Total
+        {
+            get
+            {
+                return _Total;
+            }
+            set
+            {
+                OnTotalChanging(value);
+                ReportPropertyChanging("Total");
+                _Total = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Total");
+                OnTotalChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _Total;
+        partial void OnTotalChanging(Nullable<global::System.Decimal> value);
+        partial void OnTotalChanged();
 
         #endregion
 

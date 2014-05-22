@@ -48,11 +48,12 @@
             <PropertyRef Name="ID_Cliente" />
           </Key>
           <Property Name="ID_Cliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
           <Property Name="Cedula" Type="varchar" MaxLength="13" />
           <Property Name="Telefono" Type="varchar" MaxLength="12" />
           <Property Name="Celular" Type="varchar" MaxLength="12" />
-          <Property Name="Direccion" Type="varchar" MaxLength="80" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="RNC" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -67,7 +68,7 @@
             <PropertyRef Name="ID_Rol" />
           </Key>
           <Property Name="ID_Rol" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Rol" Type="varchar" MaxLength="60" />
+          <Property Name="Rol" Type="varchar" MaxLength="100" />
           <Property Name="Permisos" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios">
@@ -76,7 +77,7 @@
           </Key>
           <Property Name="ID_Usuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ID_Rol" Type="int" />
-          <Property Name="Nombre" Type="varchar" MaxLength="60" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
           <Property Name="Contrasena" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="VentaDetalle">
@@ -89,6 +90,7 @@
           <Property Name="Precio_Unidad" Type="decimal" Scale="2" />
           <Property Name="Cantidad" Type="int" />
           <Property Name="Descuento" Type="decimal" Scale="2" />
+          <Property Name="Total" Type="decimal" Scale="2" />
         </EntityType>
         <EntityType Name="Ventas">
           <Key>
@@ -208,12 +210,13 @@
             <PropertyRef Name="ID_Cliente" />
           </Key>
           <Property Name="ID_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Cedula" Type="String" MaxLength="13" Unicode="false" FixedLength="false" />
           <Property Name="Telefono" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
           <Property Name="Celular" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
           <Property Name="Direccion" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Ventas" Relationship="InventarioCDGCModel.FK__Ventas__ID_Clien__117F9D94" FromRole="Clientes" ToRole="Ventas" />
+          <Property Type="String" Name="RNC" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -228,7 +231,7 @@
             <PropertyRef Name="ID_Rol" />
           </Key>
           <Property Name="ID_Rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Rol" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Rol" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Permisos" Type="Int32" />
           <NavigationProperty Name="Usuarios" Relationship="InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877" FromRole="Roles" ToRole="Usuarios" />
         </EntityType>
@@ -238,7 +241,7 @@
           </Key>
           <Property Name="ID_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_Rol" Type="Int32" />
-          <Property Name="Nombre" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Contrasena" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Role" Relationship="InventarioCDGCModel.FK__Usuarios__ID_Rol__0CBAE877" FromRole="Usuarios" ToRole="Roles" />
           <NavigationProperty Name="Ventas" Relationship="InventarioCDGCModel.FK__Ventas__ID_Usuar__1367E606" FromRole="Usuarios" ToRole="Ventas" />
@@ -255,6 +258,7 @@
           <Property Name="Descuento" Type="Decimal" Precision="19" Scale="2" />
           <NavigationProperty Name="Venta" Relationship="InventarioCDGCModel.FK_VentaDetalle_Ventas" FromRole="VentaDetalle" ToRole="Ventas" />
           <NavigationProperty Name="Almacen" Relationship="InventarioCDGCModel.FK_VentaDetalle_Almacen" FromRole="VentaDetalle" ToRole="Almacen" />
+          <Property Type="Decimal" Name="Total" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -348,6 +352,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="InventarioCDGCModel.Cliente">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="RNC" ColumnName="RNC" />
                 <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
@@ -388,6 +393,7 @@
           <EntitySetMapping Name="VentaDetalles">
             <EntityTypeMapping TypeName="InventarioCDGCModel.VentaDetalle">
               <MappingFragment StoreEntitySet="VentaDetalle">
+                <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="ID_Detalle" ColumnName="ID_Detalle" />
                 <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
                 <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
