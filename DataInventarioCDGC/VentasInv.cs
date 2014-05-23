@@ -269,7 +269,6 @@ namespace DataInventarioCDGC
           }
       }
 
-
       public List<AgregarVentas> RemoveList(int index)
       {
          
@@ -326,6 +325,12 @@ namespace DataInventarioCDGC
       public void EraserList()
       {
           Lista.Clear();
+
+          if (Producto != null)
+          {
+              Producto.Clear();
+          }
+         
       }
 
   }

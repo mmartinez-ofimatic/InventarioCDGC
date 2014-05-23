@@ -28,8 +28,8 @@ namespace InventarioCDGC
 
         Consultas.BuscarProductosVentas buscarProducto = new Consultas.BuscarProductosVentas();
         AgregarVentas productVentasList = new AgregarVentas();
-        List<AgregarVentas> lista = new List<AgregarVentas>();
-        AgregarVentas v = new AgregarVentas();
+        //List<AgregarVentas> lista = new List<AgregarVentas>();
+        //AgregarVentas v = new AgregarVentas();
         Dictionary<int, string> clienteKeyValue;
         Dictionary<string, string> productoKeyValue;
 
@@ -37,44 +37,10 @@ namespace InventarioCDGC
 
         private void FrmVentas_Load(object sender, EventArgs e)
         {
-            //Permisos();
-            //ActualizarGrid();
+           
         }
 
        
-       /* public void Permisos()
-        {
-            if (tiporol == 1)
-            {
-                xButtonBorrar.Enabled = true;
-                xButtonModificar.Enabled = true;
-            }
-            else if (tiporol == 2)
-            {
-                xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = true;
-            }
-            else if (tiporol == 3)
-            {
-                xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = false;
-            }
-            else if (tiporol == 4)
-            {
-                xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = false;
-                xButtonGuardar.Enabled = false;
-            }
-            else
-            {
-                xButtonBorrar.Enabled = false;
-                xButtonModificar.Enabled = false;
-                xButtonGuardar.Enabled = false;
-            }
-
-        }*/
-
-
         private void guardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //Clientescdgc clientes = new Clientescdgc();
@@ -262,6 +228,8 @@ namespace InventarioCDGC
                                 InventarioCDGC.Reportes.ReporteVentasDetalle reporte = new Reportes.ReporteVentasDetalle();
                                 reporte.Show();
 
+                                productVentasList.EraserList();
+                                xButtonGuardar.Enabled = false;
                             }
 
                             else
@@ -375,6 +343,7 @@ namespace InventarioCDGC
             xButtonBorrarProductos.Enabled = false;
             xButtonModificarProductos.Enabled = false;      
             xbuscarproducto.Enabled = true;
+            xButtonGuardar.Enabled = true;
             CleanProductos();
         }
         DataGridViewRow rowProducto;
@@ -390,7 +359,7 @@ namespace InventarioCDGC
                 var filtro = (from c in borrarlist
                               select new
                               {
-                                  IDProducto = c.Producto.Select(x => x.Key).Single(),
+                                  idProducto = c.Producto.Select(x => x.Key).Single(),
                                   Producto = c.Producto.Select(x => x.Value).Single(),
                                   c.Precio,
                                   c.Cantidad,
@@ -407,6 +376,7 @@ namespace InventarioCDGC
                 xButtonBorrarProductos.Enabled = false;
                 xbuscarproducto.Enabled = true;
                 xButtonAgregar.Enabled = true;
+                xButtonGuardar.Enabled = true;
                 CleanProductos();
             }
         }
@@ -420,6 +390,7 @@ namespace InventarioCDGC
             xbuscarproducto.Enabled = false;
             xButtonBorrarProductos.Enabled = true;
             xButtonModificarProductos.Enabled = true;
+            xButtonGuardar.Enabled = false;
             //SelectModeProduct = rowProducto.Selected;
              //productoKeyValue.Select(x => x.Key == rowProducto.Cells[0].Value);
             //textBoxProducto.Text = rowProducto.Cells[0].Value.ToString();
@@ -475,7 +446,7 @@ namespace InventarioCDGC
                             xButtonBorrarProductos.Enabled = false;
                             xbuscarproducto.Enabled = true;
                             xButtonAgregar.Enabled = true;
-                            
+                            xButtonGuardar.Enabled = true;
                             CleanProductos();
 
 
@@ -520,7 +491,8 @@ namespace InventarioCDGC
                     dataGridViewVentas.DataSource = null;
                     // productoKeyValue.Clear();
                     //productVentasList.EraserList();
-                    lista.Clear();
+                    //lista.Clear();
+                    productVentasList.EraserList();
                     CleanProductos();
                     CleanText();
                 }
@@ -537,7 +509,8 @@ namespace InventarioCDGC
                 dataGridViewVentas.DataSource = null;
                 // productoKeyValue.Clear();
                 //productVentasList.EraserList();
-                lista.Clear();
+                //lista.Clear();
+                productVentasList.EraserList();
                 CleanProductos();
                 CleanText();
             }
@@ -560,6 +533,7 @@ namespace InventarioCDGC
             xButtonBorrarProductos.Enabled = false;
             xbuscarproducto.Enabled = true;
             xButtonAgregar.Enabled = true;
+            xButtonGuardar.Enabled = true;
            // xButtonBorrar.Enabled = false;
            // xButtonModificar.Enabled = false;
             CleanProductos();
@@ -573,6 +547,7 @@ namespace InventarioCDGC
             xButtonBorrarProductos.Enabled = false;
             xbuscarproducto.Enabled = true;
             xButtonAgregar.Enabled = true;
+            xButtonGuardar.Enabled = true;
             CleanProductos();
         }
 
