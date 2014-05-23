@@ -221,7 +221,7 @@ namespace InventarioCDGC
 
                             if (transationsVentas.transationsVentas(listaNueva))
                             {
-                                MessageBox.Show("Venta realizada!", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                               // MessageBox.Show("Venta realizada!", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 CleanText();
                                 dataGridViewVentas.DataSource = null;
 
@@ -241,6 +241,10 @@ namespace InventarioCDGC
                         catch (Exception)
                         {
                             MessageBox.Show("Realize la venta nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            CleanText();
+                            dataGridViewVentas.DataSource = null;
+                            productVentasList.EraserList();
+                            xButtonGuardar.Enabled = false;
                         }
                     }
                 }
@@ -580,6 +584,11 @@ namespace InventarioCDGC
         {
             InventarioCDGC.Reportes.ReporteVentasDetalle reporte = new Reportes.ReporteVentasDetalle();
             reporte.Show();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
 
        
