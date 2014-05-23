@@ -55,7 +55,9 @@ namespace InventarioCDGC.Consultas
 
                     if (comboBoxBuscar.Text == "ID del Cliente")
                     {
-                       
+                        Validaciones v = new Validaciones();
+                        if (v.ValidateNumeric(tbuscarpor.Text))
+                        {
                             clientesClass.idcliente = Convert.ToInt32(tbuscarpor.Text);
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -64,6 +66,12 @@ namespace InventarioCDGC.Consultas
                         if (dataGridView1.RowCount == 0)
                         {
                             MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El ID del Cliente debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                      
                         }
                     }
                     else if (comboBoxBuscar.Text == "Nombre")

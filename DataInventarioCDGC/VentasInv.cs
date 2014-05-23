@@ -111,10 +111,21 @@ namespace DataInventarioCDGC
         /// Lista de todas las ventas.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Venta> BuscarTodos()
+       /* public List<Venta> BuscarTodos()
         {
             var selec = (from s in dbEntities.Ventas
                          select s).ToList();
+            return selec;
+        }*/
+
+        /// <summary>
+        /// Lista de las Ultimas Ventas.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<vwFactura> BuscarUltimasVentas()
+        {
+            var selec = (from s in dbEntities.vwFacturas
+                         select s).Take(15).OrderByDescending(x=>x.ID_Venta).ToList();
             return selec;
         }
 
@@ -122,80 +133,51 @@ namespace DataInventarioCDGC
         /// Busqueda por ID.
         /// </summary>
         /// <returns>List</returns>
-        public List<Venta> BuscarxID()
+        public List<vwFactura> BuscarxID(int idvent)
         {
 
-            List<Venta> busc = (from b in dbEntities.Ventas
-                                      where b.ID_Venta == idventa
-                                      select b).ToList();
-            if (busc != null)
-            {
-                if (busc.Count != 0)
-                {
-                    foreach (var item in busc)
-                    {
-                        idcliente = Convert.ToInt32(item.ID_Cliente);
+            List<vwFactura> busc = (from b in dbEntities.vwFacturas
+                                where b.ID_Venta == idvent
+                                    select b).ToList();
+           
+            return busc;
+        }
 
-                        idusuario = Convert.ToInt32(item.ID_Usuario);
-                        fecha = Convert.ToDateTime(item.Fecha);
-                        observacion = item.Observacion;
-                    }
-                }
-            }
+        
+
+        /// <summary>
+        /// Buscar por nombre.
+        /// </summary>
+        /// <param name="nombre">nombre del cliente.</param>
+        /// <returns>List</returns>
+        public List<vwFactura> BuscarxNombreCliente(string nombre)
+        {
+
+            List<vwFactura> busc = (from b in dbEntities.vwFacturas
+                                  where b.Cliente.Contains(nombre)
+                                  select b).OrderByDescending(x => x.ID_Venta).ToList();
+
+            return busc;
+
+            
+        }
+
+        /// <summary>
+        /// Buscar por nombre del producto.
+        /// </summary>
+        /// <param name="nombre">nombre del producto.</param>
+        /// <returns>List</returns>
+        public List<vwFactura> BuscarxNombreProducto(string nom)
+        {
+
+            List<vwFactura> busc = (from b in dbEntities.vwFacturas
+                                    where b.Producto.Contains(nom)
+                                    select b).OrderByDescending(x => x.ID_Venta).ToList();
 
             return busc;
         }
 
-        /// <summary>
-        /// Buscar por ID del producto.
-        /// </summary>
-        /// <param name="nombre">ID del producto.</param>
-        /// <returns>List</returns>
-       /* public List<Venta> BuscarxIDProducto(int id)
-        {
 
-            List<Venta> busc = (from b in dbEntities.Ventas
-                                      where b.ID_Producto == id
-                                      select b).ToList();
-            if (busc != null)
-            {
-                foreach (var item in busc)
-                {
-                    idcliente = Convert.ToInt32(item.ID_Cliente);
-                    idproducto = Convert.ToInt32(item.ID_Producto);
-                    idusuario = Convert.ToInt32(item.ID_Usuario);
-                    precio = Convert.ToDecimal(item.Precio_Unidad);
-                    cantidad = Convert.ToInt32(item.Cantidad);
-                    descuento = Convert.ToDecimal(item.Descuento);
-                    fecha = Convert.ToDateTime(item.Fecha);
-                    observacion = item.Observacion;
-                }
-            }
-            return busc;
-        }*/
-
-        /// <summary>
-        /// Buscar por ID del Cliente.
-        /// </summary>
-        /// <param name="nombre">ID del cliente.</param>
-        /// <returns>List</returns>
-        public List<Venta> BuscarxIDCliente(int id)
-        {
-            List<Venta> busc = (from b in dbEntities.Ventas
-                                      where b.ID_Cliente == id
-                                      select b).ToList();
-            if (busc != null)
-            {
-                foreach (var item in busc)
-                {
-                    idcliente = Convert.ToInt32(item.ID_Cliente);
-                    idusuario = Convert.ToInt32(item.ID_Usuario);
-                    fecha = Convert.ToDateTime(item.Fecha);
-                    observacion = item.Observacion;
-                }
-            }
-            return busc;
-        }
 
         List<AgregarVentas> agregarVentasList = new List<AgregarVentas>();
         /// <summary>

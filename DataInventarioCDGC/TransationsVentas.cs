@@ -11,7 +11,7 @@ namespace DataInventarioCDGC
    public class TransationsVentas
     {
         InventarioCDGCEntities1 dbEntities = new InventarioCDGCEntities1();
-        VentasInv venta = new VentasInv();
+        //VentasInv venta = new VentasInv();
         ventaDetalles ventaDetalle = new ventaDetalles();
        
         public static int idventa { get; set; }

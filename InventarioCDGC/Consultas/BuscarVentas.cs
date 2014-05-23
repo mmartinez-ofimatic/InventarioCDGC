@@ -23,72 +23,84 @@ namespace InventarioCDGC.Consultas
 
         private void BuscarVentas_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ventasClass.BuscarTodos();
+            dataGridView1.DataSource = ventasClass.BuscarUltimasVentas();
+            //dataGridView1.DataSource = ventasClass.BuscarTodos();
         }
 
         private void xBuscar_Click(object sender, EventArgs e)
         {
             try{
+                /*ID de Venta
+                    Nombre del Cliente
+                    Nombre del Producto
+                    Ultimas Ventas*/
             if (comboBoxBuscar.Text != "")
             {
                 if (tbuscarpor.Text != "")
                 {
-                    if (comboBoxBuscar.Text == "ID del producto")
+                    if (comboBoxBuscar.Text == "ID de Venta")
                     {
-                        
-                            //ventasClass.idproducto = Convert.ToInt32(tbuscarpor.Text);
-
+                        Validaciones v = new Validaciones();
+                        if (v.ValidateNumeric(tbuscarpor.Text))
+                        {
+                           
                             dataGridView1.AutoGenerateColumns = false;
 
+                            dataGridView1.DataSource = ventasClass.BuscarxID(Convert.ToInt32 (tbuscarpor.Text));
                             //dataGridView1.DataSource = ventasClass.BuscarxIDProducto(tbuscarpor.Text);
 
                             if (dataGridView1.RowCount == 0)
                             {
-                                MessageBox.Show("Este Producto no tiene venta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Esta Venta no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("El ID de la Venta debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
                     }
-                    else if (comboBoxBuscar.Text == "ID de Venta")
+                    else if (comboBoxBuscar.Text == "Nombre del Cliente")
                     {
                         try
                         {
-                            ventasClass.idventa = Convert.ToInt32(tbuscarpor.Text);
+                            //ventasClass.idventa = Convert.ToInt32(tbuscarpor.Text);
                             dataGridView1.AutoGenerateColumns = false;
-
-                            dataGridView1.DataSource = ventasClass.BuscarxID();
+                            dataGridView1.DataSource = ventasClass.BuscarxNombreCliente(tbuscarpor.Text);
 
                             if (dataGridView1.RowCount == 0)
                             {
-                                MessageBox.Show("Esta venta no existe!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Este nombre no existe en las ventas realizadas!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("El ID de la venta debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else if (comboBoxBuscar.Text == "ID del Cliente")
+                    else if (comboBoxBuscar.Text == "Nombre del Producto")
                     {
                         try
                         {
                             dataGridView1.AutoGenerateColumns = false;
 
-                            dataGridView1.DataSource = ventasClass.BuscarxIDCliente(Convert.ToInt32(tbuscarpor.Text));
+                            dataGridView1.DataSource = ventasClass.BuscarxNombreProducto(tbuscarpor.Text);
 
                             if (dataGridView1.RowCount == 0)
                             {
-                                MessageBox.Show("Este cliente no tiene venta!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Este producto no tiene ventas!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
                         }
                         catch (Exception)
                         {
-                            MessageBox.Show("El ID del cliente debe ser numerico!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
                     }
+
                 }
                 else
                 {
@@ -102,6 +114,20 @@ namespace InventarioCDGC.Consultas
               }
             catch (Exception) {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.Text == "Ultimas Ventas")
+            {
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = ventasClass.BuscarUltimasVentas();
             }
         }
 
