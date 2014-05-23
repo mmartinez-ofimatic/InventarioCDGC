@@ -34,6 +34,16 @@
       [vwFacturas].[Total] AS [Total]
       FROM [dbo].[vwFacturas] AS [vwFacturas]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vwVentas" EntityType="InventarioCDGCModel.Store.vwVentas" store:Type="Views" store:Schema="dbo" store:Name="vwVentas">
+            <DefiningQuery>SELECT 
+      [vwVentas].[ID_Venta] AS [ID_Venta], 
+      [vwVentas].[Cliente] AS [Cliente], 
+      [vwVentas].[Total] AS [Total], 
+      [vwVentas].[Vendedor] AS [Vendedor], 
+      [vwVentas].[Observacion] AS [Observacion], 
+      [vwVentas].[Fecha] AS [Fecha]
+      FROM [dbo].[vwVentas] AS [vwVentas]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Usuarios__ID_Rol__0CBAE877" Association="InventarioCDGCModel.Store.FK__Usuarios__ID_Rol__0CBAE877">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -152,6 +162,20 @@
           <Property Name="Descuento" Type="decimal" Scale="2" />
           <Property Name="Total" Type="decimal" Scale="2" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'InventarioCDGC.dbo.vwVentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwVentas">
+          <Key>
+            <PropertyRef Name="ID_Venta" />
+          </Key>
+          <Property Name="ID_Venta" Type="int" Nullable="false" />
+          <Property Name="Cliente" Type="varchar" MaxLength="100" />
+          <Property Name="Total" Type="decimal" Precision="38" Scale="2" />
+          <Property Name="Vendedor" Type="varchar" MaxLength="100" />
+          <Property Name="Observacion" Type="varchar" MaxLength="100" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
         <Association Name="FK__Usuarios__ID_Rol__0CBAE877">
           <End Role="Roles" Type="InventarioCDGCModel.Store.Roles" Multiplicity="0..1" />
           <End Role="Usuarios" Type="InventarioCDGCModel.Store.Usuarios" Multiplicity="*" />
@@ -246,6 +270,7 @@
           </AssociationSet>
           <EntitySet Name="vw_Productos" EntityType="InventarioCDGCModel.vw_Productos" />
           <EntitySet Name="vwFacturas" EntityType="InventarioCDGCModel.vwFactura" />
+          <EntitySet Name="vwVentas" EntityType="InventarioCDGCModel.vwVenta" />
         </EntityContainer>
         <EntityType Name="Almacen">
           <Key>
@@ -408,6 +433,17 @@
           <Property Type="Decimal" Name="Descuento" Precision="18" Scale="2" />
           <Property Type="Decimal" Name="Total" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="vwVenta">
+          <Key>
+            <PropertyRef Name="ID_Venta" />
+          </Key>
+          <Property Type="Int32" Name="ID_Venta" Nullable="false" />
+          <Property Type="String" Name="Cliente" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Total" Precision="38" Scale="2" />
+          <Property Type="String" Name="Vendedor" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Observacion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -514,6 +550,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vwVentas">
+            <EntityTypeMapping TypeName="InventarioCDGCModel.vwVenta">
+              <MappingFragment StoreEntitySet="vwVentas">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="Vendedor" ColumnName="Vendedor" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -566,6 +614,7 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="InventarioCDGCModel.vw_Productos" Width="1.5" PointX="0.75" PointY="8.75" Height="1.5956835937499996" />
         <EntityTypeShape EntityType="InventarioCDGCModel.vwFactura" Width="1.5" PointX="2.75" PointY="8.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="InventarioCDGCModel.vwVenta" Width="1.5" PointX="5.375" PointY="8.75" Height="2.1725878906249996" />
       </Diagram>
     </Diagrams>
   </Designer>
