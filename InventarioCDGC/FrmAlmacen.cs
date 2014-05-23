@@ -360,7 +360,7 @@ namespace InventarioCDGC
             //row = dataGridView1.CurrentRow;
            // row.Selected = false;
            // selectModeRow = false;
-            CleanText();
+            //CleanText();
         }
 
         private void bbuscarproducto_Click(object sender, EventArgs e)
