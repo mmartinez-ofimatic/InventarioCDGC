@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarClienteVentas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,13 +58,12 @@
             this.ColumnCelular,
             this.ColumnDireccion});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 77);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 63);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(675, 222);
+            this.dataGridView1.Size = new System.Drawing.Size(506, 180);
             this.dataGridView1.TabIndex = 32;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick_1);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -112,10 +112,9 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(268, 31);
-            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
+            this.tbuscarpor.Location = new System.Drawing.Point(201, 25);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(132, 22);
+            this.tbuscarpor.Size = new System.Drawing.Size(100, 20);
             this.tbuscarpor.TabIndex = 37;
             // 
             // comboBoxBuscar
@@ -125,21 +124,21 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del Cliente",
             "Nombre",
-            "Cedula"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(99, 31);
-            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
+            "Cedula",
+            "Ultimos Clientes"});
+            this.comboBoxBuscar.Location = new System.Drawing.Point(74, 25);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBuscar.TabIndex = 36;
+            this.comboBoxBuscar.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscar_SelectedIndexChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(13, 34);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(10, 28);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 17);
+            this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 34;
             this.label14.Text = "Buscar por";
             // 
@@ -163,9 +162,10 @@
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xBuscar.ColorTable = office2010Green1;
-            this.xBuscar.Location = new System.Drawing.Point(463, 28);
+            this.xBuscar.Location = new System.Drawing.Point(347, 23);
+            this.xBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.xBuscar.Name = "xBuscar";
-            this.xBuscar.Size = new System.Drawing.Size(75, 27);
+            this.xBuscar.Size = new System.Drawing.Size(56, 22);
             this.xBuscar.TabIndex = 38;
             this.xBuscar.Text = "Buscar";
             this.xBuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -174,16 +174,15 @@
             // 
             // BuscarClienteVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(675, 299);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(506, 243);
             this.Controls.Add(this.xBuscar);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BuscarClienteVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscador de Clientes";

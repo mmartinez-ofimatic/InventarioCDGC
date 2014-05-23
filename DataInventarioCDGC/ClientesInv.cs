@@ -114,12 +114,25 @@ namespace DataInventarioCDGC
         /// Lista de todos los clientes.
         /// </summary>
         /// <returns>List select</returns>
-        public List<Cliente> BuscarTodos()
+       /* public List<Cliente> BuscarTodos()
         {
            var selec = (from s in dbEntities.Clientes
                          select s).ToList();
             return selec;
+        }*/
+
+
+        /// <summary>
+        /// Lista los ultimos 15 clientes.
+        /// </summary>
+        /// <returns>List select</returns>
+        public List<Cliente> BuscarUltimosClientes()
+        {
+            var selec = (from s in dbEntities.Clientes
+                         select s).Take(15).OrderByDescending(x => x.ID_Cliente).ToList();
+            return selec;
         }
+
 
         /// <summary>
         /// Busqueda por ID.
@@ -160,8 +173,12 @@ namespace DataInventarioCDGC
         {
 
             List<Cliente> busc = (from b in dbEntities.Clientes
-                                           where b.Nombre == nombre
-                                           select b).ToList();
+                                  where b.Nombre.Contains(nombre)
+                                  select b).OrderByDescending(x => x.ID_Cliente).ToList();
+
+            //List<Cliente> busc = (from b in dbEntities.Clientes
+            //                               where b.Nombre == nombre
+            //                               select b).ToList();
             if (busc != null)
             {
                 foreach (var item in busc)
@@ -184,8 +201,8 @@ namespace DataInventarioCDGC
         public List<Cliente> BuscarxCedula(string cedula)
         {
             List<Cliente> busc = (from b in dbEntities.Clientes
-                                      where b.Cedula == cedula
-                                      select b).ToList();
+                                      where b.Cedula.Contains(cedula)
+                                  select b).OrderByDescending(x => x.ID_Cliente).ToList();
             if (busc != null)
             {
                 foreach (var item in busc)

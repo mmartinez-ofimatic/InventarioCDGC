@@ -24,7 +24,8 @@ namespace InventarioCDGC.Consultas
         private void BuscarClienteVentas_Load(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = clientesClass.BuscarTodos();        
+            dataGridView1.DataSource = clientesClass.BuscarUltimosClientes();
+            //dataGridView1.DataSource = clientesClass.BuscarTodos();        
         }
   
 
@@ -77,14 +78,14 @@ namespace InventarioCDGC.Consultas
                     }
                     else if (comboBoxBuscar.Text == "Cedula")
                     {
-                        Validaciones v = new Validaciones();
+                       // Validaciones v = new Validaciones();
                         // v.ValidateCedula(tbuscarpor.Text);
 
-                        if (v.ValidateCedula(tbuscarpor.Text) == false)
+                        //if (v.ValidateCedula(tbuscarpor.Text) == false)
 
-                            MessageBox.Show("Cedula Invalida. Por favor verifique.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
-                        {
+                        //    MessageBox.Show("Cedula Invalida. Por favor verifique.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //else
+                        //{
 
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -93,8 +94,9 @@ namespace InventarioCDGC.Consultas
                             {
                                 MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                        }
+                        //}
                     }
+                  
                 }
                 else
                 {
@@ -109,6 +111,15 @@ namespace InventarioCDGC.Consultas
             catch (Exception)
             {
                 MessageBox.Show("Ha ocurrido un error, intente de nuevo. Si el problema persiste contacte al administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.Text == "Ultimos Clientes")
+            {
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = clientesClass.BuscarUltimosClientes();
             }
         }
     }

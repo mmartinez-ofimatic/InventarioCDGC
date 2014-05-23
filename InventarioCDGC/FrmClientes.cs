@@ -65,7 +65,8 @@ namespace InventarioCDGC
         public void actualizarDatagrid()
         {
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = clientesclass.BuscarTodos();
+            dataGridView1.DataSource = clientesclass.BuscarUltimosClientes();
+            //dataGridView1.DataSource = clientesclass.BuscarTodos();
         }
 
         public void CleanText()
@@ -114,14 +115,14 @@ namespace InventarioCDGC
                     }
                     else if (comboBoxBuscar.Text == "Cedula")
                     {
-                        Validaciones v = new Validaciones();
+                        //Validaciones v = new Validaciones();
                        // v.ValidateCedula(tbuscarpor.Text);
 
-                        if (v.ValidateCedula(tbuscarpor.Text) == false)
+                        //if (v.ValidateCedula(tbuscarpor.Text) == false)
 
-                            MessageBox.Show("Cedula Invalida. Por favor verifique.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
-                        {
+                        //    MessageBox.Show("Cedula Invalida. Por favor verifique.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //else
+                        //{
 
                             dataGridView1.AutoGenerateColumns = false;
 
@@ -130,7 +131,16 @@ namespace InventarioCDGC
                         {
                             MessageBox.Show("Este Cliente no existe!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        }
+                        //}
+                    }
+
+
+
+
+                    else if (comboBoxBuscar.Text == "Ultimos Clientes")
+                    {   
+                            dataGridView1.AutoGenerateColumns = false;
+                            dataGridView1.DataSource = clientesclass.BuscarUltimosClientes();
                     }
                 }
                 else
@@ -481,6 +491,15 @@ namespace InventarioCDGC
         {
          //    row = dataGridView1.CurrentRow;
         //    row.Selected = false;
+        }
+
+        private void comboBoxBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBuscar.Text == "Ultimos Clientes")
+            {
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = clientesclass.BuscarUltimosClientes();
+            }
         }
 
 
