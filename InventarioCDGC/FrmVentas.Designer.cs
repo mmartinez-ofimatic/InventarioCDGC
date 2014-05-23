@@ -184,7 +184,6 @@
             this.dataGridViewVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewVentas.Size = new System.Drawing.Size(487, 117);
             this.dataGridViewVentas.TabIndex = 45;
-            this.dataGridViewVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellClick);
             this.dataGridViewVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellContentClick);
             this.dataGridViewVentas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellContentDoubleClick);
             this.dataGridViewVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVentas_CellDoubleClick);

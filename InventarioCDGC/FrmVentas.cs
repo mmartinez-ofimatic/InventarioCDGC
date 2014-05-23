@@ -373,7 +373,8 @@ namespace InventarioCDGC
             rowProducto.Selected = false;
             xButtonAgregar.Enabled = true;
             xButtonBorrarProductos.Enabled = false;
-            xButtonModificarProductos.Enabled = false;
+            xButtonModificarProductos.Enabled = false;      
+            xbuscarproducto.Enabled = true;
             CleanProductos();
         }
         DataGridViewRow rowProducto;
@@ -384,29 +385,45 @@ namespace InventarioCDGC
             if (rowProducto.Selected == true)
             {
                 // lista.RemoveAt(index);
+                var borrarlist = productVentasList.RemoveList(index);
+
+                var filtro = (from c in borrarlist
+                              select new
+                              {
+                                  IDProducto = c.Producto.Select(x => x.Key).Single(),
+                                  Producto = c.Producto.Select(x => x.Value).Single(),
+                                  c.Precio,
+                                  c.Cantidad,
+                                  c.Descuento,
+                                  c.PrecioNeto
+                              }).ToList();
 
                 dataGridViewVentas.DataSource = null;
-                dataGridViewVentas.DataSource = productVentasList.RemoveList(index);
-                //SelectModeProduct = false;
+                dataGridViewVentas.DataSource = filtro;
+               
                 rowProducto.Selected = false;
-
-                xButtonAgregar.Enabled = true;
-                xButtonBorrarProductos.Enabled = false;
+              
                 xButtonModificarProductos.Enabled = false;
+                xButtonBorrarProductos.Enabled = false;
+                xbuscarproducto.Enabled = true;
+                xButtonAgregar.Enabled = true;
                 CleanProductos();
             }
         }
-
+        Dictionary<string, string> updateDictionary = new Dictionary<string, string>();
+        string idupdate;
         private void dataGridViewVentas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             rowProducto = dataGridViewVentas.CurrentRow;
             index = rowProducto.Index;
             xButtonAgregar.Enabled = false;
+            xbuscarproducto.Enabled = false;
             xButtonBorrarProductos.Enabled = true;
             xButtonModificarProductos.Enabled = true;
             //SelectModeProduct = rowProducto.Selected;
-            
+             //productoKeyValue.Select(x => x.Key == rowProducto.Cells[0].Value);
             //textBoxProducto.Text = rowProducto.Cells[0].Value.ToString();
+            idupdate = rowProducto.Cells[0].Value.ToString();
             textBoxProducto.Text = rowProducto.Cells[1].Value.ToString();
             textBoxPrecio.Text = rowProducto.Cells[2].Value.ToString();
             textBoxCantidad.Text = rowProducto.Cells[3].Value.ToString();
@@ -435,12 +452,13 @@ namespace InventarioCDGC
                         if (textBoxDescuento.Value.ToString() != "")
                         {
                             dataGridViewVentas.DataSource = null;
-                            var listaUpdate = productVentasList.UpdateList(/*int.Parse(textBoxProducto.Text)*/productoKeyValue, decimal.Parse(textBoxPrecio.Text),
+                            var listaUpdate = productVentasList.UpdateList(/*int.Parse(textBoxProducto.Text)*/productoKeyValue,  idupdate, decimal.Parse(textBoxPrecio.Text),
                                                               int.Parse(textBoxCantidad.Value.ToString()), double.Parse(textBoxDescuento.Value.ToString()));
 
                             var filtro = (from c in listaUpdate
                                           select new
                                           {
+                                              idProducto = c.Producto.Select(x => x.Key).Single(),
                                               Producto = c.Producto.Select(x => x.Value).Single(),
                                               c.Precio,
                                               c.Cantidad,
@@ -450,6 +468,14 @@ namespace InventarioCDGC
 
                             dataGridViewVentas.DataSource = filtro;
 
+
+                            rowProducto = dataGridViewVentas.CurrentRow;
+                            rowProducto.Selected = false;
+                            xButtonModificarProductos.Enabled = false;
+                            xButtonBorrarProductos.Enabled = false;
+                            xbuscarproducto.Enabled = true;
+                            xButtonAgregar.Enabled = true;
+                            
                             CleanProductos();
 
 
@@ -518,10 +544,6 @@ namespace InventarioCDGC
             productoKeyValue = new Dictionary<string, string>();
         }
 
-        private void dataGridViewVentas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void groupBox2_Paint(object sender, PaintEventArgs e)
         {
@@ -534,7 +556,9 @@ namespace InventarioCDGC
         {
             rowProducto = dataGridViewVentas.CurrentRow;
             rowProducto.Selected = false;
-
+            xButtonModificarProductos.Enabled = false;
+            xButtonBorrarProductos.Enabled = false;
+            xbuscarproducto.Enabled = true;
             xButtonAgregar.Enabled = true;
            // xButtonBorrar.Enabled = false;
            // xButtonModificar.Enabled = false;
@@ -545,10 +569,10 @@ namespace InventarioCDGC
         {
             rowProducto = dataGridViewVentas.CurrentRow;
             rowProducto.Selected = false;
-
+            xButtonModificarProductos.Enabled = false;
+            xButtonBorrarProductos.Enabled = false;
+            xbuscarproducto.Enabled = true;
             xButtonAgregar.Enabled = true;
-           // xButtonBorrar.Enabled = false;
-          //  xButtonModificar.Enabled = false;
             CleanProductos();
         }
 
@@ -582,6 +606,8 @@ namespace InventarioCDGC
             InventarioCDGC.Reportes.ReporteVentasDetalle reporte = new Reportes.ReporteVentasDetalle();
             reporte.Show();
         }
+
+       
 
 
     }

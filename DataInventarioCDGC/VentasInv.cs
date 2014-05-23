@@ -272,9 +272,11 @@ namespace DataInventarioCDGC
 
       public List<AgregarVentas> RemoveList(int index)
       {
+         
           try
           {
               Lista.RemoveAt(index);
+
           }
           catch (Exception)
           {              
@@ -284,11 +286,11 @@ namespace DataInventarioCDGC
           return Lista;
       }
 
-      public List<AgregarVentas> UpdateList(Dictionary<string,string> idproducto, decimal fprecio, int fcantidad, double fdescuento)
+      public List<AgregarVentas> UpdateList(Dictionary<string,string> idproducto, string id, decimal fprecio, int fcantidad, double fdescuento)
       {
 
           var buscar = from b in Lista
-                       where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y => y.Key).Single()
+                       where b.Producto.Select(x => x.Key).Single() ==  id //idproducto.Select(y => y.Key).Single()
                        select b;
           //var buscar = from b in Lista
           //             where b.Producto.Select(x => x.Key).Single() == idproducto.Select(y=> y.Key).Single()
@@ -299,7 +301,7 @@ namespace DataInventarioCDGC
 
           foreach (var l in buscar)
           {
-              l.Producto = idproducto;
+              //l.Producto = idproducto;
               l.Precio = fprecio;
               l.Cantidad = fcantidad;
               l.Descuento = fdescuento;
