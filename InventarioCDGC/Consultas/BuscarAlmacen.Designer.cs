@@ -34,6 +34,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnExistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xBuscar = new InventarioCDGC.XButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -41,10 +43,9 @@
             // 
             // tbuscarpor
             // 
-            this.tbuscarpor.Location = new System.Drawing.Point(259, 26);
-            this.tbuscarpor.Margin = new System.Windows.Forms.Padding(4);
+            this.tbuscarpor.Location = new System.Drawing.Point(194, 21);
             this.tbuscarpor.Name = "tbuscarpor";
-            this.tbuscarpor.Size = new System.Drawing.Size(105, 22);
+            this.tbuscarpor.Size = new System.Drawing.Size(108, 20);
             this.tbuscarpor.TabIndex = 41;
             // 
             // comboBoxBuscar
@@ -54,20 +55,18 @@
             this.comboBoxBuscar.Items.AddRange(new object[] {
             "ID del producto",
             "Nombre del producto"});
-            this.comboBoxBuscar.Location = new System.Drawing.Point(101, 25);
-            this.comboBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBuscar.Location = new System.Drawing.Point(76, 20);
             this.comboBoxBuscar.Name = "comboBoxBuscar";
-            this.comboBoxBuscar.Size = new System.Drawing.Size(148, 24);
+            this.comboBoxBuscar.Size = new System.Drawing.Size(112, 21);
             this.comboBoxBuscar.TabIndex = 45;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(16, 30);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(12, 24);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 17);
+            this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 43;
             this.label14.Text = "Buscar por";
             // 
@@ -79,13 +78,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnIDProducto,
+            this.ColumnProducto,
+            this.ColumnPrecio,
             this.ColumnExistencia});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 75);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(480, 124);
+            this.dataGridView1.Size = new System.Drawing.Size(461, 292);
             this.dataGridView1.TabIndex = 42;
             // 
             // ColumnIDProducto
@@ -95,6 +95,20 @@
             this.ColumnIDProducto.Name = "ColumnIDProducto";
             this.ColumnIDProducto.ReadOnly = true;
             this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnProducto
+            // 
+            this.ColumnProducto.DataPropertyName = "Producto_1";
+            this.ColumnProducto.HeaderText = "Producto";
+            this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.ReadOnly = true;
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
+            this.ColumnPrecio.HeaderText = "Precio Unidad";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
             // 
             // ColumnExistencia
             // 
@@ -124,9 +138,10 @@
             office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
             office2010Green1.TextColor = System.Drawing.Color.White;
             this.xBuscar.ColorTable = office2010Green1;
-            this.xBuscar.Location = new System.Drawing.Point(382, 30);
+            this.xBuscar.Location = new System.Drawing.Point(307, 21);
+            this.xBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.xBuscar.Name = "xBuscar";
-            this.xBuscar.Size = new System.Drawing.Size(75, 23);
+            this.xBuscar.Size = new System.Drawing.Size(56, 19);
             this.xBuscar.TabIndex = 46;
             this.xBuscar.Text = "Buscar";
             this.xBuscar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
@@ -135,17 +150,16 @@
             // 
             // BuscarAlmacen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventarioCDGC.Properties.Resources.prueba2;
-            this.ClientSize = new System.Drawing.Size(480, 199);
+            this.ClientSize = new System.Drawing.Size(461, 339);
             this.Controls.Add(this.xBuscar);
             this.Controls.Add(this.tbuscarpor);
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "BuscarAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -163,8 +177,10 @@
         private System.Windows.Forms.ComboBox comboBoxBuscar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
         private XButton xBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIDProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnExistencia;
     }
 }

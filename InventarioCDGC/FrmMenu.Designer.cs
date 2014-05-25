@@ -38,7 +38,6 @@
             this.consultasDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeAlmacenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeClientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,7 +130,6 @@
             this.consultasDeInventarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaClientesToolStripMenuItem,
             this.consultaDeVentasToolStripMenuItem,
-            this.consultaDeProductosToolStripMenuItem,
             this.consultaDeAlmacenToolStripMenuItem});
             this.consultasDeInventarioToolStripMenuItem.Name = "consultasDeInventarioToolStripMenuItem";
             this.consultasDeInventarioToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
@@ -140,28 +138,21 @@
             // consultaClientesToolStripMenuItem
             // 
             this.consultaClientesToolStripMenuItem.Name = "consultaClientesToolStripMenuItem";
-            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.consultaClientesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.consultaClientesToolStripMenuItem.Text = "Consulta de Clientes";
             this.consultaClientesToolStripMenuItem.Click += new System.EventHandler(this.consultaClientesToolStripMenuItem_Click);
             // 
             // consultaDeVentasToolStripMenuItem
             // 
             this.consultaDeVentasToolStripMenuItem.Name = "consultaDeVentasToolStripMenuItem";
-            this.consultaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.consultaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.consultaDeVentasToolStripMenuItem.Text = "Consulta de Ventas";
             this.consultaDeVentasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeVentasToolStripMenuItem_Click);
-            // 
-            // consultaDeProductosToolStripMenuItem
-            // 
-            this.consultaDeProductosToolStripMenuItem.Name = "consultaDeProductosToolStripMenuItem";
-            this.consultaDeProductosToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.consultaDeProductosToolStripMenuItem.Text = "Consulta de Productos";
-            this.consultaDeProductosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeProductosToolStripMenuItem_Click);
             // 
             // consultaDeAlmacenToolStripMenuItem
             // 
             this.consultaDeAlmacenToolStripMenuItem.Name = "consultaDeAlmacenToolStripMenuItem";
-            this.consultaDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.consultaDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.consultaDeAlmacenToolStripMenuItem.Text = "Consulta de Almacen";
             this.consultaDeAlmacenToolStripMenuItem.Click += new System.EventHandler(this.consultaDeAlmacenToolStripMenuItem_Click);
             // 
@@ -480,7 +471,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultasDeInventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeVentasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultaDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeAlmacenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeInventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeClientesToolStripMenuItem1;

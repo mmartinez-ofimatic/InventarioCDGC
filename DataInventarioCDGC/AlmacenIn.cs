@@ -165,10 +165,22 @@ namespace DataInventarioCDGC
         /// Lista de todos los productos en el almacen.
         /// </summary>
         /// <returns>List select</returns>
+        //public List<Almacen> BuscarTodos()
+        //{
+        //    var selec = (from s in dbEntities.Almacens
+        //                 select s).ToList();
+
+        //    return selec;
+        //}
+
+        /// <summary>
+        /// Lista de todos los productos en el almacen.
+        /// </summary>
+        /// <returns>List select</returns>
         public List<Almacen> BuscarTodos()
         {
             var selec = (from s in dbEntities.Almacens
-                         select s).ToList();
+                         select s).Take(15).OrderBy(x => x.ID_Producto).ToList();
 
             return selec;
         }
@@ -280,7 +292,7 @@ namespace DataInventarioCDGC
         public List<Almacen> BuscarxNombre(string nomproducto)
         {
             List<Almacen> busc = (from b in dbEntities.Almacens
-                                   where b.Producto_1 == nomproducto
+                                  where b.Producto_1.Contains(nomproducto)
                                    select b).ToList();
             if (busc != null)
             {

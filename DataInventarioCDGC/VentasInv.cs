@@ -165,6 +165,19 @@ namespace DataInventarioCDGC
 
 
 
+        ///// <summary>
+        ///// Lista de Detalles de Ventas.
+        ///// </summary>
+        ///// <returns>List</returns>
+        //public List<VentaDetalle> BuscarDetallesVentas(int id)
+        //{
+        //    var selec = (from s in dbEntities.VentaDetalles
+        //                 where s.ID_Venta == id
+        //                 select s).ToList();
+
+        //    return selec;
+        //}
+
         /// <summary>
         /// Lista de Detalles de Ventas.
         /// </summary>
