@@ -118,6 +118,66 @@ namespace DataInventarioCDGC
             return selec;
         }*/
 
+
+
+        /// <summary>
+        /// Lista de las Ultimas Ventas vwVentas.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<vwVenta> BuscarUltimasVentasVista()
+        {
+            var selec = (from s in dbEntities.vwVentas
+                         select s).Take(15).OrderByDescending(x => x.ID_Venta).ToList();
+            return selec;
+        }
+
+        /// <summary>
+        /// Busqueda por ID Vista ventas.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<vwVenta> BuscarxIDVista(int idvent)
+        {
+
+            List<vwVenta> busc = (from b in dbEntities.vwVentas
+                                    where b.ID_Venta == idvent
+                                    select b).ToList();
+
+            return busc;
+        }
+
+        /// <summary>
+        /// Buscar por nombre Vista.
+        /// </summary>
+        /// <param name="nombre">nombre del cliente.</param>
+        /// <returns>List</returns>
+        public List<vwVenta> BuscarxNombreClienteVista(string nombre)
+        {
+
+            List<vwVenta> busc = (from b in dbEntities.vwVentas
+                                    where b.Cliente.Contains(nombre)
+                                    select b).OrderByDescending(x => x.ID_Venta).ToList();
+
+            return busc;
+
+
+        }
+
+
+
+
+        /// <summary>
+        /// Lista de Detalles de Ventas.
+        /// </summary>
+        /// <returns>List</returns>
+        public List<vwFactura> BuscarDetallesVentas(int id)
+        {
+            var selec = (from s in dbEntities.vwFacturas
+                         where s.ID_Venta == id
+                         select s).ToList();
+
+            return selec;
+        }
+
         /// <summary>
         /// Lista de las Ultimas Ventas.
         /// </summary>
@@ -142,8 +202,6 @@ namespace DataInventarioCDGC
            
             return busc;
         }
-
-        
 
         /// <summary>
         /// Buscar por nombre.

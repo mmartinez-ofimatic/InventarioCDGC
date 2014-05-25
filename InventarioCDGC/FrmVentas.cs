@@ -198,7 +198,7 @@ namespace InventarioCDGC
 
         private void busquedaAvanzadaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Consultas.BuscarVentas ventas = new Consultas.BuscarVentas();
+            Consultas.BuscarVentasDetalles ventas = new Consultas.BuscarVentasDetalles();
             ventas.ShowDialog(this);
         }
 
@@ -261,7 +261,7 @@ namespace InventarioCDGC
         
         private void xButtonBusquedaAvanzada_Click(object sender, EventArgs e)
         {
-            Consultas.BuscarVentas ventas = new Consultas.BuscarVentas();
+            Consultas.BuscarVentasDetalles ventas = new Consultas.BuscarVentasDetalles();
             ventas.ShowDialog(this);
         }
 

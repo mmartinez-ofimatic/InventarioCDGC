@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorTable.cs" />
+    <Compile Include="Consultas\BuscadordeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\BuscadordeVentas.Designer.cs">
+      <DependentUpon>BuscadordeVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\BuscarAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <Compile Include="Xbutton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Consultas\BuscadordeVentas.resx">
+      <DependentUpon>BuscadordeVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\BuscarAlmacen.resx">
       <DependentUpon>BuscarAlmacen.cs</DependentUpon>
     </EmbeddedResource>

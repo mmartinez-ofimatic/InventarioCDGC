@@ -99,7 +99,9 @@ namespace InventarioCDGC
 
         private void consultaDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Consultas.BuscarVentas ventas = new Consultas.BuscarVentas();
+            Consultas.BuscadordeVentas ventas = new Consultas.BuscadordeVentas();
+            
+           // Consultas.BuscarVentasDetalles ventas = new Consultas.BuscarVentasDetalles();
             ventas.ShowDialog(this);
         }
 
