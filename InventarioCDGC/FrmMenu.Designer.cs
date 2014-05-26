@@ -269,6 +269,7 @@
             this.buttonConsultas.TabIndex = 35;
             this.buttonConsultas.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buttonConsultas.UseVisualStyleBackColor = true;
+            this.buttonConsultas.Click += new System.EventHandler(this.buttonConsultas_Click);
             // 
             // buttonReportes
             // 

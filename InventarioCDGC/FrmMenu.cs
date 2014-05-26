@@ -211,6 +211,12 @@ namespace InventarioCDGC
             //reporteventas.Show();
         }
 
+        private void buttonConsultas_Click(object sender, EventArgs e)
+        {
+            Consultas.FrmConsultas consultas = new Consultas.FrmConsultas();
+            consultas.ShowDialog(this);
+        }
+
 
     }
 }
