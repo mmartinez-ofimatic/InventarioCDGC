@@ -103,6 +103,12 @@ namespace InventarioCDGC.Consultas
             //int index = e.RowIndex;
             row = dataGridView1.CurrentRow;
             Consultas.BuscarVentasDetalles.idVentaDetalles = Convert.ToInt32(row.Cells[0].Value.ToString());
+            Consultas.BuscarVentasDetalles.cliente = row.Cells[1].Value.ToString();
+            Consultas.BuscarVentasDetalles.totalNeto = row.Cells[2].Value.ToString();
+            Consultas.BuscarVentasDetalles.vendedor = row.Cells[3].Value.ToString();
+            Consultas.BuscarVentasDetalles.fecha = row.Cells[4].Value.ToString();
+            Consultas.BuscarVentasDetalles.observacion = row.Cells[5].Value.ToString();
+
             Consultas.BuscarVentasDetalles buscarVentas = new Consultas.BuscarVentasDetalles();
             buscarVentas.ShowDialog(this);
         }

@@ -20,10 +20,53 @@ namespace InventarioCDGC.Consultas
         VentasInv ventasClass = new VentasInv();
 
         public static int idVentaDetalles { get; set; }
+        public static string cliente { get; set; }
+        public static string totalNeto { get; set; }
+        public static string vendedor { get; set; }
+        public static string fecha { get; set; }
+        public static string observacion { get; set; }
 
         private void BuscarVentas_Load(object sender, EventArgs e)
         {
+            DataTable table = GetTable();
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView2.AutoGenerateColumns = false;
+
+            dataGridView2.DataSource = table;
+            //
+            // We can instantiate a new object array and add it as a row.
+            //
+            
+            //DataGridViewRow row;
+            //row = dataGridView2.CurrentRow;
+
+            //row.Cells[0].Value = idVentaDetalles;
+            //row.Cells[1].Value = cliente;
+            //row.Cells[2].Value = totalNeto;
+            //row.Cells[3].Value = vendedor;
+            //row.Cells[4].Value = fecha;
+            //row.Cells[5].Value = observacion;
+           
             dataGridView1.DataSource = ventasClass.BuscarDetallesVentas(idVentaDetalles);        
+        }
+
+        static DataTable GetTable()
+        {
+            // Here we create a DataTable with four columns.
+            DataTable table = new DataTable();
+            table.Columns.Add("ID_Venta", typeof(int));
+            table.Columns.Add("Cliente", typeof(string));
+            table.Columns.Add("Total", typeof(string));
+            table.Columns.Add("Vendedor", typeof(string));
+            table.Columns.Add("Fecha", typeof(string));
+            table.Columns.Add("Observacion", typeof(string));
+          
+
+            // Here we add five DataRows.
+            table.Rows.Add(idVentaDetalles, cliente, totalNeto, vendedor, fecha, observacion);
+           
+            return table;
         }
 
         private void xBuscar_Click(object sender, EventArgs e)
