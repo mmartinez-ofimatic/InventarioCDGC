@@ -184,9 +184,11 @@ namespace DataInventarioCDGC
         /// <returns>List</returns>
         public List<vwFactura> BuscarDetallesVentas(int id)
         {
-            var selec = (from s in dbEntities.vwFacturas
-                         where s.ID_Venta == id
-                         select s).ToList();
+            InventarioCDGCEntities1 dbent = new InventarioCDGCEntities1();
+
+            var selec = (from s in dbent.vwFacturas
+                                    where s.ID_Venta == id
+                                    select s).ToList();
 
             return selec;
         }

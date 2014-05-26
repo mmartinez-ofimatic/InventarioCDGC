@@ -1793,10 +1793,12 @@ namespace DataInventarioCDGC
         /// Create a new vwFactura object.
         /// </summary>
         /// <param name="iD_Venta">Initial value of the ID_Venta property.</param>
-        public static vwFactura CreatevwFactura(global::System.Int32 iD_Venta)
+        /// <param name="iD_Detalle">Initial value of the ID_Detalle property.</param>
+        public static vwFactura CreatevwFactura(global::System.Int32 iD_Venta, global::System.Int32 iD_Detalle)
         {
             vwFactura vwFactura = new vwFactura();
             vwFactura.ID_Venta = iD_Venta;
+            vwFactura.ID_Detalle = iD_Detalle;
             return vwFactura;
         }
 
@@ -1807,7 +1809,7 @@ namespace DataInventarioCDGC
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 ID_Venta
         {
@@ -1817,14 +1819,11 @@ namespace DataInventarioCDGC
             }
             set
             {
-                if (_ID_Venta != value)
-                {
-                    OnID_VentaChanging(value);
-                    ReportPropertyChanging("ID_Venta");
-                    _ID_Venta = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("ID_Venta");
-                    OnID_VentaChanged();
-                }
+                OnID_VentaChanging(value);
+                ReportPropertyChanging("ID_Venta");
+                _ID_Venta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ID_Venta");
+                OnID_VentaChanged();
             }
         }
         private global::System.Int32 _ID_Venta;
@@ -2046,6 +2045,33 @@ namespace DataInventarioCDGC
         private Nullable<global::System.Decimal> _Total;
         partial void OnTotalChanging(Nullable<global::System.Decimal> value);
         partial void OnTotalChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID_Detalle
+        {
+            get
+            {
+                return _ID_Detalle;
+            }
+            set
+            {
+                if (_ID_Detalle != value)
+                {
+                    OnID_DetalleChanging(value);
+                    ReportPropertyChanging("ID_Detalle");
+                    _ID_Detalle = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ID_Detalle");
+                    OnID_DetalleChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID_Detalle;
+        partial void OnID_DetalleChanging(global::System.Int32 value);
+        partial void OnID_DetalleChanged();
 
         #endregion
 

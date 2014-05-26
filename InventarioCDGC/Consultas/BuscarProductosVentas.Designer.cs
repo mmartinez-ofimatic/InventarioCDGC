@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarProductosVentas));
             this.tbuscarpor = new System.Windows.Forms.TextBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.xBuscar = new InventarioCDGC.XButton();
             this.ColumnIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xBuscar = new InventarioCDGC.XButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +88,30 @@
             this.dataGridView1.TabIndex = 35;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
+            // ColumnIDProducto
+            // 
+            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
+            this.ColumnIDProducto.HeaderText = "ID del Producto";
+            this.ColumnIDProducto.Name = "ColumnIDProducto";
+            this.ColumnIDProducto.ReadOnly = true;
+            this.ColumnIDProducto.Width = 108;
+            // 
+            // ColumnNombre
+            // 
+            this.ColumnNombre.DataPropertyName = "Producto_1";
+            this.ColumnNombre.HeaderText = "Nombre del Producto";
+            this.ColumnNombre.Name = "ColumnNombre";
+            this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Width = 130;
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
+            this.ColumnPrecio.HeaderText = "Precio de Venta";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            this.ColumnPrecio.ReadOnly = true;
+            this.ColumnPrecio.Width = 110;
+            // 
             // xBuscar
             // 
             office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
@@ -117,30 +142,6 @@
             this.xBuscar.UseVisualStyleBackColor = true;
             this.xBuscar.Click += new System.EventHandler(this.xBuscar_Click);
             // 
-            // ColumnIDProducto
-            // 
-            this.ColumnIDProducto.DataPropertyName = "ID_Producto";
-            this.ColumnIDProducto.HeaderText = "ID del Producto";
-            this.ColumnIDProducto.Name = "ColumnIDProducto";
-            this.ColumnIDProducto.ReadOnly = true;
-            this.ColumnIDProducto.Width = 108;
-            // 
-            // ColumnNombre
-            // 
-            this.ColumnNombre.DataPropertyName = "Producto_1";
-            this.ColumnNombre.HeaderText = "Nombre del Producto";
-            this.ColumnNombre.Name = "ColumnNombre";
-            this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 130;
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.DataPropertyName = "Precio_Venta";
-            this.ColumnPrecio.HeaderText = "Precio de Venta";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            this.ColumnPrecio.ReadOnly = true;
-            this.ColumnPrecio.Width = 110;
-            // 
             // BuscarProductosVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +153,7 @@
             this.Controls.Add(this.comboBoxBuscar);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BuscarProductosVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Productos";

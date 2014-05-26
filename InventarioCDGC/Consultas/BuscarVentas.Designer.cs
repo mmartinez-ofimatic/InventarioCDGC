@@ -64,7 +64,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1116, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(879, 297);
             this.dataGridView1.TabIndex = 40;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -74,6 +74,7 @@
             this.ColumnIDVenta.HeaderText = "ID de Venta";
             this.ColumnIDVenta.Name = "ColumnIDVenta";
             this.ColumnIDVenta.ReadOnly = true;
+            this.ColumnIDVenta.Visible = false;
             this.ColumnIDVenta.Width = 108;
             // 
             // ColumnNombre
@@ -82,6 +83,7 @@
             this.ColumnNombre.HeaderText = "Cliente";
             this.ColumnNombre.Name = "ColumnNombre";
             this.ColumnNombre.ReadOnly = true;
+            this.ColumnNombre.Visible = false;
             this.ColumnNombre.Width = 130;
             // 
             // ColumnIDProducto
@@ -147,14 +149,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1116, 297);
+            this.ClientSize = new System.Drawing.Size(879, 297);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BuscarVentasDetalles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar Ventas";
+            this.Text = "Detalles de la Venta";
             this.Load += new System.EventHandler(this.BuscarVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

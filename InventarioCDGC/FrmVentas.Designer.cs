@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentas));
             this.textBoxCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxObservacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.xbuscarcliente = new InventarioCDGC.XButton();
             this.textBoxObservacion1 = new System.Windows.Forms.TextBox();
             this.dataGridViewVentas = new System.Windows.Forms.DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.xbuscarproducto = new InventarioCDGC.XButton();
             this.textBoxDescuento = new System.Windows.Forms.NumericUpDown();
+            this.xButtonModificarProductos = new InventarioCDGC.XButton();
             this.textBoxCantidad = new System.Windows.Forms.NumericUpDown();
+            this.xButtonBorrarProductos = new InventarioCDGC.XButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.xButtonAgregar = new InventarioCDGC.XButton();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxProducto = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.xbuscarproducto = new InventarioCDGC.XButton();
-            this.xButtonModificarProductos = new InventarioCDGC.XButton();
-            this.xButtonBorrarProductos = new InventarioCDGC.XButton();
-            this.xButtonAgregar = new InventarioCDGC.XButton();
             this.xButtonNuevaVenta = new InventarioCDGC.XButton();
             this.xButtonGuardar = new InventarioCDGC.XButton();
-            this.xbuscarcliente = new InventarioCDGC.XButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVentas)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -120,6 +120,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Venta";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // xbuscarcliente
+            // 
+            office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
+            office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
+            office2010Green1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
+            office2010Green1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
+            office2010Green1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
+            office2010Green1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
+            office2010Green1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
+            office2010Green1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
+            office2010Green1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
+            office2010Green1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
+            office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            office2010Green1.TextColor = System.Drawing.Color.White;
+            this.xbuscarcliente.ColorTable = office2010Green1;
+            this.xbuscarcliente.Enabled = false;
+            this.xbuscarcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xbuscarcliente.Location = new System.Drawing.Point(272, 36);
+            this.xbuscarcliente.Margin = new System.Windows.Forms.Padding(2);
+            this.xbuscarcliente.Name = "xbuscarcliente";
+            this.xbuscarcliente.Size = new System.Drawing.Size(92, 19);
+            this.xbuscarcliente.TabIndex = 2;
+            this.xbuscarcliente.Text = "Buscar Cliente";
+            this.xbuscarcliente.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xbuscarcliente.UseVisualStyleBackColor = true;
+            this.xbuscarcliente.Click += new System.EventHandler(this.xbuscarcliente_Click);
             // 
             // textBoxObservacion1
             // 
@@ -199,6 +231,31 @@
             this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(165, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 17);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "%";
+            // 
+            // xbuscarproducto
+            // 
+            this.xbuscarproducto.ColorTable = office2010Green1;
+            this.xbuscarproducto.Enabled = false;
+            this.xbuscarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xbuscarproducto.Location = new System.Drawing.Point(272, 37);
+            this.xbuscarproducto.Margin = new System.Windows.Forms.Padding(2);
+            this.xbuscarproducto.Name = "xbuscarproducto";
+            this.xbuscarproducto.Size = new System.Drawing.Size(92, 19);
+            this.xbuscarproducto.TabIndex = 5;
+            this.xbuscarproducto.Text = "Buscar";
+            this.xbuscarproducto.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xbuscarproducto.UseVisualStyleBackColor = true;
+            this.xbuscarproducto.Click += new System.EventHandler(this.xbuscarproducto_Click);
+            // 
             // textBoxDescuento
             // 
             this.textBoxDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,6 +264,20 @@
             this.textBoxDescuento.ReadOnly = true;
             this.textBoxDescuento.Size = new System.Drawing.Size(49, 21);
             this.textBoxDescuento.TabIndex = 9;
+            // 
+            // xButtonModificarProductos
+            // 
+            this.xButtonModificarProductos.ColorTable = office2010Green1;
+            this.xButtonModificarProductos.Enabled = false;
+            this.xButtonModificarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xButtonModificarProductos.Location = new System.Drawing.Point(209, 230);
+            this.xButtonModificarProductos.Name = "xButtonModificarProductos";
+            this.xButtonModificarProductos.Size = new System.Drawing.Size(118, 39);
+            this.xButtonModificarProductos.TabIndex = 48;
+            this.xButtonModificarProductos.Text = "Modificar Producto";
+            this.xButtonModificarProductos.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonModificarProductos.UseVisualStyleBackColor = true;
+            this.xButtonModificarProductos.Click += new System.EventHandler(this.xButtonModificarProductos_Click);
             // 
             // textBoxCantidad
             // 
@@ -232,6 +303,20 @@
             0,
             0});
             // 
+            // xButtonBorrarProductos
+            // 
+            this.xButtonBorrarProductos.ColorTable = office2010Green1;
+            this.xButtonBorrarProductos.Enabled = false;
+            this.xButtonBorrarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xButtonBorrarProductos.Location = new System.Drawing.Point(373, 230);
+            this.xButtonBorrarProductos.Name = "xButtonBorrarProductos";
+            this.xButtonBorrarProductos.Size = new System.Drawing.Size(112, 39);
+            this.xButtonBorrarProductos.TabIndex = 47;
+            this.xButtonBorrarProductos.Text = "Borrar Producto -";
+            this.xButtonBorrarProductos.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonBorrarProductos.UseVisualStyleBackColor = true;
+            this.xButtonBorrarProductos.Click += new System.EventHandler(this.xButtonBorrarProductos_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -251,6 +336,20 @@
             this.label4.Size = new System.Drawing.Size(56, 15);
             this.label4.TabIndex = 46;
             this.label4.Text = "Cantidad";
+            // 
+            // xButtonAgregar
+            // 
+            this.xButtonAgregar.ColorTable = office2010Green1;
+            this.xButtonAgregar.Enabled = false;
+            this.xButtonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xButtonAgregar.Location = new System.Drawing.Point(40, 230);
+            this.xButtonAgregar.Name = "xButtonAgregar";
+            this.xButtonAgregar.Size = new System.Drawing.Size(117, 39);
+            this.xButtonAgregar.TabIndex = 10;
+            this.xButtonAgregar.Text = "Agregar Producto +";
+            this.xButtonAgregar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
+            this.xButtonAgregar.UseVisualStyleBackColor = true;
+            this.xButtonAgregar.Click += new System.EventHandler(this.xButtonAgregar_Click);
             // 
             // label3
             // 
@@ -292,73 +391,6 @@
             this.textBoxProducto.Size = new System.Drawing.Size(151, 21);
             this.textBoxProducto.TabIndex = 6;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(165, 167);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 17);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "%";
-            // 
-            // xbuscarproducto
-            // 
-            this.xbuscarproducto.ColorTable = office2010Green1;
-            this.xbuscarproducto.Enabled = false;
-            this.xbuscarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xbuscarproducto.Location = new System.Drawing.Point(272, 37);
-            this.xbuscarproducto.Margin = new System.Windows.Forms.Padding(2);
-            this.xbuscarproducto.Name = "xbuscarproducto";
-            this.xbuscarproducto.Size = new System.Drawing.Size(92, 19);
-            this.xbuscarproducto.TabIndex = 5;
-            this.xbuscarproducto.Text = "Buscar";
-            this.xbuscarproducto.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xbuscarproducto.UseVisualStyleBackColor = true;
-            this.xbuscarproducto.Click += new System.EventHandler(this.xbuscarproducto_Click);
-            // 
-            // xButtonModificarProductos
-            // 
-            this.xButtonModificarProductos.ColorTable = office2010Green1;
-            this.xButtonModificarProductos.Enabled = false;
-            this.xButtonModificarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonModificarProductos.Location = new System.Drawing.Point(209, 230);
-            this.xButtonModificarProductos.Name = "xButtonModificarProductos";
-            this.xButtonModificarProductos.Size = new System.Drawing.Size(118, 39);
-            this.xButtonModificarProductos.TabIndex = 48;
-            this.xButtonModificarProductos.Text = "Modificar Producto";
-            this.xButtonModificarProductos.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonModificarProductos.UseVisualStyleBackColor = true;
-            this.xButtonModificarProductos.Click += new System.EventHandler(this.xButtonModificarProductos_Click);
-            // 
-            // xButtonBorrarProductos
-            // 
-            this.xButtonBorrarProductos.ColorTable = office2010Green1;
-            this.xButtonBorrarProductos.Enabled = false;
-            this.xButtonBorrarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonBorrarProductos.Location = new System.Drawing.Point(373, 230);
-            this.xButtonBorrarProductos.Name = "xButtonBorrarProductos";
-            this.xButtonBorrarProductos.Size = new System.Drawing.Size(112, 39);
-            this.xButtonBorrarProductos.TabIndex = 47;
-            this.xButtonBorrarProductos.Text = "Borrar Producto -";
-            this.xButtonBorrarProductos.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonBorrarProductos.UseVisualStyleBackColor = true;
-            this.xButtonBorrarProductos.Click += new System.EventHandler(this.xButtonBorrarProductos_Click);
-            // 
-            // xButtonAgregar
-            // 
-            this.xButtonAgregar.ColorTable = office2010Green1;
-            this.xButtonAgregar.Enabled = false;
-            this.xButtonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xButtonAgregar.Location = new System.Drawing.Point(40, 230);
-            this.xButtonAgregar.Name = "xButtonAgregar";
-            this.xButtonAgregar.Size = new System.Drawing.Size(117, 39);
-            this.xButtonAgregar.TabIndex = 10;
-            this.xButtonAgregar.Text = "Agregar Producto +";
-            this.xButtonAgregar.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xButtonAgregar.UseVisualStyleBackColor = true;
-            this.xButtonAgregar.Click += new System.EventHandler(this.xButtonAgregar_Click);
-            // 
             // xButtonNuevaVenta
             // 
             this.xButtonNuevaVenta.ColorTable = office2010Green1;
@@ -386,38 +418,6 @@
             this.xButtonGuardar.UseVisualStyleBackColor = true;
             this.xButtonGuardar.Click += new System.EventHandler(this.xButtonGuardar_Click);
             // 
-            // xbuscarcliente
-            // 
-            office2010Green1.BorderColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(72)))), ((int)(((byte)(161)))));
-            office2010Green1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(135)))), ((int)(((byte)(228)))));
-            office2010Green1.ButtonMouseOverColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green1.ButtonMouseOverColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green1.ButtonMouseOverColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(225)))), ((int)(((byte)(137)))));
-            office2010Green1.ButtonMouseOverColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(224)))));
-            office2010Green1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green1.ButtonNormalColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(126)))), ((int)(((byte)(43)))));
-            office2010Green1.ButtonNormalColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(184)))), ((int)(((byte)(67)))));
-            office2010Green1.ButtonSelectedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(199)))), ((int)(((byte)(87)))));
-            office2010Green1.ButtonSelectedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(243)))), ((int)(((byte)(215)))));
-            office2010Green1.ButtonSelectedColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(117)))));
-            office2010Green1.ButtonSelectedColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(107)))));
-            office2010Green1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green1.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
-            office2010Green1.TextColor = System.Drawing.Color.White;
-            this.xbuscarcliente.ColorTable = office2010Green1;
-            this.xbuscarcliente.Enabled = false;
-            this.xbuscarcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xbuscarcliente.Location = new System.Drawing.Point(272, 36);
-            this.xbuscarcliente.Margin = new System.Windows.Forms.Padding(2);
-            this.xbuscarcliente.Name = "xbuscarcliente";
-            this.xbuscarcliente.Size = new System.Drawing.Size(92, 19);
-            this.xbuscarcliente.TabIndex = 2;
-            this.xbuscarcliente.Text = "Buscar Cliente";
-            this.xbuscarcliente.Theme = InventarioCDGC.Theme.MSOffice2010_Green;
-            this.xbuscarcliente.UseVisualStyleBackColor = true;
-            this.xbuscarcliente.Click += new System.EventHandler(this.xbuscarcliente_Click);
-            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +430,7 @@
             this.Controls.Add(this.xButtonGuardar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmVentas";

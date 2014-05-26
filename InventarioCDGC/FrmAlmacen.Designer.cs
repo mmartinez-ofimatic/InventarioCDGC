@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             InventarioCDGC.Office2010Green office2010Green1 = new InventarioCDGC.Office2010Green();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlmacen));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bbuscarproducto = new System.Windows.Forms.Button();
             this.textBoxIDProducto = new System.Windows.Forms.TextBox();
@@ -195,6 +196,7 @@
             this.Controls.Add(this.xButtonModificar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAlmacen";

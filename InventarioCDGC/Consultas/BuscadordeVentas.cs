@@ -100,14 +100,11 @@ namespace InventarioCDGC.Consultas
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
             //int index = e.RowIndex;
-
             row = dataGridView1.CurrentRow;
             Consultas.BuscarVentasDetalles.idVentaDetalles = Convert.ToInt32(row.Cells[0].Value.ToString());
             Consultas.BuscarVentasDetalles buscarVentas = new Consultas.BuscarVentasDetalles();
             buscarVentas.ShowDialog(this);
-
         }
 
         private void comboBoxBuscar_TextChanged(object sender, EventArgs e)

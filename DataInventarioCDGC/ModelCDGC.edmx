@@ -22,6 +22,7 @@
           </EntitySet>
           <EntitySet Name="vwFacturas" EntityType="InventarioCDGCModel.Store.vwFacturas" store:Type="Views" store:Schema="dbo" store:Name="vwFacturas">
             <DefiningQuery>SELECT 
+      [vwFacturas].[ID_Detalle] AS [ID_Detalle], 
       [vwFacturas].[ID_Venta] AS [ID_Venta], 
       [vwFacturas].[Observacion] AS [Observacion], 
       [vwFacturas].[Fecha] AS [Fecha], 
@@ -149,8 +150,9 @@
       -->
         <EntityType Name="vwFacturas">
           <Key>
-            <PropertyRef Name="ID_Venta" />
+            <PropertyRef Name="ID_Detalle" />
           </Key>
+          <Property Name="ID_Detalle" Type="int" Nullable="false" />
           <Property Name="ID_Venta" Type="int" Nullable="false" />
           <Property Name="Observacion" Type="varchar" MaxLength="100" />
           <Property Name="Fecha" Type="datetime" />
@@ -420,7 +422,7 @@
         </EntityType>
         <EntityType Name="vwFactura">
           <Key>
-            <PropertyRef Name="ID_Venta" />
+            <PropertyRef Name="ID_Detalle" />
           </Key>
           <Property Type="Int32" Name="ID_Venta" Nullable="false" />
           <Property Type="String" Name="Observacion" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -432,6 +434,7 @@
           <Property Type="Int32" Name="Cantidad" />
           <Property Type="Decimal" Name="Descuento" Precision="18" Scale="2" />
           <Property Type="Decimal" Name="Total" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ID_Detalle" Nullable="false" />
         </EntityType>
         <EntityType Name="vwVenta">
           <Key>
@@ -537,6 +540,7 @@
           <EntitySetMapping Name="vwFacturas">
             <EntityTypeMapping TypeName="InventarioCDGCModel.vwFactura">
               <MappingFragment StoreEntitySet="vwFacturas">
+                <ScalarProperty Name="ID_Detalle" ColumnName="ID_Detalle" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Descuento" ColumnName="Descuento" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
@@ -613,7 +617,7 @@
           <ConnectorPoint PointX="8.25" PointY="3.5571907552083331" />
         </AssociationConnector>
         <EntityTypeShape EntityType="InventarioCDGCModel.vw_Productos" Width="1.5" PointX="0.75" PointY="8.75" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="InventarioCDGCModel.vwFactura" Width="1.5" PointX="2.75" PointY="8.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="InventarioCDGCModel.vwFactura" Width="1.5" PointX="2.75" PointY="8.75" Height="3.1340950520833335" />
         <EntityTypeShape EntityType="InventarioCDGCModel.vwVenta" Width="1.5" PointX="5.375" PointY="8.75" Height="2.1725878906249996" />
       </Diagram>
     </Diagrams>

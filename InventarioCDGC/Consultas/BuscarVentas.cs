@@ -23,8 +23,7 @@ namespace InventarioCDGC.Consultas
 
         private void BuscarVentas_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ventasClass.BuscarDetallesVentas(idVentaDetalles);
-          
+            dataGridView1.DataSource = ventasClass.BuscarDetallesVentas(idVentaDetalles);        
         }
 
         private void xBuscar_Click(object sender, EventArgs e)
