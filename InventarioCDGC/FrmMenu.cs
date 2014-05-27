@@ -223,6 +223,12 @@ namespace InventarioCDGC
             rclientes.ShowDialog(this);
         }
 
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteProductos rproductos = new Reportes.ReporteProductos();
+            rproductos.ShowDialog(this);
+        }
+
 
     }
 }
