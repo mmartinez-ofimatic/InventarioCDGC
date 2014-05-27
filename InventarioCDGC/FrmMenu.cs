@@ -217,6 +217,12 @@ namespace InventarioCDGC
             consultas.ShowDialog(this);
         }
 
+        private void reportesDeClientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.ReporteClientes rclientes = new Reportes.ReporteClientes();
+            rclientes.ShowDialog(this);
+        }
+
 
     }
 }

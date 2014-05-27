@@ -171,6 +171,7 @@
             this.reportesDeClientesToolStripMenuItem1.Name = "reportesDeClientesToolStripMenuItem1";
             this.reportesDeClientesToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
             this.reportesDeClientesToolStripMenuItem1.Text = "Reportes de Clientes";
+            this.reportesDeClientesToolStripMenuItem1.Click += new System.EventHandler(this.reportesDeClientesToolStripMenuItem1_Click);
             // 
             // reporteDeVentasToolStripMenuItem
             // 

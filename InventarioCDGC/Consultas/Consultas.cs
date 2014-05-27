@@ -36,7 +36,7 @@ namespace InventarioCDGC.Consultas
 
         private void FrmConsultas_Load(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }
