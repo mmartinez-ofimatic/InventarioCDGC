@@ -170,6 +170,7 @@
       <DependentUpon>CrystalReportVentas.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\CrystalReportClientes.cs">
       <AutoGen>True</AutoGen>

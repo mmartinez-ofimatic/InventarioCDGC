@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.CrystalReportVentas1 = new InventarioCDGC.Reportes.CrystalReportVentas();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.CrystalReportVentas1 = new InventarioCDGC.Reportes.CrystalReportVentas();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,10 +40,10 @@
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(-4, 58);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(-4, 42);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrystalReportVentas1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(590, 370);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(880, 451);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 425);
+            this.ClientSize = new System.Drawing.Size(871, 492);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBuscar);

@@ -44,7 +44,10 @@ namespace InventarioCDGC.Reportes
                 PID.CurrentValues.Add(myDiscreteValue);
                 crystalReportViewer1.ParameterFieldInfo.Clear();
                 crystalReportViewer1.ParameterFieldInfo.Add(PID);
+                CrystalReportVentas1.Refresh();
                 crystalReportViewer1.Refresh();
+                
+
 
             }
             catch (Exception exc)
