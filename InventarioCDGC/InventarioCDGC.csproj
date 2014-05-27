@@ -166,6 +166,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\CrystalReportVentas.cs">
+      <DependentUpon>CrystalReportVentas.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reportes\CrystalReportClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +206,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteVentasDetalle.Designer.cs">
       <DependentUpon>ReporteVentasDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteVentasFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteVentasFecha.Designer.cs">
+      <DependentUpon>ReporteVentasFecha.cs</DependentUpon>
     </Compile>
     <Compile Include="Xbutton.cs">
       <SubType>Component</SubType>
@@ -260,6 +271,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\CrystalReportVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportVentas.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\CrystalReportClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportClientes.cs</LastGenOutput>
@@ -280,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteVentasDetalle.resx">
       <DependentUpon>ReporteVentasDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteVentasFecha.resx">
+      <DependentUpon>ReporteVentasFecha.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>
